@@ -319,6 +319,24 @@ def get_base_css():
 .bg-teal {{ background: linear-gradient(135deg, {COLORS['teal_deep']}, {COLORS['teal']}); }}
 .bg-coral {{ background: linear-gradient(135deg, {COLORS['coral']}, {COLORS['coral_soft']}); }}
 .bg-dark {{ background: {COLORS['dark']}; }}
+.bg-dark-stat {{ background: linear-gradient(145deg, #2D2D38 0%, #232330 100%); }}
+.bg-dark-deep {{ background: linear-gradient(145deg, #1E1E26 0%, #141418 100%); }}
+.bg-dark-moody {{ background: linear-gradient(145deg, #2A2A35 0%, #1E1E26 100%); }}
+
+/* Stat slide styles */
+.stat-num {{ line-height: 0.85; }}
+.stat-num-huge {{ font-size: 360px; }}
+.stat-num-large {{ font-size: 200px; margin-bottom: 30px; }}
+.stat-text {{ font-size: 42px; color: rgba(255,255,255,0.9); line-height: 1.4; }}
+.stat-layout {{ display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 100px; height: 100%; }}
+.stat-left {{ text-align: left; max-width: 700px; }}
+
+/* Color utilities */
+.c-red {{ color: #C45050; }}
+.c-gray {{ color: #6B7280; }}
+.c-purple {{ color: #8B7EC8; }}
+.c-white {{ color: white; }}
+.c-white-60 {{ color: rgba(255,255,255,0.6); }}
 
 /* Utility */
 .text-center {{ text-align: center; }}
@@ -966,247 +984,118 @@ def slide_12_survey_intro():
 '''
 
 
-def slide_13a_stat_75_number():
-    """Stat reveal: 75+ - Just the massive number"""
-    sad_red = '#C45050'
-    dark_bg = '#2D2D38'
+# =============================================================================
+# STAT SLIDE HELPERS - Reduce repetition
+# =============================================================================
 
+STAT_COLORS = {
+    'red': {'main': '#C45050', 'light': '#D4736A', 'shadow': 'rgba(196,80,80,0.3)'},
+    'gray': {'main': '#6B7280', 'light': '#9CA3AF', 'shadow': 'rgba(107,114,128,0.3)'},
+    'purple': {'main': '#8B7EC8', 'light': '#A89BD4', 'shadow': 'rgba(139,126,200,0.3)'},
+}
+
+def stat_slide_number(num, color_key, seed_base):
+    """Generate a number-only stat reveal slide"""
+    c = STAT_COLORS[color_key]
     return f'''
-<div class="slide" style="background: linear-gradient(145deg, {dark_bg} 0%, #232330 100%);">
+<div class="slide bg-dark-stat">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 350, 300, sad_red, 0.08, 20, seed=50, style='amoeba')}
-        {svg_blob(150, 800, 300, 280, sad_red, 0.06, -15, seed=51, style='cloud')}
+        {svg_blob(1650, 200, 350, 300, c['main'], 0.08, 20, seed=seed_base, style='amoeba')}
+        {svg_blob(150, 800, 300, 280, c['main'], 0.06, -15, seed=seed_base+1, style='cloud')}
     </svg>
-
     <div class="content flex-center">
-        <!-- Massive number -->
-        <h1 class="display" style="font-size: 360px; color: {sad_red}; line-height: 0.85; text-shadow: 0 20px 60px rgba(196,80,80,0.3);">
-            75+
-        </h1>
+        <h1 class="display stat-num stat-num-huge" style="color: {c['main']}; text-shadow: 0 20px 60px {c['shadow']};">{num}</h1>
     </div>
 </div>
 '''
 
+def stat_slide_full(num, color_key, seed_base, text_html, visual_svg):
+    """Generate a full stat slide with visualization"""
+    c = STAT_COLORS[color_key]
+    return f'''
+<div class="slide bg-dark-stat">
+    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
+        {svg_blob(1650, 200, 350, 300, c['main'], 0.08, 20, seed=seed_base, style='amoeba')}
+        {svg_blob(150, 850, 300, 280, c['main'], 0.06, -15, seed=seed_base+1, style='cloud')}
+    </svg>
+    <div class="content stat-layout">
+        <div class="stat-left">
+            <h1 class="display stat-num stat-num-large" style="color: {c['main']}; text-shadow: 0 15px 40px {c['shadow'].replace('0.3','0.25')};">{num}</h1>
+            <p class="body stat-text">{text_html}</p>
+        </div>
+        <div>{visual_svg}</div>
+    </div>
+</div>
+'''
+
+def svg_declining_bars():
+    """SVG for declining bar chart visualization"""
+    return '''<svg width="400" height="350" viewBox="0 0 400 350">
+        <rect x="40" y="50" width="60" height="250" rx="8" fill="#3A3A48" opacity="0.5"/>
+        <rect x="40" y="80" width="60" height="220" rx="8" fill="#D4736A" opacity="0.7"/>
+        <rect x="120" y="50" width="60" height="250" rx="8" fill="#3A3A48" opacity="0.5"/>
+        <rect x="120" y="120" width="60" height="180" rx="8" fill="#C45050" opacity="0.8"/>
+        <rect x="200" y="50" width="60" height="250" rx="8" fill="#3A3A48" opacity="0.5"/>
+        <rect x="200" y="170" width="60" height="130" rx="8" fill="#C45050" opacity="0.9"/>
+        <rect x="280" y="50" width="60" height="250" rx="8" fill="#3A3A48" opacity="0.5"/>
+        <rect x="280" y="220" width="60" height="80" rx="8" fill="#C45050"/>
+        <path d="M 60 40 L 320 280" stroke="#C45050" stroke-width="4" stroke-dasharray="12,6" opacity="0.6"/>
+        <polygon points="310,260 340,290 300,290" fill="#C45050" opacity="0.8"/>
+        <text x="200" y="335" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="16" fill="rgba(255,255,255,0.5)">SHOP REVENUE TREND</text>
+    </svg>'''
+
+def svg_zero_visibility():
+    """SVG for zero/empty visualization"""
+    return '''<svg width="350" height="350" viewBox="0 0 350 350">
+        <circle cx="175" cy="175" r="140" fill="none" stroke="#3A3A48" stroke-width="30" opacity="0.4"/>
+        <circle cx="175" cy="175" r="140" fill="none" stroke="#6B7280" stroke-width="8" stroke-dasharray="20,10" opacity="0.6"/>
+        <text x="175" y="200" text-anchor="middle" font-family="Ogg Bold, serif" font-size="120" fill="#6B7280" opacity="0.8">0</text>
+        <g transform="translate(60, 60)" opacity="0.4"><circle cx="15" cy="15" r="12" fill="#6B7280"/><line x1="5" y1="5" x2="25" y2="25" stroke="#232330" stroke-width="3"/></g>
+        <g transform="translate(270, 80)" opacity="0.3"><circle cx="15" cy="15" r="10" fill="#6B7280"/><line x1="7" y1="7" x2="23" y2="23" stroke="#232330" stroke-width="2"/></g>
+        <g transform="translate(50, 250)" opacity="0.35"><circle cx="12" cy="12" r="10" fill="#6B7280"/><line x1="4" y1="4" x2="20" y2="20" stroke="#232330" stroke-width="2"/></g>
+        <g transform="translate(280, 240)" opacity="0.25"><circle cx="12" cy="12" r="8" fill="#6B7280"/><line x1="5" y1="5" x2="19" y2="19" stroke="#232330" stroke-width="2"/></g>
+        <text x="175" y="340" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">VISIBILITY</text>
+    </svg>'''
+
+def svg_confusion():
+    """SVG for confusion/paralysis visualization"""
+    return '''<svg width="350" height="350" viewBox="0 0 350 350">
+        <text x="80" y="80" font-family="Ogg Bold, serif" font-size="48" fill="#8B7EC8" opacity="0.7" transform="rotate(-15 80 80)">?</text>
+        <text x="250" y="100" font-family="Ogg Bold, serif" font-size="36" fill="#A89BD4" opacity="0.5" transform="rotate(20 250 100)">?</text>
+        <text x="175" y="180" font-family="Ogg Bold, serif" font-size="72" fill="#8B7EC8" opacity="0.9">?</text>
+        <text x="120" y="280" font-family="Ogg Bold, serif" font-size="42" fill="#A89BD4" opacity="0.6" transform="rotate(-10 120 280)">?</text>
+        <text x="270" y="260" font-family="Ogg Bold, serif" font-size="54" fill="#8B7EC8" opacity="0.65" transform="rotate(25 270 260)">?</text>
+        <text x="60" y="200" font-family="Ogg Bold, serif" font-size="32" fill="#A89BD4" opacity="0.4" transform="rotate(-25 60 200)">?</text>
+        <text x="300" y="180" font-family="Ogg Bold, serif" font-size="28" fill="#8B7EC8" opacity="0.35" transform="rotate(15 300 180)">?</text>
+        <rect x="50" y="130" width="30" height="30" rx="4" fill="#3A3A48" opacity="0.4" transform="rotate(15 65 145)"/>
+        <rect x="280" y="200" width="25" height="25" rx="4" fill="#3A3A48" opacity="0.35" transform="rotate(-20 292 212)"/>
+        <rect x="140" y="300" width="35" height="35" rx="4" fill="#3A3A48" opacity="0.3" transform="rotate(30 157 317)"/>
+        <text x="175" y="345" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">PARALYSIS</text>
+    </svg>'''
+
+def slide_13a_stat_75_number():
+    return stat_slide_number('75+', 'red', 50)
 
 def slide_13b_stat_75_full():
-    """Stat reveal: 75+ shops tanked - Full context with data visualization"""
-    sad_red = '#C45050'
-    sad_red_light = '#D4736A'
-    dark_bg = '#2D2D38'
-    dark_surface = '#3A3A48'
-
-    # Build dot visualization: 75 out of 160 (showing proportion)
-    dot_rows = []
-    total_dots = 80  # Simplified visual representation (8x10 grid)
-    filled_dots = 47  # Proportional representation (~47% = 75/160)
-
-    return f'''
-<div class="slide" style="background: linear-gradient(145deg, {dark_bg} 0%, #232330 100%);">
-    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 350, 300, sad_red, 0.08, 20, seed=50, style='amoeba')}
-        {svg_blob(150, 850, 300, 280, sad_red, 0.06, -15, seed=51, style='cloud')}
-    </svg>
-
-    <div class="content" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 100px; height: 100%;">
-        <!-- Left: Number + Text -->
-        <div style="text-align: left; max-width: 700px;">
-            <h1 class="display" style="font-size: 200px; color: {sad_red}; line-height: 0.85; margin-bottom: 30px; text-shadow: 0 15px 40px rgba(196,80,80,0.25);">
-                75+
-            </h1>
-            <p class="body" style="font-size: 42px; color: rgba(255,255,255,0.9); line-height: 1.4;">
-                of sellers report their shops <span style="color: {sad_red}; font-weight: bold;">tanked</span> in the last 2 months...
-            </p>
-        </div>
-
-        <!-- Right: Visual - Downward trend bars -->
-        <div style="position: relative;">
-            <svg width="400" height="350" viewBox="0 0 400 350">
-                <!-- Descending bar chart showing decline -->
-                <rect x="40" y="50" width="60" height="250" rx="8" fill="{dark_surface}" opacity="0.5"/>
-                <rect x="40" y="80" width="60" height="220" rx="8" fill="{sad_red_light}" opacity="0.7"/>
-
-                <rect x="120" y="50" width="60" height="250" rx="8" fill="{dark_surface}" opacity="0.5"/>
-                <rect x="120" y="120" width="60" height="180" rx="8" fill="{sad_red}" opacity="0.8"/>
-
-                <rect x="200" y="50" width="60" height="250" rx="8" fill="{dark_surface}" opacity="0.5"/>
-                <rect x="200" y="170" width="60" height="130" rx="8" fill="{sad_red}" opacity="0.9"/>
-
-                <rect x="280" y="50" width="60" height="250" rx="8" fill="{dark_surface}" opacity="0.5"/>
-                <rect x="280" y="220" width="60" height="80" rx="8" fill="{sad_red}"/>
-
-                <!-- Downward arrow overlay -->
-                <path d="M 60 40 L 320 280" stroke="{sad_red}" stroke-width="4" stroke-dasharray="12,6" opacity="0.6"/>
-                <polygon points="310,260 340,290 300,290" fill="{sad_red}" opacity="0.8"/>
-
-                <!-- Label -->
-                <text x="200" y="335" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="16" fill="rgba(255,255,255,0.5)">SHOP REVENUE TREND</text>
-            </svg>
-        </div>
-    </div>
-</div>
-'''
-
+    return stat_slide_full('75+', 'red', 50,
+        'of sellers report their shops <span style="color: #C45050; font-weight: bold;">tanked</span> in the last 2 months...',
+        svg_declining_bars())
 
 def slide_14a_stat_58_number():
-    """Stat reveal: 58+ - Just the massive number"""
-    empty_gray = '#6B7280'
-    dark_bg = '#2D2D38'
-
-    return f'''
-<div class="slide" style="background: linear-gradient(145deg, {dark_bg} 0%, #232330 100%);">
-    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 350, 300, empty_gray, 0.1, 20, seed=52, style='amoeba')}
-        {svg_blob(150, 800, 300, 280, empty_gray, 0.08, -15, seed=53, style='cloud')}
-    </svg>
-
-    <div class="content flex-center">
-        <!-- Massive number -->
-        <h1 class="display" style="font-size: 360px; color: {empty_gray}; line-height: 0.85; text-shadow: 0 20px 60px rgba(107,114,128,0.3);">
-            58+
-        </h1>
-    </div>
-</div>
-'''
-
+    return stat_slide_number('58+', 'gray', 52)
 
 def slide_14b_stat_58_full():
-    """Stat reveal: 58+ no views - Full context with 'empty' visualization"""
-    empty_gray = '#6B7280'
-    empty_light = '#9CA3AF'
-    dark_bg = '#2D2D38'
-    dark_surface = '#3A3A48'
-
-    return f'''
-<div class="slide" style="background: linear-gradient(145deg, {dark_bg} 0%, #232330 100%);">
-    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 350, 300, empty_gray, 0.1, 20, seed=52, style='amoeba')}
-        {svg_blob(150, 850, 300, 280, empty_gray, 0.08, -15, seed=53, style='cloud')}
-    </svg>
-
-    <div class="content" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 100px; height: 100%;">
-        <!-- Left: Number + Text -->
-        <div style="text-align: left; max-width: 700px;">
-            <h1 class="display" style="font-size: 200px; color: {empty_gray}; line-height: 0.85; margin-bottom: 30px; text-shadow: 0 15px 40px rgba(107,114,128,0.25);">
-                58+
-            </h1>
-            <p class="body" style="font-size: 42px; color: rgba(255,255,255,0.9); line-height: 1.4;">
-                sellers said their #1 problem:<br>
-                <span style="color: {empty_light}; font-weight: bold;">"No views anymore"</span>
-            </p>
-        </div>
-
-        <!-- Right: Visual - Empty/Zero motif -->
-        <div style="position: relative;">
-            <svg width="350" height="350" viewBox="0 0 350 350">
-                <!-- Large empty circle/zero -->
-                <circle cx="175" cy="175" r="140" fill="none" stroke="{dark_surface}" stroke-width="30" opacity="0.4"/>
-                <circle cx="175" cy="175" r="140" fill="none" stroke="{empty_gray}" stroke-width="8" stroke-dasharray="20,10" opacity="0.6"/>
-
-                <!-- Center "0" -->
-                <text x="175" y="200" text-anchor="middle" font-family="Ogg Bold, serif" font-size="120" fill="{empty_gray}" opacity="0.8">0</text>
-
-                <!-- Small scattered "view" icons that are crossed out -->
-                <g transform="translate(60, 60)" opacity="0.4">
-                    <circle cx="15" cy="15" r="12" fill="{empty_gray}"/>
-                    <line x1="5" y1="5" x2="25" y2="25" stroke="#232330" stroke-width="3"/>
-                </g>
-                <g transform="translate(270, 80)" opacity="0.3">
-                    <circle cx="15" cy="15" r="10" fill="{empty_gray}"/>
-                    <line x1="7" y1="7" x2="23" y2="23" stroke="#232330" stroke-width="2"/>
-                </g>
-                <g transform="translate(50, 250)" opacity="0.35">
-                    <circle cx="12" cy="12" r="10" fill="{empty_gray}"/>
-                    <line x1="4" y1="4" x2="20" y2="20" stroke="#232330" stroke-width="2"/>
-                </g>
-                <g transform="translate(280, 240)" opacity="0.25">
-                    <circle cx="12" cy="12" r="8" fill="{empty_gray}"/>
-                    <line x1="5" y1="5" x2="19" y2="19" stroke="#232330" stroke-width="2"/>
-                </g>
-
-                <!-- Label -->
-                <text x="175" y="340" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">VISIBILITY</text>
-            </svg>
-        </div>
-    </div>
-</div>
-'''
-
+    return stat_slide_full('58+', 'gray', 52,
+        'sellers said their #1 problem:<br><span style="color: #9CA3AF; font-weight: bold;">"No views anymore"</span>',
+        svg_zero_visibility())
 
 def slide_15a_stat_47_number():
-    """Stat reveal: 47+ - Just the massive number"""
-    confused_purple = '#8B7EC8'
-    dark_bg = '#2D2D38'
-
-    return f'''
-<div class="slide" style="background: linear-gradient(145deg, {dark_bg} 0%, #232330 100%);">
-    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 350, 300, confused_purple, 0.1, 20, seed=54, style='amoeba')}
-        {svg_blob(150, 800, 300, 280, confused_purple, 0.08, -15, seed=55, style='cloud')}
-    </svg>
-
-    <div class="content flex-center">
-        <!-- Massive number -->
-        <h1 class="display" style="font-size: 360px; color: {confused_purple}; line-height: 0.85; text-shadow: 0 20px 60px rgba(139,126,200,0.3);">
-            47+
-        </h1>
-    </div>
-</div>
-'''
-
+    return stat_slide_number('47+', 'purple', 54)
 
 def slide_15b_stat_47_full():
-    """Stat reveal: 47+ don't know what to design - Full context with confusion visualization"""
-    confused_purple = '#8B7EC8'
-    confused_light = '#A89BD4'
-    dark_bg = '#2D2D38'
-    dark_surface = '#3A3A48'
-
-    return f'''
-<div class="slide" style="background: linear-gradient(145deg, {dark_bg} 0%, #232330 100%);">
-    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 350, 300, confused_purple, 0.1, 20, seed=54, style='amoeba')}
-        {svg_blob(150, 850, 300, 280, confused_purple, 0.08, -15, seed=55, style='cloud')}
-    </svg>
-
-    <div class="content" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 100px; height: 100%;">
-        <!-- Left: Number + Text -->
-        <div style="text-align: left; max-width: 700px;">
-            <h1 class="display" style="font-size: 200px; color: {confused_purple}; line-height: 0.85; margin-bottom: 30px; text-shadow: 0 15px 40px rgba(139,126,200,0.25);">
-                47+
-            </h1>
-            <p class="body" style="font-size: 42px; color: rgba(255,255,255,0.9); line-height: 1.4;">
-                said they have<br>
-                <span style="color: {confused_light}; font-weight: bold;">"No idea what to design"</span>
-            </p>
-        </div>
-
-        <!-- Right: Visual - Confusion/scattered elements -->
-        <div style="position: relative;">
-            <svg width="350" height="350" viewBox="0 0 350 350">
-                <!-- Scattered, chaotic elements representing confusion -->
-                <!-- Question marks scattered -->
-                <text x="80" y="80" font-family="Ogg Bold, serif" font-size="48" fill="{confused_purple}" opacity="0.7" transform="rotate(-15 80 80)">?</text>
-                <text x="250" y="100" font-family="Ogg Bold, serif" font-size="36" fill="{confused_light}" opacity="0.5" transform="rotate(20 250 100)">?</text>
-                <text x="175" y="180" font-family="Ogg Bold, serif" font-size="72" fill="{confused_purple}" opacity="0.9">?</text>
-                <text x="120" y="280" font-family="Ogg Bold, serif" font-size="42" fill="{confused_light}" opacity="0.6" transform="rotate(-10 120 280)">?</text>
-                <text x="270" y="260" font-family="Ogg Bold, serif" font-size="54" fill="{confused_purple}" opacity="0.65" transform="rotate(25 270 260)">?</text>
-                <text x="60" y="200" font-family="Ogg Bold, serif" font-size="32" fill="{confused_light}" opacity="0.4" transform="rotate(-25 60 200)">?</text>
-                <text x="300" y="180" font-family="Ogg Bold, serif" font-size="28" fill="{confused_purple}" opacity="0.35" transform="rotate(15 300 180)">?</text>
-
-                <!-- Scattered design elements (squares, circles) in disarray -->
-                <rect x="50" y="130" width="30" height="30" rx="4" fill="{dark_surface}" opacity="0.4" transform="rotate(15 65 145)"/>
-                <rect x="280" y="200" width="25" height="25" rx="4" fill="{dark_surface}" opacity="0.35" transform="rotate(-20 292 212)"/>
-                <rect x="140" y="300" width="35" height="35" rx="4" fill="{dark_surface}" opacity="0.3" transform="rotate(30 157 317)"/>
-                <circle cx="220" y="320" r="15" fill="{dark_surface}" opacity="0.25"/>
-                <circle cx="100" y="320" r="12" fill="{dark_surface}" opacity="0.2"/>
-
-                <!-- Label -->
-                <text x="175" y="345" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">PARALYSIS</text>
-            </svg>
-        </div>
-    </div>
-</div>
-'''
+    return stat_slide_full('47+', 'purple', 54,
+        'said they have<br><span style="color: #A89BD4; font-weight: bold;">"No idea what to design"</span>',
+        svg_confusion())
 
 
 def slide_16_engagement():
@@ -1227,20 +1116,20 @@ def slide_16_engagement():
 
         <!-- Custom chat bubble graphic -->
         <div style="position: relative; margin-bottom: 40px;">
-            <svg width="500" height="140" viewBox="0 0 500 140">
+            <svg width="500" height="160" viewBox="0 0 500 160">
                 <!-- Chat bubble shape -->
-                <rect x="0" y="0" width="500" height="100" rx="24" fill="{COLORS['teal_deep']}"/>
+                <rect x="0" y="0" width="500" height="120" rx="24" fill="{COLORS['teal_deep']}"/>
                 <!-- Bubble tail -->
-                <polygon points="100,100 130,100 115,130" fill="{COLORS['teal_deep']}"/>
+                <polygon points="100,120 130,120 115,150" fill="{COLORS['teal_deep']}"/>
 
                 <!-- Text inside bubble -->
-                <text x="250" y="55" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="28" fill="white" font-weight="500">Type</text>
-                <text x="250" y="88" text-anchor="middle" font-family="Ogg Bold, serif" font-size="36" fill="{COLORS['gold']}" font-weight="bold">"YES"</text>
+                <text x="250" y="50" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="26" fill="white" font-weight="500">Type</text>
+                <text x="250" y="100" text-anchor="middle" font-family="Ogg Bold, serif" font-size="48" fill="{COLORS['gold']}" font-weight="bold">YES</text>
 
                 <!-- Typing indicator dots -->
-                <circle cx="430" cy="50" r="6" fill="white" opacity="0.9"/>
-                <circle cx="450" cy="50" r="6" fill="white" opacity="0.6"/>
-                <circle cx="470" cy="50" r="6" fill="white" opacity="0.3"/>
+                <circle cx="430" cy="60" r="6" fill="white" opacity="0.9"/>
+                <circle cx="450" cy="60" r="6" fill="white" opacity="0.6"/>
+                <circle cx="470" cy="60" r="6" fill="white" opacity="0.3"/>
             </svg>
         </div>
 
