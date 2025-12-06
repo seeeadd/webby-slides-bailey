@@ -577,11 +577,11 @@ def slide_01_title():
         <!-- RIGHT: Shop Transformation Visual - LARGER, better positioned -->
         <div style="flex: 1.15; display: flex; align-items: center; justify-content: center; position: relative;">
 
-            <svg width="560" height="480" viewBox="0 0 560 480">
-                <!-- BEFORE label - using text-anchor start to avoid clipping -->
-                <text x="90" y="45" text-anchor="start" font-family="Satoshi, sans-serif"
-                      font-size="10" fill="{COLORS['dark']}" font-weight="600"
-                      letter-spacing="1" opacity="0.6">BEFORE</text>
+            <svg width="650" height="560" viewBox="0 0 560 480">
+                <!-- BEFORE label -->
+                <text x="90" y="42" text-anchor="start" font-family="Satoshi, sans-serif"
+                      font-size="11" fill="{COLORS['dark']}" font-weight="700"
+                      letter-spacing="2" opacity="0.7">BEFORE</text>
 
                 <!-- Messy Shop (Before) -->
                 <g transform="translate(20, 60)">
@@ -589,9 +589,9 @@ def slide_01_title():
                 </g>
 
                 <!-- AFTER label -->
-                <text x="445" y="35" text-anchor="middle" font-family="Satoshi, sans-serif"
-                      font-size="10" fill="{COLORS['teal_deep']}" font-weight="700"
-                      letter-spacing="1">AFTER</text>
+                <text x="445" y="32" text-anchor="middle" font-family="Satoshi, sans-serif"
+                      font-size="11" fill="{COLORS['teal_deep']}" font-weight="700"
+                      letter-spacing="2">AFTER</text>
 
                 <!-- Focused Shop (After) - overlapping, in front, glowing -->
                 <g transform="translate(320, 45)">
