@@ -418,7 +418,7 @@ def svg_shop_mockup_messy():
 
         <!-- $127 in painful coral/red -->
         <text x="120" y="302" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="14" fill="#C45050" font-weight="700"><tspan>$127</tspan><tspan dx="5">this</tspan><tspan dx="5">month</tspan></text>
+              font-size="16" fill="#C45050" font-weight="700" xml:space="preserve">$127  this  month</text>
     </g>
     '''
 
@@ -494,7 +494,7 @@ def svg_shop_mockup_focused():
 
         <!-- $3,847 - BOLD and prominent -->
         <text x="118" y="343" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="18" fill="{teal}" font-weight="800" xml:space="preserve">$3,847  this  month</text>
+              font-size="20" fill="{teal}" font-weight="800" xml:space="preserve">$3,847  this  month</text>
 
         <!-- Up arrow indicator - bigger -->
         <g transform="translate(186, 328)">
@@ -575,9 +575,9 @@ def slide_01_title():
         </div>
 
         <!-- RIGHT: Shop Transformation Visual - LARGER, better positioned -->
-        <div style="flex: 1.15; display: flex; align-items: center; justify-content: center; position: relative;">
+        <div style="flex: 1.2; display: flex; align-items: center; justify-content: flex-end; position: relative; padding-right: 40px;">
 
-            <svg width="650" height="560" viewBox="0 0 560 480">
+            <svg width="680" height="580" viewBox="0 0 560 480">
                 <!-- BEFORE label -->
                 <text x="90" y="42" text-anchor="start" font-family="Satoshi, sans-serif"
                       font-size="11" fill="{COLORS['dark']}" font-weight="700"
