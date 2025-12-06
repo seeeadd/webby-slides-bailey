@@ -416,9 +416,9 @@ def svg_shop_mockup_messy():
             <path d="M6 2 L6 12 M2 8 L6 12 L10 8" stroke="#C45050" stroke-width="2.5" fill="none" stroke-linecap="round"/>
         </g>
 
-        <!-- $127 in painful coral/red - separate elements for spacing -->
-        <text x="50" y="302" font-family="Satoshi, sans-serif" font-size="16" fill="#C45050" font-weight="700">$127</text>
-        <text x="95" y="302" font-family="Satoshi, sans-serif" font-size="14" fill="#C45050" font-weight="500">this month</text>
+        <!-- $127 in painful coral/red - BIGGER text -->
+        <text x="45" y="302" font-family="Satoshi, sans-serif" font-size="22" fill="#C45050" font-weight="700">$127</text>
+        <text x="105" y="302" font-family="Satoshi, sans-serif" font-size="16" fill="#C45050" font-weight="500">this month</text>
     </g>
     '''
 
@@ -492,9 +492,9 @@ def svg_shop_mockup_focused():
             <path d="M2 2 L12 12 M12 2 L2 12" stroke="{gold}" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
         </g>
 
-        <!-- $3,847 - BOLD and prominent - separate elements for spacing -->
-        <text x="55" y="343" font-family="Satoshi, sans-serif" font-size="20" fill="{teal}" font-weight="800">$3,847</text>
-        <text x="120" y="343" font-family="Satoshi, sans-serif" font-size="16" fill="{teal}" font-weight="600">this month</text>
+        <!-- $3,847 - BOLD and prominent - BIGGER text with gap -->
+        <text x="42" y="343" font-family="Satoshi, sans-serif" font-size="26" fill="{teal}" font-weight="800">$3,847</text>
+        <text x="140" y="343" font-family="Satoshi, sans-serif" font-size="17" fill="{teal}" font-weight="600">this month</text>
 
         <!-- Up arrow indicator - bigger -->
         <g transform="translate(186, 328)">
@@ -540,7 +540,7 @@ def slide_01_title():
         {svg_sparkle(1750, 700, 14, gold)}
     </svg>
 
-    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 100px 50px 80px 70px; gap: 20px;">
+    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 100px 120px 80px 100px; gap: 60px;">
 
         <!-- LEFT: Text content - pushed further left -->
         <div style="flex: 0.9; max-width: 620px;">
@@ -574,8 +574,8 @@ def slide_01_title():
             </div>
         </div>
 
-        <!-- RIGHT: Shop Transformation Visual - LARGER, better positioned -->
-        <div style="flex: 1.2; display: flex; align-items: center; justify-content: flex-end; position: relative; padding-right: 40px;">
+        <!-- RIGHT: Shop Transformation Visual - CENTERED, away from edges -->
+        <div style="flex: 1.2; display: flex; align-items: center; justify-content: center; position: relative;">
 
             <svg width="680" height="580" viewBox="0 0 560 480">
                 <!-- BEFORE label -->
