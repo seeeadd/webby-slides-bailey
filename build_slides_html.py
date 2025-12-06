@@ -416,9 +416,9 @@ def svg_shop_mockup_messy():
             <path d="M6 2 L6 12 M2 8 L6 12 L10 8" stroke="#C45050" stroke-width="2.5" fill="none" stroke-linecap="round"/>
         </g>
 
-        <!-- $127 in painful coral/red -->
-        <text x="120" y="302" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="16" fill="#C45050" font-weight="700" xml:space="preserve">$127  this  month</text>
+        <!-- $127 in painful coral/red - separate elements for spacing -->
+        <text x="50" y="302" font-family="Satoshi, sans-serif" font-size="16" fill="#C45050" font-weight="700">$127</text>
+        <text x="95" y="302" font-family="Satoshi, sans-serif" font-size="14" fill="#C45050" font-weight="500">this month</text>
     </g>
     '''
 
@@ -492,9 +492,9 @@ def svg_shop_mockup_focused():
             <path d="M2 2 L12 12 M12 2 L2 12" stroke="{gold}" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
         </g>
 
-        <!-- $3,847 - BOLD and prominent -->
-        <text x="118" y="343" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="20" fill="{teal}" font-weight="800" xml:space="preserve">$3,847  this  month</text>
+        <!-- $3,847 - BOLD and prominent - separate elements for spacing -->
+        <text x="55" y="343" font-family="Satoshi, sans-serif" font-size="20" fill="{teal}" font-weight="800">$3,847</text>
+        <text x="120" y="343" font-family="Satoshi, sans-serif" font-size="16" fill="{teal}" font-weight="600">this month</text>
 
         <!-- Up arrow indicator - bigger -->
         <g transform="translate(186, 328)">
