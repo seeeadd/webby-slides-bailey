@@ -61,6 +61,7 @@ def get_font_css():
         ('Ogg Light', 'Ogg Light Font.ttf'),
         ('Ogg Text', 'Ogg Text Book.ttf'),
         ('Ogg Text Medium', 'Ogg Text Medium.ttf'),
+        ('Satoshi', 'Satoshi-Variable.ttf'),
     ]
 
     css = ""
@@ -237,7 +238,7 @@ def get_base_css():
     position: relative;
     overflow: hidden;
     page-break-after: always;
-    font-family: 'Ogg Text', Georgia, serif;
+    font-family: 'Satoshi', 'Ogg Text', sans-serif;
 }}
 
 .slide:last-child {{
@@ -251,7 +252,7 @@ def get_base_css():
 }}
 
 .body {{
-    font-family: 'Ogg Text', Georgia, serif;
+    font-family: 'Satoshi', sans-serif;
 }}
 
 .light {{
