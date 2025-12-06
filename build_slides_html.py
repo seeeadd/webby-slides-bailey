@@ -407,15 +407,18 @@ def svg_shop_mockup_messy():
         <!-- Messy cluttered thumbnails -->
         {chr(10).join(listings)}
 
-        <!-- Revenue indicator - painful red -->
-        <rect x="10" y="288" width="210" height="20" rx="4" fill="#F5E8E8"/>
-        <text x="115" y="302" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="13" fill="#B85C5C" font-weight="600">$127 this month</text>
+        <!-- Revenue indicator - PAINFUL treatment -->
+        <rect x="8" y="285" width="214" height="24" rx="5" fill="#FCE8E8"/>
+        <rect x="10" y="287" width="210" height="20" rx="4" fill="#F8DEDE"/>
 
-        <!-- Stress indicator - down arrow -->
-        <g transform="translate(185, 290)">
-            <path d="M8 2 L8 12 M4 8 L8 12 L12 8" stroke="#C45C5C" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Down arrow - prominent -->
+        <g transform="translate(22, 290)">
+            <path d="M6 2 L6 12 M2 8 L6 12 L10 8" stroke="#C45050" stroke-width="2.5" fill="none" stroke-linecap="round"/>
         </g>
+
+        <!-- $127 in painful coral/red -->
+        <text x="120" y="302" text-anchor="middle" font-family="Satoshi, sans-serif"
+              font-size="14" fill="#C45050" font-weight="700"><tspan>$127</tspan><tspan dx="5">this</tspan><tspan dx="5">month</tspan></text>
     </g>
     '''
 
@@ -478,22 +481,24 @@ def svg_shop_mockup_focused():
         <!-- Clean, glowing thumbnails -->
         {chr(10).join(listings)}
 
-        <!-- Revenue indicator - winning gold/green -->
+        <!-- Revenue indicator - WINNING treatment with glow -->
+        <rect x="6" y="318" width="218" height="36" rx="10" fill="{teal}" opacity="0.15"/>
         <rect x="8" y="320" width="214" height="32" rx="8" fill="{mint}"/>
-        <rect x="10" y="322" width="210" height="28" rx="6" fill="white" opacity="0.4"/>
+        <rect x="10" y="322" width="210" height="28" rx="6" fill="white" opacity="0.5"/>
 
-        <!-- Sparkle near revenue -->
-        <g transform="translate(28, 328)">
-            <path d="M6 0 L6 12 M0 6 L12 6" stroke="{gold}" stroke-width="2" stroke-linecap="round"/>
-            <path d="M2 2 L10 10 M10 2 L2 10" stroke="{gold}" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+        <!-- Sparkle near revenue - bigger -->
+        <g transform="translate(24, 328)">
+            <path d="M7 0 L7 14 M0 7 L14 7" stroke="{gold}" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M2 2 L12 12 M12 2 L2 12" stroke="{gold}" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
         </g>
 
-        <text x="120" y="342" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="17" fill="{teal}" font-weight="700">$3,847 this month</text>
+        <!-- $3,847 - BOLD and prominent -->
+        <text x="118" y="343" text-anchor="middle" font-family="Satoshi, sans-serif"
+              font-size="18" fill="{teal}" font-weight="800" xml:space="preserve">$3,847  this  month</text>
 
-        <!-- Up arrow indicator -->
-        <g transform="translate(188, 330)">
-            <path d="M8 14 L8 4 M4 8 L8 4 L12 8" stroke="{teal}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Up arrow indicator - bigger -->
+        <g transform="translate(186, 328)">
+            <path d="M9 16 L9 4 M4 9 L9 4 L14 9" stroke="{teal}" stroke-width="3" fill="none" stroke-linecap="round"/>
         </g>
 
         <!-- Tiny hearts scattered -->
@@ -517,111 +522,106 @@ def svg_sparkle(x, y, size=12, color='#E8C547'):
 def slide_01_title():
     """Title slide - THE 2026 ETSY RESET - MASSIVE typography + transformation visual"""
     gold = '#E8C547'
+    success_green = '#2D9B6E'
 
     return f'''
 <div class="slide bg-cream">
-    <!-- Subtle background texture/warmth -->
+    <!-- Subtle background texture/warmth - balanced sparkles -->
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
         <!-- Warm organic shapes in background -->
-        {svg_blob(1750, 150, 280, 240, COLORS['mint'], 0.2, 15, seed=100, style='cloud')}
-        {svg_blob(50, 900, 250, 220, COLORS['blush_soft'], 0.25, -10, seed=101, style='amoeba')}
-        {svg_blob(1800, 850, 200, 180, COLORS['coral_pale'], 0.15, 20, seed=102, style='organic')}
+        {svg_blob(1780, 120, 260, 220, COLORS['mint'], 0.18, 15, seed=100, style='cloud')}
+        {svg_blob(30, 850, 220, 200, COLORS['blush_soft'], 0.22, -10, seed=101, style='amoeba')}
+        {svg_blob(1820, 920, 180, 160, COLORS['coral_pale'], 0.12, 20, seed=102, style='organic')}
 
-        <!-- Floating sparkles/stars for warmth -->
-        {svg_sparkle(120, 180, 14, gold)}
-        {svg_sparkle(280, 820, 10, COLORS['coral_soft'])}
-        {svg_sparkle(1720, 400, 12, COLORS['teal_light'])}
-        {svg_sparkle(1650, 920, 16, gold)}
-        {svg_sparkle(380, 120, 8, COLORS['mint'])}
-
-        <!-- Subtle floating dollar signs -->
-        <text x="200" y="280" font-family="Satoshi, sans-serif" font-size="24" fill="{COLORS['teal_light']}" opacity="0.15">$</text>
-        <text x="1600" y="180" font-family="Satoshi, sans-serif" font-size="32" fill="{gold}" opacity="0.12">$</text>
-        <text x="150" y="700" font-family="Satoshi, sans-serif" font-size="28" fill="{COLORS['coral_soft']}" opacity="0.1">$</text>
+        <!-- Balanced floating sparkles - top left, mid right, bottom left -->
+        {svg_sparkle(80, 140, 14, gold)}
+        {svg_sparkle(1680, 320, 12, COLORS['teal_light'])}
+        {svg_sparkle(160, 780, 10, COLORS['coral_soft'])}
+        {svg_sparkle(1750, 700, 14, gold)}
     </svg>
 
-    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 50px 70px; gap: 40px;">
+    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 100px 50px 80px 70px; gap: 20px;">
 
-        <!-- LEFT: Text content - MASSIVE RESET -->
-        <div style="flex: 1.1; max-width: 780px;">
-            <div class="pill" style="background: {COLORS['teal_deep']}; color: white; margin-bottom: 20px; padding: 10px 24px; font-size: 16px;">
+        <!-- LEFT: Text content - pushed further left -->
+        <div style="flex: 0.9; max-width: 620px;">
+            <div class="pill" style="background: {COLORS['teal_deep']}; color: white; margin-bottom: 14px; padding: 10px 22px; font-size: 15px;">
                 Day 1 of 3
             </div>
 
-            <p class="body text-teal" style="font-size: 24px; margin-bottom: 12px; letter-spacing: 0.5px;">
+            <p class="body text-teal" style="font-size: 20px; margin-bottom: 6px; letter-spacing: 0.5px;">
                 The 2026 Etsy Upgrade Challenge
             </p>
 
             <!-- MASSIVE RESET with hand-drawn underline -->
-            <div style="position: relative; margin-bottom: 20px;">
-                <h1 class="display text-dark" style="font-size: 200px; line-height: 0.85; letter-spacing: -4px;">
+            <div style="position: relative; margin-bottom: 14px;">
+                <h1 class="display text-dark" style="font-size: 160px; line-height: 0.85; letter-spacing: -3px;">
                     RESET
                 </h1>
                 <!-- Hand-drawn style underline -->
-                <svg style="position: absolute; bottom: 5px; left: 5px;" width="420" height="20" viewBox="0 0 420 20">
-                    <path d="M5 12 Q80 8 160 14 Q240 6 320 12 Q380 10 415 8" stroke="{COLORS['coral']}" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+                <svg style="position: absolute; bottom: 6px; left: 5px;" width="340" height="16" viewBox="0 0 340 16">
+                    <path d="M5 9 Q60 5 120 11 Q180 4 240 10 Q300 7 335 6" stroke="{COLORS['coral']}" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.75"/>
                 </svg>
             </div>
 
-            <!-- Subtitle on one line with bullet separators -->
-            <p class="body text-muted" style="font-size: 24px; margin-bottom: 28px; letter-spacing: 0.3px;">
-                Delete the Dead Weight&nbsp;&nbsp;<span style="color: {COLORS['coral']}; font-size: 18px;">&#9679;</span>&nbsp;&nbsp;Find Your Focus&nbsp;&nbsp;<span style="color: {COLORS['coral']}; font-size: 18px;">&#9679;</span>&nbsp;&nbsp;Build a Shop That Works
+            <!-- Subtitle - SHORT, fits on one line -->
+            <p class="body" style="font-size: 19px; margin-bottom: 22px; color: {COLORS['dark']}; font-weight: 500; white-space: nowrap;">
+                Delete the Dead Weight <span style="color: {COLORS['coral']}; font-size: 8px;">&#9679;</span> Find Your Focus <span style="color: {COLORS['coral']}; font-size: 8px;">&#9679;</span> Build a Shop That Works
             </p>
 
-            <!-- Compact credentials badge -->
-            <div style="display: inline-flex; align-items: center; background: {COLORS['teal_deep']}; color: white;
-                        padding: 14px 28px; border-radius: 12px; gap: 8px;">
-                <span class="body" style="font-size: 18px;">with</span>
-                <span class="display" style="font-size: 20px; font-weight: bold;">Bailey Vann</span>
-                <span style="opacity: 0.6; margin: 0 6px;">|</span>
-                <span class="body" style="font-size: 16px; opacity: 0.9;">Top 0.1% Etsy &bull; $1M+ Sales</span>
+            <!-- Credentials badge - clean single line -->
+            <div style="background: {COLORS['teal_deep']}; color: white; padding: 14px 28px; border-radius: 12px; display: inline-block;">
+                <span class="body" style="font-size: 16px; opacity: 0.85;">with </span><span class="display" style="font-size: 20px; font-weight: bold;">Bailey Vann</span><span class="body" style="font-size: 15px; opacity: 0.7;"> &nbsp;&#8226;&nbsp; Top 0.1% Etsy Seller</span>
             </div>
         </div>
 
-        <!-- RIGHT: Shop Transformation Visual - LARGER and overlapping -->
-        <div style="flex: 0.95; display: flex; align-items: center; justify-content: center; position: relative;">
+        <!-- RIGHT: Shop Transformation Visual - LARGER, better positioned -->
+        <div style="flex: 1.15; display: flex; align-items: center; justify-content: center; position: relative;">
 
-            <svg width="620" height="480" viewBox="0 0 620 480">
-                <!-- Messy Shop (Before) - pushed back slightly -->
-                <g transform="translate(0, 60)" opacity="0.95">
+            <svg width="560" height="480" viewBox="0 0 560 480">
+                <!-- BEFORE label - using text-anchor start to avoid clipping -->
+                <text x="90" y="45" text-anchor="start" font-family="Satoshi, sans-serif"
+                      font-size="10" fill="{COLORS['dark']}" font-weight="600"
+                      letter-spacing="1" opacity="0.6">BEFORE</text>
+
+                <!-- Messy Shop (Before) -->
+                <g transform="translate(20, 60)">
                     {svg_shop_mockup_messy()}
-                    <text x="115" y="-15" text-anchor="middle" font-family="Satoshi, sans-serif"
-                          font-size="13" fill="{COLORS['muted']}" font-weight="600"
-                          letter-spacing="1.5">BEFORE</text>
+                </g>
+
+                <!-- AFTER label -->
+                <text x="445" y="35" text-anchor="middle" font-family="Satoshi, sans-serif"
+                      font-size="10" fill="{COLORS['teal_deep']}" font-weight="700"
+                      letter-spacing="1">AFTER</text>
+
+                <!-- Focused Shop (After) - overlapping, in front, glowing -->
+                <g transform="translate(320, 45)">
+                    {svg_shop_mockup_focused()}
                 </g>
 
                 <!-- BIG RESET Arrow Bridge - prominent and dynamic -->
-                <g transform="translate(220, 160)">
+                <g transform="translate(205, 165)">
                     <!-- Glow behind arrow -->
-                    <ellipse cx="55" cy="50" rx="60" ry="45" fill="{COLORS['coral']}" opacity="0.1"/>
+                    <ellipse cx="55" cy="50" rx="65" ry="45" fill="{COLORS['coral']}" opacity="0.12"/>
 
                     <!-- Dynamic curved arrow -->
-                    <path d="M 0 50 Q 40 30 80 50 Q 100 55 110 50" stroke="{COLORS['coral']}" stroke-width="5"
+                    <path d="M 0 50 Q 40 25 85 50 Q 105 58 120 50" stroke="{COLORS['coral']}" stroke-width="5"
                           fill="none" stroke-linecap="round"/>
-                    <polygon points="108,40 125,50 108,60" fill="{COLORS['coral']}"/>
+                    <polygon points="118,40 138,50 118,60" fill="{COLORS['coral']}"/>
 
                     <!-- RESET button - bigger and glowing -->
-                    <rect x="15" y="70" width="90" height="40" rx="10" fill="{COLORS['coral']}"
-                          style="filter: drop-shadow(0 4px 12px rgba(224,123,108,0.4));"/>
-                    <text x="60" y="97" text-anchor="middle" font-family="Ogg Bold, serif"
+                    <rect x="15" y="70" width="95" height="42" rx="10" fill="{COLORS['coral']}"
+                          style="filter: drop-shadow(0 5px 14px rgba(224,123,108,0.45));"/>
+                    <text x="62" y="98" text-anchor="middle" font-family="Ogg Bold, serif"
                           font-size="18" fill="white" font-weight="bold">RESET</text>
 
-                    <!-- Tiny sparkle on button -->
-                    <circle cx="95" cy="78" r="4" fill="white" opacity="0.5"/>
+                    <!-- Sparkle on button -->
+                    <circle cx="100" cy="78" r="4" fill="white" opacity="0.6"/>
                 </g>
 
-                <!-- Focused Shop (After) - overlapping, in front, glowing -->
-                <g transform="translate(350, 30)">
-                    {svg_shop_mockup_focused()}
-                    <text x="115" y="-15" text-anchor="middle" font-family="Satoshi, sans-serif"
-                          font-size="13" fill="{COLORS['teal_deep']}" font-weight="700"
-                          letter-spacing="1.5">AFTER</text>
-                </g>
-
-                <!-- Extra sparkles around the success -->
-                {svg_sparkle(540, 50, 14, gold)}
-                {svg_sparkle(590, 200, 10, COLORS['teal_light'])}
-                {svg_sparkle(360, 420, 12, COLORS['coral_soft'])}
+                <!-- Sparkles around success -->
+                {svg_sparkle(495, 50, 14, gold)}
+                {svg_sparkle(540, 210, 11, COLORS['teal_light'])}
+                {svg_sparkle(335, 430, 12, COLORS['coral_soft'])}
             </svg>
 
         </div>
