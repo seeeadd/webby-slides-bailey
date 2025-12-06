@@ -337,42 +337,166 @@ def get_base_css():
 # SLIDE BUILDERS
 # =============================================================================
 
+def svg_shop_mockup_messy():
+    """Create SVG for the messy/cluttered Etsy shop mockup"""
+    # Muted colors for the "before" state
+    muted_bg = '#E8E8E8'
+    muted_item1 = '#B8C4C4'
+    muted_item2 = '#C9D1D1'
+    muted_item3 = '#D4DBDB'
+    muted_item4 = '#A8B4B4'
+
+    # Create a grid of many tiny, chaotic thumbnails
+    items = []
+    item_colors = [muted_item1, muted_item2, muted_item3, muted_item4]
+
+    # 4 columns x 5 rows = 20 items, tightly packed
+    for row in range(5):
+        for col in range(4):
+            x = 15 + col * 52
+            y = 65 + row * 48
+            color = item_colors[(row + col) % 4]
+            items.append(f'<rect x="{x}" y="{y}" width="48" height="44" rx="3" fill="{color}" opacity="0.8"/>')
+
+    return f'''
+    <g transform="translate(0, 0)">
+        <!-- Shop container -->
+        <rect x="0" y="0" width="230" height="340" rx="12" fill="white"
+              style="filter: drop-shadow(0 4px 20px rgba(0,0,0,0.08));"/>
+
+        <!-- Header bar -->
+        <rect x="0" y="0" width="230" height="50" rx="12" fill="{muted_bg}"/>
+        <rect x="0" y="20" width="230" height="30" fill="{muted_bg}"/>
+
+        <!-- Shop name placeholder -->
+        <rect x="15" y="15" width="100" height="12" rx="3" fill="#9CA3A8"/>
+        <rect x="15" y="32" width="60" height="8" rx="2" fill="#B8C4C4"/>
+
+        <!-- Tiny cluttered thumbnails -->
+        {chr(10).join(items)}
+
+        <!-- Revenue indicator - poor -->
+        <rect x="15" y="305" width="200" height="24" rx="6" fill="#F5F5F5"/>
+        <text x="115" y="322" text-anchor="middle" font-family="Satoshi, sans-serif"
+              font-size="14" fill="#9CA3A8" font-weight="600">$127 this month</text>
+    </g>
+    '''
+
+
+def svg_shop_mockup_focused():
+    """Create SVG for the focused/successful Etsy shop mockup"""
+    # Brand colors for the "after" state
+    teal = COLORS['teal_deep']
+    coral = COLORS['coral']
+    mint = COLORS['mint']
+
+    # Create clean grid of 6 larger, well-organized thumbnails
+    items = []
+    item_configs = [
+        (15, 65, teal, 0.9),
+        (118, 65, coral, 0.85),
+        (15, 158, mint, 0.95),
+        (118, 158, teal, 0.8),
+        (15, 251, coral, 0.9),
+        (118, 251, mint, 0.85),
+    ]
+
+    for x, y, color, opacity in item_configs:
+        items.append(f'<rect x="{x}" y="{y}" width="97" height="85" rx="8" fill="{color}" opacity="{opacity}"/>')
+
+    return f'''
+    <g transform="translate(0, 0)">
+        <!-- Shop container with subtle glow -->
+        <rect x="-4" y="-4" width="238" height="388" rx="16" fill="{COLORS['teal_deep']}" opacity="0.1"/>
+        <rect x="0" y="0" width="230" height="380" rx="12" fill="white"
+              style="filter: drop-shadow(0 8px 32px rgba(27,138,138,0.15));"/>
+
+        <!-- Header bar - branded -->
+        <rect x="0" y="0" width="230" height="50" rx="12" fill="{COLORS['teal_deep']}"/>
+        <rect x="0" y="20" width="230" height="30" fill="{COLORS['teal_deep']}"/>
+
+        <!-- Shop name - confident -->
+        <text x="15" y="28" font-family="Ogg Bold, serif" font-size="16" fill="white" font-weight="bold">The Focused Shop</text>
+        <rect x="15" y="35" width="80" height="6" rx="2" fill="white" opacity="0.6"/>
+
+        <!-- Clean, large thumbnails -->
+        {chr(10).join(items)}
+
+        <!-- Revenue indicator - thriving -->
+        <rect x="15" y="345" width="200" height="28" rx="8" fill="{COLORS['mint']}"/>
+        <text x="115" y="364" text-anchor="middle" font-family="Satoshi, sans-serif"
+              font-size="15" fill="{COLORS['teal_deep']}" font-weight="700">$3,847 this month</text>
+    </g>
+    '''
+
+
 def slide_01_title():
-    """Title slide - THE 2026 ETSY RESET"""
+    """Title slide - THE 2026 ETSY RESET with Shop Transformation visual"""
     return f'''
 <div class="slide bg-cream">
-    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1550, 180, 420, 380, COLORS['mint'], 0.45, 15, seed=1, style='cloud')}
-        {svg_blob(80, 880, 320, 300, COLORS['blush_soft'], 0.55, -20, seed=2, style='amoeba')}
-        {svg_blob(1720, 820, 280, 230, COLORS['gold_soft'], 0.35, 25, seed=3, style='organic')}
-        {svg_blob(1480, 520, 220, 200, COLORS['coral_soft'], 0.6, 30, seed=4, style='wave')}
-        {svg_blob(1600, 700, 180, 150, COLORS['gold_soft'], 0.5, -15, seed=5, style='organic')}
-        {svg_blob(200, 150, 180, 160, COLORS['mint'], 0.25, 10, seed=6, style='cloud')}
-    </svg>
+    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 60px 80px; gap: 60px;">
 
-    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding-left: 150px;">
-        <div class="pill" style="background: {COLORS['teal_deep']}; color: white; margin-bottom: 20px;">
-            Day 1 of 3
+        <!-- LEFT: Text content -->
+        <div style="flex: 1; max-width: 700px;">
+            <div class="pill" style="background: {COLORS['teal_deep']}; color: white; margin-bottom: 24px;">
+                Day 1 of 3
+            </div>
+
+            <p class="body text-teal" style="font-size: 26px; margin-bottom: 16px;">
+                The 2026 Etsy Upgrade Challenge
+            </p>
+
+            <h1 class="display text-dark" style="font-size: 140px; line-height: 0.9; margin-bottom: 24px;">
+                RESET
+            </h1>
+
+            <div class="body text-muted" style="font-size: 28px; line-height: 1.5; margin-bottom: 32px;">
+                Delete the Dead Weight.<br>
+                Find Your Focus.<br>
+                Build a Shop That Actually Works.
+            </div>
+
+            <div class="card-teal" style="display: inline-block;">
+                <span class="body" style="font-size: 20px;">
+                    with <strong>Bailey Vann</strong> &bull; Top 0.1% Etsy Seller &bull; $1M+ in Digital Product Sales
+                </span>
+            </div>
         </div>
 
-        <p class="body text-teal" style="font-size: 28px; margin-bottom: 20px;">
-            The 2026 Etsy Upgrade Challenge
-        </p>
+        <!-- RIGHT: Shop Transformation Visual -->
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 
-        <h1 class="display text-dark" style="font-size: 200px; line-height: 0.9; margin-bottom: 30px;">
-            RESET
-        </h1>
+            <svg width="580" height="420" viewBox="0 0 580 420">
+                <!-- Messy Shop (Before) -->
+                <g transform="translate(20, 40)">
+                    {svg_shop_mockup_messy()}
+                    <text x="115" y="-12" text-anchor="middle" font-family="Satoshi, sans-serif"
+                          font-size="14" fill="{COLORS['muted']}" font-weight="600"
+                          letter-spacing="1">THE MESSY SHOP</text>
+                </g>
 
-        <div class="body text-muted" style="font-size: 32px; line-height: 1.6; margin-bottom: 40px;">
-            Delete the Dead Weight.<br>
-            Find Your Focus.<br>
-            Build a Shop That Actually Works.
-        </div>
+                <!-- Arrow / RESET bridge -->
+                <g transform="translate(260, 140)">
+                    <!-- Arrow line -->
+                    <path d="M 0 60 L 50 60" stroke="{COLORS['coral']}" stroke-width="4"
+                          stroke-linecap="round" stroke-dasharray="8,6"/>
+                    <polygon points="50,50 70,60 50,70" fill="{COLORS['coral']}"/>
 
-        <div class="card-teal" style="display: inline-block;">
-            <span class="body" style="font-size: 22px;">
-                with <strong>Bailey Vann</strong> &bull; Top 0.1% Etsy Seller &bull; $1M+ in Digital Product Sales
-            </span>
+                    <!-- RESET text on arrow -->
+                    <rect x="-5" y="75" width="80" height="30" rx="6" fill="{COLORS['coral']}"/>
+                    <text x="35" y="96" text-anchor="middle" font-family="Ogg Bold, serif"
+                          font-size="14" fill="white" font-weight="bold">RESET</text>
+                </g>
+
+                <!-- Focused Shop (After) -->
+                <g transform="translate(330, 20)">
+                    {svg_shop_mockup_focused()}
+                    <text x="115" y="-12" text-anchor="middle" font-family="Satoshi, sans-serif"
+                          font-size="14" fill="{COLORS['teal_deep']}" font-weight="600"
+                          letter-spacing="1">THE FOCUSED SHOP</text>
+                </g>
+            </svg>
+
         </div>
     </div>
 </div>
