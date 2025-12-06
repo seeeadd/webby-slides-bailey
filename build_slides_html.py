@@ -338,163 +338,290 @@ def get_base_css():
 # =============================================================================
 
 def svg_shop_mockup_messy():
-    """Create SVG for the messy/cluttered Etsy shop mockup"""
-    # Muted colors for the "before" state
-    muted_bg = '#E8E8E8'
-    muted_item1 = '#B8C4C4'
-    muted_item2 = '#C9D1D1'
-    muted_item3 = '#D4DBDB'
-    muted_item4 = '#A8B4B4'
+    """Create SVG for the messy/cluttered Etsy shop - FEELS chaotic and stressful"""
+    # Desaturated, slightly sad colors with warning tint
+    sad_bg = '#D8D8D8'
+    sad_header = '#C4C4C4'
 
-    # Create a grid of many tiny, chaotic thumbnails
-    items = []
-    item_colors = [muted_item1, muted_item2, muted_item3, muted_item4]
+    # Chaotic tilted listing boxes with some dead/faded ones
+    listings = []
 
-    # 4 columns x 5 rows = 20 items, tightly packed
-    for row in range(5):
-        for col in range(4):
-            x = 15 + col * 52
-            y = 65 + row * 48
-            color = item_colors[(row + col) % 4]
-            items.append(f'<rect x="{x}" y="{y}" width="48" height="44" rx="3" fill="{color}" opacity="0.8"/>')
+    # Grid of messy, tilted, overlapping boxes
+    box_configs = [
+        # (x, y, w, h, color, opacity, rotation, is_dead)
+        (12, 58, 46, 42, '#B0B8B8', 0.7, -2, False),
+        (62, 55, 44, 40, '#A8B0B0', 0.6, 3, True),   # dead listing
+        (110, 60, 48, 44, '#BCC4C4', 0.75, -1, False),
+        (162, 56, 42, 38, '#9CA4A4', 0.5, 2, True),  # dead listing
+        (14, 104, 44, 40, '#C0C8C8', 0.65, 1, False),
+        (60, 100, 46, 42, '#A4ACAC', 0.55, -3, True), # dead listing
+        (108, 106, 50, 44, '#B8C0C0', 0.7, 2, False),
+        (160, 102, 44, 40, '#B0B8B8', 0.6, -2, False),
+        (10, 148, 48, 42, '#9CA4A4', 0.5, 3, True),  # dead listing
+        (62, 152, 42, 38, '#C4CCCC', 0.7, -1, False),
+        (106, 150, 46, 44, '#ACB4B4', 0.55, 2, True), # dead listing
+        (158, 146, 48, 42, '#B4BCBC', 0.65, -2, False),
+        (14, 194, 44, 40, '#A0A8A8', 0.6, 1, False),
+        (60, 196, 46, 42, '#BCC4C4', 0.7, -3, False),
+        (110, 192, 42, 38, '#98A0A0', 0.45, 2, True), # dead listing
+        (160, 198, 44, 40, '#B8C0C0', 0.65, -1, False),
+        (12, 240, 48, 42, '#C0C8C8', 0.7, 2, False),
+        (64, 238, 44, 40, '#A4ACAC', 0.5, -2, True),  # dead listing
+        (112, 244, 46, 42, '#B0B8B8', 0.6, 1, False),
+        (162, 240, 42, 38, '#ACB4B4', 0.55, -1, False),
+    ]
+
+    for x, y, w, h, color, opacity, rot, is_dead in box_configs:
+        transform = f'transform="rotate({rot} {x + w/2} {y + h/2})"'
+        listings.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="2" fill="{color}" opacity="{opacity}" {transform}/>')
+        # Add red X for dead listings
+        if is_dead:
+            cx, cy = x + w/2, y + h/2
+            listings.append(f'<line x1="{cx-8}" y1="{cy-8}" x2="{cx+8}" y2="{cy+8}" stroke="#C45C5C" stroke-width="2.5" opacity="0.7" {transform}/>')
+            listings.append(f'<line x1="{cx+8}" y1="{cy-8}" x2="{cx-8}" y2="{cy+8}" stroke="#C45C5C" stroke-width="2.5" opacity="0.7" {transform}/>')
 
     return f'''
     <g transform="translate(0, 0)">
-        <!-- Shop container -->
-        <rect x="0" y="0" width="230" height="340" rx="12" fill="white"
-              style="filter: drop-shadow(0 4px 20px rgba(0,0,0,0.08));"/>
+        <!-- Sad shadow underneath -->
+        <ellipse cx="115" cy="320" rx="100" ry="12" fill="#00000" opacity="0.08"/>
 
-        <!-- Header bar -->
-        <rect x="0" y="0" width="230" height="50" rx="12" fill="{muted_bg}"/>
-        <rect x="0" y="20" width="230" height="30" fill="{muted_bg}"/>
+        <!-- Shop container - slightly worn look -->
+        <rect x="0" y="0" width="230" height="310" rx="10" fill="#F8F6F4"
+              style="filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));"/>
 
-        <!-- Shop name placeholder -->
-        <rect x="15" y="15" width="100" height="12" rx="3" fill="#9CA3A8"/>
-        <rect x="15" y="32" width="60" height="8" rx="2" fill="#B8C4C4"/>
+        <!-- Dull header bar -->
+        <rect x="0" y="0" width="230" height="48" rx="10" fill="{sad_header}"/>
+        <rect x="0" y="18" width="230" height="30" fill="{sad_header}"/>
 
-        <!-- Tiny cluttered thumbnails -->
-        {chr(10).join(items)}
+        <!-- Sad shop name -->
+        <rect x="12" y="14" width="90" height="10" rx="2" fill="#9CA3A8"/>
+        <rect x="12" y="28" width="55" height="7" rx="2" fill="#B0B8B8"/>
 
-        <!-- Revenue indicator - poor -->
-        <rect x="15" y="305" width="200" height="24" rx="6" fill="#F5F5F5"/>
-        <text x="115" y="322" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="14" fill="#9CA3A8" font-weight="600">$127 this month</text>
+        <!-- Wilting plant icon -->
+        <g transform="translate(195, 12)">
+            <ellipse cx="12" cy="22" rx="10" ry="6" fill="#A8B0B0"/>
+            <path d="M12 20 Q8 12 12 5 Q10 10 8 8" stroke="#8A9494" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="8" cy="6" r="3" fill="#9CA4A4" opacity="0.7"/>
+        </g>
+
+        <!-- Messy cluttered thumbnails -->
+        {chr(10).join(listings)}
+
+        <!-- Revenue indicator - painful red -->
+        <rect x="10" y="288" width="210" height="20" rx="4" fill="#F5E8E8"/>
+        <text x="115" y="302" text-anchor="middle" font-family="Satoshi, sans-serif"
+              font-size="13" fill="#B85C5C" font-weight="600">$127 this month</text>
+
+        <!-- Stress indicator - down arrow -->
+        <g transform="translate(185, 290)">
+            <path d="M8 2 L8 12 M4 8 L8 12 L12 8" stroke="#C45C5C" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
     </g>
     '''
 
 
 def svg_shop_mockup_focused():
-    """Create SVG for the focused/successful Etsy shop mockup"""
-    # Brand colors for the "after" state
+    """Create SVG for the focused/successful Etsy shop - FEELS like winning"""
     teal = COLORS['teal_deep']
     coral = COLORS['coral']
     mint = COLORS['mint']
+    gold = '#E8C547'
 
-    # Create clean grid of 6 larger, well-organized thumbnails
-    items = []
-    item_configs = [
-        (15, 65, teal, 0.9),
-        (118, 65, coral, 0.85),
-        (15, 158, mint, 0.95),
-        (118, 158, teal, 0.8),
-        (15, 251, coral, 0.9),
-        (118, 251, mint, 0.85),
+    # Clean, confident listing boxes with depth
+    listings = []
+    listing_configs = [
+        (14, 60, 98, 78, teal, 0.9),
+        (118, 60, 98, 78, coral, 0.85),
+        (14, 146, 98, 78, mint, 0.95),
+        (118, 146, 98, 78, teal, 0.85),
+        (14, 232, 98, 78, coral, 0.9),
+        (118, 232, 98, 78, mint, 0.9),
     ]
 
-    for x, y, color, opacity in item_configs:
-        items.append(f'<rect x="{x}" y="{y}" width="97" height="85" rx="8" fill="{color}" opacity="{opacity}"/>')
+    for x, y, w, h, color, opacity in listing_configs:
+        # Soft shadow for each listing
+        listings.append(f'<rect x="{x+2}" y="{y+3}" width="{w}" height="{h}" rx="8" fill="#000" opacity="0.06"/>')
+        listings.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="{color}" opacity="{opacity}"/>')
+        # Subtle shine/highlight
+        listings.append(f'<rect x="{x+4}" y="{y+4}" width="{w-8}" height="3" rx="1" fill="white" opacity="0.25"/>')
 
     return f'''
     <g transform="translate(0, 0)">
-        <!-- Shop container with subtle glow -->
-        <rect x="-4" y="-4" width="238" height="388" rx="16" fill="{COLORS['teal_deep']}" opacity="0.1"/>
-        <rect x="0" y="0" width="230" height="380" rx="12" fill="white"
-              style="filter: drop-shadow(0 8px 32px rgba(27,138,138,0.15));"/>
+        <!-- Success glow underneath -->
+        <ellipse cx="115" cy="365" rx="120" ry="18" fill="{teal}" opacity="0.12"/>
 
-        <!-- Header bar - branded -->
-        <rect x="0" y="0" width="230" height="50" rx="12" fill="{COLORS['teal_deep']}"/>
-        <rect x="0" y="20" width="230" height="30" fill="{COLORS['teal_deep']}"/>
+        <!-- Outer glow ring -->
+        <rect x="-6" y="-6" width="242" height="372" rx="18" fill="{teal}" opacity="0.08"/>
+        <rect x="-3" y="-3" width="236" height="366" rx="15" fill="{gold}" opacity="0.06"/>
 
-        <!-- Shop name - confident -->
-        <text x="15" y="28" font-family="Ogg Bold, serif" font-size="16" fill="white" font-weight="bold">The Focused Shop</text>
-        <rect x="15" y="35" width="80" height="6" rx="2" fill="white" opacity="0.6"/>
+        <!-- Shop container - premium feel -->
+        <rect x="0" y="0" width="230" height="360" rx="12" fill="white"
+              style="filter: drop-shadow(0 12px 40px rgba(27,138,138,0.2));"/>
 
-        <!-- Clean, large thumbnails -->
-        {chr(10).join(items)}
+        <!-- Branded header bar -->
+        <rect x="0" y="0" width="230" height="52" rx="12" fill="{teal}"/>
+        <rect x="0" y="20" width="230" height="32" fill="{teal}"/>
 
-        <!-- Revenue indicator - thriving -->
-        <rect x="15" y="345" width="200" height="28" rx="8" fill="{COLORS['mint']}"/>
-        <text x="115" y="364" text-anchor="middle" font-family="Satoshi, sans-serif"
-              font-size="15" fill="{COLORS['teal_deep']}" font-weight="700">$3,847 this month</text>
+        <!-- Shop name - confident branding -->
+        <text x="14" y="30" font-family="Ogg Bold, serif" font-size="15" fill="white" font-weight="bold">Focused Shop</text>
+        <rect x="14" y="37" width="70" height="5" rx="2" fill="white" opacity="0.5"/>
+
+        <!-- Thriving plant icon -->
+        <g transform="translate(185, 10)">
+            <ellipse cx="18" cy="30" rx="14" ry="8" fill="{mint}"/>
+            <path d="M18 28 Q22 18 18 6 Q24 14 28 10" stroke="{teal}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="28" cy="8" r="5" fill="{coral}" opacity="0.9"/>
+            <path d="M14 24 Q10 16 14 8" stroke="{teal}" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="14" cy="6" r="4" fill="{mint}"/>
+        </g>
+
+        <!-- Clean, glowing thumbnails -->
+        {chr(10).join(listings)}
+
+        <!-- Revenue indicator - winning gold/green -->
+        <rect x="8" y="320" width="214" height="32" rx="8" fill="{mint}"/>
+        <rect x="10" y="322" width="210" height="28" rx="6" fill="white" opacity="0.4"/>
+
+        <!-- Sparkle near revenue -->
+        <g transform="translate(28, 328)">
+            <path d="M6 0 L6 12 M0 6 L12 6" stroke="{gold}" stroke-width="2" stroke-linecap="round"/>
+            <path d="M2 2 L10 10 M10 2 L2 10" stroke="{gold}" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+        </g>
+
+        <text x="120" y="342" text-anchor="middle" font-family="Satoshi, sans-serif"
+              font-size="17" fill="{teal}" font-weight="700">$3,847 this month</text>
+
+        <!-- Up arrow indicator -->
+        <g transform="translate(188, 330)">
+            <path d="M8 14 L8 4 M4 8 L8 4 L12 8" stroke="{teal}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- Tiny hearts scattered -->
+        <path d="M200 75 C200 72 203 70 205 72 C207 70 210 72 210 75 C210 78 205 82 205 82 C205 82 200 78 200 75Z" fill="{coral}" opacity="0.6"/>
+        <path d="M22 180 C22 178 24 176.5 25.5 178 C27 176.5 29 178 29 180 C29 182 25.5 185 25.5 185 C25.5 185 22 182 22 180Z" fill="{coral}" opacity="0.5"/>
+    </g>
+    '''
+
+
+def svg_sparkle(x, y, size=12, color='#E8C547'):
+    """Create a sparkle/star decoration"""
+    s = size
+    return f'''
+    <g transform="translate({x}, {y})">
+        <path d="M{s/2} 0 L{s/2} {s} M0 {s/2} L{s} {s/2}" stroke="{color}" stroke-width="2" stroke-linecap="round"/>
+        <path d="M{s*0.15} {s*0.15} L{s*0.85} {s*0.85} M{s*0.85} {s*0.15} L{s*0.15} {s*0.85}" stroke="{color}" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
     </g>
     '''
 
 
 def slide_01_title():
-    """Title slide - THE 2026 ETSY RESET with Shop Transformation visual"""
+    """Title slide - THE 2026 ETSY RESET - MASSIVE typography + transformation visual"""
+    gold = '#E8C547'
+
     return f'''
 <div class="slide bg-cream">
-    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 60px 80px; gap: 60px;">
+    <!-- Subtle background texture/warmth -->
+    <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
+        <!-- Warm organic shapes in background -->
+        {svg_blob(1750, 150, 280, 240, COLORS['mint'], 0.2, 15, seed=100, style='cloud')}
+        {svg_blob(50, 900, 250, 220, COLORS['blush_soft'], 0.25, -10, seed=101, style='amoeba')}
+        {svg_blob(1800, 850, 200, 180, COLORS['coral_pale'], 0.15, 20, seed=102, style='organic')}
 
-        <!-- LEFT: Text content -->
-        <div style="flex: 1; max-width: 700px;">
-            <div class="pill" style="background: {COLORS['teal_deep']}; color: white; margin-bottom: 24px;">
+        <!-- Floating sparkles/stars for warmth -->
+        {svg_sparkle(120, 180, 14, gold)}
+        {svg_sparkle(280, 820, 10, COLORS['coral_soft'])}
+        {svg_sparkle(1720, 400, 12, COLORS['teal_light'])}
+        {svg_sparkle(1650, 920, 16, gold)}
+        {svg_sparkle(380, 120, 8, COLORS['mint'])}
+
+        <!-- Subtle floating dollar signs -->
+        <text x="200" y="280" font-family="Satoshi, sans-serif" font-size="24" fill="{COLORS['teal_light']}" opacity="0.15">$</text>
+        <text x="1600" y="180" font-family="Satoshi, sans-serif" font-size="32" fill="{gold}" opacity="0.12">$</text>
+        <text x="150" y="700" font-family="Satoshi, sans-serif" font-size="28" fill="{COLORS['coral_soft']}" opacity="0.1">$</text>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 50px 70px; gap: 40px;">
+
+        <!-- LEFT: Text content - MASSIVE RESET -->
+        <div style="flex: 1.1; max-width: 780px;">
+            <div class="pill" style="background: {COLORS['teal_deep']}; color: white; margin-bottom: 20px; padding: 10px 24px; font-size: 16px;">
                 Day 1 of 3
             </div>
 
-            <p class="body text-teal" style="font-size: 26px; margin-bottom: 16px;">
+            <p class="body text-teal" style="font-size: 24px; margin-bottom: 12px; letter-spacing: 0.5px;">
                 The 2026 Etsy Upgrade Challenge
             </p>
 
-            <h1 class="display text-dark" style="font-size: 140px; line-height: 0.9; margin-bottom: 24px;">
-                RESET
-            </h1>
-
-            <div class="body text-muted" style="font-size: 28px; line-height: 1.5; margin-bottom: 32px;">
-                Delete the Dead Weight.<br>
-                Find Your Focus.<br>
-                Build a Shop That Actually Works.
+            <!-- MASSIVE RESET with hand-drawn underline -->
+            <div style="position: relative; margin-bottom: 20px;">
+                <h1 class="display text-dark" style="font-size: 200px; line-height: 0.85; letter-spacing: -4px;">
+                    RESET
+                </h1>
+                <!-- Hand-drawn style underline -->
+                <svg style="position: absolute; bottom: 5px; left: 5px;" width="420" height="20" viewBox="0 0 420 20">
+                    <path d="M5 12 Q80 8 160 14 Q240 6 320 12 Q380 10 415 8" stroke="{COLORS['coral']}" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+                </svg>
             </div>
 
-            <div class="card-teal" style="display: inline-block;">
-                <span class="body" style="font-size: 20px;">
-                    with <strong>Bailey Vann</strong> &bull; Top 0.1% Etsy Seller &bull; $1M+ in Digital Product Sales
-                </span>
+            <!-- Subtitle on one line with bullet separators -->
+            <p class="body text-muted" style="font-size: 24px; margin-bottom: 28px; letter-spacing: 0.3px;">
+                Delete the Dead Weight&nbsp;&nbsp;<span style="color: {COLORS['coral']}; font-size: 18px;">&#9679;</span>&nbsp;&nbsp;Find Your Focus&nbsp;&nbsp;<span style="color: {COLORS['coral']}; font-size: 18px;">&#9679;</span>&nbsp;&nbsp;Build a Shop That Works
+            </p>
+
+            <!-- Compact credentials badge -->
+            <div style="display: inline-flex; align-items: center; background: {COLORS['teal_deep']}; color: white;
+                        padding: 14px 28px; border-radius: 12px; gap: 8px;">
+                <span class="body" style="font-size: 18px;">with</span>
+                <span class="display" style="font-size: 20px; font-weight: bold;">Bailey Vann</span>
+                <span style="opacity: 0.6; margin: 0 6px;">|</span>
+                <span class="body" style="font-size: 16px; opacity: 0.9;">Top 0.1% Etsy &bull; $1M+ Sales</span>
             </div>
         </div>
 
-        <!-- RIGHT: Shop Transformation Visual -->
-        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <!-- RIGHT: Shop Transformation Visual - LARGER and overlapping -->
+        <div style="flex: 0.95; display: flex; align-items: center; justify-content: center; position: relative;">
 
-            <svg width="580" height="420" viewBox="0 0 580 420">
-                <!-- Messy Shop (Before) -->
-                <g transform="translate(20, 40)">
+            <svg width="620" height="480" viewBox="0 0 620 480">
+                <!-- Messy Shop (Before) - pushed back slightly -->
+                <g transform="translate(0, 60)" opacity="0.95">
                     {svg_shop_mockup_messy()}
-                    <text x="115" y="-12" text-anchor="middle" font-family="Satoshi, sans-serif"
-                          font-size="14" fill="{COLORS['muted']}" font-weight="600"
-                          letter-spacing="1">THE MESSY SHOP</text>
+                    <text x="115" y="-15" text-anchor="middle" font-family="Satoshi, sans-serif"
+                          font-size="13" fill="{COLORS['muted']}" font-weight="600"
+                          letter-spacing="1.5">BEFORE</text>
                 </g>
 
-                <!-- Arrow / RESET bridge -->
-                <g transform="translate(260, 140)">
-                    <!-- Arrow line -->
-                    <path d="M 0 60 L 50 60" stroke="{COLORS['coral']}" stroke-width="4"
-                          stroke-linecap="round" stroke-dasharray="8,6"/>
-                    <polygon points="50,50 70,60 50,70" fill="{COLORS['coral']}"/>
+                <!-- BIG RESET Arrow Bridge - prominent and dynamic -->
+                <g transform="translate(220, 160)">
+                    <!-- Glow behind arrow -->
+                    <ellipse cx="55" cy="50" rx="60" ry="45" fill="{COLORS['coral']}" opacity="0.1"/>
 
-                    <!-- RESET text on arrow -->
-                    <rect x="-5" y="75" width="80" height="30" rx="6" fill="{COLORS['coral']}"/>
-                    <text x="35" y="96" text-anchor="middle" font-family="Ogg Bold, serif"
-                          font-size="14" fill="white" font-weight="bold">RESET</text>
+                    <!-- Dynamic curved arrow -->
+                    <path d="M 0 50 Q 40 30 80 50 Q 100 55 110 50" stroke="{COLORS['coral']}" stroke-width="5"
+                          fill="none" stroke-linecap="round"/>
+                    <polygon points="108,40 125,50 108,60" fill="{COLORS['coral']}"/>
+
+                    <!-- RESET button - bigger and glowing -->
+                    <rect x="15" y="70" width="90" height="40" rx="10" fill="{COLORS['coral']}"
+                          style="filter: drop-shadow(0 4px 12px rgba(224,123,108,0.4));"/>
+                    <text x="60" y="97" text-anchor="middle" font-family="Ogg Bold, serif"
+                          font-size="18" fill="white" font-weight="bold">RESET</text>
+
+                    <!-- Tiny sparkle on button -->
+                    <circle cx="95" cy="78" r="4" fill="white" opacity="0.5"/>
                 </g>
 
-                <!-- Focused Shop (After) -->
-                <g transform="translate(330, 20)">
+                <!-- Focused Shop (After) - overlapping, in front, glowing -->
+                <g transform="translate(350, 30)">
                     {svg_shop_mockup_focused()}
-                    <text x="115" y="-12" text-anchor="middle" font-family="Satoshi, sans-serif"
-                          font-size="14" fill="{COLORS['teal_deep']}" font-weight="600"
-                          letter-spacing="1">THE FOCUSED SHOP</text>
+                    <text x="115" y="-15" text-anchor="middle" font-family="Satoshi, sans-serif"
+                          font-size="13" fill="{COLORS['teal_deep']}" font-weight="700"
+                          letter-spacing="1.5">AFTER</text>
                 </g>
+
+                <!-- Extra sparkles around the success -->
+                {svg_sparkle(540, 50, 14, gold)}
+                {svg_sparkle(590, 200, 10, COLORS['teal_light'])}
+                {svg_sparkle(360, 420, 12, COLORS['coral_soft'])}
             </svg>
 
         </div>
