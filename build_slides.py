@@ -43,21 +43,24 @@ class Colors:
 
 class Fonts:
     """Typography System"""
-    # Headers - OGG (elegant serif)
-    HEADER = "Ogg"
-    HEADER_BOLD = "Ogg"  # Will use bold weight
+    # Headers - OGG (elegant serif) - actual font family name from files
+    HEADER = "Ogg TRIAL"
+    HEADER_MEDIUM = "Ogg TRIAL Medium"
+    HEADER_LIGHT = "Ogg TRIAL Light"
 
-    # Body - Satoshi (clean sans) - fallback to Arial if not installed
-    BODY = "Satoshi"
-    BODY_FALLBACK = "Arial"
+    # Ogg Text variants (for smaller text)
+    TEXT = "Ogg Text TRIAL"
+    TEXT_BOLD = "Ogg Text TRIAL"
+    TEXT_MEDIUM = "Ogg Text TRIAL Medium"
+
+    # Body - Arial as reliable fallback (Satoshi needs to be installed)
+    BODY = "Arial"
 
     # Mono - for data/numbers
-    MONO = "JetBrains Mono"
-    MONO_FALLBACK = "Consolas"
+    MONO = "Consolas"
 
     # Script - for annotations
-    SCRIPT = "Caveat"
-    SCRIPT_FALLBACK = "Brush Script MT"
+    SCRIPT = "Brush Script MT"
 
 
 class Sizing:
