@@ -84,41 +84,133 @@ def get_font_css():
 # SVG ORGANIC SHAPES
 # =============================================================================
 
-def svg_blob(cx, cy, rx, ry, color, opacity=0.3, rotation=0):
-    """Generate smooth organic blob using SVG ellipse with rotation"""
-    return f'''<ellipse
-        cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}"
-        fill="{color}" fill-opacity="{opacity}"
-        transform="rotate({rotation} {cx} {cy})"
-    />'''
+def svg_blob(cx, cy, rx, ry, color, opacity=0.3, rotation=0, seed=0, style='organic'):
+    """
+    Generate smooth organic blob using SVG path with cubic bezier curves.
+    Creates truly organic, Pinterest-worthy shapes.
 
-def svg_smooth_blob(cx, cy, size, color, opacity=0.3, seed=0):
-    """Generate smooth organic blob using SVG path with bezier curves"""
+    Styles:
+    - 'organic': Natural flowing shape (default)
+    - 'amoeba': More irregular, amoeba-like
+    - 'cloud': Puffy, cloud-like shape
+    - 'wave': Flowing wave-like form
+    """
     import math
+    import random
 
-    # Generate smooth blob points
-    points = 8
-    r = size / 2
-    path_data = []
+    # Set random seed for reproducibility
+    rng = random.Random(seed)
 
+    # Different point counts and variation amounts for each style
+    style_configs = {
+        'organic': {'points': 6, 'var1': 0.22, 'var2': 0.15, 'smooth': 0.25},
+        'amoeba': {'points': 8, 'var1': 0.35, 'var2': 0.20, 'smooth': 0.30},
+        'cloud': {'points': 10, 'var1': 0.15, 'var2': 0.25, 'smooth': 0.20},
+        'wave': {'points': 5, 'var1': 0.30, 'var2': 0.10, 'smooth': 0.35},
+    }
+
+    config = style_configs.get(style, style_configs['organic'])
+    points = config['points']
+    var1 = config['var1']
+    var2 = config['var2']
+    smooth = config['smooth']
+
+    # Calculate vertices with organic variation
+    vertices = []
     for i in range(points):
         angle = (2 * math.pi * i) / points
-        # Subtle variation for organic feel
-        variation = 0.15 * math.sin(3 * angle + seed) + 0.1 * math.cos(2 * angle + seed)
-        curr_r = r * (0.85 + variation)
 
-        x = cx + curr_r * math.cos(angle)
-        y = cy + curr_r * math.sin(angle)
+        # Multi-frequency organic variation
+        variation = (
+            var1 * math.sin(3 * angle + seed * 0.7) +
+            var2 * math.cos(2 * angle + seed * 1.3) +
+            0.08 * math.sin(5 * angle + seed * 2.1) +
+            rng.uniform(-0.05, 0.05)  # Small random noise
+        )
 
-        if i == 0:
-            path_data.append(f"M {x:.1f} {y:.1f}")
-        else:
-            # Use smooth curve
-            path_data.append(f"L {x:.1f} {y:.1f}")
+        r_x = rx * (0.85 + variation)
+        r_y = ry * (0.85 + variation * 0.9)
 
-    path_data.append("Z")
+        x = cx + r_x * math.cos(angle)
+        y = cy + r_y * math.sin(angle)
+        vertices.append((x, y))
 
-    return f'<path d="{" ".join(path_data)}" fill="{color}" fill-opacity="{opacity}" />'
+    # Build smooth bezier path with catmull-rom style control points
+    path_parts = [f"M {vertices[0][0]:.1f} {vertices[0][1]:.1f}"]
+
+    for i in range(points):
+        curr = vertices[i]
+        next_v = vertices[(i + 1) % points]
+        prev = vertices[(i - 1) % points]
+        next_next = vertices[(i + 2) % points]
+
+        # Catmull-Rom to Bezier control point conversion
+        cp1_x = curr[0] + (next_v[0] - prev[0]) * smooth
+        cp1_y = curr[1] + (next_v[1] - prev[1]) * smooth
+        cp2_x = next_v[0] - (next_next[0] - curr[0]) * smooth
+        cp2_y = next_v[1] - (next_next[1] - curr[1]) * smooth
+
+        path_parts.append(f"C {cp1_x:.1f} {cp1_y:.1f}, {cp2_x:.1f} {cp2_y:.1f}, {next_v[0]:.1f} {next_v[1]:.1f}")
+
+    path_parts.append("Z")
+
+    transform = f'transform="rotate({rotation} {cx} {cy})"' if rotation != 0 else ''
+
+    return f'<path d="{" ".join(path_parts)}" fill="{color}" fill-opacity="{opacity}" {transform} />'
+
+
+def svg_blob_gradient(cx, cy, rx, ry, color1, color2, opacity=0.3, rotation=0, seed=0, gradient_id=None):
+    """Create a blob with a gradient fill"""
+    import math
+    import random
+
+    if gradient_id is None:
+        gradient_id = f"grad_{seed}"
+
+    rng = random.Random(seed)
+    points = 7
+
+    vertices = []
+    for i in range(points):
+        angle = (2 * math.pi * i) / points
+        variation = 0.25 * math.sin(3 * angle + seed) + 0.15 * math.cos(2 * angle + seed * 0.8)
+        r_x = rx * (0.85 + variation)
+        r_y = ry * (0.85 + variation * 0.9)
+        x = cx + r_x * math.cos(angle)
+        y = cy + r_y * math.sin(angle)
+        vertices.append((x, y))
+
+    path_parts = [f"M {vertices[0][0]:.1f} {vertices[0][1]:.1f}"]
+    for i in range(points):
+        curr = vertices[i]
+        next_v = vertices[(i + 1) % points]
+        prev = vertices[(i - 1) % points]
+        next_next = vertices[(i + 2) % points]
+
+        cp1_x = curr[0] + (next_v[0] - prev[0]) * 0.25
+        cp1_y = curr[1] + (next_v[1] - prev[1]) * 0.25
+        cp2_x = next_v[0] - (next_next[0] - curr[0]) * 0.25
+        cp2_y = next_v[1] - (next_next[1] - curr[1]) * 0.25
+
+        path_parts.append(f"C {cp1_x:.1f} {cp1_y:.1f}, {cp2_x:.1f} {cp2_y:.1f}, {next_v[0]:.1f} {next_v[1]:.1f}")
+
+    path_parts.append("Z")
+
+    transform = f'transform="rotate({rotation} {cx} {cy})"' if rotation != 0 else ''
+
+    gradient = f'''<defs>
+        <linearGradient id="{gradient_id}" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:{color1};stop-opacity:{opacity}" />
+            <stop offset="100%" style="stop-color:{color2};stop-opacity:{opacity * 0.6}" />
+        </linearGradient>
+    </defs>'''
+
+    return f'{gradient}<path d="{" ".join(path_parts)}" fill="url(#{gradient_id})" {transform} />'
+
+
+def svg_circle(cx, cy, r, color, opacity=1.0):
+    """Simple circle for UI elements like buttons"""
+    return f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{color}" fill-opacity="{opacity}" />'
 
 # =============================================================================
 # BASE CSS
@@ -182,7 +274,7 @@ def get_base_css():
     z-index: 10;
     width: 100%;
     height: 100%;
-    padding: 60px 80px;
+    padding: 100px 120px;
 }}
 
 /* Pill label */
@@ -234,6 +326,9 @@ def get_base_css():
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 100%;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }}
 """
 
@@ -246,14 +341,15 @@ def slide_01_title():
     return f'''
 <div class="slide bg-cream">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1600, 200, 400, 350, COLORS['mint'], 0.5, 20)}
-        {svg_blob(100, 900, 300, 280, COLORS['blush_soft'], 0.6, -15)}
-        {svg_blob(1700, 850, 250, 200, COLORS['gold_soft'], 0.4, 10)}
-        {svg_blob(1500, 550, 200, 180, COLORS['coral_soft'], 0.7, 25)}
-        {svg_blob(1620, 680, 150, 130, COLORS['gold_soft'], 0.6, -10)}
+        {svg_blob(1550, 180, 420, 380, COLORS['mint'], 0.45, 15, seed=1, style='cloud')}
+        {svg_blob(80, 880, 320, 300, COLORS['blush_soft'], 0.55, -20, seed=2, style='amoeba')}
+        {svg_blob(1720, 820, 280, 230, COLORS['gold_soft'], 0.35, 25, seed=3, style='organic')}
+        {svg_blob(1480, 520, 220, 200, COLORS['coral_soft'], 0.6, 30, seed=4, style='wave')}
+        {svg_blob(1600, 700, 180, 150, COLORS['gold_soft'], 0.5, -15, seed=5, style='organic')}
+        {svg_blob(200, 150, 180, 160, COLORS['mint'], 0.25, 10, seed=6, style='cloud')}
     </svg>
 
-    <div class="content">
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding-left: 150px;">
         <div class="pill" style="background: {COLORS['teal_deep']}; color: white; margin-bottom: 20px;">
             Day 1 of 3
         </div>
@@ -286,8 +382,9 @@ def slide_02_before_begin():
     return f'''
 <div class="slide bg-blush">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 180, 320, 280, COLORS['mint'], 0.45, 15)}
-        {svg_blob(100, 850, 280, 250, COLORS['coral_pale'], 0.5, -20)}
+        {svg_blob(1620, 160, 350, 300, COLORS['mint'], 0.4, 20, seed=7, style='cloud')}
+        {svg_blob(80, 820, 300, 280, COLORS['coral_pale'], 0.45, -15, seed=8, style='amoeba')}
+        {svg_blob(1750, 500, 200, 180, COLORS['gold_soft'], 0.25, 10, seed=9, style='organic')}
     </svg>
 
     <div class="content flex-center">
@@ -316,8 +413,9 @@ def slide_03_get_ready():
     return f'''
 <div class="slide bg-blush">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(150, 200, 280, 250, COLORS['coral_pale'], 0.5, -10)}
-        {svg_blob(1700, 750, 250, 220, COLORS['muted'], 0.2, 15)}
+        {svg_blob(130, 180, 300, 270, COLORS['coral_pale'], 0.45, -15, seed=10, style='amoeba')}
+        {svg_blob(1720, 720, 280, 250, COLORS['mint'], 0.3, 20, seed=11, style='cloud')}
+        {svg_blob(1600, 150, 200, 180, COLORS['gold_soft'], 0.2, 10, seed=12, style='organic')}
     </svg>
 
     <div class="content flex-center">
@@ -350,12 +448,13 @@ def slide_04_quiz_ab():
     return f'''
 <div class="slide bg-cream">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 150, 350, 300, COLORS['mint'], 0.4, 20)}
-        {svg_blob(80, 900, 280, 250, COLORS['blush_soft'], 0.5, -15)}
-        {svg_blob(1650, 900, 280, 220, COLORS['gold_soft'], 0.35, 10)}
+        {svg_blob(1620, 130, 380, 320, COLORS['mint'], 0.35, 25, seed=13, style='cloud')}
+        {svg_blob(60, 880, 300, 280, COLORS['blush_soft'], 0.4, -20, seed=14, style='amoeba')}
+        {svg_blob(1680, 880, 300, 250, COLORS['gold_soft'], 0.3, 15, seed=15, style='wave')}
+        {svg_blob(150, 200, 180, 160, COLORS['coral_pale'], 0.2, 5, seed=16, style='organic')}
     </svg>
 
-    <div class="content">
+    <div class="content flex-center">
         <h1 class="display text-dark text-center" style="font-size: 56px; margin-bottom: 50px;">
             Which design was made by a professional artist?
         </h1>
@@ -400,7 +499,9 @@ def slide_05_type_ab():
     return f'''
 <div class="slide bg-teal">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1550, 200, 400, 350, COLORS['teal_light'], 0.25, 15)}
+        {svg_blob(1520, 180, 420, 380, COLORS['teal_light'], 0.2, 20, seed=17, style='cloud')}
+        {svg_blob(100, 800, 320, 280, COLORS['teal_light'], 0.15, -15, seed=18, style='amoeba')}
+        {svg_blob(1650, 750, 250, 220, COLORS['mint'], 0.18, 10, seed=19, style='wave')}
     </svg>
 
     <div class="content flex-center">
@@ -409,14 +510,16 @@ def slide_05_type_ab():
         </h1>
 
         <div style="display: flex; gap: 80px; align-items: center;">
-            <div style="width: 180px; height: 160px; background: white; border-radius: 50%;
+            <div style="width: 180px; min-width: 180px; height: 180px; min-height: 180px;
+                        background: white; border-radius: 50%; flex-shrink: 0;
                         display: flex; align-items: center; justify-content: center;">
                 <span class="display text-teal" style="font-size: 72px;">A</span>
             </div>
 
             <span class="body text-white" style="font-size: 36px; opacity: 0.8;">or</span>
 
-            <div style="width: 180px; height: 160px; background: {COLORS['coral']}; border-radius: 50%;
+            <div style="width: 180px; min-width: 180px; height: 180px; min-height: 180px;
+                        background: {COLORS['coral']}; border-radius: 50%; flex-shrink: 0;
                         display: flex; align-items: center; justify-content: center;">
                 <span class="display text-white" style="font-size: 72px;">B</span>
             </div>
@@ -430,9 +533,10 @@ def slide_06_answer_is():
     return f'''
 <div class="slide bg-cream">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1600, 200, 400, 350, COLORS['mint'], 0.45, 25)}
-        {svg_blob(100, 800, 300, 280, COLORS['blush_soft'], 0.5, -15)}
-        {svg_blob(1650, 850, 280, 220, COLORS['gold_soft'], 0.4, 10)}
+        {svg_blob(1570, 180, 420, 370, COLORS['mint'], 0.4, 30, seed=20, style='cloud')}
+        {svg_blob(80, 780, 320, 300, COLORS['blush_soft'], 0.45, -20, seed=21, style='amoeba')}
+        {svg_blob(1680, 830, 300, 250, COLORS['gold_soft'], 0.35, 15, seed=22, style='wave')}
+        {svg_blob(200, 200, 180, 160, COLORS['coral_pale'], 0.25, 5, seed=23, style='organic')}
     </svg>
 
     <div class="content flex-center">
@@ -454,7 +558,9 @@ def slide_07_both_ai():
     return f'''
 <div class="slide bg-coral">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1500, 200, 400, 350, COLORS['coral_pale'], 0.3, 15)}
+        {svg_blob(1480, 180, 420, 380, COLORS['coral_pale'], 0.25, 20, seed=24, style='cloud')}
+        {svg_blob(120, 820, 300, 280, COLORS['coral_pale'], 0.2, -15, seed=25, style='amoeba')}
+        {svg_blob(1700, 700, 220, 200, COLORS['white'], 0.1, 10, seed=26, style='wave')}
     </svg>
 
     <div class="content flex-center">
@@ -477,8 +583,10 @@ def slide_08_ai_nowadays():
     return f'''
 <div class="slide bg-blush">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 320, 280, COLORS['muted'], 0.2, 20)}
-        {svg_blob(100, 850, 280, 250, COLORS['coral_pale'], 0.4, -15)}
+        {svg_blob(1620, 180, 350, 300, COLORS['mint'], 0.3, 25, seed=27, style='cloud')}
+        {svg_blob(80, 830, 300, 280, COLORS['coral_pale'], 0.35, -20, seed=28, style='amoeba')}
+        {svg_blob(1750, 650, 200, 180, COLORS['gold_soft'], 0.2, 10, seed=29, style='organic')}
+        {svg_blob(180, 180, 200, 180, COLORS['blush_soft'], 0.25, -5, seed=30, style='wave')}
     </svg>
 
     <div class="content flex-center">
@@ -506,8 +614,10 @@ def slide_09_sink_in():
     return f'''
 <div class="slide" style="background: linear-gradient(135deg, {COLORS['cream']}, {COLORS['mint']});">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(150, 150, 350, 300, COLORS['gold_soft'], 0.4, -10)}
-        {svg_blob(1600, 800, 350, 300, COLORS['mint'], 0.5, 20)}
+        {svg_blob(130, 130, 380, 330, COLORS['gold_soft'], 0.35, -15, seed=31, style='cloud')}
+        {svg_blob(1580, 780, 380, 320, COLORS['teal_light'], 0.4, 25, seed=32, style='amoeba')}
+        {svg_blob(1700, 200, 220, 200, COLORS['coral_pale'], 0.25, 10, seed=33, style='wave')}
+        {svg_blob(100, 650, 200, 180, COLORS['blush_soft'], 0.3, -5, seed=34, style='organic')}
     </svg>
 
     <div class="content flex-center">
@@ -523,7 +633,9 @@ def slide_10_uncomfortable():
     return f'''
 <div class="slide bg-dark">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(960, 540, 500, 400, COLORS['coral'], 0.15, -10)}
+        {svg_blob(960, 540, 520, 420, COLORS['coral'], 0.12, -15, seed=35, style='amoeba')}
+        {svg_blob(1700, 200, 280, 250, COLORS['teal_deep'], 0.1, 20, seed=36, style='cloud')}
+        {svg_blob(150, 850, 250, 220, COLORS['coral'], 0.08, -10, seed=37, style='wave')}
     </svg>
 
     <div class="content flex-center">
@@ -544,14 +656,15 @@ def slide_11_what_happens():
     return f'''
 <div class="slide bg-cream">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1600, 200, 380, 330, COLORS['mint'], 0.45, 20)}
-        {svg_blob(100, 750, 300, 280, COLORS['blush_soft'], 0.5, -15)}
-        {svg_blob(1550, 750, 250, 200, COLORS['coral_pale'], 0.5, 10)}
-        {svg_blob(1650, 850, 200, 160, COLORS['gold_soft'], 0.4, -5)}
+        {svg_blob(1580, 180, 400, 350, COLORS['mint'], 0.4, 25, seed=38, style='cloud')}
+        {svg_blob(80, 730, 320, 300, COLORS['blush_soft'], 0.45, -20, seed=39, style='amoeba')}
+        {svg_blob(1530, 730, 280, 230, COLORS['coral_pale'], 0.4, 15, seed=40, style='wave')}
+        {svg_blob(1670, 870, 220, 180, COLORS['gold_soft'], 0.35, -10, seed=41, style='organic')}
+        {svg_blob(180, 180, 180, 160, COLORS['mint'], 0.2, 5, seed=42, style='cloud')}
     </svg>
 
-    <div class="content">
-        <p class="body text-muted text-center" style="font-size: 28px; margin-bottom: 40px; margin-top: 60px;">
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 28px; margin-bottom: 40px;">
             If anyone can create designs like this in seconds...
         </p>
 
@@ -559,7 +672,7 @@ def slide_11_what_happens():
             What happens to<br>YOUR Etsy shop<br>in 2026?
         </h1>
 
-        <div style="position: absolute; right: 200px; bottom: 200px;">
+        <div style="margin-top: 40px;">
             <span class="display text-coral" style="font-size: 120px; opacity: 0.6;">?</span>
         </div>
     </div>
@@ -571,16 +684,18 @@ def slide_12_survey_intro():
     return f'''
 <div class="slide bg-blush">
     <svg class="bg-shapes" viewBox="0 0 {SLIDE_WIDTH} {SLIDE_HEIGHT}" preserveAspectRatio="none">
-        {svg_blob(1650, 200, 350, 300, COLORS['muted'], 0.15, 20)}
-        {svg_blob(100, 850, 300, 270, COLORS['coral_pale'], 0.4, -15)}
+        {svg_blob(1620, 180, 380, 320, COLORS['mint'], 0.3, 25, seed=43, style='cloud')}
+        {svg_blob(80, 830, 320, 290, COLORS['coral_pale'], 0.35, -20, seed=44, style='amoeba')}
+        {svg_blob(1750, 600, 220, 200, COLORS['gold_soft'], 0.2, 10, seed=45, style='wave')}
+        {svg_blob(180, 200, 200, 180, COLORS['blush_soft'], 0.25, -5, seed=46, style='organic')}
     </svg>
 
-    <div class="content">
-        <h1 class="display text-dark text-center" style="font-size: 72px; margin-top: 80px; margin-bottom: 60px;">
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 72px; margin-bottom: 60px;">
             The numbers I'm about<br>to show you aren't random...
         </h1>
 
-        <div class="card-teal text-center" style="max-width: 800px; margin: 0 auto; padding: 50px;">
+        <div class="card-teal text-center" style="max-width: 800px; padding: 50px;">
             <p class="body text-white" style="font-size: 28px; margin-bottom: 20px;">
                 These are from YOUR OWN ANSWERS
             </p>
