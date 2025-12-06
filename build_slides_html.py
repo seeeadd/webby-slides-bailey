@@ -465,9 +465,9 @@ def svg_shop_mockup_focused():
         <rect x="0" y="0" width="230" height="52" rx="12" fill="{teal}"/>
         <rect x="0" y="20" width="230" height="32" fill="{teal}"/>
 
-        <!-- Shop name - confident branding -->
-        <text x="14" y="30" font-family="Ogg Bold, serif" font-size="15" fill="white" font-weight="bold">Focused Shop</text>
-        <rect x="14" y="37" width="70" height="5" rx="2" fill="white" opacity="0.5"/>
+        <!-- Shop name - confident branding - BIGGER -->
+        <text x="14" y="32" font-family="Ogg Bold, serif" font-size="19" fill="white" font-weight="bold">Focused Shop</text>
+        <rect x="14" y="40" width="85" height="5" rx="2" fill="white" opacity="0.5"/>
 
         <!-- Thriving plant icon -->
         <g transform="translate(185, 10)">
@@ -540,7 +540,7 @@ def slide_01_title():
         {svg_sparkle(1750, 700, 14, gold)}
     </svg>
 
-    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 100px 120px 80px 100px; gap: 60px;">
+    <div class="content" style="display: flex; flex-direction: row; align-items: center; padding: 100px 180px 80px 100px; gap: 80px;">
 
         <!-- LEFT: Text content - pushed further left -->
         <div style="flex: 0.9; max-width: 620px;">
