@@ -72,58 +72,66 @@ class Fonts:
 
 
 # =============================================================================
-# ORGANIC SHAPE BUILDERS
+# SMOOTH ORGANIC SHAPE BUILDERS
 # =============================================================================
 
-def create_organic_blob(slide, x, y, width, height, color, opacity=100):
+def create_organic_blob(slide, x, y, width, height, color, opacity=100, rotation=0):
     """
-    Create an organic blob shape using freeform path
-    More natural, Pinterest-worthy than basic circles
+    Create a smooth organic blob using OVAL shapes (truly smooth curves)
+    with rotation for natural, asymmetric feel.
 
-    x, y, width, height should be in Inches() or Emu
+    Much cleaner than angular freeform paths.
     """
-    # Convert to EMUs if needed
-    if hasattr(width, 'emu'):
-        w_emu = width.emu
-        h_emu = height.emu
-    else:
-        w_emu = int(width * 914400)
-        h_emu = int(height * 914400)
-
-    # Generate organic blob points using sine waves for natural curves
-    points = 16
-    cx, cy = w_emu / 2, h_emu / 2
-
-    # Build list of vertices (in EMUs, relative to shape origin)
-    vertices = []
-    for i in range(points):
-        angle = (2 * math.pi * i) / points
-        # Add organic variation for natural feel
-        variation = 0.12 * math.sin(3 * angle) + 0.08 * math.cos(5 * angle) + 0.05 * math.sin(7 * angle)
-        r_x = (cx * (0.88 + variation))
-        r_y = (cy * (0.88 + variation * 0.85))
-
-        px = int(cx + r_x * math.cos(angle))
-        py = int(cy + r_y * math.sin(angle))
-        vertices.append((Emu(px), Emu(py)))
-
-    # Create freeform with vertices
-    builder = slide.shapes.build_freeform(x, y)
-    builder.move_to(vertices[0][0], vertices[0][1])
-    builder.add_line_segments(vertices[1:], close=True)
-
-    shape = builder.convert_to_shape(x, y)
+    # Use oval shape - inherently smooth
+    shape = slide.shapes.add_shape(
+        MSO_SHAPE.OVAL,
+        x, y, width, height
+    )
 
     # Apply fill
     shape.fill.solid()
     shape.fill.fore_color.rgb = color
     shape.line.fill.background()
 
-    # Set transparency if needed
+    # Apply rotation for organic asymmetric feel
+    if rotation != 0:
+        shape.rotation = rotation
+
+    # Set transparency
     if opacity < 100:
         set_shape_transparency(shape, 100 - opacity)
 
     return shape
+
+
+def create_soft_blob_cluster(slide, center_x, center_y, base_size, color, opacity=30):
+    """
+    Create a soft, layered blob cluster using overlapping ellipses.
+    More sophisticated and Pinterest-worthy than single shapes.
+    """
+    blobs = []
+
+    # Main blob
+    main = create_organic_blob(
+        slide,
+        center_x, center_y,
+        base_size, base_size * 0.8,
+        color, opacity, rotation=15
+    )
+    blobs.append(main)
+
+    # Overlapping smaller blob for depth
+    overlap = create_organic_blob(
+        slide,
+        Inches(center_x.inches + base_size.inches * 0.3),
+        Inches(center_y.inches + base_size.inches * 0.2),
+        Inches(base_size.inches * 0.7),
+        Inches(base_size.inches * 0.6),
+        color, opacity * 0.7, rotation=-10
+    )
+    blobs.append(overlap)
+
+    return blobs
 
 
 def create_wave_shape(slide, x, y, width, height, color, wave_height=0.3):
@@ -312,8 +320,8 @@ def add_pill_label(slide, left, top, text, bg_color=Colors.CORAL,
 
 def create_editorial_background_1(slide):
     """
-    Layered organic background - cream with soft teal blobs
-    Editorial, Pinterest-worthy
+    Clean editorial background - cream with subtle soft shapes
+    Minimal, elegant, Pinterest-worthy
     """
     # Base cream
     bg = slide.shapes.add_shape(
@@ -324,28 +332,31 @@ def create_editorial_background_1(slide):
     bg.fill.fore_color.rgb = Colors.CREAM
     bg.line.fill.background()
 
-    # Large organic teal blob - top right
+    # Soft teal wash - top right (very subtle)
     blob1 = create_organic_blob(
         slide,
-        Inches(8), Inches(-2),
-        Inches(7), Inches(6),
-        Colors.TEAL_LIGHT, opacity=15
+        Inches(9), Inches(-1.5),
+        Inches(6), Inches(5),
+        Colors.MINT, opacity=40,
+        rotation=25
     )
 
-    # Smaller coral blob - bottom left
+    # Blush accent - bottom left (subtle)
     blob2 = create_organic_blob(
         slide,
-        Inches(-2), Inches(4),
-        Inches(5), Inches(5),
-        Colors.CORAL_PALE, opacity=20
+        Inches(-1.5), Inches(4.5),
+        Inches(4), Inches(4),
+        Colors.BLUSH_SOFT, opacity=50,
+        rotation=-15
     )
 
-    # Subtle gold accent blob
+    # Very subtle gold - bottom right
     blob3 = create_organic_blob(
         slide,
-        Inches(10), Inches(5),
-        Inches(4), Inches(3),
-        Colors.GOLD_SOFT, opacity=25
+        Inches(10), Inches(5.5),
+        Inches(3.5), Inches(2.5),
+        Colors.GOLD_SOFT, opacity=35,
+        rotation=10
     )
 
     return [bg, blob1, blob2, blob3]
@@ -353,7 +364,7 @@ def create_editorial_background_1(slide):
 
 def create_editorial_background_2(slide):
     """
-    Warm blush background with floating elements
+    Warm blush background - clean and elegant
     """
     # Base blush gradient feel
     bg = slide.shapes.add_shape(
@@ -363,19 +374,22 @@ def create_editorial_background_2(slide):
     add_gradient_fill(bg, Colors.CREAM, Colors.BLUSH_SOFT, angle=135)
     bg.line.fill.background()
 
-    # Organic shapes for depth
+    # Soft teal accent - top corner
     blob1 = create_organic_blob(
         slide,
-        Inches(-1), Inches(-1),
-        Inches(6), Inches(5),
-        Colors.MINT, opacity=30
+        Inches(10), Inches(-1),
+        Inches(5), Inches(4),
+        Colors.MINT, opacity=35,
+        rotation=20
     )
 
+    # Subtle coral - bottom area
     blob2 = create_organic_blob(
         slide,
-        Inches(9), Inches(3),
-        Inches(6), Inches(5),
-        Colors.CORAL_PALE, opacity=20
+        Inches(-1), Inches(5),
+        Inches(4), Inches(3.5),
+        Colors.CORAL_PALE, opacity=30,
+        rotation=-20
     )
 
     return [bg, blob1, blob2]
@@ -390,12 +404,13 @@ def create_bold_teal_background(slide):
     add_gradient_fill(bg, Colors.TEAL_DEEP, Colors.TEAL, angle=135)
     bg.line.fill.background()
 
-    # Subtle lighter blob for depth
+    # Very subtle lighter wash for depth
     blob = create_organic_blob(
         slide,
-        Inches(7), Inches(-1),
-        Inches(8), Inches(6),
-        Colors.TEAL_LIGHT, opacity=15
+        Inches(8), Inches(-1),
+        Inches(7), Inches(5),
+        Colors.TEAL_LIGHT, opacity=20,
+        rotation=15
     )
 
     return [bg, blob]
@@ -411,12 +426,34 @@ def create_dark_dramatic_background(slide):
     bg.fill.fore_color.rgb = Colors.DARK
     bg.line.fill.background()
 
-    # Subtle coral glow
+    # Subtle coral glow - very faint
     blob = create_organic_blob(
         slide,
         Inches(4), Inches(2),
-        Inches(6), Inches(4),
-        Colors.CORAL, opacity=8
+        Inches(7), Inches(5),
+        Colors.CORAL, opacity=12,
+        rotation=-10
+    )
+
+    return [bg, blob]
+
+
+def create_coral_accent_background(slide):
+    """Coral accent background for emphasis"""
+    bg = slide.shapes.add_shape(
+        MSO_SHAPE.RECTANGLE, 0, 0,
+        Inches(13.333), Inches(7.5)
+    )
+    add_gradient_fill(bg, Colors.CORAL, Colors.CORAL_SOFT, angle=135)
+    bg.line.fill.background()
+
+    # Subtle lighter accent
+    blob = create_organic_blob(
+        slide,
+        Inches(9), Inches(-1),
+        Inches(6), Inches(5),
+        Colors.CORAL_PALE, opacity=25,
+        rotation=20
     )
 
     return [bg, blob]
@@ -479,18 +516,20 @@ def build_slide_01_title(prs):
         align=PP_ALIGN.CENTER
     )
 
-    # Decorative organic shape - right side visual interest
+    # Decorative organic shapes - right side - cleaner, more elegant
     accent_blob = create_organic_blob(slide,
-        Inches(9.5), Inches(2.5),
-        Inches(3.5), Inches(3),
-        Colors.CORAL_SOFT, opacity=60
+        Inches(9.8), Inches(2.8),
+        Inches(3), Inches(2.5),
+        Colors.CORAL_SOFT, opacity=70,
+        rotation=20
     )
 
-    # Smaller overlapping blob
+    # Smaller overlapping accent
     accent_blob2 = create_organic_blob(slide,
-        Inches(10.5), Inches(3.5),
-        Inches(2.5), Inches(2.5),
-        Colors.GOLD_SOFT, opacity=50
+        Inches(10.2), Inches(4),
+        Inches(2.2), Inches(1.8),
+        Colors.GOLD_SOFT, opacity=60,
+        rotation=-15
     )
 
     return slide
