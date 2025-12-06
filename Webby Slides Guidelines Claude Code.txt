@@ -1,0 +1,307 @@
+Bailey Vann Webinar Slides — Claude Code Redesign Brief
+READ THIS FIRST
+You are redesigning a PowerPoint presentation for Bailey Vann's free webinar. This is not a quick template job — this is a complete creative rebuild that should look like a $50K design agency created it.
+Your mission: Make attendees think "Holy shit, I'm getting THIS for free? What happens when I actually pay her?"
+________________
+
+
+PHASE 1: UNDERSTAND BEFORE YOU TOUCH ANYTHING
+Before writing a single line of code, analyze and internalize:
+Who is Bailey Vann?
+* Stay-at-home mom turned 7-figure Etsy seller
+* Top 0.1% seller — elite, not beginner-level guru
+* Warm, approachable, but undeniably expert
+* Her brand = "your successful friend who actually knows what she's doing"
+* NOT a cash-grab influencer. NOT desperate for approval. She has her own lane.
+The psychological goal of these slides:
+1. Keep them watching — every slide is a pattern interrupt, never boring
+2. Build trust — "she's giving away secrets most people charge for"
+3. Create desire — "if this is free, imagine what I get when I pay"
+4. Micro-yeses — subliminal visual cues that make them nod along
+5. Premium positioning — this looks like a $2,000 course, not a free webinar
+The audience:
+* Busy moms, side-hustlers, 9-5 escapees
+* Overwhelmed by conflicting advice
+* Skeptical of "guru" promises
+* Want proof, not hype
+* Need to feel understood, not sold to
+________________
+
+
+PHASE 2: BRAND SYSTEM (EXTRACT & ELEVATE)
+Based on Bailey's existing brand, use these as your foundation — but ELEVATE them.
+Color Palette
+:root {
+  /* Primary */
+  --bailey-teal: #1B8A8A;        /* Deep teal - trust, authority */
+  --bailey-teal-light: #2BA5A3;  /* Lighter teal for accents */
+  --bailey-coral: #E07B6C;       /* Warm coral - energy, action */
+  --bailey-coral-soft: #F4A89A;  /* Softer coral for backgrounds */
+  
+  /* Neutrals */
+  --bailey-cream: #FDF8F3;       /* Warm off-white - main background */
+  --bailey-blush: #FEF0EA;       /* Pink-tinted cream - card backgrounds */
+  --bailey-pink-soft: #FADADD;   /* Soft pink - subtle accents */
+  
+  /* Accents */
+  --bailey-gold: #D4AF37;        /* Gold - premium moments, stars */
+  --bailey-green: #7CB87C;       /* Fresh green - growth, success */
+  --bailey-yellow: #F7E16C;      /* Warm yellow - highlights */
+  
+  /* Text */
+  --text-dark: #2D3436;          /* Primary text */
+  --text-muted: #636E72;         /* Secondary text */
+  --text-light: #FFFFFF;         /* On dark backgrounds */
+}
+Typography
+Headers: OGG (Bold or Black weight) — elegant, distinctive serif Body: Satoshi Variable (Medium weight) — clean, modern sans-serif
+If OGG/Satoshi unavailable, fallback to:
+* Headers: Georgia Bold (serif with personality)
+* Body: Arial or Helvetica (clean, professional)
+Type Scale:
+Hero titles:     48-60px  (OGG Bold/Black)
+Section headers: 32-40px  (OGG Bold)
+Subheadings:     20-24px  (Satoshi Medium)
+Body text:       14-16px  (Satoshi Medium)
+Captions:        11-12px  (Satoshi Medium, muted)
+Visual Language
+DO:
+* Soft, organic shadows (not harsh drop shadows)
+* Rounded corners (8-16px radius)
+* Hand-drawn style annotations (arrows, circles, underlines)
+* Floating decorative elements (stars, sparkles, dollar signs — but subtle)
+* Sticky note / Post-it aesthetic for callouts
+* Gradient backgrounds (soft cream → blush transitions)
+* Layered depth (cards floating on backgrounds)
+* "Magazine editorial" layouts — asymmetric, intentional white space
+DON'T:
+* Emojis (they cheapen everything)
+* Generic icons from icon libraries
+* Canva template aesthetics
+* Harsh gradients or neon colors
+* Centered-everything boring layouts
+* Stock photo vibes
+* AI-generated generic graphics
+________________
+
+
+PHASE 3: CUSTOM GRAPHICS PHILOSOPHY
+Every visual should be CUSTOM and CONTEXTUAL. Not decorative filler.
+Approach for each slide:
+1. Read the text — what is the core message?
+2. Visualize the concept — how can this be shown, not just said?
+3. Design a custom graphic that:
+   * Reinforces the message
+   * Adds clarity (not confusion)
+   * Feels hand-crafted (not template)
+   * Could only exist for THIS slide
+Examples of custom graphics to build:
+Slide Content
+	Custom Graphic Idea
+	"Your shop is like a garden"
+	Illustrated garden with wilting vs thriving plants, shop icons as flowers
+	"$0 → $3K journey"
+	Visual timeline with milestone markers, growth curve
+	"Delete 200+ products"
+	Before/after Etsy shop dashboard mockup showing cluttered vs clean
+	"3-hour weekly routine"
+	Custom weekly calendar with time blocks illustrated
+	"Algorithm loves fresh listings"
+	Personified algorithm character giving hearts to new products
+	Revenue milestones
+	Custom revenue dashboard mockup with Bailey's actual numbers
+	"Most people quit here"
+	Mountain/journey illustration with X marks where people give up
+	Building graphics:
+Use SVG or HTML/CSS to create:
+* Fake UI mockups (Etsy dashboards, notification screens)
+* Custom illustrations (simple, flat-style, brand colors)
+* Data visualizations (charts, graphs, progress bars)
+* Journey maps and timelines
+* Comparison graphics (before/after, this vs that)
+________________
+
+
+PHASE 4: SLIDE-BY-SLIDE DESIGN RULES
+Title/Section Slides
+* BIG, bold headline (48-60px)
+* Minimal supporting text
+* Full creative visual treatment
+* These are your "pattern interrupt" moments
+* Consider full-bleed color backgrounds
+Content Slides
+* Clear visual hierarchy: headline → supporting points → visual
+* Text should be scannable in 3 seconds
+* One main idea per slide
+* Custom graphic that ADDS to understanding
+* Generous white space — don't cram
+Story/Testimony Slides
+* More editorial feel
+* Pull quotes in large, elegant type
+* Photo areas with soft frames/masks
+* Personal, authentic vibe
+Data/Proof Slides
+* Numbers should be HUGE and prominent
+* Context in smaller supporting text
+* Custom charts/graphs (not Excel defaults)
+* Before/after comparisons with clear visual distinction
+Transition Slides
+* Keep them moving forward
+* Visual breadcrumbs (progress indicators)
+* Mini pattern interrupts between sections
+ANIMATION / REVEAL EFFECT THROUGH SLIDE DUPLICATION
+PowerPoint animations can't be coded directly, so we fake it by duplicating slides.
+When to use this:
+When Bailey needs to explain something BEFORE the full content appears — so the audience isn't reading ahead while she's still talking.
+How it works:
+Instead of one slide with all the content, create 2-3 versions of the same slide:
+Example — a slide with 3 bullet points:
+
+Slide 14a: Just the headline, no bullets (Bailey introduces the topic)
+Slide 14b: Headline + bullet 1 (Bailey explains first point)
+Slide 14c: Headline + bullets 1 & 2 (Bailey explains second point)
+Slide 14d: Headline + all 3 bullets (complete slide)
+
+Example — a before/after reveal:
+
+Slide 22a: Only the "BEFORE" graphic visible
+Slide 22b: Both "BEFORE" and "AFTER" visible (transformation revealed)
+
+Example — a big number reveal:
+
+Slide 79a: Setup text: "After switching to digital products..."
+Slide 79b: The big "$1,000,000+" appears
+
+When to apply this:
+
+Stats/data reveals (build anticipation)
+Framework explanations (one piece at a time)
+Story beats (reveal the twist)
+Any moment Bailey says "and here's the thing..." before revealing
+
+Keep the layout identical between duplicates — only the content visibility changes. This creates a seamless "animation" effect when clicking through.
+
+________________
+
+
+PHASE 5: MICRO-COMMITMENT PSYCHOLOGY
+Build in subliminal "yes" triggers throughout:
+Visual micro-yeses:
+* Checkmarks appearing next to achieved milestones
+* Progress bars filling up
+* "You're here" markers on journey maps
+* Nodding head iconography (subtle)
+* Green checkmarks vs red X's in comparisons
+* "Unlocked" visual states
+Layout psychology:
+* Left-to-right flow = progress
+* Upward angles = growth
+* Warm colors on positive outcomes
+* Cool/muted on "before" states
+* Highlighted/glowing areas draw focus to key points
+Framing psychology:
+* Loss aversion: show what they're MISSING by not continuing
+* Social proof: "others are already doing this" visuals
+* Authority: Bailey's credentials displayed elegantly
+* Scarcity: "this is rare" visual treatment for key insights
+________________
+
+
+PHASE 6: LAYOUT CREATIVITY
+Break the template mold. Be unexpected.
+Layout patterns to use:
+1. Magazine Editorial — asymmetric columns, text wrapping around visuals
+2. Full-Bleed Moments — slide completely filled with visual, text overlay
+3. Split Contrast — left side "before/problem", right side "after/solution"
+4. Floating Cards — content in elevated cards over gradient backgrounds
+5. Diagonal Cuts — angled section dividers (not harsh, subtle 5-10°)
+6. Sticky Note Overlay — handwritten-style notes "pinned" to slides
+7. Dashboard Mockup — entire slide designed like a UI screenshot
+8. Journey Timeline — horizontal or vertical story progression
+Spacing rules:
+* 20-40px slide margins (breathing room)
+* 12-16px gaps between cards/elements
+* 8-12px internal padding on containers
+* Generous line-height (1.5-1.6) for readability
+________________
+
+
+PHASE 7: WHAT MAKES THIS "WORTH PAYING FOR"
+The slides should communicate:
+Expertise signals:
+* Specific numbers (not vague claims)
+* Behind-the-scenes data visualizations
+* "Secret" information styling (unlocked padlocks, revealed content)
+* Professional-grade polish in every detail
+Quality signals:
+* No typos, perfect alignment, consistent spacing
+* Intentional color choices (not random)
+* Custom graphics that took obvious effort
+* Typography that shows design knowledge
+Value signals:
+* "Most courses don't show you this" visual treatment
+* Content density that respects their time
+* Clear takeaways on every slide
+* "Write this down" moments called out
+________________
+
+
+PHASE 8: EXECUTION APPROACH FOR CLAUDE CODE
+Step 1: Extract and analyze the current deck
+Read the uploaded PPTX → Extract all text content → List every slide's purpose
+Step 2: Plan the visual approach
+For each slide, determine:
+- What's the one main message?
+- What custom graphic would enhance it?
+- What layout pattern fits?
+- Where are the emphasis moments?
+Step 3: Set up the design system
+Create shared.css with:
+- All CSS variables (colors, fonts)
+- Reusable component styles
+- Animation/transition presets
+Step 4: Build slides in HTML
+Each slide is 960x540px HTML file
+Use the html2pptx workflow
+Build custom SVG graphics inline
+Layer elements for depth
+Step 5: Visual QA
+Convert to images → Review each slide → Check:
+- Is hierarchy clear?
+- Does the graphic add value?
+- Would this make someone say "damn"?
+- Is spacing/alignment perfect?
+Step 6: Iterate ruthlessly
+If a slide feels "fine" — it's not good enough
+Push until every slide is a portfolio piece
+
+________________
+FINAL CHECKLIST BEFORE DELIVERY
+Every slide must pass these tests:
+* [ ] Could this only exist for Bailey's brand? (Not generic)
+* [ ] Does the graphic ADD understanding? (Not just decoration)
+* [ ] Is there clear visual hierarchy? (Know where to look first)
+* [ ] Would this make someone screenshot it? (That good)
+* [ ] Is spacing/alignment pixel-perfect?
+* [ ] Does it support the psychological goal?
+* [ ] Zero cheap/template/Canva vibes?
+* [ ] Does it feel expensive but NOT corporate?
+________________
+
+
+REFERENCE IMAGES PROVIDED
+You have access to screenshots of Bailey's current brand:
+* Landing page designs
+* Thank you page layouts
+* Sales page sections
+* Color palette in action
+* Typography examples
+Use these to understand the vibe, then ELEVATE it for the slides.
+________________
+
+
+THE NORTH STAR
+When in doubt, ask: "Would someone pay $2,000 for a course that uses slides like this?"
+If yes → ship it. If no → redesign it.
+This is not about making slides. This is about making Bailey look like the undeniable expert she is — through design that matches her value.
+Go make something incredible.
