@@ -79,12 +79,22 @@ def create_organic_blob(slide, x, y, width, height, color, opacity=100):
     """
     Create an organic blob shape using freeform path
     More natural, Pinterest-worthy than basic circles
+
+    x, y, width, height should be in Inches() or Emu
     """
+    # Convert to EMUs if needed
+    if hasattr(width, 'emu'):
+        w_emu = width.emu
+        h_emu = height.emu
+    else:
+        w_emu = int(width * 914400)
+        h_emu = int(height * 914400)
+
     # Generate organic blob points using sine waves for natural curves
     points = 16
-    cx, cy = width / 2, height / 2
+    cx, cy = w_emu / 2, h_emu / 2
 
-    # Build list of vertices
+    # Build list of vertices (in EMUs, relative to shape origin)
     vertices = []
     for i in range(points):
         angle = (2 * math.pi * i) / points
@@ -93,9 +103,9 @@ def create_organic_blob(slide, x, y, width, height, color, opacity=100):
         r_x = (cx * (0.88 + variation))
         r_y = (cy * (0.88 + variation * 0.85))
 
-        px = cx + r_x * math.cos(angle)
-        py = cy + r_y * math.sin(angle)
-        vertices.append((Emu(int(px * 914400)), Emu(int(py * 914400))))
+        px = int(cx + r_x * math.cos(angle))
+        py = int(cy + r_y * math.sin(angle))
+        vertices.append((Emu(px), Emu(py)))
 
     # Create freeform with vertices
     builder = slide.shapes.build_freeform(x, y)
