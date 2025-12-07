@@ -11316,6 +11316,12 @@ function populateFullListingStages() {
       el.setAttribute('onclick', onclick);
     });
 
+    // CRITICAL: Unlock all stages so clicks work
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
+    });
+
     // Remove the simple checklist and replace with full stages
     const existingChecklist = targetPhase.querySelector('.checklist');
     const existingDesc = targetPhase.querySelector('.text-muted');
@@ -11463,6 +11469,13 @@ function populateRefListingStages() {
       el.setAttribute('onclick', onclick);
     });
 
+    // CRITICAL: Unlock all stages so clicks work in Quick Reference mode
+    // The locked class has pointer-events: none which blocks ALL clicks
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
+    });
+
     // Insert after the back button but before the existing content
     const existingIntro = targetSection.querySelector('.design-intro');
     if (existingIntro) {
@@ -11518,6 +11531,12 @@ function populateRefFullStages() {
       onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('reffull-expand-");
       onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('reffull-improve-");
       el.setAttribute('onclick', onclick);
+    });
+
+    // CRITICAL: Unlock all stages so clicks work
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
     });
 
     // Replace the simple Phase 2 checklist with the full stages
@@ -11748,6 +11767,12 @@ function populateRefFullListingStages() {
       onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('reffull-expand-");
       onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('reffull-improve-");
       el.setAttribute('onclick', onclick);
+    });
+
+    // CRITICAL: Unlock all stages so clicks work
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
     });
 
     // Append the cloned stages to the container
