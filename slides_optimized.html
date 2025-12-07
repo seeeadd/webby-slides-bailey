@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bailey-teal: #1B8A8A;
+            --bailey-teal-light: #2BA5A3;
+            --bailey-coral: #E07B6C;
+            --bailey-coral-soft: #F4A89A;
+            --bailey-cream: #FDF8F3;
+            --bailey-blush: #FEF0EA;
+            --bailey-gold: #D4AF37;
+            --bailey-gold-light: #F7E16C;
+            --bailey-green: #7CB87C;
+            --text-dark: #2D3436;
+            --text-muted: #636E72;
+            --text-light: #FFFFFF;
+            --dark-bg: #1E1E26;
+            --dark-bg-deep: #141418;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* Typography */
+        .display { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; }
+        .body { font-family: 'Inter', Arial, sans-serif; font-weight: 500; }
+
+        .text-dark { color: var(--text-dark); }
+        .text-muted { color: var(--text-muted); }
+        .text-light { color: var(--text-light); }
+        .text-teal { color: var(--bailey-teal); }
+        .text-coral { color: var(--bailey-coral); }
+        .text-gold { color: var(--bailey-gold); }
+        .text-green { color: var(--bailey-green); }
+        .text-center { text-align: center; }
+
+        /* Backgrounds */
+        .bg-cream { background: var(--bailey-cream); }
+        .bg-dark { background: linear-gradient(145deg, var(--dark-bg) 0%, var(--dark-bg-deep) 100%); }
+        .bg-teal { background: linear-gradient(135deg, var(--bailey-teal), var(--bailey-teal-light)); }
+        .bg-coral { background: linear-gradient(135deg, var(--bailey-coral), var(--bailey-coral-soft)); }
+        .bg-gold { background: linear-gradient(135deg, #C49B2A, var(--bailey-gold)); }
+
+        /* Layout */
+        .content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            padding: 60px 80px;
+        }
+        .flex-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .two-col {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* Background shapes */
+        .bg-shapes {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Components */
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .badge {
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        .badge-teal { background: var(--bailey-teal); color: white; }
+        .badge-coral { background: var(--bailey-coral); color: white; }
+        .badge-gold { background: var(--bailey-gold); color: white; }
+        .badge-green { background: linear-gradient(135deg, var(--bailey-green), #5a9a5a); color: white; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--bailey-teal), var(--bailey-teal-light));
+            padding: 40px 80px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(27,138,138,0.3);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .pain-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Day cards */
+        .day-card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            width: 280px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .day-card.teal { border-top: 5px solid var(--bailey-teal); }
+        .day-card.coral { border-top: 5px solid var(--bailey-coral); }
+        .day-card.gold { border-top: 5px solid var(--bailey-gold); }
+
+        /* Strikethrough */
+        .strikethrough {
+            position: relative;
+            opacity: 0.5;
+        }
+        .strikethrough::after {
+            content: '';
+            position: absolute;
+            left: -10px; right: -10px;
+            top: 50%;
+            height: 4px;
+            background: var(--bailey-coral);
+            transform: rotate(-2deg);
+        }
+
+        /* Chat bubble */
+        .chat-bubble {
+            background: white;
+            padding: 50px 80px;
+            border-radius: 30px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+        }
+        .chat-prompt {
+            font-size: 100px;
+            letter-spacing: 10px;
+            color: var(--bailey-teal);
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .timeline-block {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Matrix preview */
+        .matrix-preview {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transform: rotate(-2deg);
+            border: 3px solid var(--bailey-gold);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== SLIDES 1-20: INTRO & REALITY CHECK ========== -->
+
+<!-- SLIDE 1: Title -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1700" cy="200" r="200" fill="#1B8A8A" fill-opacity="0.08"/>
+        <circle cx="200" cy="900" r="250" fill="#E07B6C" fill-opacity="0.06"/>
+        <path d="M0 800 Q400 700 800 850 T1600 750" fill="none" stroke="#1B8A8A" stroke-opacity="0.1" stroke-width="3"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted" style="font-size: 24px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px;">Welcome to</p>
+        <h1 class="display text-dark" style="font-size: 72px; line-height: 1.2; margin-bottom: 20px;">The 2026 Etsy Upgrade</h1>
+        <h2 class="display text-teal" style="font-size: 64px;">Challenge RESET</h2>
+        <div style="width: 120px; height: 4px; background: var(--bailey-coral); margin: 40px 0; border-radius: 2px;"></div>
+        <p class="body text-muted" style="font-size: 28px;">with Bailey Vann</p>
+    </div>
+</div>
+
+<!-- SLIDE 2: Hook -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="400" fill="#1B8A8A" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="280" fill="#1B8A8A" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 64px; line-height: 1.4;">
+            What if everything you've been told<br>
+            about <span class="text-coral">Etsy success</span> in 2026<br>
+            is completely wrong?
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 3: Bailey Intro -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="300" cy="300" r="150" fill="#E07B6C" fill-opacity="0.08"/>
+        <circle cx="1600" cy="800" r="180" fill="#1B8A8A" fill-opacity="0.06"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted" style="font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px;">Hi, I'm</p>
+        <h1 class="display text-dark" style="font-size: 80px; margin-bottom: 20px;">Bailey Vann</h1>
+        <p class="body text-muted" style="font-size: 28px; max-width: 800px; text-align: center; line-height: 1.6;">
+            Stay-at-home mom turned 7-figure Etsy seller.<br>
+            Top 0.1% of all Etsy shops.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 4: Credentials -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <rect x="100" y="200" width="400" height="300" rx="20" fill="#D4AF37" fill-opacity="0.08" transform="rotate(-5)"/>
+        <rect x="1400" y="600" width="350" height="250" rx="20" fill="#1B8A8A" fill-opacity="0.06" transform="rotate(5)"/>
+    </svg>
+    <div class="content flex-center">
+        <div style="display: flex; gap: 60px;">
+            <div class="card" style="text-align: center; width: 300px;">
+                <p class="display text-teal" style="font-size: 64px;">$1M+</p>
+                <p class="body text-muted" style="font-size: 20px; margin-top: 10px;">Total Etsy Revenue</p>
+            </div>
+            <div class="card" style="text-align: center; width: 300px;">
+                <p class="display text-coral" style="font-size: 64px;">Top 0.1%</p>
+                <p class="body text-muted" style="font-size: 20px; margin-top: 10px;">Of All Etsy Sellers</p>
+            </div>
+            <div class="card" style="text-align: center; width: 300px;">
+                <p class="display text-gold" style="font-size: 64px;">10K+</p>
+                <p class="body text-muted" style="font-size: 20px; margin-top: 10px;">Students Helped</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: The Problem Setup -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body" style="font-size: 24px; color: #636E72; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px;">Let's talk about</p>
+        <h1 class="display text-center" style="font-size: 80px; color: white; line-height: 1.2;">
+            The <span class="text-coral">Elephant</span><br>in the Room
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 6: The 2024 Reality -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M0 600 Q480 500 960 600 T1920 550" fill="none" stroke="#E07B6C" stroke-opacity="0.1" stroke-width="3"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 56px; line-height: 1.5;">
+            2024 was <span class="text-coral">rough</span> for a lot of Etsy sellers.
+        </h1>
+        <div style="display: flex; gap: 40px; margin-top: 50px;">
+            <div class="pain-card">
+                <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#E07B6C" fill-opacity="0.15"/><circle cx="15" cy="15" r="6" fill="#E07B6C"/></svg>
+                <p class="body" style="font-size: 22px; color: var(--text-dark);">Sales dropped</p>
+            </div>
+            <div class="pain-card">
+                <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#E07B6C" fill-opacity="0.15"/><circle cx="15" cy="15" r="6" fill="#E07B6C"/></svg>
+                <p class="body" style="font-size: 22px; color: var(--text-dark);">Competition increased</p>
+            </div>
+            <div class="pain-card">
+                <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#E07B6C" fill-opacity="0.15"/><circle cx="15" cy="15" r="6" fill="#E07B6C"/></svg>
+                <p class="body" style="font-size: 22px; color: var(--text-dark);">AI flooded the market</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7: The Question -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#1B8A8A" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 72px; color: white; line-height: 1.3;">
+            So the question on<br>everyone's mind:
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 8: Is Etsy Dead? -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="400" fill="#E07B6C" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 90px; line-height: 1.2;">
+            "Is Etsy <span class="text-coral">dead</span>?"
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 9: The Answer Setup -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="300" cy="200" r="150" fill="#1B8A8A" fill-opacity="0.06"/>
+        <circle cx="1600" cy="850" r="180" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted" style="font-size: 28px; margin-bottom: 30px;">Here's my honest answer:</p>
+        <h1 class="display text-dark text-center" style="font-size: 64px; line-height: 1.4;">
+            <span class="text-coral">The old way</span> of selling on Etsy?<br>
+            Yes. That's dying.
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 10: But... -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="200" r="200" fill="white" fill-opacity="0.05"/>
+        <circle cx="300" cy="800" r="250" fill="white" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 90px; color: white;">
+            But...
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 11: The New Way -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 56px; line-height: 1.5;">
+            The <span class="text-teal">new way</span>?<br>
+            It's working better than ever.
+        </h1>
+        <p class="body text-muted text-center" style="font-size: 26px; margin-top: 40px; max-width: 700px;">
+            For sellers who understand what's actually happening.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 12: Proof - My Stats -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <rect x="100" y="150" width="350" height="250" rx="20" fill="#7CB87C" fill-opacity="0.1" transform="rotate(-3)"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted" style="font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px;">My 2024 Results</p>
+        <div class="card" style="padding: 50px 80px;">
+            <h1 class="display text-green text-center" style="font-size: 100px;">+34%</h1>
+            <p class="body text-muted text-center" style="font-size: 24px; margin-top: 15px;">Revenue growth year over year</p>
+        </div>
+        <p class="body text-muted text-center" style="font-size: 22px; margin-top: 30px;">While most sellers saw declines...</p>
+    </div>
+</div>
+
+<!-- SLIDE 13: The Difference -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M960 100 L960 980" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="2"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 56px; margin-bottom: 50px;">
+            What's the difference?
+        </h1>
+        <div style="display: flex; gap: 100px;">
+            <div style="text-align: center; opacity: 0.5;">
+                <p class="display text-coral" style="font-size: 36px; margin-bottom: 20px;">Old Way</p>
+                <p class="body" style="font-size: 22px; color: var(--text-muted);">More listings</p>
+                <p class="body" style="font-size: 22px; color: var(--text-muted);">More hustle</p>
+                <p class="body" style="font-size: 22px; color: var(--text-muted);">More burnout</p>
+            </div>
+            <div style="text-align: center;">
+                <p class="display text-teal" style="font-size: 36px; margin-bottom: 20px;">New Way</p>
+                <p class="body" style="font-size: 22px; color: var(--text-dark); font-weight: 600;">Strategic focus</p>
+                <p class="body" style="font-size: 22px; color: var(--text-dark); font-weight: 600;">Smart systems</p>
+                <p class="body" style="font-size: 22px; color: var(--text-dark); font-weight: 600;">Sustainable growth</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 14: The Myth -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body" style="font-size: 24px; color: #636E72; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px;">The Biggest Myth</p>
+        <h1 class="display text-center" style="font-size: 64px; color: white; line-height: 1.3;">
+            "You need <span class="text-coral">more listings</span><br>to make more money"
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 15: The Truth -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted" style="font-size: 24px; margin-bottom: 30px;">The truth?</p>
+        <h1 class="display text-dark text-center" style="font-size: 64px; line-height: 1.3;">
+            I <span class="text-teal">deleted 80%</span> of my listings...<br>
+            and made <span class="text-teal">more money</span>.
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 16: Let That Sink In -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="200" r="200" fill="white" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 72px; color: white;">
+            Let that sink in.
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 17: The Counterintuitive Reality -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M200 200 Q600 100 1000 300 T1800 200" fill="none" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="3"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 52px; line-height: 1.5;">
+            Less listings.<br>
+            Less stress.<br>
+            <span class="text-gold">More revenue.</span>
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 18: How Is This Possible -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="300" cy="800" r="200" fill="#1B8A8A" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 64px;">
+            How is that possible?
+        </h1>
+        <svg width="60" height="80" viewBox="0 0 60 80" style="margin-top: 50px; opacity: 0.5;">
+            <path d="M30 0 L30 60 M15 45 L30 65 L45 45" fill="none" stroke="var(--bailey-teal)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+    </div>
+</div>
+
+<!-- SLIDE 19: The YES -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="white" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 150px; color: white;">
+            YES
+        </h1>
+        <p class="body text-center" style="font-size: 32px; color: rgba(255,255,255,0.8); margin-top: 30px;">
+            That's what I'm going to show you tonight.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 20: Wrong Question -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#E07B6C" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 28px; margin-bottom: 30px;">So the real question isn't:</p>
+        <div style="position: relative; display: inline-block;">
+            <h1 class="display text-dark text-center" style="font-size: 56px; opacity: 0.5;">"How do I make more listings?"</h1>
+            <svg style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" width="800" height="80" viewBox="0 0 800 80">
+                <line x1="20" y1="20" x2="780" y2="60" stroke="#C45050" stroke-width="6" stroke-linecap="round"/>
+                <line x1="20" y1="60" x2="780" y2="20" stroke="#C45050" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <p class="body text-coral text-center" style="font-size: 22px; margin-top: 40px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;">Wrong Question</p>
+    </div>
+</div>
+
+<!-- ========== SLIDES 21-24: TRANSITION ========== -->
+
+<!-- SLIDE 21: Is Etsy Worth It -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 80px; color: white; line-height: 1.2;">
+            Is Etsy even<br><span class="text-coral">worth pursuing</span><br>in 2026?
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 22: I'll Answer That -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1700" cy="200" r="200" fill="#1B8A8A" fill-opacity="0.08"/>
+        <circle cx="200" cy="850" r="150" fill="#E07B6C" fill-opacity="0.06"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 56px; line-height: 1.4; margin-bottom: 40px;">
+            I'm going to answer that<br>question tonight.
+        </h1>
+        <div style="display: flex; align-items: center; gap: 30px;">
+            <div style="width: 80px; height: 4px; background: var(--bailey-teal); border-radius: 2px;"></div>
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="16" fill="var(--bailey-teal)" fill-opacity="0.15"/>
+                <circle cx="20" cy="20" r="10" fill="var(--bailey-teal)" fill-opacity="0.3"/>
+                <circle cx="20" cy="20" r="5" fill="var(--bailey-teal)"/>
+            </svg>
+            <div style="width: 80px; height: 4px; background: var(--bailey-teal); border-radius: 2px;"></div>
+        </div>
+        <h2 class="display text-center" style="font-size: 44px; margin-top: 40px;">
+            <span class="text-teal">And the answer?</span><br>
+            <span class="text-coral">It might honestly surprise you.</span>
+        </h2>
+    </div>
+</div>
+
+<!-- SLIDE 23: AI Creates Opportunity -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 26px; margin-bottom: 30px;">Because what nobody is talking about is this:</p>
+        <h1 class="display text-dark text-center" style="font-size: 52px; line-height: 1.3;">
+            The AI flood actually<br>
+            <span class="text-teal" style="font-size: 70px;">CREATES</span> an opportunity<br>
+            <span style="font-size: 42px;">for a very specific type of seller...</span>
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 24: But Only If -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 24px; margin-bottom: 20px;">Because what nobody is talking about is this:</p>
+        <h1 class="display text-dark text-center" style="font-size: 48px; line-height: 1.3; margin-bottom: 30px;">
+            The AI flood actually<br>
+            <span class="text-teal" style="font-size: 64px;">CREATES</span> an <span class="text-gold">opportunity</span><br>
+            <span style="font-size: 40px;">for a very specific type of seller...</span>
+        </h1>
+        <div class="highlight-box">
+            <p class="body text-center" style="font-size: 28px; color: white; line-height: 1.5;">
+                <span style="font-weight: 700; font-size: 34px; color: var(--bailey-coral-soft);">BUT</span> only if you understand<br>
+                what's <strong>really</strong> happening...
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ========== SLIDES 25-41: PIVOT SECTION ========== -->
+
+<!-- SLIDE 25: Here's the Truth -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-center" style="font-size: 24px; color: #636E72; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px;">The Reality</p>
+        <h1 class="display text-center" style="font-size: 80px; color: white; line-height: 1.15;">
+            Here's the Truth<br><span class="text-coral">About 2026:</span>
+        </h1>
+        <div style="display: flex; align-items: center; gap: 20px; margin-top: 50px;">
+            <div style="width: 80px; height: 3px; background: linear-gradient(90deg, transparent, var(--bailey-coral));"></div>
+            <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4" fill="var(--bailey-coral)"/></svg>
+            <div style="width: 80px; height: 3px; background: linear-gradient(90deg, var(--bailey-coral), transparent);"></div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 26a: AI Insight Setup -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1700" cy="200" r="150" fill="#1B8A8A" fill-opacity="0.05"/>
+        <circle cx="200" cy="850" r="120" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 56px; line-height: 1.4;">
+            When everyone has access to AI...
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 26b: AI Insight Reveal -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1700" cy="200" r="150" fill="#1B8A8A" fill-opacity="0.05"/>
+        <circle cx="200" cy="850" r="120" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 52px; line-height: 1.4; margin-bottom: 50px;">
+            When everyone has access to AI...
+        </h1>
+        <div class="highlight-box">
+            <h2 class="display text-center" style="font-size: 64px; color: white; line-height: 1.3;">
+                The AI doesn't<br><span style="color: var(--bailey-coral-soft);">matter anymore.</span>
+            </h2>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 27a: FOCUS Setup -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="400" fill="#1B8A8A" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="280" fill="#1B8A8A" fill-opacity="0.04"/>
+        <circle cx="960" cy="540" r="160" fill="#1B8A8A" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 28px; margin-bottom: 30px;">What actually matters is:</p>
+        <h1 class="display text-teal text-center" style="font-size: 120px; letter-spacing: -2px;">FOCUS</h1>
+    </div>
+</div>
+
+<!-- SLIDE 27b: FOCUS Full -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="400" fill="#1B8A8A" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="280" fill="#1B8A8A" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 28px; margin-bottom: 20px;">What actually matters is:</p>
+        <h1 class="display text-teal text-center" style="font-size: 100px; letter-spacing: -2px; margin-bottom: 40px;">FOCUS</h1>
+        <div style="display: flex; gap: 60px;">
+            <div style="text-align: center;">
+                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--bailey-coral), var(--bailey-coral-soft)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                    <svg width="50" height="50" viewBox="0 0 50 50"><path d="M25 5 L30 20 L45 20 L33 30 L38 45 L25 35 L12 45 L17 30 L5 20 L20 20 Z" fill="white"/></svg>
+                </div>
+                <p class="body" style="font-size: 22px; color: var(--text-dark); font-weight: 600;">STRATEGY</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--bailey-gold), var(--bailey-gold-light)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                    <svg width="50" height="50" viewBox="0 0 50 50"><rect x="8" y="8" width="34" height="34" rx="4" fill="none" stroke="white" stroke-width="3"/><path d="M15 25 L22 32 L35 18" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <p class="body" style="font-size: 22px; color: var(--text-dark); font-weight: 600;">WHAT to Create</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 28: Same Problems -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M200 200 Q500 100 800 300 T1400 200" fill="none" stroke="#E07B6C" stroke-opacity="0.1" stroke-width="3"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 52px; line-height: 1.5;">
+            If you've felt the same problems<br>I felt back then...
+        </h1>
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 50px;">
+            <div class="pain-card">
+                <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#E07B6C" fill-opacity="0.15"/><circle cx="15" cy="15" r="6" fill="#E07B6C"/></svg>
+                <p class="body" style="font-size: 24px; color: var(--text-dark);">Overwhelmed by too many options</p>
+            </div>
+            <div class="pain-card">
+                <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#E07B6C" fill-opacity="0.15"/><circle cx="15" cy="15" r="6" fill="#E07B6C"/></svg>
+                <p class="body" style="font-size: 24px; color: var(--text-dark);">Working hard but not seeing results</p>
+            </div>
+            <div class="pain-card">
+                <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#E07B6C" fill-opacity="0.15"/><circle cx="15" cy="15" r="6" fill="#E07B6C"/></svg>
+                <p class="body" style="font-size: 24px; color: var(--text-dark);">Wondering if this will ever work</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 29: Change of Strategy -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="200" r="200" fill="white" fill-opacity="0.05"/>
+        <circle cx="300" cy="800" r="250" fill="white" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 64px; color: white; line-height: 1.4;">
+            Then you need a<br>
+            <span style="color: var(--bailey-gold-light); font-size: 80px;">change of strategy</span><br>
+            not more tactics.
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 30: My Goal -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 24px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px;">My Goal For This Challenge</p>
+        <h1 class="display text-dark text-center" style="font-size: 52px; line-height: 1.5; max-width: 900px;">
+            To give you the <span class="text-teal">exact clarity</span><br>that changed everything for me
+        </h1>
+        <div style="margin-top: 50px; display: flex; align-items: center; gap: 20px;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--bailey-coral), var(--bailey-coral-soft)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="30" height="30" viewBox="0 0 30 30"><path d="M15 5 L18 12 L25 12 L19 17 L22 25 L15 20 L8 25 L11 17 L5 12 L12 12 Z" fill="white"/></svg>
+            </div>
+            <p class="body" style="font-size: 20px; color: var(--text-muted); font-style: italic;">- Bailey</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 31: Promise #1 -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <rect x="100" y="100" width="300" height="200" rx="20" fill="#7CB87C" fill-opacity="0.1" transform="rotate(-5 250 200)"/>
+    </svg>
+    <div class="content flex-center">
+        <div class="badge badge-green" style="margin-bottom: 30px;">
+            <p class="body" style="font-size: 18px; text-transform: uppercase; letter-spacing: 2px;">Promise #1</p>
+        </div>
+        <h1 class="display text-dark text-center" style="font-size: 72px; line-height: 1.3;">
+            <span class="text-green">$3K - $5K</span><br>monthly income
+        </h1>
+        <p class="body text-muted text-center" style="font-size: 26px; margin-top: 30px; max-width: 700px;">
+            A realistic, achievable target that changes your family's life
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 32: Promise #2 -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="300" cy="300" r="150" fill="#E07B6C" fill-opacity="0.08"/>
+        <circle cx="1600" cy="700" r="180" fill="#1B8A8A" fill-opacity="0.06"/>
+    </svg>
+    <div class="content flex-center">
+        <div class="badge badge-coral" style="margin-bottom: 30px;">
+            <p class="body" style="font-size: 18px; text-transform: uppercase; letter-spacing: 2px;">Promise #2</p>
+        </div>
+        <h1 class="display text-dark text-center" style="font-size: 64px; line-height: 1.3;">
+            More <span class="text-coral">time</span> with<br>the people you love
+        </h1>
+        <p class="body text-muted text-center" style="font-size: 26px; margin-top: 30px; max-width: 700px;">
+            Because what's the point of income if you never see your family?
+        </p>
+        <svg width="60" height="60" viewBox="0 0 60 60" style="margin-top: 40px; opacity: 0.3;">
+            <path d="M30 50 C10 35 5 20 15 12 C22 6 28 10 30 15 C32 10 38 6 45 12 C55 20 50 35 30 50 Z" fill="var(--bailey-coral)"/>
+        </svg>
+    </div>
+</div>
+
+<!-- SLIDE 33a: Thesis Setup -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#D4AF37" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="200" fill="#D4AF37" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-center" style="font-size: 28px; color: #636E72;">
+            In 2026, the seller with the...
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 33b: Thesis Reveal -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#D4AF37" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="200" fill="#D4AF37" fill-opacity="0.05"/>
+        <circle cx="960" cy="540" r="100" fill="#D4AF37" fill-opacity="0.08"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-center" style="font-size: 28px; color: #636E72; margin-bottom: 40px;">In 2026, the seller with the...</p>
+        <h1 class="display text-center" style="font-size: 90px; line-height: 1.2;">
+            <span class="text-gold">CLEAREST</span><br><span style="color: white;">FOCUS</span>
+        </h1>
+        <h2 class="display text-coral text-center" style="font-size: 64px; margin-top: 30px;">WINS.</h2>
+    </div>
+</div>
+
+<!-- SLIDE 34: Transition to Roadmap -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M100 540 L1820 540" stroke="#1B8A8A" stroke-opacity="0.1" stroke-width="4" stroke-dasharray="20 10"/>
+        <circle cx="300" cy="540" r="15" fill="#1B8A8A" fill-opacity="0.3"/>
+        <circle cx="960" cy="540" r="15" fill="#1B8A8A" fill-opacity="0.5"/>
+        <circle cx="1620" cy="540" r="15" fill="#1B8A8A"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 24px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">The Path Forward</p>
+        <h1 class="display text-dark text-center" style="font-size: 64px; line-height: 1.4;">
+            Let me show you exactly<br><span class="text-teal">how we'll get there</span>
+        </h1>
+        <svg width="60" height="80" viewBox="0 0 60 80" style="margin-top: 50px;">
+            <path d="M30 0 L30 60 M15 45 L30 65 L45 45" fill="none" stroke="var(--bailey-teal)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</div>
+
+<!-- SLIDE 35: 3-Day Roadmap Overview -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <rect x="150" y="250" width="500" height="600" rx="30" fill="#1B8A8A" fill-opacity="0.03"/>
+        <rect x="710" y="250" width="500" height="600" rx="30" fill="#E07B6C" fill-opacity="0.03"/>
+        <rect x="1270" y="250" width="500" height="600" rx="30" fill="#D4AF37" fill-opacity="0.03"/>
+    </svg>
+    <div class="content" style="padding: 60px;">
+        <h1 class="display text-dark text-center" style="font-size: 56px; margin-bottom: 50px;">
+            The <span class="text-teal">3-Day</span> Roadmap
+        </h1>
+        <div style="display: flex; justify-content: center; gap: 40px;">
+            <div class="day-card teal">
+                <div class="badge badge-teal" style="margin-bottom: 20px;"><p class="body" style="font-size: 14px; font-weight: 600;">DAY 1</p></div>
+                <h3 class="display" style="font-size: 28px; color: var(--text-dark); margin-bottom: 10px;">The Etsy Reset</h3>
+                <p class="body text-muted" style="font-size: 16px;">Clear the clutter, find your focus</p>
+            </div>
+            <div class="day-card coral">
+                <div class="badge badge-coral" style="margin-bottom: 20px;"><p class="body" style="font-size: 14px; font-weight: 600;">DAY 2</p></div>
+                <h3 class="display" style="font-size: 28px; color: var(--text-dark); margin-bottom: 10px;">AI Design Lab</h3>
+                <p class="body text-muted" style="font-size: 16px;">Create products that sell</p>
+            </div>
+            <div class="day-card gold">
+                <div class="badge badge-gold" style="margin-bottom: 20px;"><p class="body" style="font-size: 14px; font-weight: 600;">DAY 3</p></div>
+                <h3 class="display" style="font-size: 28px; color: var(--text-dark); margin-bottom: 10px;">AI Empire System</h3>
+                <p class="body text-muted" style="font-size: 16px;">Scale with automation</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 36: Day 1 Detail -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="200" r="200" fill="white" fill-opacity="0.05"/>
+        <circle cx="300" cy="800" r="150" fill="white" fill-opacity="0.03"/>
+    </svg>
+    <div class="content two-col" style="padding: 80px;">
+        <div style="flex: 1;">
+            <div class="badge" style="background: rgba(255,255,255,0.2); margin-bottom: 25px;"><p class="body" style="font-size: 16px; color: white; font-weight: 600;">DAY 1</p></div>
+            <h1 class="display" style="font-size: 72px; color: white; margin-bottom: 30px;">The Etsy Reset</h1>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Audit your current shop</p></div>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Identify what's working (and what's not)</p></div>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Create your focused niche strategy</p></div>
+        </div>
+        <div style="flex: 0 0 300px; display: flex; justify-content: center;">
+            <div style="width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="white" stroke-width="6" stroke-dasharray="180 40"/><path d="M50 20 L60 35 L40 35 Z" fill="white"/></svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 37: Day 2 Detail -->
+<div class="slide bg-coral">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="200" cy="200" r="180" fill="white" fill-opacity="0.05"/>
+        <circle cx="1700" cy="850" r="200" fill="white" fill-opacity="0.03"/>
+    </svg>
+    <div class="content two-col" style="padding: 80px;">
+        <div style="flex: 1;">
+            <div class="badge" style="background: rgba(255,255,255,0.2); margin-bottom: 25px;"><p class="body" style="font-size: 16px; color: white; font-weight: 600;">DAY 2</p></div>
+            <h1 class="display" style="font-size: 72px; color: white; margin-bottom: 30px;">AI Design Lab</h1>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Master AI design tools</p></div>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Create products that actually sell</p></div>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Build your first winning product</p></div>
+        </div>
+        <div style="flex: 0 0 300px; display: flex; justify-content: center;">
+            <div style="width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="100" height="100" viewBox="0 0 100 100"><path d="M50 10 L55 40 L85 45 L55 50 L50 80 L45 50 L15 45 L45 40 Z" fill="white"/><circle cx="25" cy="25" r="8" fill="white" fill-opacity="0.5"/><circle cx="75" cy="70" r="6" fill="white" fill-opacity="0.5"/></svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 38: Day 3 Detail -->
+<div class="slide bg-gold">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="300" r="200" fill="white" fill-opacity="0.05"/>
+        <circle cx="250" cy="750" r="180" fill="white" fill-opacity="0.03"/>
+    </svg>
+    <div class="content two-col" style="padding: 80px;">
+        <div style="flex: 1;">
+            <div class="badge" style="background: rgba(255,255,255,0.2); margin-bottom: 25px;"><p class="body" style="font-size: 16px; color: white; font-weight: 600;">DAY 3</p></div>
+            <h1 class="display" style="font-size: 72px; color: white; margin-bottom: 30px;">AI Empire System</h1>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Automate your listing process</p></div>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Scale without burning out</p></div>
+            <div class="checklist-item"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" fill-opacity="0.2"/><path d="M8 12 L11 15 L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg><p class="body" style="font-size: 22px; color: white;">Build your empire in 3 hours/week</p></div>
+        </div>
+        <div style="flex: 0 0 300px; display: flex; justify-content: center;">
+            <div style="width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="100" height="100" viewBox="0 0 100 100"><path d="M15 70 L25 35 L40 50 L50 25 L60 50 L75 35 L85 70 Z" fill="white"/><rect x="15" y="70" width="70" height="12" rx="3" fill="white"/></svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 39: The Tease -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M960 100 L960 980" stroke="#D4AF37" stroke-opacity="0.1" stroke-width="2" stroke-dasharray="10 5"/>
+        <circle cx="960" cy="540" r="250" fill="#D4AF37" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 56px; line-height: 1.5;">And at the end of Day 3...</h1>
+        <div class="card" style="margin-top: 40px; border: 2px solid var(--bailey-gold); padding: 40px 60px;">
+            <p class="body text-muted text-center" style="font-size: 28px; margin-bottom: 15px;">I'll share something special:</p>
+            <h2 class="display text-teal text-center" style="font-size: 42px;">
+                How to take this further<br><span class="text-gold">(if you want to)</span>
+            </h2>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 40: The Warning -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#E07B6C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <svg width="80" height="80" viewBox="0 0 80 80" style="margin-bottom: 30px;">
+            <path d="M40 10 L75 65 L5 65 Z" fill="none" stroke="var(--bailey-coral)" stroke-width="4"/>
+            <line x1="40" y1="30" x2="40" y2="45" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="40" cy="55" r="3" fill="var(--bailey-coral)"/>
+        </svg>
+        <h1 class="display text-center" style="font-size: 56px; color: white; line-height: 1.4;">
+            But here's my <span class="text-coral">warning:</span>
+        </h1>
+        <p class="body text-center" style="font-size: 32px; color: #B2BEC3; margin-top: 40px; max-width: 800px; line-height: 1.6;">
+            This only works if you<br><span style="color: white; font-weight: 600;">actually show up</span> and do the work.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 41: DEAL -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="300" cy="200" r="150" fill="white" fill-opacity="0.05"/>
+        <circle cx="1600" cy="800" r="200" fill="white" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 52px; color: white; margin-bottom: 40px;">So here's what I need from you:</h1>
+        <div class="chat-bubble">
+            <p class="body text-muted text-center" style="font-size: 28px; margin-bottom: 20px;">Type in the chat right now:</p>
+            <h2 class="display text-teal text-center chat-prompt">DEAL</h2>
+            <p class="body text-muted text-center" style="font-size: 22px; margin-top: 20px;">if you're ready to commit to this challenge</p>
+        </div>
+        <svg width="80" height="80" viewBox="0 0 80 80" style="margin-top: 40px; opacity: 0.5;">
+            <path d="M15 45 L25 35 L35 40 L50 30 L60 35 L65 45" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 50 L35 55 L50 50 L60 55" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</div>
+
+<!-- ========== SLIDES 42-57: TRUST-BUILDING + SETUP ========== -->
+
+<!-- SLIDE 42: Section Transition - Promise -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#E07B6C" fill-opacity="0.04"/>
+        <path d="M400 300 Q600 250 800 350" fill="none" stroke="#E07B6C" stroke-opacity="0.1" stroke-width="3"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 64px; line-height: 1.4;">
+            Before We Dive In...<br>
+            <span class="text-coral">A Promise</span> from me
+        </h1>
+        <svg width="60" height="60" viewBox="0 0 60 60" style="margin-top: 40px; opacity: 0.4;">
+            <path d="M30 50 C10 35 5 20 15 12 C22 6 28 10 30 15 C32 10 38 6 45 12 C55 20 50 35 30 50 Z" fill="var(--bailey-coral)"/>
+        </svg>
+    </div>
+</div>
+
+<!-- SLIDE 43: The Bonus Tease -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="200" r="180" fill="#D4AF37" fill-opacity="0.06"/>
+        <circle cx="300" cy="800" r="150" fill="#1B8A8A" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 52px; line-height: 1.5; margin-bottom: 40px;">
+            If you stay until <span class="text-teal">minute 70</span> tonight...
+        </h1>
+        <!-- Custom clock graphic showing 70 -->
+        <div style="display: flex; align-items: center; gap: 40px; margin-bottom: 40px;">
+            <div style="width: 150px; height: 150px; border: 6px solid var(--bailey-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
+                <p class="display text-teal" style="font-size: 48px;">70</p>
+                <svg style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%);" width="20" height="20" viewBox="0 0 20 20">
+                    <rect x="8" y="0" width="4" height="10" rx="2" fill="var(--bailey-teal)"/>
+                </svg>
+            </div>
+        </div>
+        <h2 class="display text-center" style="font-size: 48px; line-height: 1.4;">
+            I'm going to give you<br>something <span class="text-gold">very special.</span>
+        </h2>
+    </div>
+</div>
+
+<!-- SLIDE 44: What It's NOT -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#E07B6C" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 24px; margin-bottom: 40px;">No, this is:</p>
+        <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 50px;">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <line x1="8" y1="8" x2="32" y2="32" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="32" y1="8" x2="8" y2="32" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <p class="display" style="font-size: 32px; color: var(--text-muted); text-decoration: line-through;">NOT in any workbook</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <line x1="8" y1="8" x2="32" y2="32" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="32" y1="8" x2="8" y2="32" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <p class="display" style="font-size: 32px; color: var(--text-muted); text-decoration: line-through;">NOT in any course I've sold</p>
+            </div>
+        </div>
+        <div class="highlight-box" style="padding: 30px 60px;">
+            <p class="body text-center" style="font-size: 28px; color: white;">
+                This is <strong>only</strong> for people who<br><span style="font-size: 36px; font-weight: 700;">show up LIVE today.</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 45a: Bonus Reveal Setup -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#D4AF37" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 28px;">You'll be getting...</p>
+    </div>
+</div>
+
+<!-- SLIDE 45b: Bonus Reveal Full -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#D4AF37" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 24px; margin-bottom: 20px;">You'll be getting...</p>
+        <h1 class="display text-dark text-center" style="font-size: 56px; margin-bottom: 50px;">
+            My Personal<br><span class="text-gold" style="font-size: 72px;">Delete Decision Matrix</span>
+        </h1>
+        <!-- Custom Matrix Preview Mockup -->
+        <div class="matrix-preview" style="max-width: 700px;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <div style="width: 40px; height: 40px; background: var(--bailey-gold); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z" fill="white"/></svg>
+                </div>
+                <p class="display" style="font-size: 20px; color: var(--text-dark);">Bailey's Decision Matrix</p>
+            </div>
+            <div style="background: #f8f8f8; border-radius: 12px; padding: 20px;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
+                    <span class="body" style="font-size: 14px; color: var(--text-muted); font-weight: 600;">LISTING</span>
+                    <span class="body" style="font-size: 14px; color: var(--text-muted); font-weight: 600;">90 DAY SALES</span>
+                    <span class="body" style="font-size: 14px; color: var(--text-muted); font-weight: 600;">ACTION</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+                    <span class="body" style="font-size: 14px; color: var(--text-dark);">Product A</span>
+                    <span class="body" style="font-size: 14px; color: var(--bailey-green);">12 sales</span>
+                    <span class="body" style="font-size: 12px; background: var(--bailey-green); color: white; padding: 4px 12px; border-radius: 20px;">KEEP</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+                    <span class="body" style="font-size: 14px; color: var(--text-dark);">Product B</span>
+                    <span class="body" style="font-size: 14px; color: var(--bailey-coral);">0 sales</span>
+                    <span class="body" style="font-size: 12px; background: var(--bailey-coral); color: white; padding: 4px 12px; border-radius: 20px;">DELETE</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0;">
+                    <span class="body" style="font-size: 14px; color: var(--text-dark);">Product C</span>
+                    <span class="body" style="font-size: 14px; color: var(--bailey-gold);">2 sales</span>
+                    <span class="body" style="font-size: 12px; background: var(--bailey-gold); color: white; padding: 4px 12px; border-radius: 20px;">OPTIMIZE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 46: What It Does -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="300" cy="300" r="200" fill="#1B8A8A" fill-opacity="0.04"/>
+        <circle cx="1600" cy="750" r="180" fill="#7CB87C" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 48px; line-height: 1.5; max-width: 1000px;">
+            The exact checklist I use to decide<br>what stays and what goes.
+        </h1>
+        <div style="margin-top: 50px; display: flex; gap: 40px; align-items: center;">
+            <div style="text-align: center;">
+                <p class="display text-coral" style="font-size: 72px;">80%</p>
+                <p class="body text-muted" style="font-size: 18px;">of my shop deleted</p>
+            </div>
+            <svg width="80" height="40" viewBox="0 0 80 40">
+                <path d="M0 20 L60 20 M50 10 L65 20 L50 30" fill="none" stroke="var(--bailey-teal)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div style="text-align: center;">
+                <p class="display text-green" style="font-size: 72px;">+34%</p>
+                <p class="body text-muted" style="font-size: 18px;">revenue increase</p>
+            </div>
+        </div>
+        <p class="body text-muted text-center" style="font-size: 22px; margin-top: 40px;">Delete more = Earn more</p>
+    </div>
+</div>
+
+<!-- SLIDE 47: The Benefits -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h2 class="display text-dark text-center" style="font-size: 44px; margin-bottom: 50px;">With this tool, you can:</h2>
+        <div style="display: flex; flex-direction: column; gap: 25px;">
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 25px 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div style="width: 50px; height: 50px; background: var(--bailey-teal); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <span class="display" style="color: white; font-size: 24px;">1</span>
+                </div>
+                <p class="body" style="font-size: 24px; color: var(--text-dark);">Instantly identify your money-makers vs. time-wasters</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 25px 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div style="width: 50px; height: 50px; background: var(--bailey-coral); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <span class="display" style="color: white; font-size: 24px;">2</span>
+                </div>
+                <p class="body" style="font-size: 24px; color: var(--text-dark);">Make confident delete decisions without second-guessing</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 25px 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div style="width: 50px; height: 50px; background: var(--bailey-gold); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <span class="display" style="color: white; font-size: 24px;">3</span>
+                </div>
+                <p class="body" style="font-size: 24px; color: var(--text-dark);">Free up time to focus on what actually sells</p>
+            </div>
+        </div>
+        <p class="body text-muted text-center" style="font-size: 20px; margin-top: 30px;">...and much more!</p>
+    </div>
+</div>
+
+<!-- SLIDE 48: The Condition -->
+<div class="slide bg-dark">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#D4AF37" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 56px; color: white; margin-bottom: 40px;">
+            But You'll Get It<br><span class="text-gold">Only If You Stay</span>
+        </h1>
+        <div style="display: flex; align-items: center; gap: 30px; margin-bottom: 40px;">
+            <!-- Lock icon -->
+            <div style="width: 80px; height: 80px; border: 4px solid var(--bailey-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <rect x="8" y="18" width="24" height="18" rx="3" fill="var(--bailey-gold)"/>
+                    <path d="M14 18 V12 C14 8 17 5 20 5 S26 8 26 12 V18" fill="none" stroke="var(--bailey-gold)" stroke-width="3"/>
+                </svg>
+            </div>
+            <svg width="60" height="30" viewBox="0 0 60 30">
+                <path d="M0 15 L40 15 M30 5 L45 15 L30 25" fill="none" stroke="white" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <!-- Unlocked at 70 -->
+            <div style="width: 80px; height: 80px; border: 4px solid var(--bailey-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(27,138,138,0.2);">
+                <p class="display" style="color: var(--bailey-teal); font-size: 28px;">70</p>
+            </div>
+        </div>
+        <p class="body text-center" style="font-size: 26px; color: #B2BEC3;">
+            You'll only get this if you're here at around minute 70.
+        </p>
+        <p class="body text-center" style="font-size: 22px; color: var(--bailey-coral-soft); margin-top: 20px; font-style: italic;">
+            (Trust me, you'll want it!)
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 49: Agenda Section Header -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <rect x="200" y="200" width="400" height="300" rx="20" fill="#1B8A8A" fill-opacity="0.04" transform="rotate(-3)"/>
+        <rect x="1300" y="550" width="450" height="350" rx="20" fill="#E07B6C" fill-opacity="0.03" transform="rotate(2)"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">The Agenda</p>
+        <h1 class="display text-dark text-center" style="font-size: 56px; line-height: 1.4;">
+            Here's What's <span class="text-teal">REALLY</span><br>Going to Happen Tonight...
+        </h1>
+        <p class="body text-muted text-center" style="font-size: 24px; margin-top: 40px;">
+            I believe in being upfront with you.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 50: The Honest Breakdown -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M200 540 L1720 540" stroke="#1B8A8A" stroke-opacity="0.1" stroke-width="4"/>
+    </svg>
+    <div class="content flex-center">
+        <h2 class="display text-dark text-center" style="font-size: 44px; margin-bottom: 50px;">Tonight's Plan:</h2>
+        <div class="timeline">
+            <div class="timeline-block" style="border-left: 5px solid var(--bailey-teal);">
+                <p class="display text-teal" style="font-size: 36px;">0-60 min</p>
+                <p class="body text-dark" style="font-size: 20px; margin-top: 10px; font-weight: 600;">Pure Teaching</p>
+                <p class="body text-muted" style="font-size: 16px; margin-top: 5px;">Real strategies you can use</p>
+            </div>
+            <svg width="60" height="30" viewBox="0 0 60 30">
+                <path d="M0 15 L40 15 M30 5 L45 15 L30 25" fill="none" stroke="var(--bailey-teal)" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <div class="timeline-block" style="border-left: 5px solid var(--bailey-gold);">
+                <p class="display text-gold" style="font-size: 36px;">~70 min</p>
+                <p class="body text-dark" style="font-size: 20px; margin-top: 10px; font-weight: 600;">Free Bonus</p>
+                <p class="body text-muted" style="font-size: 16px; margin-top: 5px;">+ VIP option mention</p>
+            </div>
+        </div>
+        <p class="body text-muted text-center" style="font-size: 20px; margin-top: 50px; font-style: italic;">
+            I don't like sleazy surprises. Now you know exactly what to expect.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 51: The Promise -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <p class="body text-muted text-center" style="font-size: 24px; margin-bottom: 30px;">So I want to be</p>
+        <h1 class="display text-dark text-center" style="font-size: 72px; margin-bottom: 40px;">CLEAR:</h1>
+        <h2 class="display text-dark text-center" style="font-size: 44px; line-height: 1.5; max-width: 900px;">
+            Tonight is all about giving you<br>
+            <span class="text-teal">everything you need</span> to take action.
+        </h2>
+        <div style="margin-top: 50px; padding: 25px 50px; border: 3px solid var(--bailey-coral); border-radius: 16px;">
+            <p class="body text-coral text-center" style="font-size: 24px; font-weight: 600;">
+                Whether or not you ever buy anything from me.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 52: Engagement Check - YES -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="white" fill-opacity="0.05"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 56px; color: white; margin-bottom: 50px;">
+            Is that cool with you?
+        </h1>
+        <div class="chat-bubble" style="padding: 40px 70px;">
+            <p class="body text-muted text-center" style="font-size: 24px; margin-bottom: 15px;">Type in the chat:</p>
+            <h2 class="display text-teal text-center" style="font-size: 90px; letter-spacing: 8px;">YES</h2>
+        </div>
+        <!-- Custom chat indicator -->
+        <div style="margin-top: 30px; display: flex; align-items: center; gap: 10px; opacity: 0.6;">
+            <div style="width: 12px; height: 12px; background: white; border-radius: 50%; animation: pulse 1s infinite;"></div>
+            <div style="width: 12px; height: 12px; background: white; border-radius: 50%; animation: pulse 1s infinite 0.2s;"></div>
+            <div style="width: 12px; height: 12px; background: white; border-radius: 50%; animation: pulse 1s infinite 0.4s;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 53: One Small Ask Transition -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="300" fill="#E07B6C" fill-opacity="0.04"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 64px;">
+            One Small Ask<br>Before We Begin...
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 54: Open Mind Ask -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M300 200 Q600 100 900 250 T1500 200" fill="none" stroke="#1B8A8A" stroke-opacity="0.1" stroke-width="3"/>
+    </svg>
+    <div class="content flex-center">
+        <h2 class="display text-dark text-center" style="font-size: 44px; margin-bottom: 40px;">
+            I want you to keep an<br><span class="text-teal">open mind</span> tonight.
+        </h2>
+        <div style="max-width: 800px;">
+            <p class="body text-dark text-center" style="font-size: 26px; line-height: 1.7;">
+                Some of what I'm about to share might feel <strong>counterintuitive</strong>.
+            </p>
+            <p class="body text-muted text-center" style="font-size: 26px; line-height: 1.7; margin-top: 20px;">
+                It might challenge what you've been told by other <span style="font-style: italic;">"Etsy experts."</span>
+            </p>
+            <p class="body text-coral text-center" style="font-size: 28px; margin-top: 30px; font-weight: 600;">
+                That's okay.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 55: Permission to Disagree -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#1B8A8A" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 48px; line-height: 1.5;">
+            You don't have to agree<br>with everything.
+        </h1>
+        <div style="margin-top: 50px;">
+            <p class="body text-center" style="font-size: 32px; color: var(--text-dark);">
+                Just stay <span class="text-teal" style="font-weight: 700;">curious</span>.
+            </p>
+            <p class="body text-center" style="font-size: 32px; color: var(--text-dark); margin-top: 15px;">
+                Just stay open to <span class="text-coral" style="font-weight: 700;">"maybe."</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 56a: The Real Commitment Setup -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#E07B6C" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-dark text-center" style="font-size: 52px;">
+            And I need a <span class="text-coral">commitment</span><br>from you.
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 56b: The Real Commitment Full -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="350" fill="#E07B6C" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h2 class="display text-dark text-center" style="font-size: 40px; margin-bottom: 40px;">
+            If what I share tonight makes sense...
+        </h2>
+        <h1 class="display text-dark text-center" style="font-size: 56px; margin-bottom: 40px;">
+            Will you actually <span class="text-teal">TRY</span> it?
+        </h1>
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 30px;">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <svg width="36" height="36" viewBox="0 0 36 36">
+                    <line x1="6" y1="6" x2="30" y2="30" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="30" y1="6" x2="6" y2="30" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <p class="body" style="font-size: 26px; color: var(--text-muted); text-decoration: line-through;">Not just nod along</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <svg width="36" height="36" viewBox="0 0 36 36">
+                    <line x1="6" y1="6" x2="30" y2="30" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="30" y1="6" x2="6" y2="30" stroke="var(--bailey-coral)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <p class="body" style="font-size: 26px; color: var(--text-muted); text-decoration: line-through;">Not just take notes</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: linear-gradient(135deg, var(--bailey-teal), var(--bailey-teal-light)); padding: 15px 30px; border-radius: 12px;">
+                <svg width="36" height="36" viewBox="0 0 36 36">
+                    <circle cx="18" cy="18" r="14" fill="white" fill-opacity="0.2"/>
+                    <path d="M10 18 L16 24 L26 12" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="body" style="font-size: 28px; color: white; font-weight: 700;">Actually DO the thing</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 57: Final Commitment - MAYBE -->
+<div class="slide bg-teal">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="300" cy="200" r="150" fill="white" fill-opacity="0.05"/>
+        <circle cx="1600" cy="800" r="200" fill="white" fill-opacity="0.03"/>
+    </svg>
+    <div class="content flex-center">
+        <h1 class="display text-center" style="font-size: 48px; color: white; margin-bottom: 20px;">
+            Can you do that for the<br>next <span style="color: var(--bailey-gold-light);">90 minutes</span>?
+        </h1>
+        <div class="chat-bubble" style="margin-top: 40px; padding: 40px 70px;">
+            <p class="body text-muted text-center" style="font-size: 24px; margin-bottom: 15px;">Type in the chat:</p>
+            <h2 class="display text-teal text-center" style="font-size: 90px; letter-spacing: 8px;">MAYBE</h2>
+        </div>
+        <p class="body text-center" style="font-size: 20px; color: rgba(255,255,255,0.7); margin-top: 30px; font-style: italic;">
+            (That's all I'm asking for - just a maybe)
+        </p>
+        <!-- Custom chat indicator -->
+        <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px; opacity: 0.5;">
+            <div style="width: 10px; height: 10px; background: white; border-radius: 50%;"></div>
+            <div style="width: 10px; height: 10px; background: white; border-radius: 50%;"></div>
+            <div style="width: 10px; height: 10px; background: white; border-radius: 50%;"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
