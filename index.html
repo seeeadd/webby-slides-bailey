@@ -4420,6 +4420,28 @@
       display: none;
     }
 
+    /* Listing Phase Navigation */
+    .listing-phase-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .listing-phase-nav .btn.outline.small {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .listing-phase-nav .btn.outline.small svg {
+      flex-shrink: 0;
+    }
+
     /* Speed Card Note */
     .speed-note {
       font-size: 0.85rem;
@@ -8609,11 +8631,24 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
             </div>
             <h3>✓ Design Glow-Up complete!</h3>
             <p>Your new design is ready. Now let's optimize the rest of your listing to maximize sales.</p>
-            <button class="btn teal" onclick="startFullListingPhase()">Continue to Listing Optimization</button>
+            <div class="transition-screen-buttons">
+              <button class="btn teal" onclick="startFullListingPhase()">Continue to Listing Optimization</button>
+              <button class="btn outline" onclick="goBackToFullDesignPhase()">← Back to Design Phase</button>
+            </div>
           </div>
 
           <!-- Listing Phase (shown after design complete) -->
           <div class="full-listing-phase hidden" id="full-listing-phase">
+            <div class="listing-phase-nav">
+              <button class="btn outline small" onclick="goBackToFullDesignPhase()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Back to Design Phase
+              </button>
+              <button class="reset-btn-inline" onclick="resetFullGlowup()">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Reset
+              </button>
+            </div>
             <h3>📋 Phase 2: Listing Optimization</h3>
             <p class="text-muted">Now optimize title, tags, description, pricing, and images.</p>
             <!-- This will reference the same stages but in a simplified checklist format -->
@@ -9405,28 +9440,115 @@ Keep it simple. I just need to add text that looks like it belongs.</div>
             Back to path selection
           </button>
 
-          <div class="design-intro">
-            <p><strong>Complete glow-up: new design + fully optimized listing.</strong></p>
-            <p>Work through both phases for maximum impact.</p>
+          <!-- Full Progress Bar -->
+          <div class="full-glowup-progress">
+            <div class="full-progress-labels">
+              <span class="design-label">DESIGN</span>
+              <span class="listing-label">LISTING</span>
+            </div>
+            <div class="full-progress-bar">
+              <div class="full-progress-fill" id="ref-full-progress-fill" style="width: 0%"></div>
+            </div>
+            <div class="full-progress-text"><span id="ref-full-steps-done">0</span> / 14 steps complete</div>
           </div>
 
-          <h3>🎨 Phase 1: Design Glow-Up</h3>
-          <div class="checklist">
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc1')"><div class="checkbox" id="check-rfc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Pick listing with sales history</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc2')"><div class="checkbox" id="check-rfc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Get style variations from ChatGPT</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc3')"><div class="checkbox" id="check-rfc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generate upgraded design in Kittl</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc4')"><div class="checkbox" id="check-rfc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Create mockups</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc5')"><div class="checkbox" id="check-rfc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicate listing & swap files</span></div>
+          <!-- Design Phase (shown first) -->
+          <div class="full-design-phase" id="ref-full-design-phase">
+            <h3>🎨 Phase 1: Design Glow-Up</h3>
+            <div class="design-intro">
+              <p><strong>Upgrade one existing listing with a fresh AI design. Same SEO, new art, more sales.</strong></p>
+            </div>
+
+            <!-- Video for Full path too -->
+            <div class="video-embed">
+              <div class="video-embed-label">▶ WATCH THE LOOM<span class="video-optional">(optional)</span></div>
+              <div class="video-embed-wrapper">
+                <iframe src="https://share.descript.com/embed/7LNESaojmr9" allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <!-- Design checklist for Full path -->
+            <div class="checklist">
+              <div class="checklist-item" onclick="toggleCheck(event, 'rfc1')"><div class="checkbox" id="check-rfc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked a listing with real sales history</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rfc2')"><div class="checkbox" id="check-rfc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got style variations from ChatGPT</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rfc3')"><div class="checkbox" id="check-rfc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated upgraded design in Kittl</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rfc4')"><div class="checkbox" id="check-rfc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rfc5')"><div class="checkbox" id="check-rfc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated listing and swapped files</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rfc6')"><div class="checkbox" id="check-rfc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published new design</span></div>
+            </div>
+
+            <button class="btn" onclick="completeRefFullDesignPhase()">✓ Design Phase Done → Continue to Listing</button>
           </div>
 
-          <h3 class="mt-2">📋 Phase 2: Listing Optimization</h3>
-          <div class="checklist">
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc6')"><div class="checkbox teal" id="check-rfc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc7')"><div class="checkbox teal" id="check-rfc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc8')"><div class="checkbox teal" id="check-rfc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc9')"><div class="checkbox teal" id="check-rfc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc10')"><div class="checkbox teal" id="check-rfc10"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing</span></div>
-            <div class="checklist-item" onclick="toggleCheck(event, 'rfc11')"><div class="checkbox teal" id="check-rfc11"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review & publish</span></div>
+          <!-- Transition between phases -->
+          <div class="transition-screen hidden" id="ref-full-transition">
+            <div class="transition-screen-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2D8B8B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>✓ Design Glow-Up complete!</h3>
+            <p>Your new design is ready. Now let's optimize the rest of your listing to maximize sales.</p>
+            <div class="transition-screen-buttons">
+              <button class="btn teal" onclick="startRefFullListingPhase()">Continue to Listing Optimization</button>
+              <button class="btn outline" onclick="goBackToRefDesignPhase()">← Back to Design Phase</button>
+            </div>
+          </div>
+
+          <!-- Listing Phase (shown after design complete) -->
+          <div class="full-listing-phase hidden" id="ref-full-listing-phase">
+            <div class="listing-phase-nav">
+              <button class="btn outline small" onclick="goBackToRefDesignPhase()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Back to Design Phase
+              </button>
+            </div>
+            <h3>📋 Phase 2: Listing Optimization</h3>
+
+            <!-- 1-Hour Listing Glow-Up intro -->
+            <div class="glowup-intro">
+              <h3>1-Hour Listing Glow-Up</h3>
+              <p><em>Pick ONE listing from your FIX pile. Set a timer. Follow the steps. Don't overthink it.</em></p>
+            </div>
+
+            <!-- Progress Bar for stages -->
+            <div class="glowup-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" id="ref-full-listing-progress-fill" style="width: 0%"></div>
+              </div>
+              <div class="progress-row">
+                <div class="progress-text"><span id="ref-full-listing-stages-done">1</span> / 8 stages complete</div>
+                <button class="reset-btn-inline" onclick="resetRefFullGlowup()">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Reset
+                </button>
+              </div>
+            </div>
+
+            <p class="text-muted">Now optimize title, tags, description, pricing, and images.</p>
+            <!-- This will reference the same stages but in a simplified checklist format -->
+            <div class="checklist">
+              <div class="checklist-item" onclick="toggleCheck(event, 'rflc1')"><div class="checkbox teal" id="check-rflc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rflc2')"><div class="checkbox teal" id="check-rflc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rflc3')"><div class="checkbox teal" id="check-rflc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rflc4')"><div class="checkbox teal" id="check-rflc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rflc5')"><div class="checkbox teal" id="check-rflc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rflc6')"><div class="checkbox teal" id="check-rflc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Add freebie (optional)</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'rflc7')"><div class="checkbox teal" id="check-rflc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review & publish</span></div>
+            </div>
+
+            <button class="btn teal" onclick="completeRefFullGlowup()">✓ Full Glow-Up Done</button>
+          </div>
+
+          <!-- Full Complete Screen -->
+          <div class="transition-screen hidden" id="ref-full-complete">
+            <div class="transition-screen-icon" style="background: linear-gradient(135deg, var(--coral-light), var(--teal-light));">
+              <span style="font-size: 2rem;">🎉</span>
+            </div>
+            <h3>🎉 Full Glow-Up complete!</h3>
+            <p>New design + fully optimized listing.<br><strong>That's a listing that's ready to sell.</strong></p>
+            <div class="transition-screen-buttons">
+              <button class="btn" onclick="doAnotherRefGlowup()">Do Another</button>
+              <button class="btn outline" onclick="backToRefPathSelector()">Back to Path Selection</button>
+            </div>
           </div>
         </div>
 
@@ -10974,6 +11096,51 @@ function updateFullProgress(steps) {
   if (text) text.textContent = steps;
 }
 
+function goBackToFullDesignPhase() {
+  // Hide transition and listing phase, show design phase
+  const designPhase = document.getElementById('full-design-phase');
+  const transition = document.getElementById('full-transition');
+  const listingPhase = document.getElementById('full-listing-phase');
+
+  if (transition) transition.classList.add('hidden');
+  if (listingPhase) listingPhase.classList.add('hidden');
+  if (designPhase) designPhase.classList.remove('hidden');
+}
+
+function resetFullGlowup() {
+  // Reset all phases to initial state
+  const designPhase = document.getElementById('full-design-phase');
+  const transition = document.getElementById('full-transition');
+  const listingPhase = document.getElementById('full-listing-phase');
+  const completeScreen = document.getElementById('full-complete');
+
+  if (designPhase) designPhase.classList.remove('hidden');
+  if (transition) transition.classList.add('hidden');
+  if (listingPhase) listingPhase.classList.add('hidden');
+  if (completeScreen) completeScreen.classList.add('hidden');
+
+  // Clear design phase checkboxes
+  for (let i = 1; i <= 6; i++) {
+    const checkbox = document.getElementById('check-fdc' + i);
+    if (checkbox) checkbox.classList.remove('checked');
+    localStorage.removeItem('sl-check-fdc' + i);
+  }
+
+  // Clear listing phase checkboxes
+  for (let i = 1; i <= 7; i++) {
+    const checkbox = document.getElementById('check-flc' + i);
+    if (checkbox) checkbox.classList.remove('checked');
+    localStorage.removeItem('sl-check-flc' + i);
+  }
+
+  // Clear localStorage
+  localStorage.removeItem('sl-full-design-complete');
+  localStorage.removeItem('sl-full-glowup-complete');
+
+  // Reset progress
+  updateFullProgress(0);
+}
+
 // Load saved path on page load
 function loadGlowupPath() {
   const savedPath = localStorage.getItem('sl-glowup-path');
@@ -11135,6 +11302,105 @@ function backToRefPathSelector() {
   if (designSection) designSection.classList.remove('active');
   if (listingSection) listingSection.classList.add('hidden');
   if (fullSection) fullSection.classList.add('hidden');
+
+  // Reset ref full glow-up phases when going back to path selector
+  resetRefFullGlowupPhases();
+}
+
+// ========================================
+// REFERENCE MODE FULL GLOW-UP FUNCTIONS
+// ========================================
+
+function completeRefFullDesignPhase() {
+  // Hide design phase, show transition
+  const designPhase = document.getElementById('ref-full-design-phase');
+  const transition = document.getElementById('ref-full-transition');
+  if (designPhase) designPhase.classList.add('hidden');
+  if (transition) transition.classList.remove('hidden');
+
+  // Update progress
+  updateRefFullProgress(6);
+  localStorage.setItem('sl-ref-full-design-complete', 'true');
+}
+
+function startRefFullListingPhase() {
+  // Hide transition, show listing phase
+  const transition = document.getElementById('ref-full-transition');
+  const listingPhase = document.getElementById('ref-full-listing-phase');
+  if (transition) transition.classList.add('hidden');
+  if (listingPhase) listingPhase.classList.remove('hidden');
+}
+
+function goBackToRefDesignPhase() {
+  // Hide transition and listing phase, show design phase
+  const designPhase = document.getElementById('ref-full-design-phase');
+  const transition = document.getElementById('ref-full-transition');
+  const listingPhase = document.getElementById('ref-full-listing-phase');
+
+  if (transition) transition.classList.add('hidden');
+  if (listingPhase) listingPhase.classList.add('hidden');
+  if (designPhase) designPhase.classList.remove('hidden');
+}
+
+function completeRefFullGlowup() {
+  // Hide listing phase, show complete screen
+  const listingPhase = document.getElementById('ref-full-listing-phase');
+  const completeScreen = document.getElementById('ref-full-complete');
+  if (listingPhase) listingPhase.classList.add('hidden');
+  if (completeScreen) completeScreen.classList.remove('hidden');
+
+  updateRefFullProgress(14);
+  localStorage.setItem('sl-ref-full-glowup-complete', 'true');
+}
+
+function updateRefFullProgress(steps) {
+  const fill = document.getElementById('ref-full-progress-fill');
+  const text = document.getElementById('ref-full-steps-done');
+  const pct = Math.round((steps / 14) * 100);
+  if (fill) fill.style.width = pct + '%';
+  if (text) text.textContent = steps;
+}
+
+function resetRefFullGlowup() {
+  // Reset all phases to initial state
+  resetRefFullGlowupPhases();
+
+  // Clear checkboxes
+  for (let i = 1; i <= 6; i++) {
+    const checkbox = document.getElementById('check-rfc' + i);
+    if (checkbox) checkbox.classList.remove('checked');
+    localStorage.removeItem('sl-check-rfc' + i);
+  }
+  for (let i = 1; i <= 7; i++) {
+    const checkbox = document.getElementById('check-rflc' + i);
+    if (checkbox) checkbox.classList.remove('checked');
+    localStorage.removeItem('sl-check-rflc' + i);
+  }
+
+  // Clear localStorage
+  localStorage.removeItem('sl-ref-full-design-complete');
+  localStorage.removeItem('sl-ref-full-glowup-complete');
+
+  // Reset progress
+  updateRefFullProgress(0);
+}
+
+function resetRefFullGlowupPhases() {
+  // Show design phase, hide everything else
+  const designPhase = document.getElementById('ref-full-design-phase');
+  const transition = document.getElementById('ref-full-transition');
+  const listingPhase = document.getElementById('ref-full-listing-phase');
+  const completeScreen = document.getElementById('ref-full-complete');
+
+  if (designPhase) designPhase.classList.remove('hidden');
+  if (transition) transition.classList.add('hidden');
+  if (listingPhase) listingPhase.classList.add('hidden');
+  if (completeScreen) completeScreen.classList.add('hidden');
+}
+
+function doAnotherRefGlowup() {
+  // Reset everything and go back to design phase
+  resetRefFullGlowup();
 }
 
 // ========================================
