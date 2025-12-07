@@ -263,21 +263,50 @@
       margin-bottom: 1.5rem;
     }
 
-    /* AI Stamp - Wax seal style, positioned */
-    .hero-ai-stamp {
-      position: absolute;
-      top: -8px;
-      right: -45px;
-      width: 72px;
-      height: 72px;
-      transform: rotate(12deg);
-      z-index: 2;
+    /* Robot + Badge Row */
+    .hero-ai-badge-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
     }
 
-    .hero-ai-stamp svg {
+    /* Mini Robot beside badge */
+    .hero-robot-mini {
+      width: 50px;
+      height: 60px;
+      animation: robotWiggle 3s ease-in-out infinite;
+    }
+
+    @keyframes robotWiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    .hero-robot-mini svg {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 2px 4px rgba(45, 91, 78, 0.2));
+      filter: drop-shadow(0 4px 10px rgba(45, 139, 139, 0.25));
+    }
+
+    /* AI Badge pill */
+    .hero-ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #2D5B4E 0%, #1F6B6B 100%);
+      padding: 0.6rem 1.25rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(45, 91, 78, 0.3);
+    }
+
+    .hero-ai-badge-text {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: white;
+      text-transform: uppercase;
     }
 
     .hero-main-title {
@@ -5627,24 +5656,60 @@
 
       <!-- Title Lockup - Integrated Design -->
       <div class="hero-title-lockup">
-        <!-- AI Stamp - Wax seal style -->
-        <div class="hero-ai-stamp">
-          <svg viewBox="0 0 72 72" fill="none">
-            <!-- Outer ring with notches -->
-            <circle cx="36" cy="36" r="32" fill="#2D5B4E"/>
-            <circle cx="36" cy="36" r="28" fill="none" stroke="#3D7B6E" stroke-width="1" stroke-dasharray="4 3"/>
-            <!-- Inner content -->
-            <circle cx="36" cy="36" r="24" fill="#2D5B4E"/>
-            <!-- AI text -->
-            <text x="36" y="34" text-anchor="middle" fill="white" font-family="Satoshi, sans-serif" font-weight="700" font-size="14">AI</text>
-            <!-- Decorative line -->
-            <line x1="24" y1="40" x2="48" y2="40" stroke="#4A9B8B" stroke-width="1"/>
-            <!-- POWERED text -->
-            <text x="36" y="50" text-anchor="middle" fill="#8BBBB0" font-family="Satoshi, sans-serif" font-weight="600" font-size="6" letter-spacing="1">POWERED</text>
-            <!-- Small decorative dots -->
-            <circle cx="20" cy="36" r="1.5" fill="#4A9B8B"/>
-            <circle cx="52" cy="36" r="1.5" fill="#4A9B8B"/>
-          </svg>
+        <!-- Robot + AI Badge Row -->
+        <div class="hero-ai-badge-row">
+          <!-- Cute Robot Mascot (smaller, beside badge) -->
+          <div class="hero-robot-mini">
+            <svg viewBox="0 0 50 60" fill="none">
+              <!-- Antenna -->
+              <line x1="25" y1="10" x2="25" y2="4" stroke="#2D8B8B" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="25" cy="3" r="3" fill="#FFD93D">
+                <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+              </circle>
+
+              <!-- Robot Head -->
+              <rect x="5" y="10" width="40" height="32" rx="10" fill="url(#robotGradientMini)"/>
+              <rect x="8" y="13" width="34" height="26" rx="7" fill="white" opacity="0.95"/>
+
+              <!-- Eyes -->
+              <ellipse cx="18" cy="26" rx="5" ry="6" fill="#2D5B4E">
+                <animate attributeName="ry" values="6;2;6" dur="4s" repeatCount="indefinite"/>
+              </ellipse>
+              <ellipse cx="32" cy="26" rx="5" ry="6" fill="#2D5B4E">
+                <animate attributeName="ry" values="6;2;6" dur="4s" repeatCount="indefinite"/>
+              </ellipse>
+
+              <!-- Eye shines -->
+              <circle cx="20" cy="24" r="2" fill="white"/>
+              <circle cx="34" cy="24" r="2" fill="white"/>
+
+              <!-- Rosy cheeks -->
+              <ellipse cx="9" cy="30" rx="3" ry="2" fill="#E8927C" opacity="0.5"/>
+              <ellipse cx="41" cy="30" rx="3" ry="2" fill="#E8927C" opacity="0.5"/>
+
+              <!-- Happy smile -->
+              <path d="M18 34 Q25 40 32 34" stroke="#2D5B4E" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+              <!-- Ears -->
+              <rect x="0" y="20" width="5" height="10" rx="2" fill="#4ECDC4"/>
+              <rect x="45" y="20" width="5" height="10" rx="2" fill="#4ECDC4"/>
+
+              <!-- Body hint -->
+              <rect x="15" y="42" width="20" height="14" rx="5" fill="url(#robotGradientMini)" opacity="0.6"/>
+
+              <defs>
+                <linearGradient id="robotGradientMini" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#4ECDC4"/>
+                  <stop offset="100%" style="stop-color:#2D8B8B"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- AI Badge pill -->
+          <div class="hero-ai-badge">
+            <span class="hero-ai-badge-text">AI-Powered</span>
+          </div>
         </div>
 
         <!-- Main Title -->
@@ -5675,7 +5740,7 @@
         <!-- Subtitle -->
         <div class="hero-subtitle">
           <span class="hero-subtitle-line"></span>
-          <span class="hero-subtitle-text">System</span>
+          <span class="hero-subtitle-text">App</span>
           <span class="hero-subtitle-line"></span>
         </div>
       </div>
@@ -6044,7 +6109,7 @@
                 <span class="speed-phase-label">PREP</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg1"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" id="check-dg1" onclick="toggleCheck(event, 'dg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: CREATE -->
               <div class="speed-phase">
@@ -6054,11 +6119,11 @@
                 <span class="speed-phase-label">CREATE</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg2"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" id="check-dg2" onclick="toggleCheck(event, 'dg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg3"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" id="check-dg3" onclick="toggleCheck(event, 'dg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg4"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" id="check-dg4" onclick="toggleCheck(event, 'dg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg5"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" id="check-dg5" onclick="toggleCheck(event, 'dg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg6"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" id="check-dg6" onclick="toggleCheck(event, 'dg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: PUBLISH -->
               <div class="speed-phase">
@@ -6068,8 +6133,8 @@
                 <span class="speed-phase-label">PUBLISH</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg7"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" id="check-dg7" onclick="toggleCheck(event, 'dg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-dg8"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" id="check-dg8" onclick="toggleCheck(event, 'dg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
             </div>
           </div>
 
@@ -9140,7 +9205,7 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
                 <span class="speed-phase-label">PREP</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg1"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" id="check-rdg1" onclick="toggleCheck(event, 'rdg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: CREATE -->
               <div class="speed-phase">
@@ -9150,11 +9215,11 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
                 <span class="speed-phase-label">CREATE</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg2"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" id="check-rdg2" onclick="toggleCheck(event, 'rdg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg3"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" id="check-rdg3" onclick="toggleCheck(event, 'rdg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg4"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" id="check-rdg4" onclick="toggleCheck(event, 'rdg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg5"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" id="check-rdg5" onclick="toggleCheck(event, 'rdg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg6"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" id="check-rdg6" onclick="toggleCheck(event, 'rdg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: PUBLISH -->
               <div class="speed-phase">
@@ -9164,8 +9229,8 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
                 <span class="speed-phase-label">PUBLISH</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg7"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" id="check-rdg7" onclick="toggleCheck(event, 'rdg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row" id="row-rdg8"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" id="check-rdg8" onclick="toggleCheck(event, 'rdg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
             </div>
           </div>
 
@@ -10827,9 +10892,15 @@ function toggleStageCheck(stageNum, itemNum, prefix) {
   const id = stageNum + '-' + itemNum;
   const storageKey = prefix + id;
   stageChecks[storageKey] = !stageChecks[storageKey];
-  const el = document.getElementById(prefix + 'sc-' + id);
+  const elId = prefix + 'sc-' + id;
+  const el = document.getElementById(elId);
   if (el) {
-    el.classList.toggle('checked', stageChecks[storageKey]);
+    // Toggle 'checked' on the parent .stage-check-item, not on .stage-checkbox
+    // CSS expects .stage-check-item.checked to style the checkbox
+    const parentItem = el.closest('.stage-check-item');
+    if (parentItem) {
+      parentItem.classList.toggle('checked', stageChecks[storageKey]);
+    }
   }
   saveGlowupState();
 }
@@ -10982,7 +11053,11 @@ function restoreGlowupState() {
       Object.keys(stageChecks).forEach(id => {
         if (stageChecks[id]) {
           const el = document.getElementById('sc-' + id);
-          if (el) el.classList.add('checked');
+          if (el) {
+            // Add 'checked' to parent .stage-check-item, not .stage-checkbox
+            const parentItem = el.closest('.stage-check-item');
+            if (parentItem) parentItem.classList.add('checked');
+          }
         }
       });
 
@@ -11005,32 +11080,33 @@ function resetGlowup() {
   stageChecks = {};
   localStorage.removeItem('sl-glowup');
 
-  // Reset all stages visually
-  for (let i = 0; i <= 7; i++) {
-    const stage = document.getElementById('stage-' + i);
-    if (!stage) continue;
-
-    stage.classList.remove('completed', 'active', 'expanded');
-    if (i === 0) {
+  // Reset ALL stage elements on the page (including cloned ones)
+  const allStages = document.querySelectorAll('.stage');
+  allStages.forEach(stage => {
+    const stageNum = stage.getAttribute('data-stage');
+    stage.classList.remove('completed', 'active', 'expanded', 'first-view');
+    if (stageNum === '0') {
       stage.classList.add('active');
     } else {
       stage.classList.add('locked');
     }
-
     // Reset all checkboxes in this stage
-    const checks = stage.querySelectorAll('.stage-check');
+    const checks = stage.querySelectorAll('.stage-check-item');
     checks.forEach(check => check.classList.remove('checked'));
-  }
+  });
 
-  // Reset progress bar
-  const fill = document.getElementById('glowup-fill');
-  const text = document.getElementById('glowup-progress-text');
-  if (fill) fill.style.width = '0%';
-  if (text) text.textContent = '0 of 8';
+  // Reset ALL progress bars (including cloned ones)
+  document.querySelectorAll('.progress-fill').forEach(fill => {
+    fill.style.width = '0%';
+  });
+  document.querySelectorAll('[id$="stages-done"]').forEach(text => {
+    text.textContent = '0';
+  });
 
-  // Hide completion message
-  const completeBox = document.getElementById('glowup-complete');
-  if (completeBox) completeBox.classList.add('hidden');
+  // Hide ALL completion messages
+  document.querySelectorAll('[id$="glowup-complete"]').forEach(box => {
+    box.classList.add('hidden');
+  });
 
   // Scroll to top of section
   const section = document.getElementById('step-2');
@@ -11069,6 +11145,8 @@ function selectGlowupPath(path) {
     if (listingSection) listingSection.classList.remove('hidden');
   } else if (path === 'full') {
     if (fullSection) fullSection.classList.remove('hidden');
+    // Populate with full Design Glow-Up content
+    setTimeout(populateFullDesignPhase, 50);
   }
 }
 
@@ -11128,8 +11206,8 @@ function doAnotherGlowup() {
 }
 
 function backToWorkflows() {
-  // Go back to workflow selection
-  setMode('reference');
+  // Go back to path selector (choose your adventure)
+  backToPathSelector();
 }
 
 // Full Glow-Up functions
@@ -11143,6 +11221,114 @@ function completeFullDesignPhase() {
   // Update progress
   updateFullProgress(6);
   localStorage.setItem('sl-full-design-complete', 'true');
+}
+
+let fullDesignPopulated = false;
+
+function populateFullDesignPhase() {
+  if (fullDesignPopulated) return;
+
+  const sourceSection = document.getElementById('design-glowup');
+  const targetPhase = document.getElementById('full-design-phase');
+
+  if (sourceSection && targetPhase) {
+    // Clone Speed Card
+    const speedCard = sourceSection.querySelector('.speed-card');
+    if (speedCard) {
+      const speedCardClone = speedCard.cloneNode(true);
+      speedCardClone.id = 'full-speed-card-glowup';
+      // Update all IDs in the clone
+      speedCardClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'full-' + el.id;
+      });
+      // Update onclick handlers
+      speedCardClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/toggleCheck\(event,\s*'dg/g, "toggleCheck(event, 'full-dg");
+        onclick = onclick.replace(/getElementById\('/g, "getElementById('full-");
+        el.setAttribute('onclick', onclick);
+      });
+      // Insert after intro
+      const intro = targetPhase.querySelector('.design-intro');
+      if (intro) intro.after(speedCardClone);
+    }
+
+    // Clone Checklist (the h3 and checklist div together)
+    const checklist = sourceSection.querySelector('.checklist');
+    const checklistH3 = sourceSection.querySelector('h3.mt-2');
+    if (checklist && checklistH3) {
+      const h3Clone = checklistH3.cloneNode(true);
+      const checklistClone = checklist.cloneNode(true);
+      // Update IDs
+      checklistClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'full-' + el.id;
+      });
+      // Update onclick handlers
+      checklistClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/toggleCheck\(event,\s*'dgc/g, "toggleCheck(event, 'full-dgc");
+        el.setAttribute('onclick', onclick);
+      });
+      // Remove the existing simple checklist
+      const existingChecklist = targetPhase.querySelector('.checklist');
+      if (existingChecklist) {
+        existingChecklist.before(h3Clone);
+        existingChecklist.replaceWith(checklistClone);
+      }
+    }
+
+    // Clone Prompts Vault
+    const promptsVault = sourceSection.querySelector('.prompts-vault');
+    if (promptsVault) {
+      const promptsClone = promptsVault.cloneNode(true);
+      promptsClone.id = 'full-qr-glowup-prompts';
+      // Update all IDs
+      promptsClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'full-' + el.id;
+      });
+      // Update onclick handlers
+      promptsClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/getElementById\('qr-glowup-prompts'\)/g, "getElementById('full-qr-glowup-prompts')");
+        onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('full-pc-glowup-");
+        el.setAttribute('onclick', onclick);
+      });
+      // Insert before the done button
+      const doneBtn = targetPhase.querySelector('.btn');
+      if (doneBtn) doneBtn.before(promptsClone);
+    }
+
+    // Clone Bailey's Rules
+    const baileysRules = sourceSection.querySelector('.baileys-rules');
+    if (baileysRules) {
+      const rulesClone = baileysRules.cloneNode(true);
+      rulesClone.id = 'full-acc-design-rules';
+      // Update onclick
+      rulesClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/getElementById\('acc-design-rules'\)/g, "getElementById('full-acc-design-rules')");
+        el.setAttribute('onclick', onclick);
+      });
+      // Insert before the done button
+      const doneBtn = targetPhase.querySelector('.btn');
+      if (doneBtn) doneBtn.before(rulesClone);
+    }
+
+    // Clone FAQ Zone (Where You'll Get Stuck)
+    const faqZone = sourceSection.querySelector('.faq-zone');
+    if (faqZone) {
+      const faqClone = faqZone.cloneNode(true);
+      // Update any IDs
+      faqClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'full-' + el.id;
+      });
+      // Insert before the done button
+      const doneBtn = targetPhase.querySelector('.btn');
+      if (doneBtn) doneBtn.before(faqClone);
+    }
+
+    fullDesignPopulated = true;
+  }
 }
 
 let fullListingPopulated = false;
@@ -11175,7 +11361,16 @@ function populateFullListingStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'full-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'full-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'full-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('full-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('full-improve-");
       el.setAttribute('onclick', onclick);
+    });
+
+    // CRITICAL: Unlock all stages so clicks work
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
     });
 
     // Remove the simple checklist and replace with full stages
@@ -11319,7 +11514,17 @@ function populateRefListingStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'ref-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'ref-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'ref-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('ref-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('ref-improve-");
       el.setAttribute('onclick', onclick);
+    });
+
+    // CRITICAL: Unlock all stages so clicks work in Quick Reference mode
+    // The locked class has pointer-events: none which blocks ALL clicks
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
     });
 
     // Insert after the back button but before the existing content
@@ -11373,7 +11578,16 @@ function populateRefFullStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'reffull-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'reffull-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'reffull-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('reffull-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('reffull-improve-");
       el.setAttribute('onclick', onclick);
+    });
+
+    // CRITICAL: Unlock all stages so clicks work
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
     });
 
     // Replace the simple Phase 2 checklist with the full stages
@@ -11422,8 +11636,117 @@ function selectRefGlowupPath(path) {
     setTimeout(populateRefListingStages, 50);
   } else if (path === 'full') {
     if (fullSection) fullSection.classList.remove('hidden');
-    // Populate with full stages from challenge mode
+    // Populate with full Design Glow-Up content and listing stages
+    setTimeout(populateRefFullDesignPhase, 50);
     setTimeout(populateRefFullStages, 50);
+  }
+}
+
+let refFullDesignPopulated = false;
+
+function populateRefFullDesignPhase() {
+  if (refFullDesignPopulated) return;
+
+  const sourceSection = document.getElementById('ref-design-glowup');
+  const targetPhase = document.getElementById('ref-full-design-phase');
+
+  if (sourceSection && targetPhase) {
+    // Clone Speed Card
+    const speedCard = sourceSection.querySelector('.speed-card');
+    if (speedCard) {
+      const speedCardClone = speedCard.cloneNode(true);
+      speedCardClone.id = 'reffull-speed-card-glowup';
+      // Update all IDs in the clone
+      speedCardClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'reffull-' + el.id;
+      });
+      // Update onclick handlers
+      speedCardClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/toggleCheck\(event,\s*'rdg/g, "toggleCheck(event, 'reffull-rdg");
+        onclick = onclick.replace(/getElementById\('/g, "getElementById('reffull-");
+        el.setAttribute('onclick', onclick);
+      });
+      // Insert after intro
+      const intro = targetPhase.querySelector('.design-intro');
+      if (intro) intro.after(speedCardClone);
+    }
+
+    // Clone Checklist
+    const checklist = sourceSection.querySelector('.checklist');
+    const checklistH3 = sourceSection.querySelector('h3.mt-2');
+    if (checklist && checklistH3) {
+      const h3Clone = checklistH3.cloneNode(true);
+      const checklistClone = checklist.cloneNode(true);
+      // Update IDs
+      checklistClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'reffull-' + el.id;
+      });
+      // Update onclick handlers
+      checklistClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/toggleCheck\(event,\s*'rdgc/g, "toggleCheck(event, 'reffull-rdgc");
+        el.setAttribute('onclick', onclick);
+      });
+      // Remove the existing simple checklist
+      const existingChecklist = targetPhase.querySelector('.checklist');
+      if (existingChecklist) {
+        existingChecklist.before(h3Clone);
+        existingChecklist.replaceWith(checklistClone);
+      }
+    }
+
+    // Clone Prompts Vault
+    const promptsVault = sourceSection.querySelector('.prompts-vault');
+    if (promptsVault) {
+      const promptsClone = promptsVault.cloneNode(true);
+      promptsClone.id = 'reffull-qr-ref-glowup-prompts';
+      // Update all IDs
+      promptsClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'reffull-' + el.id;
+      });
+      // Update onclick handlers
+      promptsClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/getElementById\('qr-ref-glowup-prompts'\)/g, "getElementById('reffull-qr-ref-glowup-prompts')");
+        onclick = onclick.replace(/getElementById\('pc-ref-glowup-/g, "getElementById('reffull-pc-ref-glowup-");
+        el.setAttribute('onclick', onclick);
+      });
+      // Insert before the done button
+      const doneBtn = targetPhase.querySelector('.btn');
+      if (doneBtn) doneBtn.before(promptsClone);
+    }
+
+    // Clone Bailey's Rules
+    const baileysRules = sourceSection.querySelector('.baileys-rules');
+    if (baileysRules) {
+      const rulesClone = baileysRules.cloneNode(true);
+      rulesClone.id = 'reffull-acc-ref-design-rules';
+      // Update onclick
+      rulesClone.querySelectorAll('[onclick]').forEach(el => {
+        let onclick = el.getAttribute('onclick');
+        onclick = onclick.replace(/getElementById\('acc-ref-design-rules'\)/g, "getElementById('reffull-acc-ref-design-rules')");
+        el.setAttribute('onclick', onclick);
+      });
+      // Insert before the done button
+      const doneBtn = targetPhase.querySelector('.btn');
+      if (doneBtn) doneBtn.before(rulesClone);
+    }
+
+    // Clone FAQ Zone (Where You'll Get Stuck)
+    const faqZone = sourceSection.querySelector('.faq-zone');
+    if (faqZone) {
+      const faqClone = faqZone.cloneNode(true);
+      // Update any IDs
+      faqClone.querySelectorAll('[id]').forEach(el => {
+        el.id = 'reffull-' + el.id;
+      });
+      // Insert before the done button
+      const doneBtn = targetPhase.querySelector('.btn');
+      if (doneBtn) doneBtn.before(faqClone);
+    }
+
+    refFullDesignPopulated = true;
   }
 }
 
@@ -11491,7 +11814,16 @@ function populateRefFullListingStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'reffull-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'reffull-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'reffull-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('reffull-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('reffull-improve-");
       el.setAttribute('onclick', onclick);
+    });
+
+    // CRITICAL: Unlock all stages so clicks work
+    clone.querySelectorAll('.stage').forEach(stage => {
+      stage.classList.remove('locked');
+      stage.classList.add('active', 'expanded');
     });
 
     // Append the cloned stages to the container
