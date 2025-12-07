@@ -11296,6 +11296,9 @@ function populateFullListingStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'full-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'full-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'full-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('full-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('full-improve-");
       el.setAttribute('onclick', onclick);
     });
 
@@ -11440,6 +11443,9 @@ function populateRefListingStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'ref-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'ref-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'ref-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('ref-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('ref-improve-");
       el.setAttribute('onclick', onclick);
     });
 
@@ -11494,6 +11500,9 @@ function populateRefFullStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'reffull-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'reffull-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'reffull-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('reffull-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('reffull-improve-");
       el.setAttribute('onclick', onclick);
     });
 
@@ -11721,6 +11730,9 @@ function populateRefFullListingStages() {
       onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'reffull-')");
       onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'reffull-')");
       onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'reffull-')");
+      // Update toggleExpand and toggleImprove calls
+      onclick = onclick.replace(/toggleExpand\('expand-/g, "toggleExpand('reffull-expand-");
+      onclick = onclick.replace(/toggleImprove\('improve-/g, "toggleImprove('reffull-improve-");
       el.setAttribute('onclick', onclick);
     });
 
