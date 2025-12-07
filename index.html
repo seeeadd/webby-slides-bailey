@@ -11033,10 +11033,10 @@ function resetGlowup() {
   }
 
   // Reset progress bar
-  const fill = document.getElementById('glowup-fill');
-  const text = document.getElementById('glowup-progress-text');
+  const fill = document.getElementById('glowup-progress-fill');
+  const text = document.getElementById('glowup-stages-done');
   if (fill) fill.style.width = '0%';
-  if (text) text.textContent = '0 of 8';
+  if (text) text.textContent = '0';
 
   // Hide completion message
   const completeBox = document.getElementById('glowup-complete');
