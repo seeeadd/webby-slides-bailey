@@ -263,21 +263,44 @@
       margin-bottom: 1.5rem;
     }
 
-    /* AI Stamp - Wax seal style, positioned on LEFT */
-    .hero-ai-stamp {
-      position: absolute;
-      top: -8px;
-      left: -50px;
-      width: 72px;
-      height: 72px;
-      transform: rotate(-12deg);
-      z-index: 2;
+    /* AI Badge - Prominent pill style above title */
+    .hero-ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #2D5B4E 0%, #1F6B6B 100%);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(45, 91, 78, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+      animation: badgeGlow 3s ease-in-out infinite;
     }
 
-    .hero-ai-stamp svg {
+    @keyframes badgeGlow {
+      0%, 100% { box-shadow: 0 4px 15px rgba(45, 91, 78, 0.3), inset 0 1px 0 rgba(255,255,255,0.1); }
+      50% { box-shadow: 0 4px 25px rgba(45, 91, 78, 0.5), inset 0 1px 0 rgba(255,255,255,0.1); }
+    }
+
+    .hero-ai-badge-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-ai-badge-icon svg {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 3px 6px rgba(45, 91, 78, 0.25));
+    }
+
+    .hero-ai-badge-text {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: white;
+      text-transform: uppercase;
     }
 
     .hero-main-title {
@@ -5627,24 +5650,15 @@
 
       <!-- Title Lockup - Integrated Design -->
       <div class="hero-title-lockup">
-        <!-- AI Stamp - Wax seal style -->
-        <div class="hero-ai-stamp">
-          <svg viewBox="0 0 72 72" fill="none">
-            <!-- Outer ring with notches -->
-            <circle cx="36" cy="36" r="32" fill="#2D5B4E"/>
-            <circle cx="36" cy="36" r="28" fill="none" stroke="#3D7B6E" stroke-width="1" stroke-dasharray="4 3"/>
-            <!-- Inner content -->
-            <circle cx="36" cy="36" r="24" fill="#2D5B4E"/>
-            <!-- AI text -->
-            <text x="36" y="34" text-anchor="middle" fill="white" font-family="Satoshi, sans-serif" font-weight="700" font-size="14">AI</text>
-            <!-- Decorative line -->
-            <line x1="24" y1="40" x2="48" y2="40" stroke="#4A9B8B" stroke-width="1"/>
-            <!-- POWERED text -->
-            <text x="36" y="50" text-anchor="middle" fill="#8BBBB0" font-family="Satoshi, sans-serif" font-weight="600" font-size="6" letter-spacing="1">POWERED</text>
-            <!-- Small decorative dots -->
-            <circle cx="20" cy="36" r="1.5" fill="#4A9B8B"/>
-            <circle cx="52" cy="36" r="1.5" fill="#4A9B8B"/>
-          </svg>
+        <!-- AI Badge - Prominent pill above title -->
+        <div class="hero-ai-badge">
+          <span class="hero-ai-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z" fill="white" opacity="0.9"/>
+              <circle cx="12" cy="12" r="4" fill="white"/>
+            </svg>
+          </span>
+          <span class="hero-ai-badge-text">AI-Powered</span>
         </div>
 
         <!-- Main Title -->
@@ -5675,7 +5689,7 @@
         <!-- Subtitle -->
         <div class="hero-subtitle">
           <span class="hero-subtitle-line"></span>
-          <span class="hero-subtitle-text">System</span>
+          <span class="hero-subtitle-text">App</span>
           <span class="hero-subtitle-line"></span>
         </div>
       </div>
