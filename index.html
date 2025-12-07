@@ -10829,7 +10829,12 @@ function toggleStageCheck(stageNum, itemNum, prefix) {
   stageChecks[storageKey] = !stageChecks[storageKey];
   const el = document.getElementById(prefix + 'sc-' + id);
   if (el) {
-    el.classList.toggle('checked', stageChecks[storageKey]);
+    // Toggle 'checked' on the parent .stage-check-item, not on .stage-checkbox
+    // CSS expects .stage-check-item.checked to style the checkbox
+    const parentItem = el.closest('.stage-check-item');
+    if (parentItem) {
+      parentItem.classList.toggle('checked', stageChecks[storageKey]);
+    }
   }
   saveGlowupState();
 }
@@ -10982,7 +10987,11 @@ function restoreGlowupState() {
       Object.keys(stageChecks).forEach(id => {
         if (stageChecks[id]) {
           const el = document.getElementById('sc-' + id);
-          if (el) el.classList.add('checked');
+          if (el) {
+            // Add 'checked' to parent .stage-check-item, not .stage-checkbox
+            const parentItem = el.closest('.stage-check-item');
+            if (parentItem) parentItem.classList.add('checked');
+          }
         }
       });
 
@@ -11018,7 +11027,7 @@ function resetGlowup() {
     }
 
     // Reset all checkboxes in this stage
-    const checks = stage.querySelectorAll('.stage-check');
+    const checks = stage.querySelectorAll('.stage-check-item');
     checks.forEach(check => check.classList.remove('checked'));
   }
 
