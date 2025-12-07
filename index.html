@@ -5742,12 +5742,12 @@
 
         <h3 class="mt-2">Open Your Tools</h3>
         <div class="checklist">
-          <div class="checklist-item" onclick="toggleCheck('setup-etsy')"><div class="checkbox" id="check-setup-etsy"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Etsy (logged in)</span></div>
-          <div class="checklist-item" onclick="toggleCheck('setup-chatgpt')"><div class="checkbox" id="check-setup-chatgpt"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">ChatGPT</span></div>
-          <div class="checklist-item" onclick="toggleCheck('setup-kittl')"><div class="checkbox" id="check-setup-kittl"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Kittl</span></div>
-          <div class="checklist-item" onclick="toggleCheck('setup-ps')"><div class="checkbox" id="check-setup-ps"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Photoshop</span></div>
-          <div class="checklist-item" onclick="toggleCheck('setup-bulk')"><div class="checkbox" id="check-setup-bulk"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">BulkMockup</span></div>
-          <div class="checklist-item" onclick="toggleCheck('setup-vela')"><div class="checkbox" id="check-setup-vela"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Vela</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'setup-etsy')"><div class="checkbox" id="check-setup-etsy"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Etsy (logged in)</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'setup-chatgpt')"><div class="checkbox" id="check-setup-chatgpt"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">ChatGPT</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'setup-kittl')"><div class="checkbox" id="check-setup-kittl"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Kittl</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'setup-ps')"><div class="checkbox" id="check-setup-ps"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Photoshop</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'setup-bulk')"><div class="checkbox" id="check-setup-bulk"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">BulkMockup</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'setup-vela')"><div class="checkbox" id="check-setup-vela"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Vela</span></div>
         </div>
 
         <h3 class="mt-2">Have This Handy</h3>
@@ -5975,7 +5975,7 @@
                 <span class="speed-phase-label">PREP</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" onclick="toggleCheck('dg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: CREATE -->
               <div class="speed-phase">
@@ -5985,11 +5985,11 @@
                 <span class="speed-phase-label">CREATE</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" onclick="toggleCheck('dg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" onclick="toggleCheck('dg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" onclick="toggleCheck('dg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" onclick="toggleCheck('dg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" onclick="toggleCheck('dg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: PUBLISH -->
               <div class="speed-phase">
@@ -5999,23 +5999,23 @@
                 <span class="speed-phase-label">PUBLISH</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" onclick="toggleCheck('dg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" onclick="toggleCheck('dg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" onclick="toggleCheck(event, 'dg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
             </div>
           </div>
 
           <!-- Design Glow-Up Checklist -->
           <h3 class="mt-2">Checklist</h3>
           <div class="checklist">
-            <div class="checklist-item" onclick="toggleCheck('dgc1')"><div class="checkbox" id="check-dgc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked a listing with real sales history (not a dead one)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc2')"><div class="checkbox" id="check-dgc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got style variations from ChatGPT</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc3')"><div class="checkbox" id="check-dgc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated upgraded design in Kittl</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc4')"><div class="checkbox" id="check-dgc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Made seamless (if needed)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc5')"><div class="checkbox" id="check-dgc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc6')"><div class="checkbox" id="check-dgc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated listing in Vela</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc7')"><div class="checkbox" id="check-dgc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Swapped images + digital files (kept the SEO)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc8')"><div class="checkbox" id="check-dgc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Set quantity back to 999</span></div>
-            <div class="checklist-item" onclick="toggleCheck('dgc9')"><div class="checkbox" id="check-dgc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc1')"><div class="checkbox" id="check-dgc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked a listing with real sales history (not a dead one)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc2')"><div class="checkbox" id="check-dgc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got style variations from ChatGPT</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc3')"><div class="checkbox" id="check-dgc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated upgraded design in Kittl</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc4')"><div class="checkbox" id="check-dgc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Made seamless (if needed)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc5')"><div class="checkbox" id="check-dgc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc6')"><div class="checkbox" id="check-dgc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated listing in Vela</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc7')"><div class="checkbox" id="check-dgc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Swapped images + digital files (kept the SEO)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc8')"><div class="checkbox" id="check-dgc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Set quantity back to 999</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'dgc9')"><div class="checkbox" id="check-dgc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
           </div>
 
           <!-- PROMPTS VAULT - THE STAR -->
@@ -8591,12 +8591,12 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
 
             <!-- Design checklist for Full path -->
             <div class="checklist">
-              <div class="checklist-item" onclick="toggleCheck('fdc1')"><div class="checkbox" id="check-fdc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked a listing with real sales history</span></div>
-              <div class="checklist-item" onclick="toggleCheck('fdc2')"><div class="checkbox" id="check-fdc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got style variations from ChatGPT</span></div>
-              <div class="checklist-item" onclick="toggleCheck('fdc3')"><div class="checkbox" id="check-fdc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated upgraded design in Kittl</span></div>
-              <div class="checklist-item" onclick="toggleCheck('fdc4')"><div class="checkbox" id="check-fdc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
-              <div class="checklist-item" onclick="toggleCheck('fdc5')"><div class="checkbox" id="check-fdc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated listing and swapped files</span></div>
-              <div class="checklist-item" onclick="toggleCheck('fdc6')"><div class="checkbox" id="check-fdc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published new design</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'fdc1')"><div class="checkbox" id="check-fdc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked a listing with real sales history</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'fdc2')"><div class="checkbox" id="check-fdc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got style variations from ChatGPT</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'fdc3')"><div class="checkbox" id="check-fdc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated upgraded design in Kittl</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'fdc4')"><div class="checkbox" id="check-fdc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'fdc5')"><div class="checkbox" id="check-fdc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated listing and swapped files</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'fdc6')"><div class="checkbox" id="check-fdc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published new design</span></div>
             </div>
 
             <button class="btn" onclick="completeFullDesignPhase()">✓ Design Phase Done → Continue to Listing</button>
@@ -8618,13 +8618,13 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
             <p class="text-muted">Now optimize title, tags, description, pricing, and images.</p>
             <!-- This will reference the same stages but in a simplified checklist format -->
             <div class="checklist">
-              <div class="checklist-item" onclick="toggleCheck('flc1')"><div class="checkbox teal" id="check-flc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images</span></div>
-              <div class="checklist-item" onclick="toggleCheck('flc2')"><div class="checkbox teal" id="check-flc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
-              <div class="checklist-item" onclick="toggleCheck('flc3')"><div class="checkbox teal" id="check-flc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description</span></div>
-              <div class="checklist-item" onclick="toggleCheck('flc4')"><div class="checkbox teal" id="check-flc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags</span></div>
-              <div class="checklist-item" onclick="toggleCheck('flc5')"><div class="checkbox teal" id="check-flc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing</span></div>
-              <div class="checklist-item" onclick="toggleCheck('flc6')"><div class="checkbox teal" id="check-flc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Add freebie (optional)</span></div>
-              <div class="checklist-item" onclick="toggleCheck('flc7')"><div class="checkbox teal" id="check-flc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review & publish</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'flc1')"><div class="checkbox teal" id="check-flc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'flc2')"><div class="checkbox teal" id="check-flc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'flc3')"><div class="checkbox teal" id="check-flc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'flc4')"><div class="checkbox teal" id="check-flc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'flc5')"><div class="checkbox teal" id="check-flc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'flc6')"><div class="checkbox teal" id="check-flc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Add freebie (optional)</span></div>
+              <div class="checklist-item" onclick="toggleCheck(event, 'flc7')"><div class="checkbox teal" id="check-flc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review & publish</span></div>
             </div>
 
             <button class="btn teal" onclick="completeFullGlowup()">✓ Full Glow-Up Done</button>
@@ -9058,7 +9058,7 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
                 <span class="speed-phase-label">PREP</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" onclick="toggleCheck('rdg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">0-5 min</span><span class="step-content"><span class="step-num">1</span>Pick one listing with consistent sales but dated design</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: CREATE -->
               <div class="speed-phase">
@@ -9068,11 +9068,11 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
                 <span class="speed-phase-label">CREATE</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" onclick="toggleCheck('rdg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" onclick="toggleCheck('rdg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" onclick="toggleCheck('rdg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" onclick="toggleCheck('rdg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" onclick="toggleCheck('rdg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">5-10 min</span><span class="step-content"><span class="step-num">2</span>Screenshot → ChatGPT → get 10 style variations</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">10-15 min</span><span class="step-content"><span class="step-num">3</span>Pick one → have ChatGPT write the full Kittl prompt</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">15-25 min</span><span class="step-content"><span class="step-num">4</span>Generate in Kittl (test 2-3 generators)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">25-30 min</span><span class="step-content"><span class="step-num">5</span>Add text manually if needed, upscale, download</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">30-40 min</span><span class="step-content"><span class="step-num">6</span>Make seamless in Photoshop (skip if design doesn't need it)</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
               <!-- PHASE: PUBLISH -->
               <div class="speed-phase">
@@ -9082,23 +9082,23 @@ Just tell me: Is this good enough to publish? Yes or no, and one thing to fix if
                 <span class="speed-phase-label">PUBLISH</span>
                 <div class="speed-phase-line"></div>
               </div>
-              <div class="step-row"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" onclick="toggleCheck('rdg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-              <div class="step-row"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" onclick="toggleCheck('rdg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">40-55 min</span><span class="step-content"><span class="step-num">7</span>BulkMockup → Vela → duplicate listing → swap images + files</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+              <div class="step-row"><span class="step-time">55-60 min</span><span class="step-content"><span class="step-num">8</span>Final check → publish</span><div class="checkbox step-check" onclick="toggleCheck(event, 'rdg8')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
             </div>
           </div>
 
           <!-- Design Glow-Up Checklist -->
           <h3 class="mt-2">Checklist</h3>
           <div class="checklist">
-            <div class="checklist-item" onclick="toggleCheck('rdgc1')"><div class="checkbox" id="check-rdgc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked a listing with real sales history (not a dead one)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc2')"><div class="checkbox" id="check-rdgc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got style variations from ChatGPT</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc3')"><div class="checkbox" id="check-rdgc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated upgraded design in Kittl</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc4')"><div class="checkbox" id="check-rdgc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Made seamless (if needed)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc5')"><div class="checkbox" id="check-rdgc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc6')"><div class="checkbox" id="check-rdgc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated listing in Vela</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc7')"><div class="checkbox" id="check-rdgc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Swapped images + digital files (kept the SEO)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc8')"><div class="checkbox" id="check-rdgc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Set quantity back to 999</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rdgc9')"><div class="checkbox" id="check-rdgc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc1')"><div class="checkbox" id="check-rdgc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked a listing with real sales history (not a dead one)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc2')"><div class="checkbox" id="check-rdgc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got style variations from ChatGPT</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc3')"><div class="checkbox" id="check-rdgc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated upgraded design in Kittl</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc4')"><div class="checkbox" id="check-rdgc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Made seamless (if needed)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc5')"><div class="checkbox" id="check-rdgc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc6')"><div class="checkbox" id="check-rdgc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated listing in Vela</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc7')"><div class="checkbox" id="check-rdgc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Swapped images + digital files (kept the SEO)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc8')"><div class="checkbox" id="check-rdgc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Set quantity back to 999</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rdgc9')"><div class="checkbox" id="check-rdgc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
           </div>
 
           <!-- PROMPTS VAULT - THE STAR (Reference Mode) -->
@@ -9382,17 +9382,20 @@ Keep it simple. I just need to add text that looks like it belongs.</div>
 
           <h3>Listing Optimization Checklist</h3>
           <div class="checklist">
-            <div class="checklist-item" onclick="toggleCheck('rlc1')"><div class="checkbox teal" id="check-rlc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images (main mockup, lifestyle, specs)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rlc2')"><div class="checkbox teal" id="check-rlc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rlc3')"><div class="checkbox teal" id="check-rlc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description (what it is, what's included, how to use, what it's NOT)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rlc4')"><div class="checkbox teal" id="check-rlc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags (13 tags, mix of broad + specific)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rlc5')"><div class="checkbox teal" id="check-rlc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing (check sweet spot range)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rlc6')"><div class="checkbox teal" id="check-rlc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Add a simple freebie (optional but recommended)</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rlc7')"><div class="checkbox teal" id="check-rlc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review: "Would I buy this?"</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rlc8')"><div class="checkbox teal" id="check-rlc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc1')"><div class="checkbox teal" id="check-rlc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images (main mockup, lifestyle, specs)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc2')"><div class="checkbox teal" id="check-rlc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc3')"><div class="checkbox teal" id="check-rlc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description (what it is, what's included, how to use, what it's NOT)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc4')"><div class="checkbox teal" id="check-rlc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags (13 tags, mix of broad + specific)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc5')"><div class="checkbox teal" id="check-rlc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing (check sweet spot range)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc6')"><div class="checkbox teal" id="check-rlc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Add a simple freebie (optional but recommended)</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc7')"><div class="checkbox teal" id="check-rlc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review: "Would I buy this?"</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rlc8')"><div class="checkbox teal" id="check-rlc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
           </div>
 
-          <p class="text-muted mt-1" style="font-style: italic;">For detailed prompts and step-by-step guidance, use the Listing Glow-Up in Challenge Mode.</p>
+          <div class="stage-callout" style="margin-top: 1.5rem;">
+            <strong>Want the full guided experience?</strong> The Challenge Mode has detailed prompts, AI generators, and step-by-step instructions for each task above.
+            <button class="btn small" style="margin-top: 0.75rem;" onclick="setMode('challenge'); setTimeout(() => selectGlowupPath('listing'), 100);">Switch to Challenge Mode →</button>
+          </div>
         </div>
 
         <!-- FULL GLOW-UP PATH (Reference) -->
@@ -9409,21 +9412,21 @@ Keep it simple. I just need to add text that looks like it belongs.</div>
 
           <h3>🎨 Phase 1: Design Glow-Up</h3>
           <div class="checklist">
-            <div class="checklist-item" onclick="toggleCheck('rfc1')"><div class="checkbox" id="check-rfc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Pick listing with sales history</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc2')"><div class="checkbox" id="check-rfc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Get style variations from ChatGPT</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc3')"><div class="checkbox" id="check-rfc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generate upgraded design in Kittl</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc4')"><div class="checkbox" id="check-rfc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Create mockups</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc5')"><div class="checkbox" id="check-rfc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicate listing & swap files</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc1')"><div class="checkbox" id="check-rfc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Pick listing with sales history</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc2')"><div class="checkbox" id="check-rfc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Get style variations from ChatGPT</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc3')"><div class="checkbox" id="check-rfc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generate upgraded design in Kittl</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc4')"><div class="checkbox" id="check-rfc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Create mockups</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc5')"><div class="checkbox" id="check-rfc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicate listing & swap files</span></div>
           </div>
 
           <h3 class="mt-2">📋 Phase 2: Listing Optimization</h3>
           <div class="checklist">
-            <div class="checklist-item" onclick="toggleCheck('rfc6')"><div class="checkbox teal" id="check-rfc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc7')"><div class="checkbox teal" id="check-rfc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc8')"><div class="checkbox teal" id="check-rfc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc9')"><div class="checkbox teal" id="check-rfc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc10')"><div class="checkbox teal" id="check-rfc10"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing</span></div>
-            <div class="checklist-item" onclick="toggleCheck('rfc11')"><div class="checkbox teal" id="check-rfc11"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review & publish</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc6')"><div class="checkbox teal" id="check-rfc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix thumbnail & images</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc7')"><div class="checkbox teal" id="check-rfc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Upgrade title with keywords</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc8')"><div class="checkbox teal" id="check-rfc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Fix description</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc9')"><div class="checkbox teal" id="check-rfc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Optimize tags</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc10')"><div class="checkbox teal" id="check-rfc10"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Review pricing</span></div>
+            <div class="checklist-item" onclick="toggleCheck(event, 'rfc11')"><div class="checkbox teal" id="check-rfc11"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Final review & publish</span></div>
           </div>
         </div>
 
@@ -9482,7 +9485,7 @@ Keep it simple. I just need to add text that looks like it belongs.</div>
               <span class="speed-phase-label">RESEARCH</span>
               <div class="speed-phase-line"></div>
             </div>
-            <div class="step-row"><span class="step-time teal">0-5 min</span><span class="step-content"><span class="step-num teal">1</span>Etsy + ProfitTree/EverBee → find listing &lt;3 months old with high sales + badges</span><div class="checkbox step-check teal" onclick="toggleCheck('rt1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">0-5 min</span><span class="step-content"><span class="step-num teal">1</span>Etsy + ProfitTree/EverBee → find listing &lt;3 months old with high sales + badges</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rt1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
             <!-- PHASE: CREATE -->
             <div class="speed-phase">
@@ -9492,9 +9495,9 @@ Keep it simple. I just need to add text that looks like it belongs.</div>
               <span class="speed-phase-label">CREATE</span>
               <div class="speed-phase-line"></div>
             </div>
-            <div class="step-row"><span class="step-time teal">5-10 min</span><span class="step-content"><span class="step-num teal">2</span>Screenshot → ChatGPT → get AI prompt → ask for 10 theme variations → pick one</span><div class="checkbox step-check teal" onclick="toggleCheck('rt2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">10-20 min</span><span class="step-content"><span class="step-num teal">3</span>Generate in Kittl (2-3 generators) → pick best</span><div class="checkbox step-check teal" onclick="toggleCheck('rt3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">20-30 min</span><span class="step-content"><span class="step-num teal">4</span>Make seamless in Photoshop</span><div class="checkbox step-check teal" onclick="toggleCheck('rt4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">5-10 min</span><span class="step-content"><span class="step-num teal">2</span>Screenshot → ChatGPT → get AI prompt → ask for 10 theme variations → pick one</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rt2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">10-20 min</span><span class="step-content"><span class="step-num teal">3</span>Generate in Kittl (2-3 generators) → pick best</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rt3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">20-30 min</span><span class="step-content"><span class="step-num teal">4</span>Make seamless in Photoshop</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rt4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
             <!-- PHASE: PUBLISH -->
             <div class="speed-phase">
@@ -9504,22 +9507,22 @@ Keep it simple. I just need to add text that looks like it belongs.</div>
               <span class="speed-phase-label">PUBLISH</span>
               <div class="speed-phase-line"></div>
             </div>
-            <div class="step-row"><span class="step-time teal">30-32 min</span><span class="step-content"><span class="step-num teal">5</span>BulkMockup</span><div class="checkbox step-check teal" onclick="toggleCheck('rt5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">32-55 min</span><span class="step-content"><span class="step-num teal">6</span>Vela → use template → add images, files, niche tags</span><div class="checkbox step-check teal" onclick="toggleCheck('rt6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">55-60 min</span><span class="step-content"><span class="step-num teal">7</span>Publish</span><div class="checkbox step-check teal" onclick="toggleCheck('rt7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">30-32 min</span><span class="step-content"><span class="step-num teal">5</span>BulkMockup</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rt5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">32-55 min</span><span class="step-content"><span class="step-num teal">6</span>Vela → use template → add images, files, niche tags</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rt6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">55-60 min</span><span class="step-content"><span class="step-num teal">7</span>Publish</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rt7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
           </div>
         </div>
 
         <h3 class="mt-2">Checklist</h3>
         <div class="checklist">
-          <div class="checklist-item" onclick="toggleCheck('tc1')"><div class="checkbox teal" id="check-tc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Found a trending design (&lt;3 months, high sales, badges)</span></div>
-          <div class="checklist-item" onclick="toggleCheck('tc2')"><div class="checkbox teal" id="check-tc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Screenshot → ChatGPT → got style variations</span></div>
-          <div class="checklist-item" onclick="toggleCheck('tc3')"><div class="checkbox teal" id="check-tc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated design in Kittl</span></div>
-          <div class="checklist-item" onclick="toggleCheck('tc4')"><div class="checkbox teal" id="check-tc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Made seamless</span></div>
-          <div class="checklist-item" onclick="toggleCheck('tc5')"><div class="checkbox teal" id="check-tc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
-          <div class="checklist-item" onclick="toggleCheck('tc6')"><div class="checkbox teal" id="check-tc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Used Vela template (not from scratch)</span></div>
-          <div class="checklist-item" onclick="toggleCheck('tc7')"><div class="checkbox teal" id="check-tc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Added niche-specific tags (only 3 needed)</span></div>
-          <div class="checklist-item" onclick="toggleCheck('tc8')"><div class="checkbox teal" id="check-tc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc1')"><div class="checkbox teal" id="check-tc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Found a trending design (&lt;3 months, high sales, badges)</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc2')"><div class="checkbox teal" id="check-tc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Screenshot → ChatGPT → got style variations</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc3')"><div class="checkbox teal" id="check-tc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Generated design in Kittl</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc4')"><div class="checkbox teal" id="check-tc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Made seamless</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc5')"><div class="checkbox teal" id="check-tc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created mockups</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc6')"><div class="checkbox teal" id="check-tc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Used Vela template (not from scratch)</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc7')"><div class="checkbox teal" id="check-tc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Added niche-specific tags (only 3 needed)</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'tc8')"><div class="checkbox teal" id="check-tc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published</span></div>
         </div>
 
         <h3 class="mt-2">What to Look For in Trend Research</h3>
@@ -9971,8 +9974,8 @@ For each variation, give me the full prompt ready to paste into Midjourney.</div
               <span class="speed-phase-label">PLAN</span>
               <div class="speed-phase-line"></div>
             </div>
-            <div class="step-row"><span class="step-time teal">0-5 min</span><span class="step-content"><span class="step-num teal">1</span>Pick niche with easy variations (awareness, states, hobbies)</span><div class="checkbox step-check teal" onclick="toggleCheck('rn1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">5-15 min</span><span class="step-content"><span class="step-num teal">2</span>ChatGPT → get 10 variation prompts at once</span><div class="checkbox step-check teal" onclick="toggleCheck('rn2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">0-5 min</span><span class="step-content"><span class="step-num teal">1</span>Pick niche with easy variations (awareness, states, hobbies)</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rn1')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">5-15 min</span><span class="step-content"><span class="step-num teal">2</span>ChatGPT → get 10 variation prompts at once</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rn2')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
             <!-- PHASE: BATCH CREATE -->
             <div class="speed-phase">
@@ -9982,9 +9985,9 @@ For each variation, give me the full prompt ready to paste into Midjourney.</div
               <span class="speed-phase-label">BATCH CREATE</span>
               <div class="speed-phase-line"></div>
             </div>
-            <div class="step-row"><span class="step-time teal">15-35 min</span><span class="step-content"><span class="step-num teal">3</span>Batch generate in Kittl</span><div class="checkbox step-check teal" onclick="toggleCheck('rn3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">35-45 min</span><span class="step-content"><span class="step-num teal">4</span>Batch seamless in Photoshop</span><div class="checkbox step-check teal" onclick="toggleCheck('rn4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">45-50 min</span><span class="step-content"><span class="step-num teal">5</span>BulkMockup all at once</span><div class="checkbox step-check teal" onclick="toggleCheck('rn5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">15-35 min</span><span class="step-content"><span class="step-num teal">3</span>Batch generate in Kittl</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rn3')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">35-45 min</span><span class="step-content"><span class="step-num teal">4</span>Batch seamless in Photoshop</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rn4')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">45-50 min</span><span class="step-content"><span class="step-num teal">5</span>BulkMockup all at once</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rn5')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 
             <!-- PHASE: PUBLISH ALL -->
             <div class="speed-phase">
@@ -9994,22 +9997,22 @@ For each variation, give me the full prompt ready to paste into Midjourney.</div
               <span class="speed-phase-label">PUBLISH ALL</span>
               <div class="speed-phase-line"></div>
             </div>
-            <div class="step-row"><span class="step-time teal">50-75 min</span><span class="step-content"><span class="step-num teal">6</span>Vela → duplicate base listing → bulk replace images/files/tags</span><div class="checkbox step-check teal" onclick="toggleCheck('rn6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-            <div class="step-row"><span class="step-time teal">75-90 min</span><span class="step-content"><span class="step-num teal">7</span>Create bundle (PDF → Google Drive link)</span><div class="checkbox step-check teal" onclick="toggleCheck('rn7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">50-75 min</span><span class="step-content"><span class="step-num teal">6</span>Vela → duplicate base listing → bulk replace images/files/tags</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rn6')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="step-row"><span class="step-time teal">75-90 min</span><span class="step-content"><span class="step-num teal">7</span>Create bundle (PDF → Google Drive link)</span><div class="checkbox step-check teal" onclick="toggleCheck(event, 'rn7')"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
           </div>
         </div>
 
         <h3 class="mt-2">Checklist</h3>
         <div class="checklist">
-          <div class="checklist-item" onclick="toggleCheck('nc1')"><div class="checkbox teal" id="check-nc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked niche with 10+ natural variations</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc2')"><div class="checkbox teal" id="check-nc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got all prompts from ChatGPT in one conversation</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc3')"><div class="checkbox teal" id="check-nc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Batch generated designs</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc4')"><div class="checkbox teal" id="check-nc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Batch made seamless</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc5')"><div class="checkbox teal" id="check-nc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Bulk mockups</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc6')"><div class="checkbox teal" id="check-nc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated base listing for each variation</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc7')"><div class="checkbox teal" id="check-nc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Used Find &amp; Replace for titles/tags</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc8')"><div class="checkbox teal" id="check-nc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published all individual listings</span></div>
-          <div class="checklist-item" onclick="toggleCheck('nc9')"><div class="checkbox teal" id="check-nc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created bundle with PDF + Google Drive</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc1')"><div class="checkbox teal" id="check-nc1"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Picked niche with 10+ natural variations</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc2')"><div class="checkbox teal" id="check-nc2"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Got all prompts from ChatGPT in one conversation</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc3')"><div class="checkbox teal" id="check-nc3"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Batch generated designs</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc4')"><div class="checkbox teal" id="check-nc4"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Batch made seamless</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc5')"><div class="checkbox teal" id="check-nc5"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Bulk mockups</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc6')"><div class="checkbox teal" id="check-nc6"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Duplicated base listing for each variation</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc7')"><div class="checkbox teal" id="check-nc7"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Used Find &amp; Replace for titles/tags</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc8')"><div class="checkbox teal" id="check-nc8"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Published all individual listings</span></div>
+          <div class="checklist-item" onclick="toggleCheck(event, 'nc9')"><div class="checkbox teal" id="check-nc9"><svg viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="checklist-text">Created bundle with PDF + Google Drive</span></div>
         </div>
 
         <h3 class="mt-2">Niches That Work for This</h3>
@@ -10495,16 +10498,18 @@ updateProgress = function() {
   updateNewProgress();
 };
 
-function toggleCheck(id){
+function toggleCheck(e, id){
   checks[id]=!checks[id];
   const el=document.getElementById('check-'+id);
   if(el)el.classList.toggle('checked',checks[id]);
   const row=document.getElementById('row-'+id);
   if(row)row.classList.toggle('checked',checks[id]);
-  if(event&&event.target){
-    const cb=event.target.closest('.checkbox');
+  // Also toggle the checkbox that was clicked directly
+  const evt = e || window.event;
+  if(evt&&evt.target){
+    const cb=evt.target.closest('.checkbox');
     if(cb)cb.classList.toggle('checked',checks[id]);
-    const sr=event.target.closest('.step-row');
+    const sr=evt.target.closest('.step-row');
     if(sr)sr.classList.toggle('checked',checks[id]);
   }
   save();
@@ -10892,12 +10897,62 @@ function completeFullDesignPhase() {
   localStorage.setItem('sl-full-design-complete', 'true');
 }
 
+let fullListingPopulated = false;
+
+function populateFullListingStages() {
+  if (fullListingPopulated) return;
+
+  const sourceWrapper = document.querySelector('#listing-glowup .glowup-wrapper');
+  const targetPhase = document.getElementById('full-listing-phase');
+
+  if (sourceWrapper && targetPhase) {
+    // Clone the full glowup wrapper content
+    const clone = sourceWrapper.cloneNode(true);
+
+    // Update all IDs in the clone to avoid conflicts
+    clone.querySelectorAll('[id]').forEach(el => {
+      el.id = 'full-' + el.id;
+    });
+
+    // Update onclick handlers that reference IDs
+    clone.querySelectorAll('[onclick]').forEach(el => {
+      let onclick = el.getAttribute('onclick');
+      onclick = onclick.replace(/getElementById\('stage-/g, "getElementById('full-stage-");
+      onclick = onclick.replace(/getElementById\('sc-/g, "getElementById('full-sc-");
+      onclick = onclick.replace(/getElementById\('expand-/g, "getElementById('full-expand-");
+      onclick = onclick.replace(/getElementById\('improve-/g, "getElementById('full-improve-");
+      onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('full-pc-glowup-");
+      onclick = onclick.replace(/getElementById\('glowup-/g, "getElementById('full-glowup-");
+      el.setAttribute('onclick', onclick);
+    });
+
+    // Remove the simple checklist and replace with full stages
+    const existingChecklist = targetPhase.querySelector('.checklist');
+    const existingDesc = targetPhase.querySelector('.text-muted');
+    if (existingChecklist) existingChecklist.remove();
+    if (existingDesc) existingDesc.remove();
+
+    // Insert before the completion button
+    const completeBtn = targetPhase.querySelector('.btn.teal');
+    if (completeBtn) {
+      completeBtn.before(clone);
+    } else {
+      targetPhase.appendChild(clone);
+    }
+
+    fullListingPopulated = true;
+  }
+}
+
 function startFullListingPhase() {
   // Hide transition, show listing phase
   const transition = document.getElementById('full-transition');
   const listingPhase = document.getElementById('full-listing-phase');
   if (transition) transition.classList.add('hidden');
   if (listingPhase) listingPhase.classList.remove('hidden');
+
+  // Populate with full stages from the listing glow-up
+  setTimeout(populateFullListingStages, 50);
 }
 
 function completeFullGlowup() {
@@ -10934,6 +10989,110 @@ setTimeout(loadGlowupPath, 100);
 // REFERENCE MODE PATH SELECTOR FUNCTIONS
 // ========================================
 
+// Clone listing stages from challenge mode to quick reference if not already done
+let refListingPopulated = false;
+let refFullPopulated = false;
+
+function populateRefListingStages() {
+  if (refListingPopulated) return;
+
+  const sourceWrapper = document.querySelector('#listing-glowup .glowup-wrapper');
+  const targetSection = document.getElementById('ref-listing-glowup');
+
+  if (sourceWrapper && targetSection) {
+    // Clone the full glowup wrapper content
+    const clone = sourceWrapper.cloneNode(true);
+
+    // Update all IDs in the clone to avoid conflicts
+    clone.querySelectorAll('[id]').forEach(el => {
+      el.id = 'ref-' + el.id;
+    });
+
+    // Update onclick handlers that reference IDs
+    clone.querySelectorAll('[onclick]').forEach(el => {
+      let onclick = el.getAttribute('onclick');
+      // Update stage IDs in onclick handlers
+      onclick = onclick.replace(/getElementById\('stage-/g, "getElementById('ref-stage-");
+      onclick = onclick.replace(/getElementById\('sc-/g, "getElementById('ref-sc-");
+      onclick = onclick.replace(/getElementById\('expand-/g, "getElementById('ref-expand-");
+      onclick = onclick.replace(/getElementById\('improve-/g, "getElementById('ref-improve-");
+      onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('ref-pc-glowup-");
+      onclick = onclick.replace(/getElementById\('glowup-/g, "getElementById('ref-glowup-");
+      el.setAttribute('onclick', onclick);
+    });
+
+    // Insert after the back button but before the existing content
+    const existingIntro = targetSection.querySelector('.design-intro');
+    if (existingIntro) {
+      existingIntro.remove();
+    }
+    const existingH3 = targetSection.querySelector('h3');
+    if (existingH3) {
+      existingH3.remove();
+    }
+    const existingChecklist = targetSection.querySelector('.checklist');
+    if (existingChecklist) {
+      existingChecklist.remove();
+    }
+    const existingCallout = targetSection.querySelector('.stage-callout');
+    if (existingCallout) {
+      existingCallout.remove();
+    }
+
+    targetSection.appendChild(clone);
+    refListingPopulated = true;
+  }
+}
+
+function populateRefFullStages() {
+  if (refFullPopulated) return;
+
+  const sourceWrapper = document.querySelector('#listing-glowup .glowup-wrapper');
+  const targetSection = document.getElementById('ref-full-glowup');
+
+  if (sourceWrapper && targetSection) {
+    // Clone the full glowup wrapper content
+    const clone = sourceWrapper.cloneNode(true);
+
+    // Update all IDs in the clone to avoid conflicts (use different prefix)
+    clone.querySelectorAll('[id]').forEach(el => {
+      el.id = 'reffull-' + el.id;
+    });
+
+    // Update onclick handlers that reference IDs
+    clone.querySelectorAll('[onclick]').forEach(el => {
+      let onclick = el.getAttribute('onclick');
+      onclick = onclick.replace(/getElementById\('stage-/g, "getElementById('reffull-stage-");
+      onclick = onclick.replace(/getElementById\('sc-/g, "getElementById('reffull-sc-");
+      onclick = onclick.replace(/getElementById\('expand-/g, "getElementById('reffull-expand-");
+      onclick = onclick.replace(/getElementById\('improve-/g, "getElementById('reffull-improve-");
+      onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('reffull-pc-glowup-");
+      onclick = onclick.replace(/getElementById\('glowup-/g, "getElementById('reffull-glowup-");
+      el.setAttribute('onclick', onclick);
+    });
+
+    // Replace the simple Phase 2 checklist with the full stages
+    const phase2Header = targetSection.querySelector('h3.mt-2');
+    const phase2Checklist = targetSection.querySelectorAll('.checklist')[1];
+
+    if (phase2Header && phase2Checklist) {
+      // Remove the simple checklist
+      phase2Checklist.remove();
+
+      // Add a label
+      const label = document.createElement('p');
+      label.className = 'text-muted';
+      label.innerHTML = '<strong>Follow the complete listing optimization process:</strong>';
+      phase2Header.after(label);
+
+      // Add the cloned stages after the label
+      label.after(clone);
+    }
+
+    refFullPopulated = true;
+  }
+}
+
 function selectRefGlowupPath(path) {
   localStorage.setItem('sl-ref-glowup-path', path);
 
@@ -10954,8 +11113,12 @@ function selectRefGlowupPath(path) {
     if (designSection) designSection.classList.add('active');
   } else if (path === 'listing') {
     if (listingSection) listingSection.classList.remove('hidden');
+    // Populate with full stages from challenge mode
+    setTimeout(populateRefListingStages, 50);
   } else if (path === 'full') {
     if (fullSection) fullSection.classList.remove('hidden');
+    // Populate with full stages from challenge mode
+    setTimeout(populateRefFullStages, 50);
   }
 }
 
