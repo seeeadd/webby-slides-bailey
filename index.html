@@ -10783,21 +10783,24 @@ load=function(){
 let glowupStages = {};  // Track completed stages
 let stageChecks = {};   // Track individual stage checklist items
 
-function toggleStageBody(n) {
-  const stage = document.getElementById('stage-' + n);
+function toggleStageBody(n, prefix) {
+  prefix = prefix || '';
+  const stage = document.getElementById(prefix + 'stage-' + n);
   if (!stage || stage.classList.contains('locked')) return;
 
   // If stage is completed and user clicks header, uncomplete it
   if (stage.classList.contains('completed')) {
-    uncompleteStage(n);
+    uncompleteStage(n, prefix);
   } else {
     stage.classList.toggle('expanded');
   }
 }
 
-function uncompleteStage(n) {
-  glowupStages[n] = false;
-  const stage = document.getElementById('stage-' + n);
+function uncompleteStage(n, prefix) {
+  prefix = prefix || '';
+  const storageKey = prefix + n;
+  glowupStages[storageKey] = false;
+  const stage = document.getElementById(prefix + 'stage-' + n);
   if (stage) {
     stage.classList.remove('completed');
     stage.classList.add('active', 'expanded');
@@ -10805,8 +10808,8 @@ function uncompleteStage(n) {
 
   // Re-lock any stages after this one that aren't independently completed
   for (let i = n + 1; i <= 7; i++) {
-    if (!glowupStages[i]) {
-      const laterStage = document.getElementById('stage-' + i);
+    if (!glowupStages[prefix + i]) {
+      const laterStage = document.getElementById(prefix + 'stage-' + i);
       if (laterStage) {
         laterStage.classList.remove('active', 'expanded');
         laterStage.classList.add('locked');
@@ -10815,16 +10818,18 @@ function uncompleteStage(n) {
   }
 
   // Update progress
-  updateGlowupProgress();
+  updateGlowupProgress(prefix);
   saveGlowupState();
 }
 
-function toggleStageCheck(stageNum, itemNum) {
+function toggleStageCheck(stageNum, itemNum, prefix) {
+  prefix = prefix || '';
   const id = stageNum + '-' + itemNum;
-  stageChecks[id] = !stageChecks[id];
-  const el = document.getElementById('sc-' + id);
+  const storageKey = prefix + id;
+  stageChecks[storageKey] = !stageChecks[storageKey];
+  const el = document.getElementById(prefix + 'sc-' + id);
   if (el) {
-    el.classList.toggle('checked', stageChecks[id]);
+    el.classList.toggle('checked', stageChecks[storageKey]);
   }
   saveGlowupState();
 }
@@ -10897,16 +10902,18 @@ function copyCode(btn) {
   }
 }
 
-function completeStage(n) {
-  glowupStages[n] = true;
-  const currentStage = document.getElementById('stage-' + n);
+function completeStage(n, prefix) {
+  prefix = prefix || '';
+  const storageKey = prefix + n;
+  glowupStages[storageKey] = true;
+  const currentStage = document.getElementById(prefix + 'stage-' + n);
   if (currentStage) {
     currentStage.classList.remove('active', 'expanded');
     currentStage.classList.add('completed');
   }
 
   // Unlock next stage
-  const nextStage = document.getElementById('stage-' + (n + 1));
+  const nextStage = document.getElementById(prefix + 'stage-' + (n + 1));
   if (nextStage) {
     nextStage.classList.remove('locked');
     nextStage.classList.add('active', 'first-view', 'expanded');
@@ -10917,12 +10924,12 @@ function completeStage(n) {
   }
 
   // Update progress
-  updateGlowupProgress();
+  updateGlowupProgress(prefix);
   saveGlowupState();
 
   // Check if all stages complete
   if (n === 7) {
-    const completeBox = document.getElementById('glowup-complete');
+    const completeBox = document.getElementById(prefix + 'glowup-complete');
     if (completeBox) {
       completeBox.classList.remove('hidden');
       setTimeout(() => completeBox.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
@@ -10930,10 +10937,15 @@ function completeStage(n) {
   }
 }
 
-function updateGlowupProgress() {
-  const completedCount = Object.keys(glowupStages).filter(k => glowupStages[k]).length;
-  const fill = document.getElementById('glowup-progress-fill');
-  const text = document.getElementById('glowup-stages-done');
+function updateGlowupProgress(prefix) {
+  prefix = prefix || '';
+  // Count completed stages for this specific prefix
+  let completedCount = 0;
+  for (let i = 0; i <= 7; i++) {
+    if (glowupStages[prefix + i]) completedCount++;
+  }
+  const fill = document.getElementById(prefix + 'glowup-progress-fill');
+  const text = document.getElementById(prefix + 'glowup-stages-done');
   if (fill) fill.style.width = (completedCount / 8 * 100) + '%';
   if (text) text.textContent = completedCount;
 }
@@ -11159,6 +11171,10 @@ function populateFullListingStages() {
       onclick = onclick.replace(/getElementById\('improve-/g, "getElementById('full-improve-");
       onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('full-pc-glowup-");
       onclick = onclick.replace(/getElementById\('glowup-/g, "getElementById('full-glowup-");
+      // Update function calls to pass prefix
+      onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'full-')");
+      onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'full-')");
+      onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'full-')");
       el.setAttribute('onclick', onclick);
     });
 
@@ -11299,6 +11315,10 @@ function populateRefListingStages() {
       onclick = onclick.replace(/getElementById\('improve-/g, "getElementById('ref-improve-");
       onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('ref-pc-glowup-");
       onclick = onclick.replace(/getElementById\('glowup-/g, "getElementById('ref-glowup-");
+      // Update function calls to pass prefix
+      onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'ref-')");
+      onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'ref-')");
+      onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'ref-')");
       el.setAttribute('onclick', onclick);
     });
 
@@ -11349,6 +11369,10 @@ function populateRefFullStages() {
       onclick = onclick.replace(/getElementById\('improve-/g, "getElementById('reffull-improve-");
       onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('reffull-pc-glowup-");
       onclick = onclick.replace(/getElementById\('glowup-/g, "getElementById('reffull-glowup-");
+      // Update function calls to pass prefix
+      onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'reffull-')");
+      onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'reffull-')");
+      onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'reffull-')");
       el.setAttribute('onclick', onclick);
     });
 
@@ -11463,6 +11487,10 @@ function populateRefFullListingStages() {
       onclick = onclick.replace(/getElementById\('improve-/g, "getElementById('reffull-improve-");
       onclick = onclick.replace(/getElementById\('pc-glowup-/g, "getElementById('reffull-pc-glowup-");
       onclick = onclick.replace(/getElementById\('glowup-/g, "getElementById('reffull-glowup-");
+      // Update function calls to pass prefix
+      onclick = onclick.replace(/toggleStageBody\((\d+)\)/g, "toggleStageBody($1, 'reffull-')");
+      onclick = onclick.replace(/toggleStageCheck\((\d+),\s*(\d+)\)/g, "toggleStageCheck($1, $2, 'reffull-')");
+      onclick = onclick.replace(/completeStage\((\d+)\)/g, "completeStage($1, 'reffull-')");
       el.setAttribute('onclick', onclick);
     });
 
