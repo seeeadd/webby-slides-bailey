@@ -11015,32 +11015,33 @@ function resetGlowup() {
   stageChecks = {};
   localStorage.removeItem('sl-glowup');
 
-  // Reset all stages visually
-  for (let i = 0; i <= 7; i++) {
-    const stage = document.getElementById('stage-' + i);
-    if (!stage) continue;
-
-    stage.classList.remove('completed', 'active', 'expanded');
-    if (i === 0) {
+  // Reset ALL stage elements on the page (including cloned ones)
+  const allStages = document.querySelectorAll('.stage');
+  allStages.forEach(stage => {
+    const stageNum = stage.getAttribute('data-stage');
+    stage.classList.remove('completed', 'active', 'expanded', 'first-view');
+    if (stageNum === '0') {
       stage.classList.add('active');
     } else {
       stage.classList.add('locked');
     }
-
     // Reset all checkboxes in this stage
     const checks = stage.querySelectorAll('.stage-check-item');
     checks.forEach(check => check.classList.remove('checked'));
-  }
+  });
 
-  // Reset progress bar
-  const fill = document.getElementById('glowup-progress-fill');
-  const text = document.getElementById('glowup-stages-done');
-  if (fill) fill.style.width = '0%';
-  if (text) text.textContent = '0';
+  // Reset ALL progress bars (including cloned ones)
+  document.querySelectorAll('.progress-fill').forEach(fill => {
+    fill.style.width = '0%';
+  });
+  document.querySelectorAll('[id$="stages-done"]').forEach(text => {
+    text.textContent = '0';
+  });
 
-  // Hide completion message
-  const completeBox = document.getElementById('glowup-complete');
-  if (completeBox) completeBox.classList.add('hidden');
+  // Hide ALL completion messages
+  document.querySelectorAll('[id$="glowup-complete"]').forEach(box => {
+    box.classList.add('hidden');
+  });
 
   // Scroll to top of section
   const section = document.getElementById('step-2');
