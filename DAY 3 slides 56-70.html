@@ -6,7 +6,7 @@
         /* ============================================
            DAY 3: THE EMPIRE SYSTEM — BATCH 4
            Slides 56-70: CEO Math + Seasonal Calendar + Recap
-           Color Palette: Warm Gold/Amber/Bronze
+           CREATIVE REDESIGN - Visual-first approach
            ============================================ */
 
 @font-face {
@@ -35,14 +35,10 @@
     --cream: #FDF6E3;
     --warm-white: #FFFEF5;
     --pale-gold: #FAF3E0;
-    --light-tan: #F5E6D3;
     --espresso: #3D2B1F;
-    --charcoal: #2D2D2D;
     --sage-green: #6B8E6B;
     --burnt-coral: #E07A5F;
     --warm-gray: #8B8178;
-    --taupe: #A69B8D;
-    --stone: #D4CCC4;
 }
 
 body {
@@ -67,6 +63,15 @@ body {
     font-weight: 500;
 }
 
+.bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
 .content {
     position: relative;
     z-index: 10;
@@ -81,27 +86,29 @@ body {
     justify-content: center;
 }
 
-.bg-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+.card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(61, 43, 31, 0.1);
+    padding: 50px;
 }
 
-.slide-label {
-    position: absolute;
-    bottom: 20px;
-    right: 40px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.3);
-    font-family: 'Satoshi', sans-serif;
-    letter-spacing: 2px;
+.pill {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-.slide-label-dark {
-    color: rgba(0,0,0,0.2);
+.stat-huge {
+    font-size: 280px;
+    line-height: 1;
+}
+
+.stat-large {
+    font-size: 180px;
+    line-height: 1;
 }
 
     </style>
@@ -110,1063 +117,636 @@ body {
 
 <!-- ============================================
      SLIDE 56: CEO Math Section Header
-     Dark bronze, mindset upgrade energy
+     Dramatic intro - dark bronze, minimal
      ============================================ -->
 <div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <defs>
-            <radialGradient id="ceoGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
-            </radialGradient>
-        </defs>
-        <ellipse cx="960" cy="540" rx="700" ry="450" fill="url(#ceoGlow)"/>
-        <!-- Scale/balance visual representing time = money -->
-        <g transform="translate(960, 350)" stroke="#C9A227" stroke-width="2" fill="none" opacity="0.15">
-            <!-- Center pillar -->
-            <line x1="0" y1="-80" x2="0" y2="80"/>
-            <!-- Balance beam -->
-            <line x1="-200" y1="-80" x2="200" y2="-80"/>
-            <!-- Left pan (time) -->
-            <circle cx="-200" cy="-40" r="60"/>
-            <text x="-200" y="-35" text-anchor="middle" fill="#C9A227" font-size="24" font-family="Satoshi" opacity="0.3">TIME</text>
-            <!-- Right pan (money) -->
-            <circle cx="200" cy="-40" r="60"/>
-            <text x="200" y="-35" text-anchor="middle" fill="#C9A227" font-size="24" font-family="Satoshi" opacity="0.3">$$$</text>
-            <!-- Strings -->
-            <line x1="-200" y1="-80" x2="-200" y2="-100"/>
-            <line x1="200" y1="-80" x2="200" y2="-100"/>
-        </g>
+        <path d="M 1704.0 180.0 C 1725.7 258.7, 1884.1 334.5, 1874.5 408.7 C 1864.8 482.9, 1751.1 529.2, 1655.8 550.9 C 1560.4 572.7, 1478.2 556.1, 1397.7 517.3 C 1317.2 478.4, 1295.0 424.2, 1253.4 356.7 C 1211.7 289.3, 1176.9 243.3, 1189.3 180.0 C 1201.7 116.7, 1277.9 117.5, 1315.6 40.1 C 1353.3 -37.3, 1309.5 -159.8, 1377.9 -206.9 C 1446.3 -254.0, 1579.8 -239.7, 1657.5 -195.3 C 1735.2 -150.8, 1757.1 -59.8, 1766.4 15.3 C 1775.7 90.3, 1682.4 101.3, 1704.0 180.0 Z" fill="#C9A227" fill-opacity="0.08" transform="rotate(20 1520 180)" />
+        <path d="M 357.8 800.0 C 411.9 900.1, 458.1 985.7, 380.7 1037.9 C 303.4 1090.0, 240.4 995.9, 100.0 973.9 C -40.4 951.8, -10.7 1016.4, -87.2 964.3 C -163.7 912.1, -152.1 900.8, -155.0 800.0 C -157.9 699.2, -173.3 722.3, -96.8 628.2 C -20.3 534.1, 10.9 463.5, 100.0 486.3 C 189.1 509.1, 123.0 610.1, 200.3 704.2 C 277.7 798.3, 303.7 699.9, 357.8 800.0 Z" fill="#D4A84B" fill-opacity="0.06" transform="rotate(-15 100 800)" />
     </svg>
 
     <div class="content flex-center">
-        <p class="body" style="font-size: 18px; color: #D4A84B; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px;">
+        <p class="body" style="font-size: 24px; color: #D4A84B; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 40px;">
             Mindset Upgrade
         </p>
 
-        <h1 class="display" style="font-size: 100px; color: #C9A227; text-align: center; text-shadow: 0 6px 60px rgba(201, 162, 39, 0.5); margin-bottom: 50px;">
-            THE CEO MATH RULE
+        <h1 class="display" style="font-size: 130px; color: #C9A227; text-align: center; text-shadow: 0 10px 80px rgba(201, 162, 39, 0.4);">
+            THE CEO<br>MATH RULE
         </h1>
-
-        <div style="max-width: 900px; text-align: center;">
-            <p class="body" style="font-size: 36px; color: #FFFEF5; line-height: 1.6;">
-                When Your Time Creates Money,
-            </p>
-            <p class="body" style="font-size: 36px; color: #D4A84B; line-height: 1.6; margin-top: 10px;">
-                Money's Job Is To Buy Back Your Time
-            </p>
-        </div>
-
-        <div style="width: 200px; height: 3px; background: linear-gradient(90deg, transparent, #C9A227, transparent); margin-top: 60px;"></div>
     </div>
-    <div class="slide-label">SLIDE 56</div>
 </div>
 
 <!-- ============================================
-     SLIDE 57: When to Outsource (Hourly Rate Calc)
-     Calculator visual with step-by-step math
+     SLIDE 56b: CEO Math - The Philosophy
+     Single powerful statement
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+<div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <circle cx="1700" cy="200" r="250" fill="#C9A227" fill-opacity="0.04"/>
-        <circle cx="200" cy="900" r="180" fill="#B8860B" fill-opacity="0.03"/>
-    </svg>
-
-    <div class="content" style="display: flex; align-items: center; justify-content: space-between; padding: 80px 140px;">
-        <!-- Left side: Question & Context -->
-        <div style="max-width: 600px;">
-            <p class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">
-                The Question
-            </p>
-            <h1 class="display" style="font-size: 48px; color: #3D2B1F; margin-bottom: 40px; line-height: 1.2;">
-                At what point should you start outsourcing?
-            </h1>
-            <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 30px;">
-                Here's the simple math I use:
-            </p>
-
-            <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 25px 40px; border-radius: 16px; display: inline-block;">
-                <p class="body" style="font-size: 22px; color: white; font-weight: 600;">
-                    STEP 1: Calculate your hourly rate
-                </p>
-            </div>
-        </div>
-
-        <!-- Right side: Calculator Visual -->
-        <div style="background: white; padding: 50px; border-radius: 30px; box-shadow: 0 25px 80px rgba(61, 43, 31, 0.12); width: 650px;">
-            <!-- Formula -->
-            <div style="background: #FAF3E0; padding: 30px; border-radius: 16px; margin-bottom: 40px; text-align: center;">
-                <p class="body" style="font-size: 24px; color: #5C4827;">
-                    <span style="color: #C9A227; font-weight: 700;">Monthly Revenue</span> ÷ <span style="color: #C9A227; font-weight: 700;">Hours Worked</span> = <span style="color: #3D2B1F; font-weight: 700;">Your Rate</span>
-                </p>
-            </div>
-
-            <!-- Example calculation -->
-            <p class="body" style="font-size: 16px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">
-                Example:
-            </p>
-
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px dashed #D4CCC4;">
-                    <p class="body" style="font-size: 22px; color: #5C4827;">Monthly revenue</p>
-                    <p class="display" style="font-size: 28px; color: #3D2B1F;">$500</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px dashed #D4CCC4;">
-                    <p class="body" style="font-size: 22px; color: #5C4827;">Hours per week</p>
-                    <p class="display" style="font-size: 28px; color: #3D2B1F;">3 hrs</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px dashed #D4CCC4;">
-                    <p class="body" style="font-size: 22px; color: #5C4827;">Hours per month (×4)</p>
-                    <p class="display" style="font-size: 28px; color: #3D2B1F;">12 hrs</p>
-                </div>
-            </div>
-
-            <!-- Result -->
-            <div style="background: linear-gradient(135deg, #5C4827, #3D2B1F); padding: 30px; border-radius: 16px; margin-top: 30px; display: flex; justify-content: space-between; align-items: center;">
-                <p class="body" style="font-size: 22px; color: #FFFEF5;">$500 ÷ 12 hrs =</p>
-                <p class="display" style="font-size: 48px; color: #C9A227;">$41.66/hr</p>
-            </div>
-        </div>
-    </div>
-    <div class="slide-label slide-label-dark">SLIDE 57</div>
-</div>
-
-<!-- ============================================
-     SLIDE 58: The Rule (Step 2)
-     Bold statement with threshold visual
-     ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
-    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <!-- Threshold line visual -->
-        <line x1="0" y1="700" x2="1920" y2="700" stroke="#C9A227" stroke-width="4" stroke-opacity="0.15" stroke-dasharray="20,10"/>
-        <text x="100" y="680" fill="#C9A227" fill-opacity="0.2" font-size="24" font-family="Satoshi">YOUR RATE THRESHOLD</text>
+        <path d="M 1263.0 540.0 C 1267.1 727.5, 1452.8 783.6, 1361.9 857.4 C 1271.0 931.2, 1202.4 785.0, 960.0 785.9 C 717.6 786.8, 729.1 934.1, 554.0 860.3 C 379.0 786.6, 285.6 666.1, 376.6 540.0 C 467.6 413.9, 682.3 581.7, 857.4 440.1 C 1032.4 298.6, 812.7 130.4, 960.0 68.1 C 1107.3 5.7, 1257.6 90.8, 1348.5 232.3 C 1439.4 373.9, 1259.0 352.5, 1263.0 540.0 Z" fill="#C9A227" fill-opacity="0.1" transform="rotate(-15 960 540)" />
     </svg>
 
     <div class="content flex-center">
-        <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 20px 50px; border-radius: 50px; margin-bottom: 50px;">
-            <p class="body" style="font-size: 20px; color: white; font-weight: 600; letter-spacing: 2px;">
-                STEP 2: APPLY THE RULE
-            </p>
-        </div>
-
-        <div style="max-width: 1100px; text-align: center;">
-            <h1 class="display" style="font-size: 52px; color: #3D2B1F; line-height: 1.4; margin-bottom: 60px;">
-                Any repeatable task that can be done for<br>
-                <span style="color: #C9A227; font-size: 72px;">LESS</span> than your hourly rate?
-            </h1>
-
-            <!-- Visual divider with X -->
-            <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 60px;">
-                <div style="width: 200px; height: 3px; background: linear-gradient(90deg, transparent, #E07A5F);"></div>
-                <div style="width: 80px; height: 80px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                        <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <div style="width: 200px; height: 3px; background: linear-gradient(90deg, #E07A5F, transparent);"></div>
-            </div>
-
-            <h2 class="display" style="font-size: 56px; color: #E07A5F; margin-bottom: 60px;">
-                That task should NOT be done by you.
-            </h2>
-
-            <!-- Example callout -->
-            <div style="background: white; padding: 40px 60px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); display: inline-block;">
-                <p class="body" style="font-size: 26px; color: #5C4827;">
-                    In this example: anything under <span style="color: #C9A227; font-weight: 700;">$41/hour</span> = delegate
-                </p>
-                <p class="body" style="font-size: 22px; color: #8B8178; margin-top: 15px;">
-                    You're worth more doing other things.
-                </p>
-            </div>
-        </div>
+        <h1 class="display" style="font-size: 72px; color: #FFFEF5; text-align: center; line-height: 1.4;">
+            When your time creates money,<br>
+            <span style="color: #C9A227;">money's job is to buy back your time.</span>
+        </h1>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 58</div>
 </div>
 
 <!-- ============================================
-     SLIDE 59: What to Delegate
-     Visual checklist with hand-off energy
+     SLIDE 57: The Question Hook
+     Simple question to engage
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <!-- Hand-off arrow suggestion -->
-        <path d="M 300 540 Q 500 540, 600 400" fill="none" stroke="#C9A227" stroke-width="3" stroke-opacity="0.1"/>
-        <path d="M 300 540 Q 500 540, 600 680" fill="none" stroke="#C9A227" stroke-width="3" stroke-opacity="0.1"/>
+        <path d="M 1942.1 130.0 C 1956.0 185.9, 1916.1 218.6, 1879.7 289.0 C 1843.2 359.4, 1832.4 460.5, 1759.8 482.0 C 1687.2 503.6, 1576.4 446.5, 1516.7 396.7 C 1457.1 346.9, 1487.9 286.5, 1461.7 233.1 C 1435.5 179.8, 1429.3 195.2, 1385.7 130.0 C 1342.2 64.8, 1218.8 -37.3, 1243.9 -93.1 C 1269.1 -148.8, 1418.7 -146.7, 1511.6 -148.6 C 1604.6 -150.6, 1649.1 -134.4, 1708.7 -102.8 C 1768.4 -71.2, 1763.3 -37.1, 1809.9 9.4 C 1856.6 56.0, 1928.1 74.1, 1942.1 130.0 Z" fill="#C9A227" fill-opacity="0.08" transform="rotate(25 1620 130)" />
+        <path d="M 290.8 880.0 C 280.3 998.1, 325.9 979.5, 256.7 1062.0 C 187.4 1144.5, 146.1 1181.9, 60.0 1155.1 C -26.1 1128.3, 76.6 1055.2, -30.2 972.6 C -137.1 890.1, -258.8 966.9, -296.1 880.0 C -333.3 793.1, -261.2 722.2, -154.4 683.1 C -47.6 644.0, -73.8 754.0, 60.0 749.6 C 193.8 745.2, 222.5 629.4, 291.8 668.5 C 361.0 707.6, 301.4 761.9, 290.8 880.0 Z" fill="#D4A84B" fill-opacity="0.06" transform="rotate(-20 60 880)" />
     </svg>
 
-    <div class="content" style="display: flex; align-items: center; justify-content: space-between; padding: 80px 140px;">
-        <!-- Left: Title -->
-        <div style="max-width: 450px;">
-            <h1 class="display" style="font-size: 56px; color: #3D2B1F; margin-bottom: 30px;">
-                What to<br>Delegate<br><span style="color: #C9A227;">First</span>
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 90px; color: #3D2B1F; text-align: center;">
+            At what point should you<br>start outsourcing?
+        </h1>
+
+        <div style="margin-top: 60px; display: flex; gap: 20px;">
+            <div style="width: 20px; height: 20px; background: #C9A227; border-radius: 50%;"></div>
+            <div style="width: 20px; height: 20px; background: #C9A227; border-radius: 50%; opacity: 0.6;"></div>
+            <div style="width: 20px; height: 20px; background: #C9A227; border-radius: 50%; opacity: 0.3;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     SLIDE 57b: Calculator Visual - THE FORMULA
+     Clean visual math equation
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 263.5 200.0 C 259.5 276.5, 289.9 314.6, 243.9 341.9 C 197.9 369.2, 145.4 344.8, 79.6 309.3 C 13.9 273.8, -26.3 244.6, -19.0 200.0 C -11.8 155.4, 38.8 171.9, 108.6 130.8 C 178.4 89.8, 221.3 18.5, 260.0 35.8 C 298.8 53.1, 267.5 123.5, 263.5 200.0 Z" fill="#C9A227" fill-opacity="0.1" transform="rotate(5 150 200)" />
+    </svg>
+
+    <div class="content flex-center">
+        <p class="body" style="font-size: 28px; color: #8B8178; margin-bottom: 40px;">Here's the simple math:</p>
+
+        <!-- Visual Formula -->
+        <div style="display: flex; align-items: center; gap: 40px; margin-bottom: 80px;">
+            <div class="card" style="padding: 40px 60px; text-align: center;">
+                <p class="body" style="font-size: 18px; color: #8B8178; margin-bottom: 10px;">MONTHLY REVENUE</p>
+                <p class="display" style="font-size: 56px; color: #C9A227;">$500</p>
+            </div>
+
+            <span class="display" style="font-size: 72px; color: #5C4827;">÷</span>
+
+            <div class="card" style="padding: 40px 60px; text-align: center;">
+                <p class="body" style="font-size: 18px; color: #8B8178; margin-bottom: 10px;">HOURS WORKED</p>
+                <p class="display" style="font-size: 56px; color: #5C4827;">12</p>
+            </div>
+
+            <span class="display" style="font-size: 72px; color: #5C4827;">=</span>
+
+            <div style="background: linear-gradient(135deg, #5C4827, #3D2B1F); padding: 40px 60px; border-radius: 24px; text-align: center;">
+                <p class="body" style="font-size: 18px; color: #D4A84B; margin-bottom: 10px;">YOUR HOURLY RATE</p>
+                <p class="display" style="font-size: 72px; color: #C9A227;">$41</p>
+            </div>
+        </div>
+
+        <p class="body" style="font-size: 24px; color: #5C4827;">
+            3 hrs/week × 4 weeks = 12 hours/month
+        </p>
+    </div>
+</div>
+
+<!-- ============================================
+     SLIDE 58: THE RULE - Big reveal
+     Dramatic statement
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #E07A5F 0%, #c4534a 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 1897.1 180.0 C 1896.0 266.7, 1873.7 336.1, 1811.3 395.0 C 1749.0 453.9, 1666.9 472.9, 1585.3 474.6 C 1503.6 476.3, 1474.9 428.6, 1403.0 403.6 C 1331.2 378.5, 1314.1 394.0, 1225.9 349.3 C 1137.7 304.6, 977.0 256.7, 961.9 180.0 C 946.7 103.3, 1060.8 7.8, 1150.1 -34.2 C 1239.4 -76.1, 1325.3 -23.3, 1408.5 -29.8 C 1491.7 -36.3, 1484.5 -65.0, 1566.2 -66.7 C 1647.8 -68.4, 1750.7 -87.6, 1816.8 -38.3 C 1883.0 11.1, 1898.2 93.3, 1897.1 180.0 Z" fill="#FDD5CC" fill-opacity="0.15" transform="rotate(20 1480 180)" />
+        <path d="M 315.8 820.0 C 304.5 946.7, 391.3 958.0, 332.5 1015.4 C 273.8 1072.8, 240.4 1017.3, 120.0 1011.3 C -0.4 1005.3, 44.4 1052.9, -68.9 995.5 C -182.2 938.1, -288.9 899.1, -257.8 820.0 C -226.6 740.9, -78.4 802.1, 35.0 731.7 C 148.3 661.3, 19.4 627.0, 120.0 585.3 C 220.6 543.7, 311.5 522.5, 370.3 592.9 C 429.0 663.3, 327.2 693.3, 315.8 820.0 Z" fill="#FDD5CC" fill-opacity="0.1" transform="rotate(-15 120 820)" />
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 80px; color: white; text-align: center; line-height: 1.3;">
+            Any task that costs<br>
+            <span style="font-size: 120px;">LESS</span> than $41/hr?
+        </h1>
+    </div>
+</div>
+
+<!-- ============================================
+     SLIDE 58b: THE RULE - Answer
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #E07A5F 0%, #c4534a 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 1263.0 540.0 C 1267.1 727.5, 1452.8 783.6, 1361.9 857.4 C 1271.0 931.2, 1202.4 785.0, 960.0 785.9 C 717.6 786.8, 729.1 934.1, 554.0 860.3 C 379.0 786.6, 285.6 666.1, 376.6 540.0 C 467.6 413.9, 682.3 581.7, 857.4 440.1 C 1032.4 298.6, 812.7 130.4, 960.0 68.1 C 1107.3 5.7, 1257.6 90.8, 1348.5 232.3 C 1439.4 373.9, 1259.0 352.5, 1263.0 540.0 Z" fill="white" fill-opacity="0.08" transform="rotate(-15 960 540)" />
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 120px; color: white; text-align: center;">
+            Should NOT<br>be done by you.
+        </h1>
+
+        <p class="body" style="font-size: 32px; color: rgba(255,255,255,0.8); margin-top: 60px;">
+            You're worth more doing other things.
+        </p>
+    </div>
+</div>
+
+<!-- ============================================
+     SLIDE 59: What to Delegate - Visual List
+     Clean iconographic list
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 2043.6 180.0 C 2025.1 259.4, 1920.1 318.9, 1836.5 352.0 C 1752.9 385.1, 1706.2 307.2, 1625.6 345.5 C 1544.9 383.8, 1515.7 531.8, 1433.3 543.4 C 1350.9 555.1, 1265.9 476.6, 1213.4 403.9 C 1161.0 331.2, 1148.1 256.4, 1171.0 180.0 C 1193.9 103.6, 1270.2 81.9, 1328.0 22.1 C 1385.7 -37.7, 1394.2 -103.1, 1459.7 -119.1 C 1525.2 -135.1, 1561.4 -72.8, 1655.3 -58.0 C 1749.1 -43.2, 1851.2 -92.8, 1928.9 -45.2 C 2006.5 2.4, 2062.1 100.6, 2043.6 180.0 Z" fill="#6B8E6B" fill-opacity="0.08" transform="rotate(30 1570 180)" />
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="max-width: 500px;">
+            <h1 class="display" style="font-size: 72px; color: #3D2B1F; margin-bottom: 30px;">
+                Delegate<br><span style="color: #6B8E6B;">First</span>
             </h1>
-            <p class="body" style="font-size: 24px; color: #8B8178; line-height: 1.6;">
-                Anything that doesn't require<br>
-                <span style="color: #5C4827; font-weight: 600;">YOUR creative brain.</span>
+            <p class="body" style="font-size: 28px; color: #8B8178;">
+                Tasks that don't need<br>YOUR creative brain.
             </p>
         </div>
 
-        <!-- Right: Task cards -->
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-            <div style="background: white; padding: 30px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; gap: 25px; min-width: 550px;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <span style="color: white; font-size: 24px;">→</span>
+        <div style="display: flex; flex-direction: column; gap: 25px;">
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px; min-width: 500px;">
+                <div style="width: 60px; height: 60px; background: #6B8E6B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✓</span>
                 </div>
-                <p class="body" style="font-size: 24px; color: #3D2B1F;">Mockup creation <span style="color: #8B8178;">(bulk work)</span></p>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Mockup creation</p>
             </div>
-
-            <div style="background: white; padding: 30px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; gap: 25px;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <span style="color: white; font-size: 24px;">→</span>
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px;">
+                <div style="width: 60px; height: 60px; background: #6B8E6B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✓</span>
                 </div>
-                <p class="body" style="font-size: 24px; color: #3D2B1F;">Listing uploads into Vela</p>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Listing uploads</p>
             </div>
-
-            <div style="background: white; padding: 30px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; gap: 25px;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <span style="color: white; font-size: 24px;">→</span>
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px;">
+                <div style="width: 60px; height: 60px; background: #6B8E6B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✓</span>
                 </div>
-                <p class="body" style="font-size: 24px; color: #3D2B1F;">Copying titles & tags into templates</p>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Customer service</p>
             </div>
-
-            <div style="background: white; padding: 30px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; gap: 25px;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <span style="color: white; font-size: 24px;">→</span>
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px;">
+                <div style="width: 60px; height: 60px; background: #6B8E6B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✓</span>
                 </div>
-                <p class="body" style="font-size: 24px; color: #3D2B1F;">Basic customer service</p>
-            </div>
-
-            <div style="background: white; padding: 30px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; gap: 25px;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <span style="color: white; font-size: 24px;">→</span>
-                </div>
-                <p class="body" style="font-size: 24px; color: #3D2B1F;">Admin work</p>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Admin work</p>
             </div>
         </div>
     </div>
-
-    <!-- Bottom tip -->
-    <div style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); background: rgba(92, 72, 39, 0.08); padding: 20px 40px; border-radius: 12px; border-left: 4px solid #C9A227;">
-        <p class="body" style="font-size: 18px; color: #5C4827;">
-            💡 Use tools like <span style="font-weight: 600;">Vela</span> so assistants don't need Etsy login access. <span style="color: #8B8178;">(Protects your account from flags.)</span>
-        </p>
-    </div>
-    <div class="slide-label slide-label-dark">SLIDE 59</div>
 </div>
 
 <!-- ============================================
      SLIDE 60: What to NEVER Delegate
-     Protected zone with crown/CEO visual
+     Contrast with coral X marks
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <!-- Crown icon suggestion -->
-        <g transform="translate(960, 150)" fill="#C9A227" fill-opacity="0.08">
-            <path d="M-60 0 L-40 -40 L0 -10 L40 -40 L60 0 L40 30 L-40 30 Z"/>
-        </g>
+        <path d="M 403.1 780.0 C 356.2 864.6, 244.6 746.9, 147.7 855.2 C 50.8 963.4, 171.0 1098.4, 80.0 1140.9 C -11.0 1183.3, -116.8 1105.1, -155.6 996.8 C -194.3 888.5, -44.0 914.5, -49.2 780.0 C -54.5 645.5, -211.7 615.1, -173.0 548.5 C -134.2 482.0, -63.0 550.8, 80.0 558.2 C 223.0 565.6, 206.9 506.6, 303.8 573.2 C 400.7 639.7, 449.9 695.4, 403.1 780.0 Z" fill="#E07A5F" fill-opacity="0.08" transform="rotate(-20 80 780)" />
     </svg>
 
-    <div class="content flex-center">
-        <h1 class="display" style="font-size: 56px; color: #3D2B1F; margin-bottom: 60px;">
-            What You <span style="color: #E07A5F;">NEVER</span> Delegate
-        </h1>
+    <div class="content" style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="max-width: 500px;">
+            <h1 class="display" style="font-size: 72px; color: #3D2B1F; margin-bottom: 30px;">
+                <span style="color: #E07A5F;">Never</span><br>Delegate
+            </h1>
+            <p class="body" style="font-size: 28px; color: #8B8178;">
+                You are the vision.<br>A VA can't be you.
+            </p>
+        </div>
 
-        <!-- Protected zone visual -->
-        <div style="background: linear-gradient(145deg, rgba(224, 122, 95, 0.08), rgba(224, 122, 95, 0.03)); border: 3px solid rgba(224, 122, 95, 0.3); border-radius: 30px; padding: 50px 80px; margin-bottom: 50px;">
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px 80px;">
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 45px; height: 45px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p class="body" style="font-size: 26px; color: #3D2B1F;">Niche selection</p>
+        <div style="display: flex; flex-direction: column; gap: 25px;">
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px; min-width: 500px; border: 2px solid rgba(224, 122, 95, 0.2);">
+                <div style="width: 60px; height: 60px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✕</span>
                 </div>
-
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 45px; height: 45px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p class="body" style="font-size: 26px; color: #3D2B1F;">Final design decisions</p>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Niche selection</p>
+            </div>
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px; border: 2px solid rgba(224, 122, 95, 0.2);">
+                <div style="width: 60px; height: 60px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✕</span>
                 </div>
-
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 45px; height: 45px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p class="body" style="font-size: 26px; color: #3D2B1F;">Trend research <span style="color: #8B8178; font-size: 20px;">(what to design)</span></p>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Trend research</p>
+            </div>
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px; border: 2px solid rgba(224, 122, 95, 0.2);">
+                <div style="width: 60px; height: 60px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✕</span>
                 </div>
-
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 45px; height: 45px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p class="body" style="font-size: 26px; color: #3D2B1F;">Pricing strategy</p>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Design decisions</p>
+            </div>
+            <div class="card" style="padding: 30px 50px; display: flex; align-items: center; gap: 25px; border: 2px solid rgba(224, 122, 95, 0.2);">
+                <div style="width: 60px; height: 60px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 28px;">✕</span>
                 </div>
-
-                <div style="display: flex; align-items: center; gap: 20px; grid-column: span 2; justify-content: center;">
-                    <div style="width: 45px; height: 45px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 6l12 12M18 6l-12 12" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p class="body" style="font-size: 26px; color: #3D2B1F;">Big-picture planning</p>
-                </div>
+                <p class="body" style="font-size: 26px; color: #3D2B1F;">Pricing strategy</p>
             </div>
         </div>
-
-        <!-- The principle -->
-        <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 40px 80px; border-radius: 24px; text-align: center;">
-            <p class="display" style="font-size: 36px; color: #C9A227; margin-bottom: 15px;">
-                You are the vision and the taste.
-            </p>
-            <p class="body" style="font-size: 24px; color: #FFFEF5;">
-                A VA can't decide what your shop stands for.
-            </p>
-        </div>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 60</div>
 </div>
 
 <!-- ============================================
      SLIDE 61: Seasonal Calendar Header
-     Dark bronze, planning energy
+     Dark dramatic intro
      ============================================ -->
 <div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <defs>
-            <radialGradient id="seasonGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.12"/>
-                <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
-            </radialGradient>
-        </defs>
-        <ellipse cx="960" cy="540" rx="700" ry="450" fill="url(#seasonGlow)"/>
-        <!-- Calendar grid suggestion -->
-        <g stroke="#C9A227" stroke-width="1" stroke-opacity="0.1">
-            <rect x="700" y="650" width="520" height="300" rx="10" fill="none"/>
-            <line x1="700" y1="720" x2="1220" y2="720"/>
-            <line x1="700" y1="780" x2="1220" y2="780"/>
-            <line x1="700" y1="840" x2="1220" y2="840"/>
-            <line x1="700" y1="900" x2="1220" y2="900"/>
-            <line x1="830" y1="650" x2="830" y2="950"/>
-            <line x1="960" y1="650" x2="960" y2="950"/>
-            <line x1="1090" y1="650" x2="1090" y2="950"/>
-        </g>
+        <path d="M 1820.2 700.0 C 1811.9 824.5, 1854.3 809.0, 1752.4 848.1 C 1650.5 887.2, 1573.3 882.3, 1529.1 811.6 C 1484.9 740.9, 1539.8 757.8, 1626.2 646.1 C 1712.6 534.5, 1708.1 473.6, 1776.0 492.5 C 1843.9 511.3, 1828.4 575.5, 1820.2 700.0 Z" fill="#C9A227" fill-opacity="0.1" transform="rotate(10 1700 700)" />
+        <path d="M 269.2 350.0 C 270.6 428.1, 263.0 484.3, 204.7 510.1 C 146.4 535.9, 121.6 493.1, 35.9 453.1 C -49.7 413.1, -141.5 396.5, -137.9 350.0 C -134.4 303.5, -34.0 305.0, 50.2 266.9 C 134.5 228.9, 144.3 177.1, 199.0 197.9 C 253.7 218.6, 267.8 271.9, 269.2 350.0 Z" fill="#D4A84B" fill-opacity="0.08" transform="rotate(-5 100 350)" />
     </svg>
 
     <div class="content flex-center">
-        <p class="body" style="font-size: 18px; color: #D4A84B; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px;">
+        <p class="body" style="font-size: 24px; color: #D4A84B; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 40px;">
             Planning System
         </p>
 
-        <h1 class="display" style="font-size: 90px; color: #C9A227; text-align: center; text-shadow: 0 6px 60px rgba(201, 162, 39, 0.5); margin-bottom: 50px;">
-            THE SEASONAL<br>PROFIT CALENDAR
+        <h1 class="display" style="font-size: 110px; color: #C9A227; text-align: center; text-shadow: 0 10px 80px rgba(201, 162, 39, 0.4);">
+            SEASONAL<br>PROFIT CALENDAR
         </h1>
-
-        <p class="body" style="font-size: 36px; color: #FFFEF5; text-align: center;">
-            Staying <span style="color: #D4A84B; font-weight: 600;">2-3 Months Ahead</span> of Demand
-        </p>
-
-        <div style="width: 200px; height: 3px; background: linear-gradient(90deg, transparent, #C9A227, transparent); margin-top: 60px;"></div>
     </div>
-    <div class="slide-label">SLIDE 61</div>
 </div>
 
 <!-- ============================================
-     SLIDE 62: The Timing Problem
-     Timeline showing "too late" mistake
+     SLIDE 62: The Timing Problem - Visual Timeline
+     Show the mistake visually
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <circle cx="1650" cy="250" r="200" fill="#E07A5F" fill-opacity="0.05"/>
-    </svg>
-
-    <div class="content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <p class="body" style="font-size: 24px; color: #8B8178; margin-bottom: 20px;">
-            Here's a mistake I made early on:
-        </p>
-
-        <!-- Timeline visual -->
-        <div style="background: white; padding: 50px 80px; border-radius: 30px; box-shadow: 0 20px 60px rgba(61, 43, 31, 0.1); margin-bottom: 50px; width: 1200px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px;">
-                <!-- Timeline -->
-                <div style="flex: 1; position: relative; height: 120px;">
-                    <!-- Timeline line -->
-                    <div style="position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #D4CCC4, #E07A5F); transform: translateY(-50%);"></div>
-
-                    <!-- December marker -->
-                    <div style="position: absolute; left: 10%; top: 50%; transform: translate(-50%, -50%);">
-                        <div style="width: 20px; height: 20px; background: #D4CCC4; border-radius: 50%;"></div>
-                        <p class="body" style="position: absolute; top: 35px; left: 50%; transform: translateX(-50%); font-size: 16px; color: #8B8178; white-space: nowrap;">December</p>
-                        <p class="body" style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); font-size: 14px; color: #6B8E6B; white-space: nowrap;">Should design ✓</p>
-                    </div>
-
-                    <!-- January marker -->
-                    <div style="position: absolute; left: 40%; top: 50%; transform: translate(-50%, -50%);">
-                        <div style="width: 20px; height: 20px; background: #D4CCC4; border-radius: 50%;"></div>
-                        <p class="body" style="position: absolute; top: 35px; left: 50%; transform: translateX(-50%); font-size: 16px; color: #8B8178; white-space: nowrap;">January</p>
-                    </div>
-
-                    <!-- February - Bailey designed -->
-                    <div style="position: absolute; left: 70%; top: 50%; transform: translate(-50%, -50%);">
-                        <div style="width: 30px; height: 30px; background: #E07A5F; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-size: 16px;">!</span>
-                        </div>
-                        <p class="body" style="position: absolute; top: 40px; left: 50%; transform: translateX(-50%); font-size: 16px; color: #E07A5F; font-weight: 600; white-space: nowrap;">February</p>
-                        <p class="body" style="position: absolute; top: -35px; left: 50%; transform: translateX(-50%); font-size: 14px; color: #E07A5F; white-space: nowrap;">I designed here</p>
-                    </div>
-
-                    <!-- Valentine's Day -->
-                    <div style="position: absolute; left: 90%; top: 50%; transform: translate(-50%, -50%);">
-                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #E07A5F, #c4534a); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                            <span style="font-size: 20px;">❤️</span>
-                        </div>
-                        <p class="body" style="position: absolute; top: 45px; left: 50%; transform: translateX(-50%); font-size: 16px; color: #3D2B1F; font-weight: 600; white-space: nowrap;">Feb 14</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pain points -->
-            <div style="display: flex; gap: 30px; justify-content: center;">
-                <div style="background: rgba(224, 122, 95, 0.1); padding: 15px 25px; border-radius: 10px;">
-                    <p class="body" style="font-size: 18px; color: #E07A5F;">Everyone was already shopping</p>
-                </div>
-                <div style="background: rgba(224, 122, 95, 0.1); padding: 15px 25px; border-radius: 10px;">
-                    <p class="body" style="font-size: 18px; color: #E07A5F;">Competition was at its peak</p>
-                </div>
-                <div style="background: rgba(224, 122, 95, 0.1); padding: 15px 25px; border-radius: 10px;">
-                    <p class="body" style="font-size: 18px; color: #E07A5F;">I was already too late</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- The rule -->
-        <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 35px 70px; border-radius: 20px;">
-            <p class="body" style="font-size: 28px; color: #FFFEF5; text-align: center;">
-                If you're designing when buyers are shopping,<br>
-                <span style="color: #E07A5F; font-weight: 600;">you're already behind.</span>
-            </p>
-        </div>
-    </div>
-    <div class="slide-label slide-label-dark">SLIDE 62</div>
-</div>
-
-<!-- ============================================
-     SLIDE 63: Rule of Thumb (2-3 months ahead)
-     Visual timeline with design → sell markers
-     ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
-    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <circle cx="200" cy="200" r="150" fill="#C9A227" fill-opacity="0.04"/>
+        <path d="M 1750.3 780.0 C 1736.6 912.2, 1873.6 865.2, 1822.6 983.1 C 1771.5 1100.9, 1684.4 1204.0, 1580.0 1172.8 C 1475.6 1141.7, 1579.2 997.1, 1474.5 879.2 C 1369.7 761.4, 1285.1 880.7, 1230.8 780.0 C 1176.5 679.3, 1188.8 608.9, 1293.5 543.7 C 1398.3 478.4, 1407.6 562.9, 1580.0 562.5 C 1752.4 562.0, 1817.2 477.0, 1868.3 542.3 C 1919.4 607.5, 1764.0 647.8, 1750.3 780.0 Z" fill="#E07A5F" fill-opacity="0.06" transform="rotate(25 1580 780)" />
     </svg>
 
     <div class="content flex-center">
-        <h1 class="display" style="font-size: 52px; color: #3D2B1F; margin-bottom: 20px;">
-            The Rule:
+        <p class="body" style="font-size: 28px; color: #8B8178; margin-bottom: 30px;">A mistake I made early on:</p>
+
+        <h1 class="display" style="font-size: 72px; color: #3D2B1F; text-align: center; margin-bottom: 60px;">
+            I designed Valentine's products<br><span style="color: #E07A5F;">in February.</span>
         </h1>
-        <p class="display" style="font-size: 64px; color: #C9A227; margin-bottom: 60px;">
-            Design 2-3 months AHEAD of the season.
-        </p>
 
-        <!-- Visual examples -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1200px;">
-            <div style="background: white; padding: 35px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Holiday</p>
-                    <p class="display" style="font-size: 28px; color: #E07A5F;">Valentine's Day</p>
-                </div>
-                <div style="color: #C9A227; font-size: 32px;">→</div>
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Design In</p>
-                    <p class="display" style="font-size: 28px; color: #C9A227;">December</p>
-                </div>
-            </div>
+        <!-- Visual Timeline -->
+        <svg width="1000" height="200" viewBox="0 0 1000 200">
+            <!-- Timeline base -->
+            <line x1="50" y1="100" x2="950" y2="100" stroke="#D4CCC4" stroke-width="4"/>
 
-            <div style="background: white; padding: 35px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Holiday</p>
-                    <p class="display" style="font-size: 28px; color: #6B8E6B;">St. Patrick's Day</p>
-                </div>
-                <div style="color: #C9A227; font-size: 32px;">→</div>
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Design In</p>
-                    <p class="display" style="font-size: 28px; color: #C9A227;">Early January</p>
-                </div>
-            </div>
+            <!-- December - Should design -->
+            <circle cx="200" cy="100" r="20" fill="#6B8E6B"/>
+            <text x="200" y="150" text-anchor="middle" font-family="Satoshi" font-size="18" fill="#6B8E6B">December</text>
+            <text x="200" y="60" text-anchor="middle" font-family="Satoshi" font-size="14" fill="#6B8E6B">Should design ✓</text>
 
-            <div style="background: white; padding: 35px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Event</p>
-                    <p class="display" style="font-size: 28px; color: #5C4827;">Graduation</p>
-                </div>
-                <div style="color: #C9A227; font-size: 32px;">→</div>
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Design In</p>
-                    <p class="display" style="font-size: 28px; color: #C9A227;">February</p>
-                </div>
-            </div>
+            <!-- February - When I designed -->
+            <circle cx="550" cy="100" r="30" fill="#E07A5F"/>
+            <text x="550" y="40" text-anchor="middle" font-family="Ogg Bold" font-size="18" fill="#E07A5F">I designed here</text>
+            <text x="550" y="155" text-anchor="middle" font-family="Satoshi" font-size="18" fill="#E07A5F">February</text>
 
-            <div style="background: white; padding: 35px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Holiday</p>
-                    <p class="display" style="font-size: 28px; color: #c4534a;">Christmas</p>
-                </div>
-                <div style="color: #C9A227; font-size: 32px;">→</div>
-                <div>
-                    <p class="body" style="font-size: 14px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">Design In</p>
-                    <p class="display" style="font-size: 28px; color: #C9A227;">August</p>
-                </div>
-            </div>
-        </div>
+            <!-- Valentine's Day -->
+            <circle cx="800" cy="100" r="25" fill="#c4534a"/>
+            <text x="800" y="60" text-anchor="middle" font-size="28">❤️</text>
+            <text x="800" y="155" text-anchor="middle" font-family="Satoshi" font-size="18" fill="#3D2B1F">Feb 14</text>
 
-        <div style="margin-top: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 25px 60px; border-radius: 50px;">
-            <p class="body" style="font-size: 26px; color: white; font-weight: 600;">
-                You're always one to two seasons ahead.
-            </p>
-        </div>
+            <!-- Arrow showing "too late" -->
+            <path d="M 580 100 L 770 100" stroke="#E07A5F" stroke-width="3" stroke-dasharray="8,4"/>
+            <polygon points="770,95 785,100 770,105" fill="#E07A5F"/>
+        </svg>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 63</div>
+</div>
+
+<!-- ============================================
+     SLIDE 62b: The Rule Statement
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #3D2B1F 0%, #2D2014 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 1263.0 540.0 C 1267.1 727.5, 1452.8 783.6, 1361.9 857.4 C 1271.0 931.2, 1202.4 785.0, 960.0 785.9 C 717.6 786.8, 729.1 934.1, 554.0 860.3 C 379.0 786.6, 285.6 666.1, 376.6 540.0 C 467.6 413.9, 682.3 581.7, 857.4 440.1 C 1032.4 298.6, 812.7 130.4, 960.0 68.1 C 1107.3 5.7, 1257.6 90.8, 1348.5 232.3 C 1439.4 373.9, 1259.0 352.5, 1263.0 540.0 Z" fill="#E07A5F" fill-opacity="0.1" transform="rotate(-15 960 540)" />
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 80px; color: #FFFEF5; text-align: center; line-height: 1.4;">
+            If you're designing when<br>buyers are shopping...
+        </h1>
+
+        <h2 class="display" style="font-size: 100px; color: #E07A5F; margin-top: 40px;">
+            You're already behind.
+        </h2>
+    </div>
+</div>
+
+<!-- ============================================
+     SLIDE 63: The Rule of Thumb
+     Big number reveal
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 1854.6 180.0 C 1887.6 234.5, 1942.6 303.0, 1918.7 362.4 C 1894.7 421.8, 1812.5 466.5, 1734.9 477.1 C 1657.4 487.8, 1597.8 447.4, 1531.0 415.6 C 1464.1 383.7, 1428.3 365.0, 1400.7 317.9 C 1373.1 270.8, 1392.2 234.8, 1393.0 180.0 C 1393.7 125.2, 1384.2 109.0, 1404.3 44.1 C 1424.4 -20.7, 1427.3 -111.5, 1493.6 -144.3 C 1560.0 -177.1, 1684.0 -166.6, 1736.0 -119.7 C 1788.1 -72.9, 1730.1 30.1, 1753.8 90.0 C 1777.5 150.0, 1821.7 125.5, 1854.6 180.0 Z" fill="#C9A227" fill-opacity="0.1" transform="rotate(25 1620 180)" />
+    </svg>
+
+    <div class="content flex-center">
+        <p class="body" style="font-size: 32px; color: #8B8178; margin-bottom: 20px;">The Rule:</p>
+
+        <h1 class="display" style="font-size: 200px; color: #C9A227; text-shadow: 0 15px 60px rgba(201, 162, 39, 0.3);">
+            2-3
+        </h1>
+
+        <p class="display" style="font-size: 72px; color: #3D2B1F;">
+            months AHEAD
+        </p>
+    </div>
 </div>
 
 <!-- ============================================
      SLIDE 64: Seasonal Calendar Visual
-     Screenshot-worthy reference table
+     Clean table reference
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
-    <div class="content" style="padding: 60px 100px;">
-        <h1 class="display" style="font-size: 44px; color: #3D2B1F; margin-bottom: 40px; text-align: center;">
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
+    <div class="content" style="padding: 60px 120px;">
+        <h1 class="display" style="font-size: 48px; color: #3D2B1F; margin-bottom: 40px; text-align: center;">
             Seasonal Profit Calendar
         </h1>
 
-        <!-- Calendar Table -->
         <div style="background: white; border-radius: 24px; box-shadow: 0 20px 60px rgba(61, 43, 31, 0.1); overflow: hidden;">
             <!-- Header -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; background: linear-gradient(135deg, #5C4827, #3D2B1F);">
-                <div style="padding: 25px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
-                    <p class="body" style="font-size: 18px; color: #C9A227; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Design In</p>
-                </div>
-                <div style="padding: 25px 40px; border-right: 1px solid rgba(255,255,255,0.1);">
-                    <p class="body" style="font-size: 18px; color: #D4A84B; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Sells In</p>
-                </div>
-                <div style="padding: 25px 40px;">
-                    <p class="body" style="font-size: 18px; color: #FFFEF5; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Holidays / Themes</p>
-                </div>
+            <div style="display: grid; grid-template-columns: 200px 200px 1fr; background: linear-gradient(135deg, #5C4827, #3D2B1F);">
+                <div style="padding: 25px 40px;"><p class="body" style="font-size: 16px; color: #C9A227; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Design In</p></div>
+                <div style="padding: 25px 40px;"><p class="body" style="font-size: 16px; color: #D4A84B; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Sells In</p></div>
+                <div style="padding: 25px 40px;"><p class="body" style="font-size: 16px; color: #FFFEF5; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Holidays</p></div>
             </div>
-
             <!-- Rows -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; border-bottom: 1px solid #F5E6D3;">
-                <div style="padding: 22px 40px; background: rgba(201, 162, 39, 0.08);">
-                    <p class="display" style="font-size: 22px; color: #C9A227;">December</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #B8860B;">Jan - Feb</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #5C4827;">Valentine's, winter clearance</p>
-                </div>
+            <div style="display: grid; grid-template-columns: 200px 200px 1fr; border-bottom: 1px solid #F5E6D3;">
+                <div style="padding: 20px 40px; background: rgba(201, 162, 39, 0.08);"><p class="display" style="font-size: 24px; color: #C9A227;">December</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #B8860B;">Jan - Feb</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #5C4827;">Valentine's Day ❤️</p></div>
             </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; border-bottom: 1px solid #F5E6D3;">
-                <div style="padding: 22px 40px; background: rgba(201, 162, 39, 0.08);">
-                    <p class="display" style="font-size: 22px; color: #C9A227;">January</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #B8860B;">Feb - Mar</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #5C4827;">St. Patrick's, spring prep</p>
-                </div>
+            <div style="display: grid; grid-template-columns: 200px 200px 1fr; border-bottom: 1px solid #F5E6D3;">
+                <div style="padding: 20px 40px; background: rgba(201, 162, 39, 0.08);"><p class="display" style="font-size: 24px; color: #C9A227;">February</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #B8860B;">Apr - Jun</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #5C4827;">Easter, Mother's Day, Graduation 🎓</p></div>
             </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; border-bottom: 1px solid #F5E6D3;">
-                <div style="padding: 22px 40px; background: rgba(201, 162, 39, 0.08);">
-                    <p class="display" style="font-size: 22px; color: #C9A227;">February</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #B8860B;">Apr - Jun</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #5C4827;">Easter, graduation, Mother's/Father's Day</p>
-                </div>
+            <div style="display: grid; grid-template-columns: 200px 200px 1fr; border-bottom: 1px solid #F5E6D3;">
+                <div style="padding: 20px 40px; background: rgba(201, 162, 39, 0.08);"><p class="display" style="font-size: 24px; color: #C9A227;">July</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #B8860B;">Sep - Oct</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #5C4827;">Halloween, Fall vibes 🎃</p></div>
             </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; border-bottom: 1px solid #F5E6D3;">
-                <div style="padding: 22px 40px; background: rgba(201, 162, 39, 0.08);">
-                    <p class="display" style="font-size: 22px; color: #C9A227;">April</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #B8860B;">Jun - Aug</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #5C4827;">Summer themes, back to school</p>
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; border-bottom: 1px solid #F5E6D3;">
-                <div style="padding: 22px 40px; background: rgba(201, 162, 39, 0.08);">
-                    <p class="display" style="font-size: 22px; color: #C9A227;">July</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #B8860B;">Sep - Oct</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #5C4827;">Halloween, fall vibes</p>
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr 2fr;">
-                <div style="padding: 22px 40px; background: rgba(201, 162, 39, 0.08);">
-                    <p class="display" style="font-size: 22px; color: #C9A227;">August</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #B8860B;">Oct - Dec</p>
-                </div>
-                <div style="padding: 22px 40px;">
-                    <p class="body" style="font-size: 20px; color: #5C4827;">Christmas, holiday everything</p>
-                </div>
+            <div style="display: grid; grid-template-columns: 200px 200px 1fr;">
+                <div style="padding: 20px 40px; background: rgba(201, 162, 39, 0.08);"><p class="display" style="font-size: 24px; color: #C9A227;">August</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #B8860B;">Oct - Dec</p></div>
+                <div style="padding: 20px 40px;"><p class="body" style="font-size: 20px; color: #5C4827;">Christmas, Holiday everything 🎄</p></div>
             </div>
         </div>
 
-        <!-- Bottom note -->
-        <div style="margin-top: 30px; text-align: center;">
-            <p class="body" style="font-size: 18px; color: #8B8178;">
-                <span style="color: #C9A227;">Plus:</span> Awareness days like Earth Day, 100 Days of School, Teacher Appreciation...
-            </p>
-        </div>
+        <p class="body" style="font-size: 20px; color: #8B8178; text-align: center; margin-top: 30px;">
+            Screenshot this — you'll want it later.
+        </p>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 64</div>
 </div>
 
 <!-- ============================================
-     SLIDE 65: Evergreen vs Seasonal
-     Visual chart showing baseline + spikes
+     SLIDE 65: Evergreen vs Seasonal Chart
+     Visual revenue graph
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <circle cx="1700" cy="900" r="200" fill="#6B8E6B" fill-opacity="0.05"/>
+        <path d="M 333.7 200.0 C 341.9 262.7, 348.4 322.4, 298.5 348.2 C 248.5 374.1, 202.3 340.5, 133.9 303.4 C 65.4 266.4, 28.6 257.2, 24.6 200.0 C 20.6 142.8, 57.8 100.3, 118.0 74.6 C 178.3 48.9, 211.7 66.0, 265.6 97.3 C 319.5 128.7, 325.5 137.3, 333.7 200.0 Z" fill="#6B8E6B" fill-opacity="0.1" transform="rotate(5 200 200)" />
     </svg>
 
-    <div class="content" style="display: flex; align-items: center; justify-content: space-between; padding: 80px 120px;">
-        <!-- Left: Text -->
+    <div class="content" style="display: flex; align-items: center; justify-content: space-between;">
         <div style="max-width: 500px;">
-            <p class="body" style="font-size: 24px; color: #8B8178; margin-bottom: 20px;">
-                One more thing about timing:
-            </p>
-
-            <h1 class="display" style="font-size: 44px; color: #3D2B1F; margin-bottom: 40px; line-height: 1.3;">
-                Always keep a base of <span style="color: #6B8E6B;">EVERGREEN</span> products.
+            <h1 class="display" style="font-size: 56px; color: #3D2B1F; margin-bottom: 40px;">
+                <span style="color: #6B8E6B;">Evergreen</span><br>+ Seasonal
             </h1>
 
-            <p class="body" style="font-size: 22px; color: #5C4827; margin-bottom: 30px; line-height: 1.6;">
-                Niches that sell year-round, regardless of season.
-            </p>
-
-            <p class="body" style="font-size: 26px; color: #3D2B1F; margin-bottom: 40px;">
-                Then use <span style="color: #C9A227; font-weight: 600;">seasonal products</span> to stack <span style="color: #C9A227; font-weight: 600;">SPIKES</span> on top.
-            </p>
-
-            <!-- Legend -->
-            <div style="display: flex; gap: 40px;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 30px; height: 10px; background: #6B8E6B; border-radius: 5px;"></div>
-                    <p class="body" style="font-size: 18px; color: #5C4827;">Evergreen = consistent baseline</p>
+            <div style="display: flex; gap: 30px; flex-direction: column;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 40px; height: 12px; background: #6B8E6B; border-radius: 6px;"></div>
+                    <p class="body" style="font-size: 22px; color: #5C4827;">Evergreen = steady baseline</p>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 30px; height: 10px; background: #C9A227; border-radius: 5px;"></div>
-                    <p class="body" style="font-size: 18px; color: #5C4827;">Seasonal = bonus revenue peaks</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 40px; height: 12px; background: #C9A227; border-radius: 6px;"></div>
+                    <p class="body" style="font-size: 22px; color: #5C4827;">Seasonal = bonus spikes</p>
                 </div>
             </div>
         </div>
 
-        <!-- Right: Chart Visual -->
-        <div style="background: white; padding: 50px; border-radius: 30px; box-shadow: 0 20px 60px rgba(61, 43, 31, 0.1); width: 750px; height: 500px; position: relative;">
-            <!-- Y-axis label -->
-            <p class="body" style="position: absolute; left: 20px; top: 50%; transform: rotate(-90deg) translateX(-50%); font-size: 14px; color: #8B8178; letter-spacing: 2px;">REVENUE</p>
+        <!-- Revenue Chart -->
+        <div class="card" style="width: 800px; height: 500px; position: relative; padding: 40px;">
+            <svg width="720" height="420" viewBox="0 0 720 420">
+                <!-- Grid lines -->
+                <line x1="60" y1="50" x2="60" y2="350" stroke="#E5E5E5" stroke-width="1"/>
+                <line x1="60" y1="350" x2="680" y2="350" stroke="#E5E5E5" stroke-width="1"/>
 
-            <!-- Chart area -->
-            <div style="position: relative; height: 100%; padding-left: 40px; padding-bottom: 40px;">
-                <!-- Baseline (evergreen) -->
-                <div style="position: absolute; bottom: 40px; left: 40px; right: 40px; height: 120px; background: linear-gradient(180deg, rgba(107, 142, 107, 0.3), rgba(107, 142, 107, 0.1)); border-radius: 8px 8px 0 0;"></div>
+                <!-- Evergreen baseline -->
+                <rect x="60" y="280" width="620" height="70" fill="#6B8E6B" fill-opacity="0.3" rx="8"/>
 
-                <!-- Spikes (seasonal) -->
-                <div style="position: absolute; bottom: 160px; left: 100px; width: 80px; height: 150px; background: linear-gradient(180deg, #C9A227, rgba(201, 162, 39, 0.5)); border-radius: 8px 8px 0 0;"></div>
-                <div style="position: absolute; bottom: 160px; left: 250px; width: 80px; height: 100px; background: linear-gradient(180deg, #C9A227, rgba(201, 162, 39, 0.5)); border-radius: 8px 8px 0 0;"></div>
-                <div style="position: absolute; bottom: 160px; left: 400px; width: 80px; height: 180px; background: linear-gradient(180deg, #C9A227, rgba(201, 162, 39, 0.5)); border-radius: 8px 8px 0 0;"></div>
-                <div style="position: absolute; bottom: 160px; left: 550px; width: 80px; height: 130px; background: linear-gradient(180deg, #C9A227, rgba(201, 162, 39, 0.5)); border-radius: 8px 8px 0 0;"></div>
+                <!-- Seasonal spikes -->
+                <rect x="100" y="150" width="80" height="130" fill="#C9A227" rx="8"/>
+                <rect x="250" y="180" width="80" height="100" fill="#C9A227" rx="8"/>
+                <rect x="400" y="100" width="80" height="180" fill="#C9A227" rx="8"/>
+                <rect x="550" y="130" width="80" height="150" fill="#C9A227" rx="8"/>
 
-                <!-- X-axis labels -->
-                <div style="position: absolute; bottom: 10px; left: 40px; right: 40px; display: flex; justify-content: space-around;">
-                    <p class="body" style="font-size: 14px; color: #8B8178;">Valentine's</p>
-                    <p class="body" style="font-size: 14px; color: #8B8178;">Mother's</p>
-                    <p class="body" style="font-size: 14px; color: #8B8178;">Halloween</p>
-                    <p class="body" style="font-size: 14px; color: #8B8178;">Christmas</p>
-                </div>
+                <!-- Labels -->
+                <text x="140" y="390" text-anchor="middle" font-family="Satoshi" font-size="14" fill="#8B8178">Valentine's</text>
+                <text x="290" y="390" text-anchor="middle" font-family="Satoshi" font-size="14" fill="#8B8178">Mother's</text>
+                <text x="440" y="390" text-anchor="middle" font-family="Satoshi" font-size="14" fill="#8B8178">Halloween</text>
+                <text x="590" y="390" text-anchor="middle" font-family="Satoshi" font-size="14" fill="#8B8178">Christmas</text>
 
-                <!-- Baseline label -->
-                <div style="position: absolute; bottom: 80px; right: 60px; background: rgba(107, 142, 107, 0.2); padding: 8px 16px; border-radius: 8px;">
-                    <p class="body" style="font-size: 14px; color: #6B8E6B; font-weight: 600;">EVERGREEN BASELINE</p>
-                </div>
-            </div>
+                <!-- Y-axis label -->
+                <text x="30" y="200" text-anchor="middle" font-family="Satoshi" font-size="14" fill="#8B8178" transform="rotate(-90 30 200)">REVENUE</text>
+            </svg>
         </div>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 65</div>
 </div>
 
 <!-- ============================================
      SLIDE 66: Complete System Header
-     Dark bronze, putting it together
+     Dark, putting it all together
      ============================================ -->
 <div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <defs>
-            <radialGradient id="systemGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
-            </radialGradient>
-        </defs>
-        <ellipse cx="960" cy="540" rx="700" ry="450" fill="url(#systemGlow)"/>
-        <!-- Connecting dots/nodes suggesting system -->
-        <g fill="#C9A227" fill-opacity="0.15">
-            <circle cx="400" cy="400" r="8"/>
-            <circle cx="600" cy="300" r="6"/>
-            <circle cx="800" cy="500" r="10"/>
-            <circle cx="1000" cy="350" r="7"/>
-            <circle cx="1200" cy="450" r="9"/>
-            <circle cx="1400" cy="350" r="6"/>
-            <circle cx="1550" cy="500" r="8"/>
-        </g>
-        <g stroke="#C9A227" stroke-width="1" stroke-opacity="0.08">
-            <line x1="400" y1="400" x2="600" y2="300"/>
-            <line x1="600" y1="300" x2="800" y2="500"/>
-            <line x1="800" y1="500" x2="1000" y2="350"/>
-            <line x1="1000" y1="350" x2="1200" y2="450"/>
-            <line x1="1200" y1="450" x2="1400" y2="350"/>
-            <line x1="1400" y1="350" x2="1550" y2="500"/>
-        </g>
+        <path d="M 1263.0 540.0 C 1267.1 727.5, 1452.8 783.6, 1361.9 857.4 C 1271.0 931.2, 1202.4 785.0, 960.0 785.9 C 717.6 786.8, 729.1 934.1, 554.0 860.3 C 379.0 786.6, 285.6 666.1, 376.6 540.0 C 467.6 413.9, 682.3 581.7, 857.4 440.1 C 1032.4 298.6, 812.7 130.4, 960.0 68.1 C 1107.3 5.7, 1257.6 90.8, 1348.5 232.3 C 1439.4 373.9, 1259.0 352.5, 1263.0 540.0 Z" fill="#C9A227" fill-opacity="0.1" transform="rotate(-15 960 540)" />
     </svg>
 
     <div class="content flex-center">
-        <p class="body" style="font-size: 18px; color: #D4A84B; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 40px;">
+        <p class="body" style="font-size: 24px; color: #D4A84B; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 40px;">
             Putting It All Together
         </p>
 
-        <h1 class="display" style="font-size: 100px; color: #C9A227; text-align: center; text-shadow: 0 6px 60px rgba(201, 162, 39, 0.5); margin-bottom: 50px;">
+        <h1 class="display" style="font-size: 120px; color: #C9A227; text-align: center; text-shadow: 0 10px 80px rgba(201, 162, 39, 0.4);">
             THE COMPLETE<br>EMPIRE SYSTEM
         </h1>
-
-        <p class="body" style="font-size: 36px; color: #FFFEF5; text-align: center;">
-            Everything Working Together
-        </p>
-
-        <div style="width: 200px; height: 3px; background: linear-gradient(90deg, transparent, #C9A227, transparent); margin-top: 60px;"></div>
     </div>
-    <div class="slide-label">SLIDE 66</div>
 </div>
 
 <!-- ============================================
-     SLIDE 67: Full System Visual
-     THE master roadmap diagram
+     SLIDE 67: Full System Visual - THE ROADMAP
+     Master diagram
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
-    <div class="content" style="padding: 50px 80px;">
-        <!-- Weekly Rhythm Section -->
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
+    <div class="content" style="padding: 50px 100px;">
+        <!-- Weekly Rhythm -->
         <div style="margin-bottom: 30px;">
-            <p class="body" style="font-size: 18px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">
-                The Weekly Rhythm
-            </p>
-            <div style="display: flex; gap: 30px; justify-content: center;">
-                <!-- Monday -->
-                <div style="background: linear-gradient(145deg, #C9A227, #B8860B); padding: 30px 40px; border-radius: 20px; width: 320px; box-shadow: 0 15px 40px rgba(201, 162, 39, 0.3);">
-                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Monday</p>
-                    <p class="display" style="font-size: 28px; color: white; margin-bottom: 15px;">RESEARCH</p>
-                    <div style="background: rgba(255,255,255,0.15); padding: 12px 20px; border-radius: 10px;">
-                        <p class="body" style="font-size: 16px; color: white;">Find 20 Green Light ideas</p>
-                    </div>
-                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 10px; text-align: center;">1 hour</p>
+            <p class="body" style="font-size: 16px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">Weekly Rhythm</p>
+            <div style="display: flex; gap: 20px; justify-content: center; align-items: center;">
+                <div style="background: linear-gradient(135deg, #C9A227, #B8860B); padding: 30px 50px; border-radius: 20px; text-align: center; min-width: 280px;">
+                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px;">MONDAY</p>
+                    <p class="display" style="font-size: 32px; color: white;">RESEARCH</p>
+                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 8px;">1 hour</p>
                 </div>
-
-                <!-- Arrow -->
-                <div style="display: flex; align-items: center; color: #C9A227; font-size: 36px;">→</div>
-
-                <!-- Wednesday -->
-                <div style="background: linear-gradient(145deg, #B8860B, #996d00); padding: 30px 40px; border-radius: 20px; width: 320px; box-shadow: 0 15px 40px rgba(184, 134, 11, 0.3);">
-                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Wednesday</p>
-                    <p class="display" style="font-size: 28px; color: white; margin-bottom: 15px;">CREATE</p>
-                    <div style="background: rgba(255,255,255,0.15); padding: 12px 20px; border-radius: 10px;">
-                        <p class="body" style="font-size: 16px; color: white;">Design 10-15 products (one niche)</p>
-                    </div>
-                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 10px; text-align: center;">1 hour</p>
+                <span style="font-size: 36px; color: #C9A227;">→</span>
+                <div style="background: linear-gradient(135deg, #B8860B, #8B6914); padding: 30px 50px; border-radius: 20px; text-align: center; min-width: 280px;">
+                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px;">WEDNESDAY</p>
+                    <p class="display" style="font-size: 32px; color: white;">CREATE</p>
+                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 8px;">1 hour</p>
                 </div>
-
-                <!-- Arrow -->
-                <div style="display: flex; align-items: center; color: #C9A227; font-size: 36px;">→</div>
-
-                <!-- Friday -->
-                <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 30px 40px; border-radius: 20px; width: 320px; box-shadow: 0 15px 40px rgba(92, 72, 39, 0.3);">
-                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Friday</p>
-                    <p class="display" style="font-size: 28px; color: #C9A227; margin-bottom: 15px;">LIST</p>
-                    <div style="background: rgba(255,255,255,0.1); padding: 12px 20px; border-radius: 10px;">
-                        <p class="body" style="font-size: 16px; color: white;">Publish 15-20 products live</p>
-                    </div>
-                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 10px; text-align: center;">1 hour</p>
+                <span style="font-size: 36px; color: #C9A227;">→</span>
+                <div style="background: linear-gradient(135deg, #5C4827, #3D2B1F); padding: 30px 50px; border-radius: 20px; text-align: center; min-width: 280px;">
+                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px;">FRIDAY</p>
+                    <p class="display" style="font-size: 32px; color: #C9A227;">LIST</p>
+                    <p class="body" style="font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 8px;">1 hour</p>
                 </div>
             </div>
         </div>
 
-        <!-- Down Arrow -->
         <div style="text-align: center; color: #C9A227; font-size: 40px; margin: 20px 0;">↓</div>
 
-        <!-- Quarterly Check -->
+        <!-- Quarterly -->
         <div style="margin-bottom: 30px;">
-            <p class="body" style="font-size: 18px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-align: center;">
-                The Quarterly Check
-            </p>
-            <div style="background: white; padding: 30px 60px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.08); display: flex; align-items: center; justify-content: center; gap: 50px;">
-                <p class="body" style="font-size: 20px; color: #5C4827;">Every 4 months:</p>
-                <div style="display: flex; gap: 30px;">
-                    <div style="background: rgba(224, 122, 95, 0.1); padding: 15px 30px; border-radius: 12px;">
-                        <p class="display" style="font-size: 22px; color: #E07A5F;">DELETE</p>
-                    </div>
-                    <div style="background: rgba(184, 134, 11, 0.1); padding: 15px 30px; border-radius: 12px;">
-                        <p class="display" style="font-size: 22px; color: #B8860B;">OPTIMIZE</p>
-                    </div>
-                    <div style="background: rgba(201, 162, 39, 0.1); padding: 15px 30px; border-radius: 12px;">
-                        <p class="display" style="font-size: 22px; color: #C9A227;">SCALE</p>
-                    </div>
-                </div>
+            <p class="body" style="font-size: 16px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-align: center;">Quarterly Check</p>
+            <div class="card" style="padding: 30px 60px; display: flex; align-items: center; justify-content: center; gap: 40px;">
+                <div style="background: rgba(224, 122, 95, 0.1); padding: 15px 30px; border-radius: 12px;"><p class="display" style="font-size: 24px; color: #E07A5F;">DELETE</p></div>
+                <div style="background: rgba(184, 134, 11, 0.1); padding: 15px 30px; border-radius: 12px;"><p class="display" style="font-size: 24px; color: #B8860B;">OPTIMIZE</p></div>
+                <div style="background: rgba(201, 162, 39, 0.1); padding: 15px 30px; border-radius: 12px;"><p class="display" style="font-size: 24px; color: #C9A227;">SCALE</p></div>
             </div>
         </div>
 
-        <!-- Down Arrow -->
         <div style="text-align: center; color: #C9A227; font-size: 40px; margin: 20px 0;">↓</div>
 
-        <!-- Annual Plan -->
+        <!-- Annual -->
         <div style="margin-bottom: 30px;">
-            <p class="body" style="font-size: 18px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-align: center;">
-                The Annual Plan
-            </p>
+            <p class="body" style="font-size: 16px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; text-align: center;">Annual Plan</p>
             <div style="background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), rgba(184, 134, 11, 0.05)); padding: 25px 60px; border-radius: 20px; border: 2px solid rgba(201, 162, 39, 0.2); text-align: center;">
-                <p class="body" style="font-size: 24px; color: #5C4827;">
-                    Stay <span style="color: #C9A227; font-weight: 600;">2-3 months ahead</span> on the seasonal calendar
-                </p>
+                <p class="body" style="font-size: 24px; color: #5C4827;">Stay <span style="color: #C9A227; font-weight: 600;">2-3 months ahead</span> on seasonal calendar</p>
             </div>
         </div>
 
-        <!-- Total Footer -->
-        <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 30px 60px; border-radius: 20px; text-align: center; margin-top: 20px;">
+        <!-- Total -->
+        <div style="background: linear-gradient(135deg, #5C4827, #3D2B1F); padding: 30px 60px; border-radius: 20px; text-align: center; margin-top: 20px;">
             <p class="body" style="font-size: 28px; color: #FFFEF5;">
-                TOTAL: <span style="color: #C9A227; font-weight: 700;">3 hours/week</span> → <span style="color: #C9A227;">sustainable empire</span>
+                TOTAL: <span style="color: #C9A227; font-weight: 700;">3 hours/week</span> → sustainable empire
             </p>
         </div>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 67</div>
 </div>
 
 <!-- ============================================
-     SLIDE 68: "Boring" Embrace
-     Typography-focused reframe
+     SLIDE 68: "Boring" Embrace - Typography focus
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <!-- Stacking blocks suggestion -->
-        <g fill="#C9A227" fill-opacity="0.05">
-            <rect x="1500" y="600" width="100" height="60" rx="8"/>
-            <rect x="1480" y="540" width="140" height="60" rx="8"/>
-            <rect x="1460" y="480" width="180" height="60" rx="8"/>
-            <rect x="1440" y="420" width="220" height="60" rx="8"/>
-        </g>
+        <path d="M 392.7 130.0 C 357.0 185.6, 284.4 153.8, 256.5 218.3 C 228.5 282.8, 306.0 398.6, 253.1 452.7 C 200.2 506.8, 66.3 521.7, -8.0 488.7 C -82.3 455.7, -108.6 359.3, -118.4 287.5 C -128.2 215.8, -54.8 194.3, -57.2 130.0 C -59.5 65.7, -147.2 19.9, -130.0 -34.1 C -112.9 -88.2, -46.9 -111.0, 28.7 -140.3 C 104.3 -169.7, 166.8 -196.9, 248.1 -180.8 C 329.4 -164.7, 406.1 -121.9, 435.0 -59.7 C 464.0 2.5, 428.4 74.4, 392.7 130.0 Z" fill="#C9A227" fill-opacity="0.06" transform="rotate(-15 130 130)" />
     </svg>
 
     <div class="content flex-center">
-        <h1 class="display" style="font-size: 80px; color: #3D2B1F; margin-bottom: 50px;">
-            This system is <span style="color: #8B8178;">boring.</span>
+        <h1 class="display" style="font-size: 100px; color: #8B8178; margin-bottom: 50px;">
+            This system is boring.
         </h1>
 
-        <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 60px; text-align: center;">
-            <p class="body" style="font-size: 28px; color: #8B8178;">No "one weird trick."</p>
-            <p class="body" style="font-size: 28px; color: #8B8178;">No viral hack.</p>
-            <p class="body" style="font-size: 28px; color: #8B8178;">No secret nobody else knows.</p>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <p class="body" style="font-size: 32px; color: #A69B8D; margin-bottom: 15px;">No "one weird trick."</p>
+            <p class="body" style="font-size: 32px; color: #A69B8D; margin-bottom: 15px;">No viral hack.</p>
+            <p class="body" style="font-size: 32px; color: #A69B8D;">No secret nobody else knows.</p>
         </div>
 
-        <div style="background: white; padding: 40px 80px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); margin-bottom: 60px;">
-            <p class="body" style="font-size: 30px; color: #5C4827; text-align: center;">
-                Just: <span style="color: #C9A227; font-weight: 600;">Research.</span> <span style="color: #C9A227; font-weight: 600;">Create.</span> <span style="color: #C9A227; font-weight: 600;">List.</span> <span style="color: #C9A227; font-weight: 600;">Track.</span> <span style="color: #C9A227; font-weight: 600;">Repeat.</span>
-            </p>
-        </div>
-
-        <!-- The reframe - building crescendo -->
-        <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
-            <p class="body" style="font-size: 32px; color: #5C4827;">But boring is <span style="font-weight: 600;">sustainable.</span></p>
-            <p class="body" style="font-size: 38px; color: #3D2B1F; font-weight: 600;">Boring <span style="color: #B8860B;">compounds.</span></p>
-            <p class="display" style="font-size: 56px; color: #C9A227;">Boring builds empires.</p>
+        <div style="display: flex; flex-direction: column; gap: 15px; text-align: center;">
+            <p class="body" style="font-size: 36px; color: #5C4827;">But boring is <span style="font-weight: 700;">sustainable.</span></p>
+            <p class="body" style="font-size: 44px; color: #3D2B1F; font-weight: 700;">Boring compounds.</p>
+            <p class="display" style="font-size: 72px; color: #C9A227;">Boring builds empires.</p>
         </div>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 68</div>
 </div>
 
 <!-- ============================================
-     SLIDE 69: Compound Math Recap
-     Growth curve visualization
+     SLIDE 69: Compound Math - Big Numbers
      ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
-    <div class="content" style="display: flex; align-items: center; justify-content: space-between; padding: 80px 120px;">
-        <!-- Left: Timeline progression -->
-        <div style="max-width: 700px;">
-            <h1 class="display" style="font-size: 44px; color: #3D2B1F; margin-bottom: 50px;">
-                Let's see the compound effect:
-            </h1>
-
-            <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 50px;">
-                <div style="display: flex; align-items: center; gap: 30px;">
-                    <div style="background: rgba(201, 162, 39, 0.2); padding: 10px 20px; border-radius: 8px; min-width: 100px; text-align: center;">
-                        <p class="body" style="font-size: 16px; color: #5C4827;">Month 1</p>
-                    </div>
-                    <p class="body" style="font-size: 22px; color: #5C4827;"><span style="color: #C9A227; font-weight: 600;">60</span> products → <span style="color: #6B8E6B; font-weight: 600;">5-10</span> winners</p>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 30px;">
-                    <div style="background: rgba(201, 162, 39, 0.3); padding: 10px 20px; border-radius: 8px; min-width: 100px; text-align: center;">
-                        <p class="body" style="font-size: 16px; color: #5C4827;">Month 3</p>
-                    </div>
-                    <p class="body" style="font-size: 22px; color: #5C4827;"><span style="color: #C9A227; font-weight: 600;">180</span> products → <span style="color: #6B8E6B; font-weight: 600;">20-30</span> winners</p>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 30px;">
-                    <div style="background: rgba(201, 162, 39, 0.4); padding: 10px 20px; border-radius: 8px; min-width: 100px; text-align: center;">
-                        <p class="body" style="font-size: 16px; color: #5C4827;">Month 6</p>
-                    </div>
-                    <p class="body" style="font-size: 22px; color: #5C4827;"><span style="color: #C9A227; font-weight: 600;">360</span> products → <span style="color: #6B8E6B; font-weight: 600;">40-60</span> winners</p>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 30px;">
-                    <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 10px 20px; border-radius: 8px; min-width: 100px; text-align: center;">
-                        <p class="body" style="font-size: 16px; color: white; font-weight: 600;">Month 12</p>
-                    </div>
-                    <p class="body" style="font-size: 22px; color: #3D2B1F; font-weight: 600;"><span style="color: #C9A227;">700+</span> products → <span style="color: #6B8E6B;">80-120+</span> winners</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right: Revenue calculation -->
-        <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 50px; border-radius: 30px; box-shadow: 0 25px 70px rgba(92, 72, 39, 0.35); width: 550px;">
-            <p class="body" style="font-size: 20px; color: #D4A84B; margin-bottom: 30px;">
-                Each winner doing $10-50/month...
-            </p>
-
-            <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 40px;">
-                <div style="background: rgba(255,255,255,0.08); padding: 25px; border-radius: 16px;">
-                    <p class="body" style="font-size: 16px; color: #8B8178; margin-bottom: 8px;">Low end estimate:</p>
-                    <p class="display" style="font-size: 42px; color: #FFFEF5;">$800-1,200<span style="font-size: 24px; color: #D4A84B;">/month</span></p>
-                </div>
-
-                <div style="background: rgba(201, 162, 39, 0.2); padding: 25px; border-radius: 16px;">
-                    <p class="body" style="font-size: 16px; color: #D4A84B; margin-bottom: 8px;">Higher end:</p>
-                    <p class="display" style="font-size: 48px; color: #C9A227;">$2,000-5,000+<span style="font-size: 24px; color: #FFFEF5;">/month</span></p>
-                </div>
-            </div>
-
-            <!-- Punchline -->
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; text-align: center;">
-                <p class="display" style="font-size: 32px; color: #FFFEF5;">
-                    From <span style="color: #C9A227;">3 hours a week.</span>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="slide-label slide-label-dark">SLIDE 69</div>
-</div>
-
-<!-- ============================================
-     SLIDE 70: Transition Setup
-     Three-day recap, opens to offer
-     ============================================ -->
-<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+<div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <ellipse cx="960" cy="540" rx="800" ry="500" fill="#C9A227" fill-opacity="0.03"/>
+        <path d="M 1828.4 200.0 C 1772.3 324.2, 1855.0 224.1, 1801.5 334.9 C 1748.0 445.7, 1741.4 568.9, 1650.0 569.3 C 1558.6 569.7, 1597.9 446.9, 1496.9 336.2 C 1395.8 225.4, 1325.2 291.0, 1313.2 200.0 C 1301.1 109.0, 1355.7 91.1, 1456.8 32.9 C 1557.8 -25.3, 1490.5 39.7, 1650.0 6.0 C 1809.5 -27.6, 1935.0 -137.4, 1988.6 -79.2 C 2042.1 -21.0, 1884.5 75.8, 1828.4 200.0 Z" fill="#C9A227" fill-opacity="0.08" transform="rotate(20 1650 200)" />
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="max-width: 600px;">
+            <p class="body" style="font-size: 28px; color: #D4A84B; margin-bottom: 40px;">The compound effect:</p>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <span class="body" style="font-size: 20px; color: #8B8178; width: 100px;">Month 1</span>
+                    <span class="display" style="font-size: 32px; color: #D4A84B;">60</span>
+                    <span class="body" style="font-size: 20px; color: #FFFEF5;">products → <span style="color: #6B8E6B;">5-10</span> winners</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <span class="body" style="font-size: 20px; color: #8B8178; width: 100px;">Month 6</span>
+                    <span class="display" style="font-size: 32px; color: #D4A84B;">360</span>
+                    <span class="body" style="font-size: 20px; color: #FFFEF5;">products → <span style="color: #6B8E6B;">40-60</span> winners</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <span class="body" style="font-size: 20px; color: #8B8178; width: 100px;">Month 12</span>
+                    <span class="display" style="font-size: 40px; color: #C9A227;">700+</span>
+                    <span class="body" style="font-size: 20px; color: #FFFEF5;">products → <span style="color: #6B8E6B;">80-120+</span> winners</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <p class="body" style="font-size: 24px; color: #D4A84B; margin-bottom: 20px;">Each winner = $10-50/month</p>
+            <p class="display" style="font-size: 120px; color: #C9A227; text-shadow: 0 10px 60px rgba(201, 162, 39, 0.4);">
+                $2K-5K
+            </p>
+            <p class="body" style="font-size: 32px; color: #FFFEF5;">/month</p>
+            <div style="margin-top: 40px; background: rgba(255,255,255,0.1); padding: 20px 40px; border-radius: 50px;">
+                <p class="body" style="font-size: 24px; color: #C9A227;">From 3 hours a week.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     SLIDE 70: Transition Setup - Three Day Recap
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(135deg, #FDF6E3, #FAF3E0);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 1263.0 540.0 C 1267.1 727.5, 1452.8 783.6, 1361.9 857.4 C 1271.0 931.2, 1202.4 785.0, 960.0 785.9 C 717.6 786.8, 729.1 934.1, 554.0 860.3 C 379.0 786.6, 285.6 666.1, 376.6 540.0 C 467.6 413.9, 682.3 581.7, 857.4 440.1 C 1032.4 298.6, 812.7 130.4, 960.0 68.1 C 1107.3 5.7, 1257.6 90.8, 1348.5 232.3 C 1439.4 373.9, 1259.0 352.5, 1263.0 540.0 Z" fill="#C9A227" fill-opacity="0.05" transform="rotate(-15 960 540)" />
     </svg>
 
     <div class="content flex-center">
-        <h1 class="display" style="font-size: 48px; color: #3D2B1F; margin-bottom: 60px;">
+        <h1 class="display" style="font-size: 56px; color: #3D2B1F; margin-bottom: 60px;">
             So now you have:
         </h1>
 
-        <!-- Three day cards -->
         <div style="display: flex; gap: 40px; margin-bottom: 60px;">
-            <!-- Day 1 -->
-            <div style="background: white; padding: 40px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); width: 350px; border-top: 5px solid #6B8E6B;">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 50px; height: 50px; background: #6B8E6B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <p class="display" style="font-size: 28px; color: #C9A227;">Day 1</p>
-                </div>
-                <p class="body" style="font-size: 22px; color: #3D2B1F; margin-bottom: 10px;">
-                    <span style="font-weight: 600;">WHAT</span> to create
-                </p>
-                <p class="body" style="font-size: 18px; color: #8B8178;">
-                    (Demand-First Framework)
-                </p>
+            <div class="card" style="padding: 40px; width: 320px; border-top: 6px solid #6B8E6B;">
+                <p class="display" style="font-size: 32px; color: #C9A227; margin-bottom: 15px;">Day 1</p>
+                <p class="body" style="font-size: 24px; color: #3D2B1F;"><span style="font-weight: 700;">WHAT</span> to create</p>
+                <p class="body" style="font-size: 16px; color: #8B8178; margin-top: 10px;">Demand-First Framework</p>
             </div>
-
-            <!-- Day 2 -->
-            <div style="background: white; padding: 40px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); width: 350px; border-top: 5px solid #6B8E6B;">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 50px; height: 50px; background: #6B8E6B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <p class="display" style="font-size: 28px; color: #C9A227;">Day 2</p>
-                </div>
-                <p class="body" style="font-size: 22px; color: #3D2B1F; margin-bottom: 10px;">
-                    <span style="font-weight: 600;">HOW</span> to validate
-                </p>
-                <p class="body" style="font-size: 18px; color: #8B8178;">
-                    (Winner Hypothesis)
-                </p>
+            <div class="card" style="padding: 40px; width: 320px; border-top: 6px solid #6B8E6B;">
+                <p class="display" style="font-size: 32px; color: #C9A227; margin-bottom: 15px;">Day 2</p>
+                <p class="body" style="font-size: 24px; color: #3D2B1F;"><span style="font-weight: 700;">HOW</span> to validate</p>
+                <p class="body" style="font-size: 16px; color: #8B8178; margin-top: 10px;">Winner Hypothesis</p>
             </div>
-
-            <!-- Day 3 -->
-            <div style="background: white; padding: 40px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); width: 350px; border-top: 5px solid #C9A227;">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 50px; height: 50px; background: #C9A227; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <p class="display" style="font-size: 28px; color: #C9A227;">Day 3</p>
-                </div>
-                <p class="body" style="font-size: 22px; color: #3D2B1F; margin-bottom: 10px;">
-                    <span style="font-weight: 600;">HOW</span> to stay consistent
-                </p>
-                <p class="body" style="font-size: 18px; color: #8B8178;">
-                    (Empire System)
-                </p>
+            <div class="card" style="padding: 40px; width: 320px; border-top: 6px solid #C9A227;">
+                <p class="display" style="font-size: 32px; color: #C9A227; margin-bottom: 15px;">Day 3</p>
+                <p class="body" style="font-size: 24px; color: #3D2B1F;"><span style="font-weight: 700;">HOW</span> to stay consistent</p>
+                <p class="body" style="font-size: 16px; color: #8B8178; margin-top: 10px;">Empire System</p>
             </div>
         </div>
 
-        <!-- Validation statement -->
-        <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 30px 70px; border-radius: 100px; margin-bottom: 50px; box-shadow: 0 15px 40px rgba(201, 162, 39, 0.3);">
-            <p class="body" style="font-size: 28px; color: white; font-weight: 600;">
-                You have everything you need to succeed.
-            </p>
+        <div class="pill" style="background: linear-gradient(135deg, #C9A227, #D4A84B); color: white; padding: 20px 60px; font-size: 28px; margin-bottom: 50px;">
+            You have everything you need to succeed.
         </div>
 
-        <!-- Transition line -->
-        <p class="body" style="font-size: 32px; color: #3D2B1F;">
+        <p class="body" style="font-size: 36px; color: #3D2B1F;">
             But let me ask you something honestly...
         </p>
     </div>
-    <div class="slide-label slide-label-dark">SLIDE 70</div>
 </div>
 
 </body>
