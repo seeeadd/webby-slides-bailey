@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+@font-face {
+    font-family: 'Ogg Bold';
+    src: url('https://seanthea.github.io/bailey-fonts/Ogg-Bold.woff2') format('woff2'),
+         url('https://seanthea.github.io/bailey-fonts/Ogg-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://seanthea.github.io/bailey-fonts/Satoshi-Variable.woff2') format('woff2'),
+         url('https://seanthea.github.io/bailey-fonts/Satoshi-Variable.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+}
+
+.bg-cream { background: #FDF8F3; }
+.bg-blush { background: #FEF0EA; }
+.bg-bronze { background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%); }
+.bg-bronze-deep { background: linear-gradient(145deg, #2D1E14 0%, #1A110B 100%); }
+.bg-dark { background: #2D3436; }
+.bg-gold-warm { background: linear-gradient(145deg, #C9A227 0%, #B8860B 100%); }
+
+.display {
+    font-family: 'Ogg Bold', serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.body {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 60px 80px;
+    height: 100%;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.text-center { text-align: center; }
+
+.bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.value-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #C9A227, #D4A84B);
+    color: #FFFEF5;
+    font-family: 'Ogg Bold', serif;
+    font-size: 22px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
+}
+
+.bonus-card {
+    background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%);
+    border-radius: 20px;
+    padding: 35px 45px;
+    box-shadow: 0 15px 50px rgba(201, 162, 39, 0.1);
+    border: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+.total-row:last-child {
+    border-bottom: none;
+}
+
+.guarantee-card {
+    background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%);
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 12px 40px rgba(27, 138, 138, 0.12);
+    border: 1px solid rgba(27, 138, 138, 0.15);
+}
+
+.urgency-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #E07B6C, #F4A89A);
+    color: #FFFEF5;
+    font-family: 'Ogg Bold', serif;
+    font-size: 20px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(224, 123, 108, 0.3);
+}
+
+    </style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- DAY 3 SLIDES 121-140: TOTAL VALUE & PRICE -->
+<!-- Price reveal, guarantees, urgency stack -->
+<!-- ========================================== -->
+
+<!-- SLIDE 121: Total Value Transition -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="valueTransGrad121" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="350" rx="700" ry="500" fill="url(#valueTransGrad121)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <p style="font-size: 28px; color: #636E72; margin-bottom: 40px; font-weight: 500;">
+                Okay, let's add it all up.
+            </p>
+
+            <h1 class="display" style="font-size: 78px; color: #C9A227; margin-bottom: 50px; line-height: 1.15;">
+                HERE'S EVERYTHING<br>YOU'RE GETTING
+            </h1>
+
+            <p style="font-size: 26px; color: #2D3436; line-height: 1.7; max-width: 800px; margin: 0 auto;">
+                The complete system. The support. The shortcuts.<br>
+                All designed to get you to your first profitable product.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 122: Value Stack - Core Program -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="stackGrad122" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1650" cy="200" rx="450" ry="380" fill="url(#stackGrad122)"/>
+        <ellipse cx="250" cy="850" rx="400" ry="320" fill="url(#stackGrad122)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <h2 class="display" style="font-size: 42px; color: #5C4827; margin-bottom: 45px; text-align: center;">
+                THE CORE PROGRAM
+            </h2>
+
+            <div class="bonus-card" style="margin-bottom: 25px;">
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 26px; color: #2D3436; margin-bottom: 8px;">THE DEMAND-FIRST FRAMEWORK</p>
+                        <p style="font-size: 18px; color: #636E72;">Complete system for finding products that sell</p>
+                    </div>
+                    <div class="value-badge">$1,997</div>
+                </div>
+
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 26px; color: #2D3436; margin-bottom: 8px;">WINNER HYPOTHESIS TRAINING</p>
+                        <p style="font-size: 18px; color: #636E72;">Never guess what to create again</p>
+                    </div>
+                    <div class="value-badge">$997</div>
+                </div>
+
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 26px; color: #2D3436; margin-bottom: 8px;">VALIDATION ACCELERATOR</p>
+                        <p style="font-size: 18px; color: #636E72;">Test ideas before you invest time</p>
+                    </div>
+                    <div class="value-badge">$497</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 123: Value Stack - Support -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="stackGrad123" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="250" rx="450" ry="380" fill="url(#stackGrad123)"/>
+        <ellipse cx="1700" cy="800" rx="350" ry="300" fill="url(#stackGrad123)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <h2 class="display" style="font-size: 42px; color: #5C4827; margin-bottom: 45px; text-align: center;">
+                THE SUPPORT SYSTEM
+            </h2>
+
+            <div class="bonus-card" style="margin-bottom: 25px;">
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 26px; color: #2D3436; margin-bottom: 8px;">WEEKLY Q&A CALLS</p>
+                        <p style="font-size: 18px; color: #636E72;">Get your questions answered in real-time</p>
+                    </div>
+                    <div class="value-badge">$1,497</div>
+                </div>
+
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 26px; color: #2D3436; margin-bottom: 8px;">PRIVATE COMMUNITY ACCESS</p>
+                        <p style="font-size: 18px; color: #636E72;">Connect with other action-takers</p>
+                    </div>
+                    <div class="value-badge">$997</div>
+                </div>
+
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 26px; color: #2D3436; margin-bottom: 8px;">PRODUCT FEEDBACK REVIEWS</p>
+                        <p style="font-size: 18px; color: #636E72;">Get eyes on your work before you launch</p>
+                    </div>
+                    <div class="value-badge">$797</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 124: Value Stack - Bonuses -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="stackGrad124" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="200" rx="550" ry="400" fill="url(#stackGrad124)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <h2 class="display" style="font-size: 42px; color: #5C4827; margin-bottom: 45px; text-align: center;">
+                THE BONUSES
+            </h2>
+
+            <div class="bonus-card">
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 24px; color: #2D3436; margin-bottom: 6px;">Winner Hypothesis Vault</p>
+                        <p style="font-size: 16px; color: #636E72;">50+ proven product ideas</p>
+                    </div>
+                    <div class="value-badge" style="font-size: 20px; padding: 10px 22px;">$497</div>
+                </div>
+
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 24px; color: #2D3436; margin-bottom: 6px;">Listing Copy Templates</p>
+                        <p style="font-size: 16px; color: #636E72;">Write listings that convert</p>
+                    </div>
+                    <div class="value-badge" style="font-size: 20px; padding: 10px 22px;">$297</div>
+                </div>
+
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 24px; color: #2D3436; margin-bottom: 6px;">Pricing Calculator</p>
+                        <p style="font-size: 16px; color: #636E72;">Know your numbers instantly</p>
+                    </div>
+                    <div class="value-badge" style="font-size: 20px; padding: 10px 22px;">$197</div>
+                </div>
+
+                <div class="total-row">
+                    <div>
+                        <p class="display" style="font-size: 24px; color: #2D3436; margin-bottom: 6px;">Launch Week Checklist</p>
+                        <p style="font-size: 16px; color: #636E72;">Step-by-step launch process</p>
+                    </div>
+                    <div class="value-badge" style="font-size: 20px; padding: 10px 22px;">$197</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 125: Total Value Reveal -->
+<div class="slide bg-bronze-deep">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="totalGrad125" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.12" />
+                <stop offset="100%" style="stop-color:#2D1E14;stop-opacity:0.02" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1500" cy="300" rx="550" ry="450" fill="url(#totalGrad125)"/>
+        <ellipse cx="400" cy="800" rx="450" ry="380" fill="url(#totalGrad125)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <p style="font-size: 30px; color: rgba(255,254,245,0.7); margin-bottom: 40px; font-weight: 500;">
+                When you add it all together...
+            </p>
+
+            <h1 class="display" style="font-size: 52px; color: #FFFEF5; margin-bottom: 30px;">
+                TOTAL VALUE:
+            </h1>
+
+            <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 40px 80px; border-radius: 20px; display: inline-block; box-shadow: 0 20px 60px rgba(201, 162, 39, 0.4); margin-bottom: 50px;">
+                <p class="display" style="font-size: 96px; color: #FFFEF5; text-shadow: 0 4px 30px rgba(0,0,0,0.2);">
+                    $7,969
+                </p>
+            </div>
+
+            <p style="font-size: 26px; color: rgba(255,254,245,0.85); line-height: 1.6;">
+                That's what you'd pay if you hired consultants,<br>
+                bought separate courses, and pieced it together yourself.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 126: But You Won't Pay That -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="butGrad126" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="650" ry="480" fill="url(#butGrad126)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1000px;">
+            <h1 class="display" style="font-size: 72px; color: #2D3436; margin-bottom: 50px; line-height: 1.2;">
+                But you're not going<br>to pay anywhere<br>close to that.
+            </h1>
+
+            <p style="font-size: 28px; color: #636E72; line-height: 1.7;">
+                Because I remember what it felt like to be stuck.<br>
+                And I want this to be accessible.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 127: Not Even Half -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="halfGrad127" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="500" rx="500" ry="420" fill="url(#halfGrad127)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <p style="font-size: 30px; color: #636E72; margin-bottom: 45px; font-weight: 500;">
+                You're not paying $7,969
+            </p>
+
+            <p style="font-size: 36px; color: #2D3436; margin-bottom: 45px;">
+                You're not even paying half of that.
+            </p>
+
+            <p style="font-size: 80px; color: #B8860B; text-decoration: line-through; opacity: 0.6; font-family: 'Ogg Bold', serif;">
+                $3,984
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 128: Price Reveal Setup -->
+<div class="slide bg-bronze">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="priceSetupGrad128" x1="30%" y1="0%" x2="70%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#5C4827;stop-opacity:0.02" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1100" cy="350" rx="600" ry="450" fill="url(#priceSetupGrad128)"/>
+        <ellipse cx="350" cy="750" rx="400" ry="350" fill="url(#priceSetupGrad128)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <h1 class="display" style="font-size: 64px; color: #FFFEF5; margin-bottom: 50px; line-height: 1.2; text-shadow: 0 4px 30px rgba(0,0,0,0.15);">
+                YOUR INVESTMENT TODAY
+            </h1>
+
+            <p style="font-size: 28px; color: rgba(255,254,245,0.85); line-height: 1.7; max-width: 850px; margin: 0 auto;">
+                For the complete Demand-First Framework,<br>
+                all the support, and every bonus...
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 129: Price Reveal - The Number -->
+<div class="slide bg-bronze-deep">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="priceGrad129" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.15" />
+                <stop offset="100%" style="stop-color:#2D1E14;stop-opacity:0.02" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#priceGrad129)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1200px;">
+            <div style="background: linear-gradient(145deg, rgba(201,162,39,0.15), rgba(201,162,39,0.05)); padding: 60px 100px; border-radius: 30px; border: 2px solid rgba(201, 162, 39, 0.3); box-shadow: 0 30px 80px rgba(0,0,0,0.3);">
+                <p style="font-size: 32px; color: rgba(255,254,245,0.7); margin-bottom: 25px; font-weight: 500;">
+                    JUST
+                </p>
+
+                <p class="display" style="font-size: 140px; color: #C9A227; text-shadow: 0 6px 40px rgba(201, 162, 39, 0.5); margin-bottom: 25px;">
+                    $497
+                </p>
+
+                <p style="font-size: 26px; color: rgba(255,254,245,0.85);">
+                    One-time payment. Lifetime access.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 130: Payment Plan Option -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="payGrad130" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="300" rx="450" ry="380" fill="url(#payGrad130)"/>
+        <ellipse cx="1650" cy="750" rx="400" ry="350" fill="url(#payGrad130)"/>
+    </svg>
+
+    <div class="content flex-center">
+        <div style="max-width: 1400px; width: 100%;">
+            <h2 class="display" style="font-size: 48px; color: #2D3436; margin-bottom: 60px; text-align: center;">
+                CHOOSE WHAT WORKS FOR YOU
+            </h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+                <!-- Pay in Full -->
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 24px; padding: 50px; box-shadow: 0 20px 60px rgba(201, 162, 39, 0.15); border: 2px solid rgba(201, 162, 39, 0.2); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #C9A227, #D4A84B); color: #FFFEF5; font-size: 14px; padding: 8px 16px; border-radius: 20px; font-weight: 600;">BEST VALUE</div>
+
+                    <p class="display" style="font-size: 28px; color: #5C4827; margin-bottom: 20px;">PAY IN FULL</p>
+                    <p class="display" style="font-size: 72px; color: #C9A227; margin-bottom: 15px;">$497</p>
+                    <p style="font-size: 20px; color: #636E72; margin-bottom: 30px;">One-time payment</p>
+
+                    <div style="border-top: 1px solid rgba(201, 162, 39, 0.2); padding-top: 25px;">
+                        <p style="font-size: 18px; color: #2D3436; line-height: 1.8;">
+                            <span style="color: #7CB87C; margin-right: 8px;">&#10003;</span> Immediate full access<br>
+                            <span style="color: #7CB87C; margin-right: 8px;">&#10003;</span> Save $92<br>
+                            <span style="color: #7CB87C; margin-right: 8px;">&#10003;</span> Lifetime updates
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Payment Plan -->
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FDF8F3 100%); border-radius: 24px; padding: 50px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <p class="display" style="font-size: 28px; color: #5C4827; margin-bottom: 20px;">PAYMENT PLAN</p>
+                    <p class="display" style="font-size: 72px; color: #2D3436; margin-bottom: 15px;">3 x $197</p>
+                    <p style="font-size: 20px; color: #636E72; margin-bottom: 30px;">Monthly payments</p>
+
+                    <div style="border-top: 1px solid rgba(0, 0, 0, 0.08); padding-top: 25px;">
+                        <p style="font-size: 18px; color: #2D3436; line-height: 1.8;">
+                            <span style="color: #7CB87C; margin-right: 8px;">&#10003;</span> Immediate full access<br>
+                            <span style="color: #7CB87C; margin-right: 8px;">&#10003;</span> Spread the investment<br>
+                            <span style="color: #7CB87C; margin-right: 8px;">&#10003;</span> Lifetime updates
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 131: Guarantee Transition -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="guarTransGrad131" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#1B8A8A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="450" rx="650" ry="480" fill="url(#guarTransGrad131)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1000px;">
+            <p style="font-size: 28px; color: #636E72; margin-bottom: 40px; font-weight: 500;">
+                Now, I know what you might be thinking...
+            </p>
+
+            <h1 class="display" style="font-size: 56px; color: #2D3436; margin-bottom: 50px; line-height: 1.25;">
+                "What if this doesn't<br>work for me?"
+            </h1>
+
+            <p style="font-size: 26px; color: #636E72; line-height: 1.7;">
+                Fair question. Let me remove that risk entirely.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 132: The Guarantee -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="guarGrad132" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#1B8A8A;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="300" rx="500" ry="400" fill="url(#guarGrad132)"/>
+        <ellipse cx="300" cy="800" rx="400" ry="350" fill="url(#guarGrad132)"/>
+    </svg>
+
+    <div class="content flex-center">
+        <div style="max-width: 1400px; width: 100%;">
+            <div class="guarantee-card" style="padding: 60px 80px; text-align: center;">
+                <!-- Shield icon -->
+                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #1B8A8A, #2BA5A3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 35px; box-shadow: 0 15px 40px rgba(27, 138, 138, 0.3);">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <h2 class="display" style="font-size: 48px; color: #1B8A8A; margin-bottom: 30px;">
+                    30-DAY ACTION-TAKER GUARANTEE
+                </h2>
+
+                <p style="font-size: 24px; color: #2D3436; line-height: 1.8; max-width: 900px; margin: 0 auto 30px;">
+                    Go through the framework. Do the work. If you don't have at least<br>
+                    <strong>3 validated product ideas</strong> within 30 days, I'll give you<br>
+                    a <strong>full refund</strong>. No questions asked.
+                </p>
+
+                <p style="font-size: 20px; color: #636E72; font-style: italic;">
+                    You either get results, or you get your money back.<br>
+                    There's literally no risk.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 133: Why This Guarantee -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="whyGrad133" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#1B8A8A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="350" cy="350" rx="450" ry="380" fill="url(#whyGrad133)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1300px;">
+            <h2 class="display" style="font-size: 46px; color: #2D3436; margin-bottom: 50px;">
+                WHY CAN I OFFER THIS?
+            </h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 20px; padding: 40px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.1);">
+                    <p class="display" style="font-size: 64px; color: #1B8A8A; margin-bottom: 15px;">87%</p>
+                    <p style="font-size: 20px; color: #2D3436; line-height: 1.6;">of students who complete the framework find at least one winning product in their first 30 days</p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 20px; padding: 40px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.1);">
+                    <p class="display" style="font-size: 64px; color: #1B8A8A; margin-bottom: 15px;">2.3%</p>
+                    <p style="font-size: 20px; color: #2D3436; line-height: 1.6;">refund rate across all my programs because the system actually works</p>
+                </div>
+            </div>
+
+            <p style="font-size: 24px; color: #636E72; margin-top: 45px; text-align: center;">
+                I'm confident because I've seen the results. Thousands of times.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 134: Fast Action Bonus Intro -->
+<div class="slide bg-bronze-deep">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="fastGrad134" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#E07B6C;stop-opacity:0.12" />
+                <stop offset="100%" style="stop-color:#2D1E14;stop-opacity:0.02" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1550" cy="350" rx="550" ry="420" fill="url(#fastGrad134)"/>
+        <ellipse cx="350" cy="750" rx="400" ry="350" fill="url(#fastGrad134)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <div class="urgency-badge" style="margin-bottom: 40px;">
+                FAST ACTION BONUS
+            </div>
+
+            <h1 class="display" style="font-size: 68px; color: #FFFEF5; margin-bottom: 40px; line-height: 1.2; text-shadow: 0 4px 30px rgba(0,0,0,0.2);">
+                FOR THE NEXT<br>48 HOURS ONLY
+            </h1>
+
+            <p style="font-size: 26px; color: rgba(255,254,245,0.85); line-height: 1.7;">
+                If you're someone who takes action fast,<br>
+                I want to reward that.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 135: Fast Action Bonus - What You Get -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="fastBonusGrad135" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#E07B6C;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="300" rx="600" ry="450" fill="url(#fastBonusGrad135)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px;">
+                <div class="urgency-badge">48-HOUR BONUS</div>
+            </div>
+
+            <h2 class="display" style="font-size: 44px; color: #2D3436; margin-bottom: 15px;">
+                1-ON-1 PRODUCT REVIEW SESSION
+            </h2>
+
+            <p class="display" style="font-size: 56px; color: #E07B6C; margin-bottom: 40px;">
+                A 30-MINUTE CALL WITH ME
+            </p>
+
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 20px; padding: 45px 55px; box-shadow: 0 15px 50px rgba(224, 123, 108, 0.12); border: 1px solid rgba(224, 123, 108, 0.15); margin-bottom: 40px;">
+                <p style="font-size: 22px; color: #2D3436; line-height: 1.8; margin-bottom: 25px;">
+                    Once you've done your research and picked your top 3 product ideas, we'll get on a call together. I'll personally review your choices and tell you:
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <p style="font-size: 20px; color: #2D3436;"><span style="color: #E07B6C; font-weight: 700; margin-right: 10px;">&#8594;</span> Which one I'd launch first</p>
+                    <p style="font-size: 20px; color: #2D3436;"><span style="color: #E07B6C; font-weight: 700; margin-right: 10px;">&#8594;</span> What I'd change about your approach</p>
+                    <p style="font-size: 20px; color: #2D3436;"><span style="color: #E07B6C; font-weight: 700; margin-right: 10px;">&#8594;</span> Red flags I see (before you invest time)</p>
+                    <p style="font-size: 20px; color: #2D3436;"><span style="color: #E07B6C; font-weight: 700; margin-right: 10px;">&#8594;</span> Exactly how I'd position it</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="font-size: 22px; color: #636E72;">
+                    This alone is worth more than the entire program.
+                </p>
+                <div style="background: linear-gradient(135deg, #E07B6C, #F4A89A); color: #FFFEF5; font-family: 'Ogg Bold', serif; font-size: 24px; padding: 14px 32px; border-radius: 10px; box-shadow: 0 8px 25px rgba(224, 123, 108, 0.3);">
+                    VALUE: $500
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 136: Scarcity on Fast Action -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="scarcityGrad136" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E07B6C;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1650" cy="400" rx="500" ry="420" fill="url(#scarcityGrad136)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1000px;">
+            <h2 class="display" style="font-size: 52px; color: #E07B6C; margin-bottom: 50px;">
+                THIS ISN'T A GIMMICK
+            </h2>
+
+            <p style="font-size: 26px; color: #2D3436; line-height: 1.8; margin-bottom: 50px;">
+                I can only do <strong>20 of these calls per month</strong>.<br>
+                Once those spots are gone, this bonus disappears.
+            </p>
+
+            <div style="background: linear-gradient(145deg, #FEF0EA 0%, #FFFFFF 100%); border-radius: 16px; padding: 35px 50px; display: inline-block; box-shadow: 0 12px 40px rgba(224, 123, 108, 0.12); border: 1px solid rgba(224, 123, 108, 0.15);">
+                <p style="font-size: 22px; color: #636E72; margin-bottom: 10px;">Spots remaining this month:</p>
+                <p class="display" style="font-size: 64px; color: #E07B6C;">7</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 137: Live-Only Bonus Intro -->
+<div class="slide bg-bronze">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="liveGrad137" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#5C4827;stop-opacity:0.02" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="400" cy="350" rx="500" ry="420" fill="url(#liveGrad137)"/>
+        <ellipse cx="1550" cy="750" rx="450" ry="380" fill="url(#liveGrad137)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <div style="background: rgba(201, 162, 39, 0.2); color: #C9A227; font-family: 'Ogg Bold', serif; font-size: 22px; padding: 12px 28px; border-radius: 8px; display: inline-block; margin-bottom: 40px; border: 1px solid rgba(201, 162, 39, 0.3);">
+                LIVE ATTENDEE EXCLUSIVE
+            </div>
+
+            <h1 class="display" style="font-size: 68px; color: #FFFEF5; margin-bottom: 45px; line-height: 1.2; text-shadow: 0 4px 30px rgba(0,0,0,0.15);">
+                ONE MORE THING...
+            </h1>
+
+            <p style="font-size: 28px; color: rgba(255,254,245,0.85); line-height: 1.7;">
+                Because you showed up live today,<br>
+                you're getting something no one else will.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 138: Live Bonus - Niche Accelerator -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="nicheGrad138" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="350" rx="650" ry="480" fill="url(#nicheGrad138)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 35px;">
+                <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); color: #FFFEF5; font-family: 'Ogg Bold', serif; font-size: 18px; padding: 10px 22px; border-radius: 8px;">LIVE ONLY</div>
+            </div>
+
+            <h2 class="display" style="font-size: 40px; color: #2D3436; margin-bottom: 15px;">
+                THE NICHE ACCELERATOR PACK
+            </h2>
+
+            <p class="display" style="font-size: 52px; color: #C9A227; margin-bottom: 40px;">
+                5 DEEP-DIVE NICHE BREAKDOWNS
+            </p>
+
+            <div class="bonus-card" style="margin-bottom: 40px;">
+                <p style="font-size: 22px; color: #2D3436; line-height: 1.8; margin-bottom: 30px;">
+                    I've taken 5 of the most profitable niches on Etsy and broken down <em>exactly</em> what's working right now:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px;">
+                    <div style="background: linear-gradient(145deg, #FAF3E0, #F5EBD5); padding: 25px 20px; border-radius: 12px; text-align: center;">
+                        <p class="display" style="font-size: 18px; color: #5C4827;">Wedding<br>Stationery</p>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #FAF3E0, #F5EBD5); padding: 25px 20px; border-radius: 12px; text-align: center;">
+                        <p class="display" style="font-size: 18px; color: #5C4827;">Digital<br>Planners</p>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #FAF3E0, #F5EBD5); padding: 25px 20px; border-radius: 12px; text-align: center;">
+                        <p class="display" style="font-size: 18px; color: #5C4827;">Wall Art<br>Prints</p>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #FAF3E0, #F5EBD5); padding: 25px 20px; border-radius: 12px; text-align: center;">
+                        <p class="display" style="font-size: 18px; color: #5C4827;">Social Media<br>Templates</p>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #FAF3E0, #F5EBD5); padding: 25px 20px; border-radius: 12px; text-align: center;">
+                        <p class="display" style="font-size: 18px; color: #5C4827;">Resume<br>Templates</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="font-size: 20px; color: #636E72;">
+                    Each one includes winning products, pricing strategies, and what to avoid.
+                </p>
+                <div class="value-badge" style="font-size: 24px; padding: 14px 32px;">
+                    VALUE: $397
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 139: Live Bonus Deadline -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="deadlineGrad139" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#E07B6C;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="350" rx="500" ry="400" fill="url(#deadlineGrad139)"/>
+        <ellipse cx="300" cy="750" rx="400" ry="350" fill="url(#deadlineGrad139)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <h2 class="display" style="font-size: 48px; color: #2D3436; margin-bottom: 45px;">
+                THIS BONUS EXPIRES AT MIDNIGHT
+            </h2>
+
+            <div style="background: linear-gradient(145deg, #FEF0EA 0%, #FFFFFF 100%); border-radius: 20px; padding: 50px 70px; box-shadow: 0 15px 50px rgba(224, 123, 108, 0.12); border: 1px solid rgba(224, 123, 108, 0.15); margin-bottom: 45px;">
+                <p style="font-size: 24px; color: #636E72; margin-bottom: 20px;">Time remaining:</p>
+
+                <div style="display: flex; justify-content: center; gap: 30px;">
+                    <div style="text-align: center;">
+                        <p class="display" style="font-size: 72px; color: #E07B6C;">04</p>
+                        <p style="font-size: 18px; color: #636E72;">HOURS</p>
+                    </div>
+                    <p class="display" style="font-size: 72px; color: #E07B6C;">:</p>
+                    <div style="text-align: center;">
+                        <p class="display" style="font-size: 72px; color: #E07B6C;">32</p>
+                        <p style="font-size: 18px; color: #636E72;">MINUTES</p>
+                    </div>
+                    <p class="display" style="font-size: 72px; color: #E07B6C;">:</p>
+                    <div style="text-align: center;">
+                        <p class="display" style="font-size: 72px; color: #E07B6C;">17</p>
+                        <p style="font-size: 18px; color: #636E72;">SECONDS</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 24px; color: #636E72; line-height: 1.7;">
+                After that, the Niche Accelerator Pack is gone.<br>
+                It won't be available again—even if you buy later.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 140: Recap Everything -->
+<div class="slide bg-bronze-deep">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="recapGrad140" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.12" />
+                <stop offset="100%" style="stop-color:#2D1E14;stop-opacity:0.02" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#recapGrad140)"/>
+    </svg>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1200px;">
+            <h2 class="display" style="font-size: 48px; color: #C9A227; margin-bottom: 50px;">
+                LET'S RECAP WHAT YOU'RE GETTING
+            </h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; text-align: left; margin-bottom: 50px;">
+                <div style="background: rgba(201, 162, 39, 0.1); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #C9A227; margin-right: 10px;">&#10003;</span> The Demand-First Framework</p>
+                </div>
+                <div style="background: rgba(201, 162, 39, 0.1); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #C9A227; margin-right: 10px;">&#10003;</span> Winner Hypothesis Training</p>
+                </div>
+                <div style="background: rgba(201, 162, 39, 0.1); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #C9A227; margin-right: 10px;">&#10003;</span> Validation Accelerator</p>
+                </div>
+                <div style="background: rgba(201, 162, 39, 0.1); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #C9A227; margin-right: 10px;">&#10003;</span> Weekly Q&A Calls</p>
+                </div>
+                <div style="background: rgba(201, 162, 39, 0.1); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #C9A227; margin-right: 10px;">&#10003;</span> Private Community</p>
+                </div>
+                <div style="background: rgba(201, 162, 39, 0.1); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #C9A227; margin-right: 10px;">&#10003;</span> All Bonuses ($1,500+ value)</p>
+                </div>
+                <div style="background: rgba(224, 123, 108, 0.15); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(224, 123, 108, 0.3);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #E07B6C; margin-right: 10px;">&#9733;</span> 1-on-1 Call (48hr bonus)</p>
+                </div>
+                <div style="background: rgba(224, 123, 108, 0.15); padding: 25px 30px; border-radius: 12px; border: 1px solid rgba(224, 123, 108, 0.3);">
+                    <p style="font-size: 20px; color: #FFFEF5;"><span style="color: #E07B6C; margin-right: 10px;">&#9733;</span> Niche Accelerator (live only)</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 30px 60px; border-radius: 16px; display: inline-block; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.4);">
+                <p style="font-size: 24px; color: rgba(255,254,245,0.8); margin-bottom: 10px;">Total Value: <span style="text-decoration: line-through;">$8,866</span></p>
+                <p class="display" style="font-size: 56px; color: #FFFEF5;">YOUR PRICE: $497</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
