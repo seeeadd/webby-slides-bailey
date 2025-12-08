@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* ============================================
+           DAY 3: THE EMPIRE SYSTEM — BATCH 1
+           Slides 20-32
+           Color Palette: Warm Gold/Amber/Bronze
+           ============================================ */
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            /* Day 3 Primary Warms */
+            --warm-gold: #C9A227;
+            --rich-amber: #B8860B;
+            --deep-bronze: #5C4827;
+            --honey: #D4A84B;
+
+            /* Backgrounds */
+            --cream: #FDF6E3;
+            --warm-white: #FFFEF5;
+            --pale-gold: #FAF3E0;
+            --light-tan: #F5E6D3;
+
+            /* Text */
+            --espresso: #3D2B1F;
+            --charcoal: #2D2D2D;
+            --soft-black: #1A1A1A;
+
+            /* Accent - Positive */
+            --sage-green: #6B8E6B;
+            --olive: #7D8B6A;
+            --forest: #4A5D4A;
+
+            /* Accent - Warning */
+            --burnt-coral: #E07A5F;
+            --terracotta: #C9705F;
+            --rust: #B54A32;
+
+            /* Accent - Cool */
+            --deep-teal: #1A5C5C;
+            --muted-teal: #3D7A7A;
+
+            /* Neutrals */
+            --warm-gray: #8B8178;
+            --taupe: #A69B8D;
+            --stone: #D4CCC4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            padding: 80px 120px;
+        }
+
+        .flex-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .display {
+            font-family: 'OGG', Georgia, serif;
+            font-weight: 700;
+        }
+
+        .body {
+            font-family: 'Satoshi', 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        .text-center { text-align: center; }
+
+        /* Slide label for development */
+        .slide-label {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.3);
+            font-family: monospace;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================
+     SLIDE 20: Section Title - THE EMPIRE SYSTEM
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Honeycomb pattern suggesting "system" and structured wealth -->
+        <defs>
+            <pattern id="honeycomb" x="0" y="0" width="100" height="86.6" patternUnits="userSpaceOnUse">
+                <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke="#C9A227" stroke-width="1" stroke-opacity="0.08"/>
+                <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke="#C9A227" stroke-width="0.5" stroke-opacity="0.05" transform="translate(50, 43.3)"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#honeycomb)"/>
+        <!-- Radial glow from center -->
+        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#C9A227" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
+        </radialGradient>
+        <ellipse cx="960" cy="540" rx="700" ry="400" fill="url(#centerGlow)"/>
+        <!-- Corner decorative lines -->
+        <line x1="0" y1="200" x2="200" y2="0" stroke="#C9A227" stroke-opacity="0.1" stroke-width="2"/>
+        <line x1="1720" y1="0" x2="1920" y2="200" stroke="#C9A227" stroke-opacity="0.1" stroke-width="2"/>
+        <line x1="0" y1="880" x2="200" y2="1080" stroke="#C9A227" stroke-opacity="0.1" stroke-width="2"/>
+        <line x1="1720" y1="1080" x2="1920" y2="880" stroke="#C9A227" stroke-opacity="0.1" stroke-width="2"/>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- Small decorative element above title -->
+        <div style="margin-bottom: 40px;">
+            <svg width="120" height="20" viewBox="0 0 120 20">
+                <line x1="0" y1="10" x2="45" y2="10" stroke="#C9A227" stroke-width="2" stroke-opacity="0.6"/>
+                <polygon points="60,0 70,10 60,20 50,10" fill="#C9A227" fill-opacity="0.8"/>
+                <line x1="75" y1="10" x2="120" y2="10" stroke="#C9A227" stroke-width="2" stroke-opacity="0.6"/>
+            </svg>
+        </div>
+
+        <h1 class="display" style="font-size: 120px; color: #C9A227; letter-spacing: 8px; text-align: center; text-shadow: 0 4px 30px rgba(201, 162, 39, 0.3);">
+            THE EMPIRE<br>SYSTEM
+        </h1>
+
+        <p class="body" style="font-size: 36px; color: #FFFEF5; margin-top: 50px; text-align: center; letter-spacing: 2px; opacity: 0.95;">
+            How to Create Consistently
+        </p>
+        <p class="body" style="font-size: 32px; color: #D4A84B; margin-top: 15px; text-align: center; font-weight: 600;">
+            (In Just 3 Hours Per Week)
+        </p>
+
+        <!-- Bottom decorative element -->
+        <div style="margin-top: 60px;">
+            <svg width="200" height="30" viewBox="0 0 200 30">
+                <path d="M0 15 L80 15 L100 5 L120 15 L200 15" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+    <div class="slide-label">SLIDE 20</div>
+</div>
+
+<!-- ============================================
+     SLIDE 21: The Problem Setup
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Organic blob shapes -->
+        <path d="M 1750 150 Q 1850 200, 1800 300 Q 1750 400, 1850 450 Q 1950 500, 1900 600 L 1920 600 L 1920 0 L 1700 0 Z" fill="#C9A227" fill-opacity="0.06"/>
+        <path d="M 100 900 Q 200 850, 150 750 Q 100 650, 200 600 Q 0 550, 0 650 L 0 1080 L 200 1080 Z" fill="#B8860B" fill-opacity="0.05"/>
+        <!-- Frustrated scribble effect in corner -->
+        <path d="M 1700 800 Q 1750 780, 1780 820 Q 1810 860, 1760 880 Q 1710 900, 1740 850" fill="none" stroke="#E07A5F" stroke-width="2" stroke-opacity="0.15"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <h1 class="display" style="font-size: 52px; color: #3D2B1F; margin-bottom: 50px; line-height: 1.3;">
+            Everyone says: <span style="color: #C9A227;">"Consistency is key!"</span>
+        </h1>
+
+        <p class="body" style="font-size: 32px; color: #5C4827; margin-bottom: 40px;">
+            But nobody tells you <span style="font-weight: 700;">HOW</span> to be consistent when:
+        </p>
+
+        <!-- Pain points as floating cards -->
+        <div style="display: flex; flex-direction: column; gap: 20px; max-width: 900px;">
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 22px 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(61, 43, 31, 0.06); border-left: 4px solid #C9A227;">
+                <span style="color: #C9A227; font-size: 28px; font-weight: 700;">→</span>
+                <span class="body" style="font-size: 26px; color: #3D2B1F;">You have kids who need you every five minutes</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 22px 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(61, 43, 31, 0.06); border-left: 4px solid #B8860B;">
+                <span style="color: #B8860B; font-size: 28px; font-weight: 700;">→</span>
+                <span class="body" style="font-size: 26px; color: #3D2B1F;">You work a full-time job that drains you</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 22px 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(61, 43, 31, 0.06); border-left: 4px solid #D4A84B;">
+                <span style="color: #D4A84B; font-size: 28px; font-weight: 700;">→</span>
+                <span class="body" style="font-size: 26px; color: #3D2B1F;">You're exhausted by 8pm</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 22px 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(61, 43, 31, 0.06); border-left: 4px solid #8B8178;">
+                <span style="color: #8B8178; font-size: 28px; font-weight: 700;">→</span>
+                <span class="body" style="font-size: 26px; color: #3D2B1F;">You don't know what to work on first</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 22px 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(61, 43, 31, 0.06); border-left: 4px solid #E07A5F;">
+                <span style="color: #E07A5F; font-size: 28px; font-weight: 700;">→</span>
+                <span class="body" style="font-size: 26px; color: #3D2B1F;">You lose motivation after a few days</span>
+            </div>
+        </div>
+
+        <!-- The punch line -->
+        <div style="margin-top: 60px; text-align: left;">
+            <p class="body" style="font-size: 34px; color: #5C4827;">
+                "Be consistent" is useless advice
+            </p>
+            <p class="display" style="font-size: 42px; color: #3D2B1F; margin-top: 10px;">
+                without a <span style="color: #C9A227; background: linear-gradient(180deg, transparent 60%, rgba(201, 162, 39, 0.25) 60%);">SYSTEM</span> to make it happen.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 21</div>
+</div>
+
+<!-- ============================================
+     SLIDE 22a: 3×3×3 Framework (Empty State)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="450" fill="#C9A227" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="350" fill="#C9A227" fill-opacity="0.04"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 72px; color: #C9A227; text-align: center; letter-spacing: 4px; margin-bottom: 80px;">
+            3 DAYS × 3 TASKS × 3 HOURS
+        </h1>
+
+        <!-- Three empty card placeholders -->
+        <div style="display: flex; gap: 60px; margin-bottom: 60px;">
+            <!-- Monday Card (Empty) -->
+            <div style="width: 340px; height: 380px; border: 3px dashed #B8860B; border-radius: 24px; background: rgba(255, 254, 245, 0.5); display: flex; align-items: center; justify-content: center;">
+                <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="8 4"/>
+                    <text x="40" y="48" text-anchor="middle" fill="#B8860B" font-size="32" font-family="serif">?</text>
+                </svg>
+            </div>
+            <!-- Wednesday Card (Empty) -->
+            <div style="width: 340px; height: 380px; border: 3px dashed #B8860B; border-radius: 24px; background: rgba(255, 254, 245, 0.5); display: flex; align-items: center; justify-content: center;">
+                <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="8 4"/>
+                    <text x="40" y="48" text-anchor="middle" fill="#B8860B" font-size="32" font-family="serif">?</text>
+                </svg>
+            </div>
+            <!-- Friday Card (Empty) -->
+            <div style="width: 340px; height: 380px; border: 3px dashed #B8860B; border-radius: 24px; background: rgba(255, 254, 245, 0.5); display: flex; align-items: center; justify-content: center;">
+                <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="8 4"/>
+                    <text x="40" y="48" text-anchor="middle" fill="#B8860B" font-size="32" font-family="serif">?</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Day labels -->
+        <div style="display: flex; gap: 60px;">
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #5C4827; letter-spacing: 3px; text-transform: uppercase;">Monday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #5C4827; letter-spacing: 3px; text-transform: uppercase;">Wednesday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #5C4827; letter-spacing: 3px; text-transform: uppercase;">Friday</p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 22a</div>
+</div>
+
+<!-- ============================================
+     SLIDE 22b: 3×3×3 Framework (Monday Revealed)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="450" fill="#C9A227" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="350" fill="#C9A227" fill-opacity="0.04"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 72px; color: #C9A227; text-align: center; letter-spacing: 4px; margin-bottom: 80px;">
+            3 DAYS × 3 TASKS × 3 HOURS
+        </h1>
+
+        <div style="display: flex; gap: 60px; margin-bottom: 60px;">
+            <!-- Monday Card (FILLED) -->
+            <div style="width: 340px; height: 380px; background: linear-gradient(145deg, #C9A227, #B8860B); border-radius: 24px; box-shadow: 0 20px 60px rgba(201, 162, 39, 0.35); padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <!-- Research icon -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" style="margin-bottom: 20px;">
+                        <circle cx="25" cy="25" r="18" fill="none" stroke="#FFFEF5" stroke-width="3"/>
+                        <line x1="38" y1="38" x2="52" y2="52" stroke="#FFFEF5" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h2 class="display" style="font-size: 42px; color: #FFFEF5; margin-bottom: 20px;">RESEARCH</h2>
+                    <p class="body" style="font-size: 22px; color: rgba(255, 254, 245, 0.9); line-height: 1.6;">
+                        Find what's selling<br>
+                        Validate 20 ideas
+                    </p>
+                </div>
+                <div style="border-top: 2px solid rgba(255, 254, 245, 0.3); padding-top: 20px;">
+                    <p class="body" style="font-size: 28px; color: #FFFEF5; font-weight: 700;">1 hour</p>
+                </div>
+            </div>
+            <!-- Wednesday Card (Empty) -->
+            <div style="width: 340px; height: 380px; border: 3px dashed #B8860B; border-radius: 24px; background: rgba(255, 254, 245, 0.5); display: flex; align-items: center; justify-content: center;">
+                <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="8 4"/>
+                    <text x="40" y="48" text-anchor="middle" fill="#B8860B" font-size="32" font-family="serif">?</text>
+                </svg>
+            </div>
+            <!-- Friday Card (Empty) -->
+            <div style="width: 340px; height: 380px; border: 3px dashed #B8860B; border-radius: 24px; background: rgba(255, 254, 245, 0.5); display: flex; align-items: center; justify-content: center;">
+                <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="8 4"/>
+                    <text x="40" y="48" text-anchor="middle" fill="#B8860B" font-size="32" font-family="serif">?</text>
+                </svg>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 60px;">
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #C9A227; letter-spacing: 3px; text-transform: uppercase; font-weight: 700;">Monday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #5C4827; letter-spacing: 3px; text-transform: uppercase;">Wednesday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #5C4827; letter-spacing: 3px; text-transform: uppercase;">Friday</p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 22b</div>
+</div>
+
+<!-- ============================================
+     SLIDE 22c: 3×3×3 Framework (Wednesday Revealed)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="450" fill="#C9A227" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="350" fill="#C9A227" fill-opacity="0.04"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 72px; color: #C9A227; text-align: center; letter-spacing: 4px; margin-bottom: 80px;">
+            3 DAYS × 3 TASKS × 3 HOURS
+        </h1>
+
+        <div style="display: flex; gap: 60px; margin-bottom: 60px;">
+            <!-- Monday Card (FILLED) -->
+            <div style="width: 340px; height: 380px; background: linear-gradient(145deg, #C9A227, #B8860B); border-radius: 24px; box-shadow: 0 20px 60px rgba(201, 162, 39, 0.35); padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <svg width="60" height="60" viewBox="0 0 60 60" style="margin-bottom: 20px;">
+                        <circle cx="25" cy="25" r="18" fill="none" stroke="#FFFEF5" stroke-width="3"/>
+                        <line x1="38" y1="38" x2="52" y2="52" stroke="#FFFEF5" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h2 class="display" style="font-size: 42px; color: #FFFEF5; margin-bottom: 20px;">RESEARCH</h2>
+                    <p class="body" style="font-size: 22px; color: rgba(255, 254, 245, 0.9); line-height: 1.6;">
+                        Find what's selling<br>
+                        Validate 20 ideas
+                    </p>
+                </div>
+                <div style="border-top: 2px solid rgba(255, 254, 245, 0.3); padding-top: 20px;">
+                    <p class="body" style="font-size: 28px; color: #FFFEF5; font-weight: 700;">1 hour</p>
+                </div>
+            </div>
+            <!-- Wednesday Card (FILLED) -->
+            <div style="width: 340px; height: 380px; background: linear-gradient(145deg, #B8860B, #8B6914); border-radius: 24px; box-shadow: 0 20px 60px rgba(184, 134, 11, 0.35); padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <!-- Create icon (paintbrush/pencil) -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" style="margin-bottom: 20px;">
+                        <path d="M45 8 L52 15 L20 47 L10 50 L13 40 Z" fill="none" stroke="#FFFEF5" stroke-width="3" stroke-linejoin="round"/>
+                        <path d="M40 13 L47 20" stroke="#FFFEF5" stroke-width="3"/>
+                    </svg>
+                    <h2 class="display" style="font-size: 42px; color: #FFFEF5; margin-bottom: 20px;">CREATE</h2>
+                    <p class="body" style="font-size: 22px; color: rgba(255, 254, 245, 0.9); line-height: 1.6;">
+                        Design in one niche<br>
+                        10-15 products
+                    </p>
+                </div>
+                <div style="border-top: 2px solid rgba(255, 254, 245, 0.3); padding-top: 20px;">
+                    <p class="body" style="font-size: 28px; color: #FFFEF5; font-weight: 700;">1 hour</p>
+                </div>
+            </div>
+            <!-- Friday Card (Empty) -->
+            <div style="width: 340px; height: 380px; border: 3px dashed #B8860B; border-radius: 24px; background: rgba(255, 254, 245, 0.5); display: flex; align-items: center; justify-content: center;">
+                <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+                    <circle cx="40" cy="40" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="8 4"/>
+                    <text x="40" y="48" text-anchor="middle" fill="#B8860B" font-size="32" font-family="serif">?</text>
+                </svg>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 60px;">
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #C9A227; letter-spacing: 3px; text-transform: uppercase; font-weight: 700;">Monday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #B8860B; letter-spacing: 3px; text-transform: uppercase; font-weight: 700;">Wednesday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 24px; color: #5C4827; letter-spacing: 3px; text-transform: uppercase;">Friday</p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 22c</div>
+</div>
+
+<!-- ============================================
+     SLIDE 22d: 3×3×3 Framework (Complete)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="450" fill="#C9A227" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="350" fill="#C9A227" fill-opacity="0.04"/>
+        <!-- Celebratory sparkles -->
+        <circle cx="200" cy="200" r="4" fill="#C9A227" fill-opacity="0.4"/>
+        <circle cx="1700" cy="250" r="3" fill="#D4A84B" fill-opacity="0.5"/>
+        <circle cx="1750" cy="800" r="5" fill="#C9A227" fill-opacity="0.3"/>
+        <circle cx="180" cy="850" r="3" fill="#B8860B" fill-opacity="0.4"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 72px; color: #C9A227; text-align: center; letter-spacing: 4px; margin-bottom: 60px;">
+            3 DAYS × 3 TASKS × 3 HOURS
+        </h1>
+
+        <div style="display: flex; gap: 60px; margin-bottom: 40px;">
+            <!-- Monday Card (FILLED) -->
+            <div style="width: 340px; height: 360px; background: linear-gradient(145deg, #C9A227, #B8860B); border-radius: 24px; box-shadow: 0 20px 60px rgba(201, 162, 39, 0.35); padding: 35px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <svg width="50" height="50" viewBox="0 0 60 60" style="margin-bottom: 15px;">
+                        <circle cx="25" cy="25" r="18" fill="none" stroke="#FFFEF5" stroke-width="3"/>
+                        <line x1="38" y1="38" x2="52" y2="52" stroke="#FFFEF5" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h2 class="display" style="font-size: 38px; color: #FFFEF5; margin-bottom: 15px;">RESEARCH</h2>
+                    <p class="body" style="font-size: 20px; color: rgba(255, 254, 245, 0.9); line-height: 1.5;">
+                        Find what's selling<br>
+                        Validate 20 ideas
+                    </p>
+                </div>
+                <div style="border-top: 2px solid rgba(255, 254, 245, 0.3); padding-top: 15px;">
+                    <p class="body" style="font-size: 26px; color: #FFFEF5; font-weight: 700;">1 hour</p>
+                </div>
+            </div>
+            <!-- Wednesday Card (FILLED) -->
+            <div style="width: 340px; height: 360px; background: linear-gradient(145deg, #B8860B, #8B6914); border-radius: 24px; box-shadow: 0 20px 60px rgba(184, 134, 11, 0.35); padding: 35px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <svg width="50" height="50" viewBox="0 0 60 60" style="margin-bottom: 15px;">
+                        <path d="M45 8 L52 15 L20 47 L10 50 L13 40 Z" fill="none" stroke="#FFFEF5" stroke-width="3" stroke-linejoin="round"/>
+                        <path d="M40 13 L47 20" stroke="#FFFEF5" stroke-width="3"/>
+                    </svg>
+                    <h2 class="display" style="font-size: 38px; color: #FFFEF5; margin-bottom: 15px;">CREATE</h2>
+                    <p class="body" style="font-size: 20px; color: rgba(255, 254, 245, 0.9); line-height: 1.5;">
+                        Design in one niche<br>
+                        10-15 products
+                    </p>
+                </div>
+                <div style="border-top: 2px solid rgba(255, 254, 245, 0.3); padding-top: 15px;">
+                    <p class="body" style="font-size: 26px; color: #FFFEF5; font-weight: 700;">1 hour</p>
+                </div>
+            </div>
+            <!-- Friday Card (FILLED) -->
+            <div style="width: 340px; height: 360px; background: linear-gradient(145deg, #5C4827, #3D2B1F); border-radius: 24px; box-shadow: 0 20px 60px rgba(92, 72, 39, 0.4); padding: 35px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <!-- List/Upload icon -->
+                    <svg width="50" height="50" viewBox="0 0 60 60" style="margin-bottom: 15px;">
+                        <rect x="8" y="8" width="44" height="44" rx="6" fill="none" stroke="#FFFEF5" stroke-width="3"/>
+                        <line x1="18" y1="22" x2="42" y2="22" stroke="#FFFEF5" stroke-width="2"/>
+                        <line x1="18" y1="32" x2="38" y2="32" stroke="#FFFEF5" stroke-width="2"/>
+                        <line x1="18" y1="42" x2="34" y2="42" stroke="#FFFEF5" stroke-width="2"/>
+                    </svg>
+                    <h2 class="display" style="font-size: 38px; color: #FFFEF5; margin-bottom: 15px;">LIST</h2>
+                    <p class="body" style="font-size: 20px; color: rgba(255, 254, 245, 0.9); line-height: 1.5;">
+                        Mockup + upload<br>
+                        15-20 products live
+                    </p>
+                </div>
+                <div style="border-top: 2px solid rgba(255, 254, 245, 0.3); padding-top: 15px;">
+                    <p class="body" style="font-size: 26px; color: #FFFEF5; font-weight: 700;">1 hour</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 60px; margin-bottom: 50px;">
+            <p class="body" style="width: 340px; text-align: center; font-size: 22px; color: #C9A227; letter-spacing: 3px; text-transform: uppercase; font-weight: 700;">Monday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 22px; color: #B8860B; letter-spacing: 3px; text-transform: uppercase; font-weight: 700;">Wednesday</p>
+            <p class="body" style="width: 340px; text-align: center; font-size: 22px; color: #5C4827; letter-spacing: 3px; text-transform: uppercase; font-weight: 700;">Friday</p>
+        </div>
+
+        <!-- Total line -->
+        <div style="display: flex; align-items: center; gap: 20px; background: white; padding: 25px 50px; border-radius: 100px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.1);">
+            <p class="body" style="font-size: 28px; color: #5C4827;">TOTAL:</p>
+            <p class="display" style="font-size: 32px; color: #3D2B1F;">3 hours/week</p>
+            <span style="color: #C9A227; font-size: 32px; font-weight: 700;">→</span>
+            <p class="display" style="font-size: 32px; color: #C9A227;">Empire built.</p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 22d</div>
+</div>
+
+<!-- ============================================
+     SLIDE 23: Why This Rhythm Works
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 0 100 Q 480 50, 960 100 T 1920 80" fill="none" stroke="#C9A227" stroke-opacity="0.08" stroke-width="3"/>
+        <path d="M 0 1000 Q 480 1050, 960 1000 T 1920 1020" fill="none" stroke="#B8860B" stroke-opacity="0.06" stroke-width="3"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <h1 class="display" style="font-size: 56px; color: #3D2B1F; margin-bottom: 60px;">
+            Why these specific days?
+        </h1>
+
+        <div style="display: flex; flex-direction: column; gap: 40px; max-width: 1200px;">
+            <!-- Point 1 -->
+            <div style="display: flex; gap: 35px; align-items: flex-start;">
+                <div style="min-width: 80px; height: 80px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);">
+                    <span class="display" style="font-size: 36px; color: white;">1</span>
+                </div>
+                <div>
+                    <h3 class="display" style="font-size: 32px; color: #3D2B1F; margin-bottom: 12px;">SEPARATION OF MODES</h3>
+                    <p class="body" style="font-size: 24px; color: #5C4827; line-height: 1.6;">
+                        Research brain ≠ Creative brain ≠ Publishing brain<br>
+                        <span style="color: #8B8178;">Each day uses a different mental mode</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, #D4CCC4, transparent); margin: 0 100px;"></div>
+
+            <!-- Point 2 -->
+            <div style="display: flex; gap: 35px; align-items: flex-start;">
+                <div style="min-width: 80px; height: 80px; background: linear-gradient(135deg, #B8860B, #C9A227); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);">
+                    <span class="display" style="font-size: 36px; color: white;">2</span>
+                </div>
+                <div>
+                    <h3 class="display" style="font-size: 32px; color: #3D2B1F; margin-bottom: 12px;">MOMENTUM RHYTHM</h3>
+                    <p class="body" style="font-size: 24px; color: #5C4827; line-height: 1.6;">
+                        48 hours between sessions = processing time<br>
+                        <span style="color: #8B8178;">Your brain works on it even when you're not</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, #D4CCC4, transparent); margin: 0 100px;"></div>
+
+            <!-- Point 3 -->
+            <div style="display: flex; gap: 35px; align-items: flex-start;">
+                <div style="min-width: 80px; height: 80px; background: linear-gradient(135deg, #5C4827, #6B5530); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(92, 72, 39, 0.3);">
+                    <span class="display" style="font-size: 36px; color: white;">3</span>
+                </div>
+                <div>
+                    <h3 class="display" style="font-size: 32px; color: #3D2B1F; margin-bottom: 12px;">SUSTAINABILITY</h3>
+                    <p class="body" style="font-size: 24px; color: #5C4827; line-height: 1.6;">
+                        Weekends completely OFF<br>
+                        Never more than 1 hour at once<br>
+                        <span style="color: #6B8E6B; font-weight: 600;">You can actually keep this up for years</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 23</div>
+</div>
+
+<!-- ============================================
+     SLIDE 24: Monday Section Header
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Calendar grid pattern -->
+        <defs>
+            <pattern id="calendarGrid" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+                <rect width="120" height="120" fill="none" stroke="#C9A227" stroke-width="0.5" stroke-opacity="0.08"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#calendarGrid)"/>
+        <!-- Glowing Monday indicator -->
+        <circle cx="960" cy="400" r="150" fill="#C9A227" fill-opacity="0.08"/>
+        <circle cx="960" cy="400" r="100" fill="#C9A227" fill-opacity="0.1"/>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- Day badge -->
+        <div style="background: linear-gradient(135deg, #C9A227, #B8860B); padding: 15px 40px; border-radius: 50px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(201, 162, 39, 0.4);">
+            <span class="body" style="font-size: 20px; color: white; letter-spacing: 4px; text-transform: uppercase;">Day 1 of 3</span>
+        </div>
+
+        <h1 class="display" style="font-size: 100px; color: #C9A227; text-align: center; letter-spacing: 3px; text-shadow: 0 4px 30px rgba(201, 162, 39, 0.3);">
+            MONDAY
+        </h1>
+        <h2 class="display" style="font-size: 56px; color: #FFFEF5; text-align: center; margin-top: 10px;">
+            RESEARCH DAY
+        </h2>
+
+        <p class="body" style="font-size: 32px; color: rgba(255, 254, 245, 0.85); margin-top: 40px; text-align: center;">
+            Finding What People Are Already Buying
+        </p>
+
+        <!-- Specs row -->
+        <div style="display: flex; gap: 80px; margin-top: 80px;">
+            <div style="text-align: center;">
+                <svg width="50" height="50" viewBox="0 0 50 50" style="margin-bottom: 15px;">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="#D4A84B" stroke-width="2"/>
+                    <path d="M25 12 L25 25 L35 30" fill="none" stroke="#D4A84B" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="body" style="font-size: 18px; color: #D4A84B; letter-spacing: 2px;">TIME</p>
+                <p class="body" style="font-size: 24px; color: #FFFEF5; font-weight: 600;">1 hour</p>
+            </div>
+            <div style="text-align: center;">
+                <svg width="50" height="50" viewBox="0 0 50 50" style="margin-bottom: 15px;">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="#D4A84B" stroke-width="2"/>
+                    <path d="M15 25 L22 32 L35 18" fill="none" stroke="#D4A84B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="body" style="font-size: 18px; color: #D4A84B; letter-spacing: 2px;">GOAL</p>
+                <p class="body" style="font-size: 24px; color: #FFFEF5; font-weight: 600;">20 validated ideas</p>
+            </div>
+            <div style="text-align: center;">
+                <svg width="50" height="50" viewBox="0 0 50 50" style="margin-bottom: 15px;">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="#D4A84B" stroke-width="2"/>
+                    <circle cx="25" cy="18" r="6" fill="none" stroke="#D4A84B" stroke-width="2"/>
+                    <path d="M14 38 Q25 28 36 38" fill="none" stroke="#D4A84B" stroke-width="2"/>
+                </svg>
+                <p class="body" style="font-size: 18px; color: #D4A84B; letter-spacing: 2px;">MODE</p>
+                <p class="body" style="font-size: 24px; color: #FFFEF5; font-weight: 600;">Curious, not creative</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label">SLIDE 24</div>
+</div>
+
+<!-- ============================================
+     SLIDE 25: Pattern Interrupt - MONEY Day
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Dollar signs scattered subtly -->
+        <text x="150" y="200" font-size="80" fill="#C9A227" fill-opacity="0.06" font-family="serif">$</text>
+        <text x="1700" y="350" font-size="100" fill="#C9A227" fill-opacity="0.05" font-family="serif">$</text>
+        <text x="1600" y="800" font-size="70" fill="#C9A227" fill-opacity="0.04" font-family="serif">$</text>
+        <text x="200" y="900" font-size="90" fill="#C9A227" fill-opacity="0.05" font-family="serif">$</text>
+        <!-- Strikethrough decoration -->
+        <line x1="100" y1="300" x2="400" y2="300" stroke="#E07A5F" stroke-width="3" stroke-opacity="0.15"/>
+    </svg>
+
+    <div class="content flex-center">
+        <p class="body" style="font-size: 42px; color: #5C4827; margin-bottom: 20px;">
+            Monday is not creative day.
+        </p>
+
+        <h1 class="display" style="font-size: 90px; color: #C9A227; text-align: center; margin-bottom: 50px; text-shadow: 0 4px 20px rgba(201, 162, 39, 0.2);">
+            Monday is MONEY day.
+        </h1>
+
+        <div style="background: white; padding: 40px 60px; border-radius: 20px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); max-width: 900px; margin-bottom: 50px;">
+            <p class="body" style="font-size: 32px; color: #3D2B1F; text-align: center; line-height: 1.5;">
+                We <span style="font-weight: 700;">ONLY</span> research what the market<br>
+                is already begging for.
+            </p>
+        </div>
+
+        <!-- The hard rule -->
+        <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+            <div style="display: flex; gap: 25px; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 10px; background: rgba(224, 122, 95, 0.1); padding: 12px 25px; border-radius: 30px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="#E07A5F" stroke-width="2"/>
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="#E07A5F" stroke-width="2"/>
+                    </svg>
+                    <span class="body" style="font-size: 22px; color: #E07A5F;">No Canva</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; background: rgba(224, 122, 95, 0.1); padding: 12px 25px; border-radius: 30px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="#E07A5F" stroke-width="2"/>
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="#E07A5F" stroke-width="2"/>
+                    </svg>
+                    <span class="body" style="font-size: 22px; color: #E07A5F;">No Midjourney</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; background: rgba(224, 122, 95, 0.1); padding: 12px 25px; border-radius: 30px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="#E07A5F" stroke-width="2"/>
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="#E07A5F" stroke-width="2"/>
+                    </svg>
+                    <span class="body" style="font-size: 22px; color: #E07A5F;">No Kittl</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="body" style="font-size: 28px; color: #5C4827; margin-top: 50px; text-align: center;">
+            If you're designing on Monday, <span style="color: #E07A5F; font-weight: 600;">you broke the system.</span>
+        </p>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 25</div>
+</div>
+
+<!-- ============================================
+     SLIDE 26: Tools Open
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="250" r="200" fill="#C9A227" fill-opacity="0.04"/>
+        <circle cx="300" cy="800" r="150" fill="#B8860B" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <!-- Step indicator -->
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+            <div style="background: linear-gradient(135deg, #C9A227, #B8860B); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span class="display" style="font-size: 24px; color: white;">1</span>
+            </div>
+            <span class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px;">Step One</span>
+        </div>
+
+        <h1 class="display" style="font-size: 60px; color: #3D2B1F; margin-bottom: 50px;">
+            Open Your Money Tools
+        </h1>
+
+        <!-- Tool list as clean cards -->
+        <div style="display: flex; flex-direction: column; gap: 25px; max-width: 800px;">
+            <div style="display: flex; align-items: center; gap: 25px; background: white; padding: 30px 40px; border-radius: 20px; box-shadow: 0 8px 30px rgba(61, 43, 31, 0.06);">
+                <span style="color: #C9A227; font-size: 32px; font-weight: 700;">→</span>
+                <div>
+                    <span class="body" style="font-size: 26px; color: #3D2B1F;">Etsy search</span>
+                    <span class="body" style="font-size: 22px; color: #8B8178; margin-left: 15px;">(that's it, just Etsy)</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 25px; background: white; padding: 30px 40px; border-radius: 20px; box-shadow: 0 8px 30px rgba(61, 43, 31, 0.06);">
+                <span style="color: #C9A227; font-size: 32px; font-weight: 700;">→</span>
+                <span class="body" style="font-size: 26px; color: #3D2B1F;">EverBee or ProfitTree installed</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 25px; background: white; padding: 30px 40px; border-radius: 20px; box-shadow: 0 8px 30px rgba(61, 43, 31, 0.06);">
+                <span style="color: #C9A227; font-size: 32px; font-weight: 700;">→</span>
+                <span class="body" style="font-size: 26px; color: #3D2B1F;">A simple doc for your ideas</span>
+            </div>
+        </div>
+
+        <!-- Closing line -->
+        <div style="margin-top: 60px; padding-left: 75px;">
+            <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 15px;">
+                That's the whole setup.
+            </p>
+            <p class="body" style="font-size: 26px; color: #8B8178;">
+                You're not designing. <span style="color: #C9A227; font-weight: 600;">You're doing detective work.</span>
+            </p>
+        </div>
+
+        <!-- Detective magnifying glass icon -->
+        <div style="position: absolute; right: 150px; bottom: 150px; opacity: 0.15;">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#C9A227" stroke-width="8"/>
+                <line x1="125" y1="125" x2="180" y2="180" stroke="#C9A227" stroke-width="12" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 26</div>
+</div>
+
+<!-- ============================================
+     SLIDE 27a: Green Lights Criteria (Empty State)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="600" r="400" fill="#6B8E6B" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <!-- Step indicator -->
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+            <div style="background: linear-gradient(135deg, #C9A227, #B8860B); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span class="display" style="font-size: 24px; color: white;">2</span>
+            </div>
+            <span class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px;">Step Two</span>
+        </div>
+
+        <h1 class="display" style="font-size: 60px; color: #3D2B1F; margin-bottom: 20px;">
+            Hunt for <span style="color: #6B8E6B;">"Green Lights"</span>
+        </h1>
+
+        <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 60px;">
+            You're looking for listings that pass <span style="font-weight: 700;">ALL</span> these criteria:
+        </p>
+
+        <!-- Four empty placeholder boxes in 2x2 grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px;">
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 27a</div>
+</div>
+
+<!-- ============================================
+     SLIDE 27b: Green Lights (First Criterion)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="600" r="400" fill="#6B8E6B" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+            <div style="background: linear-gradient(135deg, #C9A227, #B8860B); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span class="display" style="font-size: 24px; color: white;">2</span>
+            </div>
+            <span class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px;">Step Two</span>
+        </div>
+
+        <h1 class="display" style="font-size: 60px; color: #3D2B1F; margin-bottom: 20px;">
+            Hunt for <span style="color: #6B8E6B;">"Green Lights"</span>
+        </h1>
+
+        <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 60px;">
+            You're looking for listings that pass <span style="font-weight: 700;">ALL</span> these criteria:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px;">
+            <!-- First criterion REVEALED -->
+            <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(107, 142, 107, 0.15); border-left: 5px solid #6B8E6B;">
+                <div style="display: flex; align-items: flex-start; gap: 20px;">
+                    <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink: 0; margin-top: 5px;">
+                        <circle cx="20" cy="20" r="18" fill="#6B8E6B"/>
+                        <path d="M12 20 L17 25 L28 14" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="display" style="font-size: 26px; color: #3D2B1F; margin-bottom: 8px;">LOW LISTING AGE</h3>
+                        <p class="body" style="font-size: 20px; color: #5C4827;">Under 3-4 months old</p>
+                        <p class="body" style="font-size: 17px; color: #8B8178; margin-top: 12px; font-style: italic;">
+                            (Old + selling = brand. NEW + selling = opportunity.)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Empty placeholders -->
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 27b</div>
+</div>
+
+<!-- ============================================
+     SLIDE 27c: Green Lights (Second Criterion)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="600" r="400" fill="#6B8E6B" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+            <div style="background: linear-gradient(135deg, #C9A227, #B8860B); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span class="display" style="font-size: 24px; color: white;">2</span>
+            </div>
+            <span class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px;">Step Two</span>
+        </div>
+
+        <h1 class="display" style="font-size: 60px; color: #3D2B1F; margin-bottom: 20px;">
+            Hunt for <span style="color: #6B8E6B;">"Green Lights"</span>
+        </h1>
+
+        <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 60px;">
+            You're looking for listings that pass <span style="font-weight: 700;">ALL</span> these criteria:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px;">
+            <!-- First criterion -->
+            <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(107, 142, 107, 0.15); border-left: 5px solid #6B8E6B;">
+                <div style="display: flex; align-items: flex-start; gap: 20px;">
+                    <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink: 0; margin-top: 5px;">
+                        <circle cx="20" cy="20" r="18" fill="#6B8E6B"/>
+                        <path d="M12 20 L17 25 L28 14" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="display" style="font-size: 26px; color: #3D2B1F; margin-bottom: 8px;">LOW LISTING AGE</h3>
+                        <p class="body" style="font-size: 20px; color: #5C4827;">Under 3-4 months old</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Second criterion REVEALED -->
+            <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(107, 142, 107, 0.15); border-left: 5px solid #6B8E6B;">
+                <div style="display: flex; align-items: flex-start; gap: 20px;">
+                    <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink: 0; margin-top: 5px;">
+                        <circle cx="20" cy="20" r="18" fill="#6B8E6B"/>
+                        <path d="M12 20 L17 25 L28 14" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="display" style="font-size: 26px; color: #3D2B1F; margin-bottom: 8px;">CONSISTENT SALES</h3>
+                        <p class="body" style="font-size: 20px; color: #5C4827;">Not a one-hit wonder</p>
+                        <p class="body" style="font-size: 17px; color: #8B8178; margin-top: 8px;">Regular purchases showing up</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Empty placeholders -->
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+            <div style="height: 140px; border: 3px dashed #6B8E6B; border-radius: 20px; background: rgba(107, 142, 107, 0.03); display: flex; align-items: center; justify-content: center;">
+                <span class="body" style="font-size: 48px; color: #6B8E6B; opacity: 0.3;">?</span>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 27c</div>
+</div>
+
+<!-- ============================================
+     SLIDE 27d: Green Lights (Complete)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="600" r="400" fill="#6B8E6B" fill-opacity="0.04"/>
+        <!-- Celebratory elements -->
+        <circle cx="200" cy="200" r="5" fill="#6B8E6B" fill-opacity="0.4"/>
+        <circle cx="1720" cy="180" r="4" fill="#6B8E6B" fill-opacity="0.5"/>
+        <circle cx="1680" cy="850" r="6" fill="#6B8E6B" fill-opacity="0.3"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+            <div style="background: linear-gradient(135deg, #C9A227, #B8860B); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span class="display" style="font-size: 24px; color: white;">2</span>
+            </div>
+            <span class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px;">Step Two</span>
+        </div>
+
+        <h1 class="display" style="font-size: 52px; color: #3D2B1F; margin-bottom: 15px;">
+            Hunt for <span style="color: #6B8E6B;">"Green Lights"</span>
+        </h1>
+
+        <p class="body" style="font-size: 24px; color: #5C4827; margin-bottom: 40px;">
+            You're looking for listings that pass <span style="font-weight: 700;">ALL</span> these criteria:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 1100px;">
+            <!-- All four criteria revealed -->
+            <div style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(107, 142, 107, 0.15); border-left: 5px solid #6B8E6B;">
+                <div style="display: flex; align-items: flex-start; gap: 18px;">
+                    <svg width="36" height="36" viewBox="0 0 40 40" style="flex-shrink: 0; margin-top: 3px;">
+                        <circle cx="20" cy="20" r="18" fill="#6B8E6B"/>
+                        <path d="M12 20 L17 25 L28 14" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="display" style="font-size: 24px; color: #3D2B1F; margin-bottom: 5px;">LOW LISTING AGE</h3>
+                        <p class="body" style="font-size: 18px; color: #5C4827;">Under 3-4 months old</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(107, 142, 107, 0.15); border-left: 5px solid #6B8E6B;">
+                <div style="display: flex; align-items: flex-start; gap: 18px;">
+                    <svg width="36" height="36" viewBox="0 0 40 40" style="flex-shrink: 0; margin-top: 3px;">
+                        <circle cx="20" cy="20" r="18" fill="#6B8E6B"/>
+                        <path d="M12 20 L17 25 L28 14" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="display" style="font-size: 24px; color: #3D2B1F; margin-bottom: 5px;">CONSISTENT SALES</h3>
+                        <p class="body" style="font-size: 18px; color: #5C4827;">Not a one-hit wonder</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(107, 142, 107, 0.15); border-left: 5px solid #6B8E6B;">
+                <div style="display: flex; align-items: flex-start; gap: 18px;">
+                    <svg width="36" height="36" viewBox="0 0 40 40" style="flex-shrink: 0; margin-top: 3px;">
+                        <circle cx="20" cy="20" r="18" fill="#6B8E6B"/>
+                        <path d="M12 20 L17 25 L28 14" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="display" style="font-size: 24px; color: #3D2B1F; margin-bottom: 5px;">BADGES SHOWING</h3>
+                        <p class="body" style="font-size: 18px; color: #5C4827;">"Bestseller" or "Popular Now" tags</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(107, 142, 107, 0.15); border-left: 5px solid #6B8E6B;">
+                <div style="display: flex; align-items: flex-start; gap: 18px;">
+                    <svg width="36" height="36" viewBox="0 0 40 40" style="flex-shrink: 0; margin-top: 3px;">
+                        <circle cx="20" cy="20" r="18" fill="#6B8E6B"/>
+                        <path d="M12 20 L17 25 L28 14" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="display" style="font-size: 24px; color: #3D2B1F; margin-bottom: 5px;">REAL SOCIAL PROOF</h3>
+                        <p class="body" style="font-size: 18px; color: #5C4827;">Reviews and favorites that prove demand</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom conclusion -->
+        <div style="margin-top: 45px; text-align: center;">
+            <p class="body" style="font-size: 28px; color: #5C4827;">
+                If it checks all four, that's a <span class="display" style="color: #6B8E6B; font-size: 32px;">GREEN LIGHT.</span>
+            </p>
+            <p class="body" style="font-size: 24px; color: #8B8178; margin-top: 10px;">
+                That product gets added to your list.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 27d</div>
+</div>
+
+<!-- ============================================
+     SLIDE 28: Output Target (20 ideas)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Radiating lines from the number -->
+        <line x1="960" y1="350" x2="960" y2="150" stroke="#C9A227" stroke-opacity="0.1" stroke-width="2"/>
+        <line x1="960" y1="350" x2="1100" y2="200" stroke="#C9A227" stroke-opacity="0.08" stroke-width="2"/>
+        <line x1="960" y1="350" x2="820" y2="200" stroke="#C9A227" stroke-opacity="0.08" stroke-width="2"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <!-- Step indicator -->
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+            <div style="background: linear-gradient(135deg, #C9A227, #B8860B); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span class="display" style="font-size: 24px; color: white;">3</span>
+            </div>
+            <span class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px;">Step Three</span>
+        </div>
+
+        <h1 class="display" style="font-size: 60px; color: #3D2B1F; margin-bottom: 50px;">
+            Build Your Idea List
+        </h1>
+
+        <!-- The big number -->
+        <div style="display: flex; align-items: baseline; gap: 25px; margin-bottom: 30px;">
+            <span class="body" style="font-size: 36px; color: #5C4827;">Your target:</span>
+            <span class="display" style="font-size: 140px; color: #C9A227; line-height: 1; text-shadow: 0 8px 30px rgba(201, 162, 39, 0.3);">20</span>
+            <span class="body" style="font-size: 36px; color: #5C4827;">validated ideas</span>
+        </div>
+
+        <p class="body" style="font-size: 26px; color: #8B8178; margin-bottom: 60px;">
+            If you're doing complex products like planners, <span style="color: #5C4827;">10 solid ideas is fine.</span>
+        </p>
+
+        <!-- The rule box -->
+        <div style="background: white; padding: 45px 60px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); max-width: 800px;">
+            <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 20px;">
+                But here's the rule:
+            </p>
+            <p class="body" style="font-size: 30px; color: #3D2B1F; line-height: 1.6;">
+                Research is <span style="font-weight: 700;">DONE</span> when the list is full.<br>
+                Not when you "feel ready."<br>
+                <span style="color: #C9A227; font-weight: 700;">When you have the ideas.</span>
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 28</div>
+</div>
+
+<!-- ============================================
+     SLIDE 29: Quote - Write This Down
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FAF3E0 0%, #F5E6D3 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Elegant quote marks -->
+        <text x="150" y="300" font-size="400" fill="#C9A227" fill-opacity="0.06" font-family="Georgia, serif">"</text>
+        <text x="1550" y="850" font-size="400" fill="#C9A227" fill-opacity="0.06" font-family="Georgia, serif">"</text>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- Pencil icon + Write This Down badge -->
+        <div style="display: flex; align-items: center; gap: 15px; background: linear-gradient(135deg, #C9A227, #B8860B); padding: 15px 35px; border-radius: 50px; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);">
+            <svg width="28" height="28" viewBox="0 0 28 28">
+                <path d="M20 4 L24 8 L10 22 L4 24 L6 18 Z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M17 7 L21 11" stroke="white" stroke-width="2"/>
+            </svg>
+            <span class="body" style="font-size: 20px; color: white; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;">Write This Down</span>
+        </div>
+
+        <!-- The quote -->
+        <div style="max-width: 1000px; text-align: center;">
+            <h1 class="display" style="font-size: 72px; color: #3D2B1F; line-height: 1.4; margin-bottom: 50px;">
+                "I don't trust motivation.<br>
+                <span style="color: #C9A227;">I trust calendars."</span>
+            </h1>
+        </div>
+
+        <!-- Supporting text -->
+        <div style="background: white; padding: 35px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06);">
+            <p class="body" style="font-size: 28px; color: #5C4827; text-align: center; line-height: 1.6;">
+                Research ends when the list is full.<br>
+                <span style="color: #8B8178;">Not when you feel like stopping.</span>
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 29</div>
+</div>
+
+<!-- ============================================
+     SLIDE 30: Bailey's Monday Walkthrough
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Cozy, conversational feel -->
+        <circle cx="1650" cy="200" r="180" fill="#D4A84B" fill-opacity="0.06"/>
+        <circle cx="250" cy="850" r="150" fill="#C9A227" fill-opacity="0.04"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <h1 class="display" style="font-size: 56px; color: #3D2B1F; margin-bottom: 50px;">
+            My Actual Monday:
+        </h1>
+
+        <!-- Conversational flow with highlighted terms -->
+        <div style="max-width: 1100px; font-size: 30px; line-height: 1.8; color: #5C4827;">
+            <p class="body" style="margin-bottom: 30px;">
+                I open Etsy and ProfitTree.
+            </p>
+
+            <p class="body" style="margin-bottom: 30px;">
+                I type my base product types:
+                <span style="background: linear-gradient(180deg, transparent 50%, rgba(201, 162, 39, 0.2) 50%); padding: 0 8px; color: #3D2B1F; font-weight: 600;">"PNG,"</span>
+                <span style="background: linear-gradient(180deg, transparent 50%, rgba(201, 162, 39, 0.2) 50%); padding: 0 8px; color: #3D2B1F; font-weight: 600;">"tumbler wrap,"</span>
+                <span style="background: linear-gradient(180deg, transparent 50%, rgba(201, 162, 39, 0.2) 50%); padding: 0 8px; color: #3D2B1F; font-weight: 600;">"digital planner,"</span>
+                <span style="background: linear-gradient(180deg, transparent 50%, rgba(201, 162, 39, 0.2) 50%); padding: 0 8px; color: #3D2B1F; font-weight: 600;">"printable checklist"</span>
+            </p>
+
+            <p class="body" style="margin-bottom: 30px;">
+                Sometimes I add a niche:
+                <span style="background: linear-gradient(180deg, transparent 50%, rgba(184, 134, 11, 0.2) 50%); padding: 0 8px; color: #3D2B1F; font-weight: 600;">"nurse PNG,"</span>
+                <span style="background: linear-gradient(180deg, transparent 50%, rgba(184, 134, 11, 0.2) 50%); padding: 0 8px; color: #3D2B1F; font-weight: 600;">"western tumbler wrap,"</span>
+                <span style="background: linear-gradient(180deg, transparent 50%, rgba(184, 134, 11, 0.2) 50%); padding: 0 8px; color: #3D2B1F; font-weight: 600;">"ADHD planner"</span>
+            </p>
+
+            <p class="body" style="margin-bottom: 40px;">
+                Then I just... <span style="color: #6B8E6B; font-weight: 600;">look for green lights.</span>
+            </p>
+        </div>
+
+        <!-- Simple closing -->
+        <div style="background: white; padding: 40px 60px; border-radius: 20px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06); max-width: 600px;">
+            <p class="body" style="font-size: 28px; color: #3D2B1F; text-align: center;">
+                Twenty ideas that fit the criteria.
+            </p>
+            <p class="display" style="font-size: 32px; color: #C9A227; text-align: center; margin-top: 15px;">
+                That's it. That's Monday.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 30</div>
+</div>
+
+<!-- ============================================
+     SLIDE 31: Tie Down (Micro-Commitment)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="960" cy="540" r="400" fill="#6B8E6B" fill-opacity="0.03"/>
+        <circle cx="960" cy="540" r="300" fill="#6B8E6B" fill-opacity="0.04"/>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- Building questions -->
+        <div style="max-width: 1000px; text-align: center;">
+            <p class="body" style="font-size: 36px; color: #5C4827; margin-bottom: 35px; line-height: 1.5;">
+                If you had a clear checklist for what makes<br>a "green light" product...
+            </p>
+
+            <p class="body" style="font-size: 36px; color: #5C4827; margin-bottom: 35px; line-height: 1.5;">
+                And you <span style="font-weight: 700;">ONLY</span> designed products<br>that passed that checklist...
+            </p>
+
+            <h2 class="display" style="font-size: 52px; color: #3D2B1F; margin-bottom: 70px;">
+                Do you think your hit rate would go up?
+            </h2>
+        </div>
+
+        <!-- Chat prompt -->
+        <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(135deg, #6B8E6B, #4A5D4A); padding: 30px 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(107, 142, 107, 0.3);">
+            <span style="font-size: 36px; color: white;">→</span>
+            <p class="body" style="font-size: 28px; color: white;">
+                Type <span class="display" style="font-size: 32px; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 8px; margin: 0 8px;">"GREEN LIGHT"</span> in the chat if this is clicking.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 31</div>
+</div>
+
+<!-- ============================================
+     SLIDE 32: Loop Opener (60-Second Diagnostic Tease)
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #F5E6D3 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Amber accent suggesting "bonus" energy -->
+        <rect x="0" y="0" width="15" height="1080" fill="url(#amberGradient)"/>
+        <defs>
+            <linearGradient id="amberGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#B8860B" stop-opacity="0"/>
+                <stop offset="30%" stop-color="#B8860B" stop-opacity="0.3"/>
+                <stop offset="70%" stop-color="#B8860B" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#B8860B" stop-opacity="0"/>
+            </linearGradient>
+        </defs>
+        <!-- Question mark hints -->
+        <text x="1650" y="250" font-size="150" fill="#C9A227" fill-opacity="0.08" font-family="Georgia, serif">?</text>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <p class="body" style="font-size: 32px; color: #8B8178; margin-bottom: 40px;">
+            Speaking of knowing what's working...
+        </p>
+
+        <div style="margin-bottom: 50px;">
+            <p class="body" style="font-size: 36px; color: #5C4827; line-height: 1.5;">
+                There's a
+                <span class="display" style="font-size: 52px; color: #C9A227; background: linear-gradient(180deg, transparent 60%, rgba(201, 162, 39, 0.2) 60%); padding: 0 10px;">60-SECOND DIAGNOSTIC</span>
+                I use<br>
+                to figure out exactly why a design isn't selling.
+            </p>
+        </div>
+
+        <!-- Quick rhythm line -->
+        <div style="display: flex; gap: 30px; margin-bottom: 50px; flex-wrap: wrap;">
+            <div style="background: white; padding: 18px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(61, 43, 31, 0.05);">
+                <span class="body" style="font-size: 24px; color: #5C4827;">Traffic problem?</span>
+            </div>
+            <div style="background: white; padding: 18px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(61, 43, 31, 0.05);">
+                <span class="body" style="font-size: 24px; color: #5C4827;">SEO issue?</span>
+            </div>
+            <div style="background: white; padding: 18px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(61, 43, 31, 0.05);">
+                <span class="body" style="font-size: 24px; color: #5C4827;">Pricing?</span>
+            </div>
+            <div style="background: white; padding: 18px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(61, 43, 31, 0.05);">
+                <span class="body" style="font-size: 24px; color: #5C4827;">The design itself?</span>
+            </div>
+        </div>
+
+        <p class="body" style="font-size: 30px; color: #3D2B1F; margin-bottom: 60px;">
+            You can pinpoint it in about a minute.
+        </p>
+
+        <!-- Redirect -->
+        <div style="border-left: 4px solid #B8860B; padding-left: 30px;">
+            <p class="body" style="font-size: 28px; color: #8B8178; margin-bottom: 15px;">
+                But that's a whole separate training...
+            </p>
+            <p class="display" style="font-size: 36px; color: #B8860B;">
+                Let me show you Wednesday.
+            </p>
+        </div>
+
+        <!-- Arrow pointing forward -->
+        <div style="position: absolute; right: 150px; bottom: 150px;">
+            <svg width="80" height="80" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-opacity="0.3"/>
+                <path d="M30 40 L50 40 M42 32 L50 40 L42 48" fill="none" stroke="#B8860B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 32</div>
+</div>
+
+</body>
+</html>
