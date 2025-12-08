@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+@font-face {
+    font-family: 'Ogg Bold';
+    src: url('https://seanthea.github.io/bailey-fonts/Ogg-Bold.woff2') format('woff2'),
+         url('https://seanthea.github.io/bailey-fonts/Ogg-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://seanthea.github.io/bailey-fonts/Satoshi-Variable.woff2') format('woff2'),
+         url('https://seanthea.github.io/bailey-fonts/Satoshi-Variable.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+}
+
+.bg-cream { background: #FDF8F3; }
+.bg-blush { background: #FEF0EA; }
+.bg-bronze { background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%); }
+.bg-bronze-deep { background: linear-gradient(145deg, #2D1E14 0%, #1A110B 100%); }
+.bg-dark { background: #2D3436; }
+.bg-gold-warm { background: linear-gradient(145deg, #C9A227 0%, #B8860B 100%); }
+
+.display {
+    font-family: 'Ogg Bold', serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.body {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 60px 80px;
+    height: 100%;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.text-center { text-align: center; }
+
+.bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.gold-arrow {
+    color: #C9A227;
+    font-weight: 700;
+    margin-right: 12px;
+    font-size: 22px;
+}
+
+.objection-quote {
+    font-family: 'Ogg Bold', serif;
+    font-size: 58px;
+    color: #5C4827;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.objection-card {
+    background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%);
+    border-radius: 20px;
+    padding: 35px 45px;
+    box-shadow: 0 15px 50px rgba(201, 162, 39, 0.1);
+    border: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+.answer-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #1B8A8A, #2BA5A3);
+    color: #FFFEF5;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(27, 138, 138, 0.25);
+}
+
+.struck-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.calendar-excuse {
+    background: linear-gradient(145deg, #FEF0EA 0%, #FFFFFF 100%);
+    border-radius: 12px;
+    padding: 16px 24px;
+    box-shadow: 0 8px 25px rgba(224, 123, 108, 0.08);
+    border: 1px solid rgba(224, 123, 108, 0.1);
+    font-size: 18px;
+    color: #636E72;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- DAY 3 SLIDES 161-180: OBJECTION HANDLING -->
+<!-- Common objections addressed honestly -->
+<!-- ========================================== -->
+
+<!-- SLIDE 161: Objection Transition -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="transGrad161" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#5C4827;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="500" rx="700" ry="500" fill="url(#transGrad161)"/>
+    </svg>
+
+    <!-- Subtle horizontal line accent -->
+    <div style="position: absolute; top: 50%; left: 150px; right: 150px; height: 1px; background: linear-gradient(90deg, transparent, rgba(92, 72, 39, 0.15), transparent); transform: translateY(-150px);"></div>
+    <div style="position: absolute; top: 50%; left: 150px; right: 150px; height: 1px; background: linear-gradient(90deg, transparent, rgba(92, 72, 39, 0.15), transparent); transform: translateY(150px);"></div>
+
+    <div class="content flex-center text-center">
+        <div style="max-width: 1100px;">
+            <h1 class="display" style="font-size: 64px; color: #5C4827; line-height: 1.35;">
+                Let me address the most common<br>objections before we move on.
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 162: "No Time" Setup -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="timeGrad162" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="350" rx="500" ry="420" fill="url(#timeGrad162)"/>
+        <ellipse cx="250" cy="750" rx="380" ry="320" fill="url(#timeGrad162)"/>
+    </svg>
+
+    <!-- Clock icon graphic -->
+    <div style="position: absolute; right: 150px; top: 50%; transform: translateY(-50%);">
+        <svg width="280" height="280" viewBox="0 0 280 280">
+            <defs>
+                <linearGradient id="clockGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.15" />
+                    <stop offset="100%" style="stop-color:#D4A84B;stop-opacity:0.08" />
+                </linearGradient>
+            </defs>
+            <circle cx="140" cy="140" r="130" fill="url(#clockGrad)" stroke="rgba(201, 162, 39, 0.2)" stroke-width="2"/>
+            <circle cx="140" cy="140" r="8" fill="#5C4827"/>
+            <line x1="140" y1="140" x2="140" y2="70" stroke="#5C4827" stroke-width="6" stroke-linecap="round"/>
+            <line x1="140" y1="140" x2="195" y2="140" stroke="#C9A227" stroke-width="4" stroke-linecap="round"/>
+            <!-- Hour markers -->
+            <circle cx="140" cy="30" r="5" fill="rgba(92, 72, 39, 0.3)"/>
+            <circle cx="250" cy="140" r="5" fill="rgba(92, 72, 39, 0.3)"/>
+            <circle cx="140" cy="250" r="5" fill="rgba(92, 72, 39, 0.3)"/>
+            <circle cx="30" cy="140" r="5" fill="rgba(92, 72, 39, 0.3)"/>
+        </svg>
+    </div>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 900px;">
+            <p class="objection-quote" style="font-size: 68px;">
+                "I don't have time."
+            </p>
+
+            <p style="font-size: 28px; color: #636E72; margin-bottom: 45px; font-weight: 500;">
+                I hear this one a lot.
+            </p>
+
+            <p style="font-size: 26px; color: #2D3436; line-height: 1.7; font-weight: 500;">
+                You're busy. You have kids. You have a job.<br>
+                <span style="color: #5C4827; font-weight: 600;">When are you supposed to fit this in?</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 163: "No Time" Math -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="mathGrad163" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.07" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="350" cy="300" rx="450" ry="380" fill="url(#mathGrad163)"/>
+        <ellipse cx="1650" cy="750" rx="400" ry="350" fill="url(#mathGrad163)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <!-- Big math equation -->
+            <div style="background: linear-gradient(145deg, #FFFEF8 0%, #FAF3E0 100%); border-radius: 20px; padding: 40px 60px; display: inline-block; margin-bottom: 55px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.12); border: 2px solid rgba(201, 162, 39, 0.15);">
+                <p class="display" style="font-size: 48px; color: #5C4827;">
+                    3 hours/week = <span style="color: #C9A227; font-size: 64px;">25 minutes</span> per day
+                </p>
+            </div>
+
+            <p style="font-size: 26px; color: #636E72; margin-bottom: 35px; font-weight: 500;">That's less than:</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 55px;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 14px; padding: 22px 32px; box-shadow: 0 10px 35px rgba(224, 123, 108, 0.08); border: 1px solid rgba(224, 123, 108, 0.1); display: flex; align-items: center; gap: 15px;">
+                    <span class="gold-arrow">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">One Netflix episode</span>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 14px; padding: 22px 32px; box-shadow: 0 10px 35px rgba(224, 123, 108, 0.08); border: 1px solid rgba(224, 123, 108, 0.1); display: flex; align-items: center; gap: 15px;">
+                    <span class="gold-arrow">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">Scrolling social media</span>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 14px; padding: 22px 32px; box-shadow: 0 10px 35px rgba(224, 123, 108, 0.08); border: 1px solid rgba(224, 123, 108, 0.1); display: flex; align-items: center; gap: 15px;">
+                    <span class="gold-arrow">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">Watching random YouTube videos</span>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 14px; padding: 22px 32px; box-shadow: 0 10px 35px rgba(224, 123, 108, 0.08); border: 1px solid rgba(224, 123, 108, 0.1); display: flex; align-items: center; gap: 15px;">
+                    <span class="gold-arrow">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">Worrying about money at 2am</span>
+                </div>
+            </div>
+
+            <div style="border-left: 5px solid #C9A227; padding-left: 30px;">
+                <p style="font-size: 32px; color: #2D3436; font-weight: 700; margin-bottom: 10px;">
+                    You have the time.
+                </p>
+                <p style="font-size: 26px; color: #636E72; font-weight: 500;">
+                    The question is what you're spending it on.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 164: "No Time" Identity -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="identGrad164" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#identGrad164)"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="max-width: 850px;">
+            <p style="font-size: 28px; color: #636E72; margin-bottom: 40px; font-weight: 500;">
+                You're probably the one who:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 22px; margin-bottom: 55px;">
+                <div style="display: flex; align-items: center;">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436; font-weight: 500;">Handles the school emails</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436; font-weight: 500;">Remembers the doctor appointments</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436; font-weight: 500;">Plans the meals</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436; font-weight: 500;">Keeps the whole house running</span>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(145deg, #FFFEF8 0%, #FAF3E0 100%); border-radius: 18px; padding: 35px 45px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.1); border: 1px solid rgba(201, 162, 39, 0.15);">
+                <p style="font-size: 26px; color: #2D3436; font-weight: 700; margin-bottom: 12px;">
+                    You're already managing a LOT.
+                </p>
+                <p style="font-size: 24px; color: #5C4827; font-weight: 500;">
+                    This is about managing something that <span style="color: #C9A227; font-weight: 700;">pays you back.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Juggling balls graphic -->
+        <div style="position: relative; width: 400px; height: 500px;">
+            <svg width="400" height="500" viewBox="0 0 400 500">
+                <defs>
+                    <linearGradient id="ball1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E07B6C;stop-opacity:0.9" />
+                        <stop offset="100%" style="stop-color:#F4A89A;stop-opacity:0.9" />
+                    </linearGradient>
+                    <linearGradient id="ball2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#1B8A8A;stop-opacity:0.9" />
+                        <stop offset="100%" style="stop-color:#2BA5A3;stop-opacity:0.9" />
+                    </linearGradient>
+                    <linearGradient id="ball3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.9" />
+                        <stop offset="100%" style="stop-color:#D4A84B;stop-opacity:0.9" />
+                    </linearGradient>
+                    <linearGradient id="ball4Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#7CB87C;stop-opacity:0.9" />
+                        <stop offset="100%" style="stop-color:#5A9A5A;stop-opacity:0.9" />
+                    </linearGradient>
+                </defs>
+                <!-- Floating balls representing responsibilities -->
+                <circle cx="100" cy="80" r="50" fill="url(#ball1Grad)" style="filter: drop-shadow(0 8px 20px rgba(224, 123, 108, 0.3));"/>
+                <circle cx="300" cy="120" r="45" fill="url(#ball2Grad)" style="filter: drop-shadow(0 8px 20px rgba(27, 138, 138, 0.3));"/>
+                <circle cx="180" cy="200" r="55" fill="url(#ball3Grad)" style="filter: drop-shadow(0 8px 20px rgba(201, 162, 39, 0.3));"/>
+                <circle cx="280" cy="300" r="40" fill="url(#ball4Grad)" style="filter: drop-shadow(0 8px 20px rgba(124, 184, 124, 0.3));"/>
+                <circle cx="120" cy="350" r="35" fill="url(#ball1Grad)" style="filter: drop-shadow(0 8px 20px rgba(224, 123, 108, 0.3)); opacity: 0.7;"/>
+                <!-- Dotted arc paths suggesting juggling motion -->
+                <path d="M80 350 Q200 50 320 350" stroke="rgba(201, 162, 39, 0.2)" stroke-width="2" fill="none" stroke-dasharray="8 8"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 165: "No Time" Final -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="finalTimeGrad165" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1550" cy="350" rx="500" ry="420" fill="url(#finalTimeGrad165)"/>
+        <ellipse cx="350" cy="750" rx="400" ry="350" fill="url(#finalTimeGrad165)"/>
+    </svg>
+
+    <div class="content flex-center">
+        <div style="max-width: 1100px; width: 100%;">
+            <!-- Two conditionals side by side -->
+            <div style="display: flex; flex-direction: column; gap: 35px; margin-bottom: 60px;">
+                <!-- If worth it -->
+                <div style="background: linear-gradient(145deg, #FFFEF8 0%, #FAF3E0 100%); border-radius: 20px; padding: 40px 50px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.12); border: 2px solid rgba(201, 162, 39, 0.2);">
+                    <p style="font-size: 26px; color: #5C4827; margin-bottom: 15px;">
+                        If this opportunity <span style="color: #C9A227; font-weight: 700;">IS WORTH</span> 25 minutes a day...
+                    </p>
+                    <p class="display" style="font-size: 42px; color: #C9A227;">
+                        Then you have time.
+                    </p>
+                </div>
+
+                <!-- If not worth it -->
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FDF8F3 100%); border-radius: 20px; padding: 40px 50px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); border: 1px solid rgba(99, 110, 114, 0.1);">
+                    <p style="font-size: 26px; color: #636E72; margin-bottom: 15px;">
+                        If it's <span style="font-weight: 700;">NOT</span> worth 25 minutes a day...
+                    </p>
+                    <p class="display" style="font-size: 42px; color: #5C4827;">
+                        Then don't join.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Final honest statement -->
+            <p style="font-size: 34px; color: #2D3436; font-weight: 700; text-align: center;">
+                But don't pretend the time isn't there.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 166: "Can't Afford" Setup -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="affordGrad166" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="350" rx="480" ry="400" fill="url(#affordGrad166)"/>
+        <ellipse cx="1650" cy="750" rx="400" ry="350" fill="url(#affordGrad166)"/>
+    </svg>
+
+    <!-- Money/wallet icon -->
+    <div style="position: absolute; right: 180px; top: 50%; transform: translateY(-50%);">
+        <svg width="260" height="220" viewBox="0 0 260 220">
+            <defs>
+                <linearGradient id="walletGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#5C4827;stop-opacity:0.15" />
+                    <stop offset="100%" style="stop-color:#3D2B1F;stop-opacity:0.1" />
+                </linearGradient>
+            </defs>
+            <!-- Wallet shape -->
+            <rect x="20" y="40" width="200" height="140" rx="15" fill="url(#walletGrad)" stroke="rgba(92, 72, 39, 0.2)" stroke-width="2"/>
+            <rect x="140" y="80" width="100" height="60" rx="10" fill="rgba(201, 162, 39, 0.2)" stroke="rgba(201, 162, 39, 0.3)" stroke-width="2"/>
+            <circle cx="190" cy="110" r="15" fill="#C9A227" opacity="0.6"/>
+            <!-- Money peeking out -->
+            <rect x="30" y="60" width="90" height="50" rx="5" fill="rgba(124, 184, 124, 0.3)" stroke="rgba(124, 184, 124, 0.4)" stroke-width="1"/>
+            <text x="75" y="92" font-family="'Ogg Bold', serif" font-size="24" fill="rgba(92, 72, 39, 0.4)" text-anchor="middle">$</text>
+        </svg>
+    </div>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 900px;">
+            <p class="objection-quote" style="font-size: 68px; margin-bottom: 50px;">
+                "I can't afford it<br>right now."
+            </p>
+
+            <p style="font-size: 28px; color: #636E72; margin-bottom: 20px; font-weight: 500;">
+                Let me be real with you.
+            </p>
+
+            <p style="font-size: 26px; color: #2D3436; margin-bottom: 45px; line-height: 1.6;">
+                <span style="color: #C9A227; font-weight: 700;">$2,497</span> is a real investment.<br>
+                I'm not going to pretend it's pocket change.
+            </p>
+
+            <p style="font-size: 28px; color: #5C4827; font-weight: 600;">
+                But let's think about this differently...
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 167: Expense vs Investment -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="expInvGrad167" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.07" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#expInvGrad167)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1400px; margin: 0 auto; width: 100%;">
+            <!-- Expense vs Investment comparison -->
+            <div style="display: flex; justify-content: center; gap: 80px; margin-bottom: 55px;">
+                <!-- Expense -->
+                <div style="text-align: center; opacity: 0.5;">
+                    <p style="font-size: 22px; color: #636E72; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">Expense</p>
+                    <p class="display struck-text" style="font-size: 38px; color: #636E72;">takes money away</p>
+                    <!-- Down arrow -->
+                    <svg width="60" height="80" viewBox="0 0 60 80" style="margin-top: 20px;">
+                        <path d="M30 0 L30 60 M15 45 L30 65 L45 45" stroke="#E07B6C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                    </svg>
+                </div>
+
+                <!-- Investment -->
+                <div style="text-align: center;">
+                    <p style="font-size: 22px; color: #C9A227; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Investment</p>
+                    <p class="display" style="font-size: 42px; color: #C9A227;">brings money back</p>
+                    <!-- Up arrow -->
+                    <svg width="60" height="80" viewBox="0 0 60 80" style="margin-top: 20px;">
+                        <path d="M30 80 L30 20 M15 35 L30 15 L45 35" stroke="#7CB87C" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Math breakdown -->
+            <div style="background: linear-gradient(145deg, #FFFEF8 0%, #FAF3E0 100%); border-radius: 20px; padding: 40px 60px; margin-bottom: 50px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.12); border: 1px solid rgba(201, 162, 39, 0.15);">
+                <p style="font-size: 28px; color: #5C4827; margin-bottom: 25px; text-align: center;">
+                    <span style="color: #C9A227; font-weight: 700;">$2,497 ÷ 90 days</span> = <span class="display" style="font-size: 36px; color: #C9A227;">$27.74/day</span>
+                </p>
+                <p style="font-size: 26px; color: #2D3436; text-align: center; line-height: 1.6;">
+                    If this leads to even <span style="color: #C9A227; font-weight: 700;">$500/month</span> in extra income,<br>
+                    that's a <span class="display" style="font-size: 36px; color: #7CB87C;">240% return</span> in year one.
+                </p>
+            </div>
+
+            <p style="font-size: 32px; color: #2D3436; font-weight: 700; text-align: center;">
+                This isn't spending. <span style="color: #C9A227;">This is investing.</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 168: Cost of Inaction -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="inactGrad168" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#E07B6C;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="350" rx="500" ry="420" fill="url(#inactGrad168)"/>
+        <ellipse cx="300" cy="750" rx="400" ry="350" fill="url(#inactGrad168)"/>
+    </svg>
+
+    <div class="content flex-center">
+        <div style="max-width: 1100px; text-align: center;">
+            <h1 class="display" style="font-size: 58px; color: #5C4827; margin-bottom: 60px;">
+                What's the cost of staying stuck?
+            </h1>
+
+            <!-- Rhetorical questions as cards -->
+            <div style="display: flex; flex-direction: column; gap: 22px; margin-bottom: 60px;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 16px; padding: 28px 40px; box-shadow: 0 10px 35px rgba(224, 123, 108, 0.08); border: 1px solid rgba(224, 123, 108, 0.12);">
+                    <p style="font-size: 26px; color: #5C4827;">Another year of <span style="color: #E07B6C; font-weight: 600;">guessing?</span></p>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 16px; padding: 28px 40px; box-shadow: 0 10px 35px rgba(224, 123, 108, 0.08); border: 1px solid rgba(224, 123, 108, 0.12);">
+                    <p style="font-size: 26px; color: #5C4827;">Another year of <span style="color: #E07B6C; font-weight: 600;">inconsistent income?</span></p>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF0EA 100%); border-radius: 16px; padding: 28px 40px; box-shadow: 0 10px 35px rgba(224, 123, 108, 0.08); border: 1px solid rgba(224, 123, 108, 0.12);">
+                    <p style="font-size: 26px; color: #5C4827;">Another year of <span style="color: #E07B6C; font-weight: 600;">"I'll figure it out eventually"?</span></p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #C9A227 0%, #D4A84B 100%); border-radius: 18px; padding: 35px 55px; display: inline-block; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.3);">
+                <p style="font-size: 30px; color: #FFFEF5; font-weight: 700;">
+                    Sometimes the "safe" choice is actually<br>the expensive one.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 169: "What If It Doesn't Work" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="workGrad169" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#1B8A8A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="450" rx="700" ry="500" fill="url(#workGrad169)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1400px; margin: 0 auto; width: 100%;">
+            <p class="objection-quote" style="font-size: 58px; margin-bottom: 35px;">
+                "What if it doesn't work for me?"
+            </p>
+
+            <p style="font-size: 32px; color: #1B8A8A; margin-bottom: 50px; font-weight: 600;">
+                That's what the guarantee is for.
+            </p>
+
+            <!-- Two guarantees -->
+            <div style="display: flex; gap: 40px; margin-bottom: 55px;">
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 18px; padding: 35px 40px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span class="gold-arrow">&#8594;</span>
+                        <p class="display" style="font-size: 24px; color: #1B8A8A;">30-Day Clarity Guarantee</p>
+                    </div>
+                    <p style="font-size: 20px; color: #2D3436;">Full refund if you're still lost</p>
+                </div>
+
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 18px; padding: 35px 40px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span class="gold-arrow">&#8594;</span>
+                        <p class="display" style="font-size: 24px; color: #1B8A8A;">90-Day Extension</p>
+                    </div>
+                    <p style="font-size: 20px; color: #2D3436;">More support if you need more time</p>
+                </div>
+            </div>
+
+            <div style="border-left: 5px solid #5C4827; padding-left: 30px;">
+                <p style="font-size: 26px; color: #2D3436; font-weight: 700; margin-bottom: 12px;">
+                    The only way this "doesn't work" is if you don't do the work.
+                </p>
+                <p style="font-size: 24px; color: #636E72; font-weight: 500;">
+                    And that's not the program failing — that's a choice.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 170: "Courses Don't Work" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="courseGrad170" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="400" rx="500" ry="420" fill="url(#courseGrad170)"/>
+        <ellipse cx="300" cy="700" rx="400" ry="350" fill="url(#courseGrad170)"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center;">
+        <div style="max-width: 900px;">
+            <p class="objection-quote" style="font-size: 54px; margin-bottom: 40px;">
+                "I've bought courses before and they don't work."
+            </p>
+
+            <div style="margin-bottom: 45px;">
+                <p style="font-size: 26px; color: #636E72; margin-bottom: 8px;">Courses give you information.</p>
+                <p style="font-size: 26px; color: #636E72;">Then they leave you alone.</p>
+            </div>
+
+            <div style="background: linear-gradient(145deg, #FFFEF8 0%, #FAF3E0 100%); border-radius: 20px; padding: 40px 50px; margin-bottom: 40px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.12); border: 2px solid rgba(201, 162, 39, 0.2);">
+                <p style="font-size: 28px; color: #5C4827; margin-bottom: 12px; font-weight: 600;">
+                    This isn't a course.
+                </p>
+                <p style="font-size: 28px; color: #2D3436;">
+                    This is 90 days of <span style="color: #C9A227; font-weight: 700;">implementation support.</span>
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 25px; margin-bottom: 40px;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 12px; padding: 18px 28px; box-shadow: 0 8px 25px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15);">
+                    <p style="font-size: 20px; color: #1B8A8A; font-weight: 600;">Weekly calls</p>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 12px; padding: 18px 28px; box-shadow: 0 8px 25px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15);">
+                    <p style="font-size: 20px; color: #1B8A8A; font-weight: 600;">Direct feedback</p>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 12px; padding: 18px 28px; box-shadow: 0 8px 25px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15);">
+                    <p style="font-size: 20px; color: #1B8A8A; font-weight: 600;">Accountability</p>
+                </div>
+            </div>
+
+            <p style="font-size: 24px; color: #636E72; font-style: italic;">
+                Not just content to watch alone at midnight.
+            </p>
+        </div>
+
+        <!-- Course vs Support visual -->
+        <div style="margin-left: auto; padding-right: 80px;">
+            <svg width="350" height="400" viewBox="0 0 350 400">
+                <!-- Old course - books stacked alone -->
+                <g transform="translate(0, 0)" opacity="0.4">
+                    <rect x="50" y="180" width="100" height="20" rx="3" fill="#636E72"/>
+                    <rect x="60" y="155" width="80" height="20" rx="3" fill="#636E72"/>
+                    <rect x="55" y="130" width="90" height="20" rx="3" fill="#636E72"/>
+                    <text x="100" y="240" font-family="'Satoshi', sans-serif" font-size="14" fill="#636E72" text-anchor="middle">Alone</text>
+                </g>
+                <!-- New - connected support -->
+                <g transform="translate(180, 0)">
+                    <!-- Central hub -->
+                    <circle cx="85" cy="150" r="40" fill="url(#courseGrad170)" stroke="#C9A227" stroke-width="3"/>
+                    <text x="85" y="155" font-family="'Ogg Bold', serif" font-size="16" fill="#C9A227" text-anchor="middle">YOU</text>
+                    <!-- Connected nodes -->
+                    <circle cx="30" cy="80" r="25" fill="#1B8A8A" opacity="0.7"/>
+                    <circle cx="140" cy="80" r="25" fill="#1B8A8A" opacity="0.7"/>
+                    <circle cx="30" cy="220" r="25" fill="#1B8A8A" opacity="0.7"/>
+                    <circle cx="140" cy="220" r="25" fill="#1B8A8A" opacity="0.7"/>
+                    <!-- Connection lines -->
+                    <line x1="60" y1="120" x2="40" y2="100" stroke="#1B8A8A" stroke-width="2" opacity="0.5"/>
+                    <line x1="110" y1="120" x2="130" y2="100" stroke="#1B8A8A" stroke-width="2" opacity="0.5"/>
+                    <line x1="60" y1="180" x2="40" y2="200" stroke="#1B8A8A" stroke-width="2" opacity="0.5"/>
+                    <line x1="110" y1="180" x2="130" y2="200" stroke="#1B8A8A" stroke-width="2" opacity="0.5"/>
+                    <text x="85" y="280" font-family="'Satoshi', sans-serif" font-size="14" fill="#1B8A8A" text-anchor="middle" font-weight="600">Supported</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 171: "I Need to Think" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="thinkGrad171" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="450" rx="700" ry="500" fill="url(#thinkGrad171)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 40px;">
+                <p class="objection-quote" style="font-size: 54px; margin-bottom: 0;">"I need to think about it."</p>
+                <p style="font-size: 28px; color: #636E72; font-weight: 500; padding-top: 15px;">Fair.</p>
+            </div>
+
+            <p style="font-size: 28px; color: #5C4827; margin-bottom: 40px; font-weight: 600;">
+                But let me ask: What specifically are you unsure about?
+            </p>
+
+            <!-- Four concerns grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 50px;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 25px 35px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span class="gold-arrow" style="padding-top: 3px;">&#8594;</span>
+                        <div>
+                            <p style="font-size: 22px; color: #2D3436; font-weight: 600;">Is it the investment?</p>
+                            <p style="font-size: 18px; color: #636E72;">(Payment plan + guarantee)</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 25px 35px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span class="gold-arrow" style="padding-top: 3px;">&#8594;</span>
+                        <div>
+                            <p style="font-size: 22px; color: #2D3436; font-weight: 600;">Is it the time?</p>
+                            <p style="font-size: 18px; color: #636E72;">(25 min/day)</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 25px 35px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span class="gold-arrow" style="padding-top: 3px;">&#8594;</span>
+                        <div>
+                            <p style="font-size: 22px; color: #2D3436; font-weight: 600;">Is it whether it works?</p>
+                            <p style="font-size: 18px; color: #636E72;">(Proof + guarantee)</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 25px 35px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span class="gold-arrow" style="padding-top: 3px;">&#8594;</span>
+                        <div>
+                            <p style="font-size: 22px; color: #2D3436; font-weight: 600;">Is it me?</p>
+                            <p style="font-size: 18px; color: #636E72;">(67K subscribers, $1M+ in sales)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(145deg, #FEF0EA 0%, #FFFFFF 100%); border-radius: 18px; padding: 35px 50px; box-shadow: 0 12px 40px rgba(224, 123, 108, 0.1); border: 1px solid rgba(224, 123, 108, 0.15);">
+                <p style="font-size: 26px; color: #2D3436; font-weight: 700; margin-bottom: 10px;">
+                    If you know the answer but you're scared... that's different.
+                </p>
+                <p style="font-size: 24px; color: #E07B6C; font-weight: 600;">
+                    That's not "thinking." That's fear.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 172: "Talk to Spouse" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="spouseGrad172" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="350" rx="500" ry="420" fill="url(#spouseGrad172)"/>
+        <ellipse cx="250" cy="750" rx="400" ry="350" fill="url(#spouseGrad172)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <div style="display: flex; align-items: flex-start; gap: 30px; margin-bottom: 50px;">
+                <p class="objection-quote" style="font-size: 52px; margin-bottom: 0;">"I need to talk to my<br>spouse/partner."</p>
+                <p style="font-size: 26px; color: #636E72; font-weight: 500; padding-top: 15px;">I respect that. Truly.</p>
+            </div>
+
+            <p style="font-size: 28px; color: #5C4827; margin-bottom: 45px; font-weight: 600;">
+                Here's what I'd suggest:
+            </p>
+
+            <!-- Three suggestions -->
+            <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 50px;">
+                <!-- Suggestion 1 -->
+                <div style="display: flex; gap: 30px; align-items: flex-start;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3); flex-shrink: 0;">
+                        <span style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #FFFEF5;">1</span>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 28px 35px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); flex: 1;">
+                        <p class="display" style="font-size: 24px; color: #C9A227; margin-bottom: 8px;">SHARE THE REPLAY</p>
+                        <p style="font-size: 20px; color: #2D3436;">Let them see what you saw. Context matters.</p>
+                    </div>
+                </div>
+
+                <!-- Suggestion 2 -->
+                <div style="display: flex; gap: 30px; align-items: flex-start;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3); flex-shrink: 0;">
+                        <span style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #FFFEF5;">2</span>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 28px 35px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); flex: 1;">
+                        <p class="display" style="font-size: 24px; color: #C9A227; margin-bottom: 8px;">SHOW THEM THE MATH</p>
+                        <p style="font-size: 20px; color: #2D3436;">$27.74/day for potential $500+/month</p>
+                    </div>
+                </div>
+
+                <!-- Suggestion 3 -->
+                <div style="display: flex; gap: 30px; align-items: flex-start;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3); flex-shrink: 0;">
+                        <span style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #FFFEF5;">3</span>
+                    </div>
+                    <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 28px 35px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); flex: 1;">
+                        <p class="display" style="font-size: 24px; color: #C9A227; margin-bottom: 8px;">ASK THEM THIS</p>
+                        <p style="font-size: 20px; color: #2D3436; font-style: italic;">"Would you support me investing in myself if it could change our financial future?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 26px; color: #5C4827; font-weight: 500;">
+                Most partners say yes when they see the logic.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 173: "Bad Timing" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="timingGrad173" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#E07B6C;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#timingGrad173)"/>
+    </svg>
+
+    <div class="content flex-center">
+        <div style="max-width: 1400px; width: 100%;">
+            <p class="objection-quote" style="font-size: 64px; text-align: center; margin-bottom: 50px;">
+                "It's not the right time."
+            </p>
+
+            <p style="font-size: 26px; color: #636E72; text-align: center; margin-bottom: 40px; font-weight: 500;">
+                Let me show you the calendar excuse pattern:
+            </p>
+
+            <!-- Calendar excuse cycle -->
+            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; margin-bottom: 55px;">
+                <div class="calendar-excuse">
+                    <p style="font-weight: 600; color: #E07B6C; margin-bottom: 5px;">JAN</p>
+                    <p style="font-size: 14px;">"Just had the holidays"</p>
+                </div>
+                <div class="calendar-excuse">
+                    <p style="font-weight: 600; color: #E07B6C; margin-bottom: 5px;">FEB-MAR</p>
+                    <p style="font-size: 14px;">"Tax season stress"</p>
+                </div>
+                <div class="calendar-excuse">
+                    <p style="font-weight: 600; color: #E07B6C; margin-bottom: 5px;">APR-MAY</p>
+                    <p style="font-size: 14px;">"Kids finishing school"</p>
+                </div>
+                <div class="calendar-excuse">
+                    <p style="font-weight: 600; color: #E07B6C; margin-bottom: 5px;">JUN-AUG</p>
+                    <p style="font-size: 14px;">"Summer vacation"</p>
+                </div>
+                <div class="calendar-excuse">
+                    <p style="font-weight: 600; color: #E07B6C; margin-bottom: 5px;">SEP-OCT</p>
+                    <p style="font-size: 14px;">"Back to school chaos"</p>
+                </div>
+                <div class="calendar-excuse">
+                    <p style="font-weight: 600; color: #E07B6C; margin-bottom: 5px;">NOV-DEC</p>
+                    <p style="font-size: 14px;">"Holiday madness"</p>
+                </div>
+            </div>
+
+            <!-- Circular arrow showing the cycle -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <svg width="120" height="60" viewBox="0 0 120 60">
+                    <path d="M10 30 Q60 60 110 30" stroke="#E07B6C" stroke-width="2" fill="none" stroke-dasharray="5 5"/>
+                    <path d="M110 30 Q60 0 10 30" stroke="#E07B6C" stroke-width="2" fill="none" stroke-dasharray="5 5"/>
+                    <polygon points="15,25 5,30 15,35" fill="#E07B6C"/>
+                </svg>
+                <p style="font-size: 18px; color: #E07B6C; font-style: italic;">...and repeat</p>
+            </div>
+
+            <div style="text-align: center;">
+                <p class="display" style="font-size: 52px; color: #C9A227; line-height: 1.3;">
+                    There's NEVER a "good time."<br>
+                    There's only NOW or NEVER.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 174: "Not Tech Savvy" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="techGrad174" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#1B8A8A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="350" rx="500" ry="420" fill="url(#techGrad174)"/>
+        <ellipse cx="300" cy="750" rx="400" ry="350" fill="url(#techGrad174)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1400px; margin: 0 auto; width: 100%;">
+            <p class="objection-quote" style="font-size: 58px; margin-bottom: 50px;">
+                "I'm not good with technology."
+            </p>
+
+            <p style="font-size: 28px; color: #636E72; margin-bottom: 35px; font-weight: 500;">If you can:</p>
+
+            <!-- Simple tech actions -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 50px;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 18px; padding: 35px 25px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15); text-align: center;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1B8A8A, #2BA5A3); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(27, 138, 138, 0.3);">
+                        <svg width="28" height="28" viewBox="0 0 28 28">
+                            <polygon points="11,6 11,22 22,14" fill="white"/>
+                        </svg>
+                    </div>
+                    <p style="font-size: 18px; color: #2D3436; font-weight: 500;">Watch a YouTube video</p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 18px; padding: 35px 25px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15); text-align: center;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1B8A8A, #2BA5A3); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(27, 138, 138, 0.3);">
+                        <svg width="28" height="28" viewBox="0 0 28 28">
+                            <circle cx="12" cy="12" r="7" stroke="white" stroke-width="2.5" fill="none"/>
+                            <line x1="17" y1="17" x2="24" y2="24" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <p style="font-size: 18px; color: #2D3436; font-weight: 500;">Type in a search bar</p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 18px; padding: 35px 25px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15); text-align: center;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1B8A8A, #2BA5A3); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(27, 138, 138, 0.3);">
+                        <svg width="28" height="28" viewBox="0 0 28 28">
+                            <rect x="4" y="8" width="12" height="12" rx="2" stroke="white" stroke-width="2" fill="none"/>
+                            <rect x="12" y="8" width="12" height="12" rx="2" stroke="white" stroke-width="2" fill="none" stroke-dasharray="3 2"/>
+                        </svg>
+                    </div>
+                    <p style="font-size: 18px; color: #2D3436; font-weight: 500;">Copy and paste text</p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 18px; padding: 35px 25px; box-shadow: 0 12px 40px rgba(27, 138, 138, 0.1); border: 1px solid rgba(27, 138, 138, 0.15); text-align: center;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1B8A8A, #2BA5A3); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 25px rgba(27, 138, 138, 0.3);">
+                        <svg width="28" height="28" viewBox="0 0 28 28">
+                            <path d="M14 4 L14 18 M8 12 L14 18 L20 12" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="6" y1="24" x2="22" y2="24" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <p style="font-size: 18px; color: #2D3436; font-weight: 500;">Upload a file</p>
+                </div>
+            </div>
+
+            <p style="font-size: 32px; color: #2D3436; font-weight: 700; margin-bottom: 25px; text-align: center;">
+                You have ALL the tech skills you need.
+            </p>
+
+            <div style="text-align: center;">
+                <p style="font-size: 24px; color: #636E72; line-height: 1.6;">
+                    The tools are designed for non-tech people.<br>
+                    And I walk you through everything. <span style="color: #1B8A8A; font-weight: 600;">Step by step.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 175: "Etsy Saturated" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="satGrad175" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.07" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="350" cy="350" rx="500" ry="420" fill="url(#satGrad175)"/>
+        <ellipse cx="1650" cy="750" rx="400" ry="350" fill="url(#satGrad175)"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="max-width: 900px;">
+            <p class="objection-quote" style="font-size: 54px; margin-bottom: 45px;">
+                "Isn't Etsy too saturated?"
+            </p>
+
+            <div style="background: linear-gradient(145deg, #FFFEF8 0%, #FAF3E0 100%); border-radius: 20px; padding: 35px 50px; margin-bottom: 45px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.15); border: 2px solid rgba(201, 162, 39, 0.2);">
+                <p style="font-size: 22px; color: #636E72; margin-bottom: 10px;">Etsy has</p>
+                <p class="display" style="font-size: 72px; color: #C9A227;">96+ MILLION</p>
+                <p style="font-size: 24px; color: #5C4827; font-weight: 600;">active buyers.</p>
+            </div>
+
+            <p style="font-size: 24px; color: #636E72; margin-bottom: 30px;">Yes, there are a lot of sellers. But most of them are:</p>
+
+            <div style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 45px;">
+                <div style="display: flex; align-items: center;">
+                    <span class="gold-arrow">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">Guessing at what to sell</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span class="gold-arrow">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">Ignoring what buyers actually want</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span class="gold-arrow">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">Creating randomly, not strategically</span>
+                </div>
+            </div>
+
+            <p style="font-size: 28px; color: #2D3436; font-weight: 700;">
+                That's not competition. That's noise.<br>
+                <span style="color: #C9A227;">You're learning to be signal.</span>
+            </p>
+        </div>
+
+        <!-- Signal vs Noise visual -->
+        <div style="position: relative;">
+            <svg width="420" height="500" viewBox="0 0 420 500">
+                <defs>
+                    <linearGradient id="signalGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#D4A84B;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <!-- Noise dots (many, scattered, faded) -->
+                <g opacity="0.3">
+                    <circle cx="50" cy="100" r="8" fill="#636E72"/>
+                    <circle cx="120" cy="80" r="6" fill="#636E72"/>
+                    <circle cx="180" cy="120" r="9" fill="#636E72"/>
+                    <circle cx="250" cy="90" r="7" fill="#636E72"/>
+                    <circle cx="320" cy="110" r="8" fill="#636E72"/>
+                    <circle cx="380" cy="85" r="6" fill="#636E72"/>
+                    <circle cx="70" cy="170" r="7" fill="#636E72"/>
+                    <circle cx="140" cy="160" r="8" fill="#636E72"/>
+                    <circle cx="210" cy="180" r="6" fill="#636E72"/>
+                    <circle cx="280" cy="155" r="9" fill="#636E72"/>
+                    <circle cx="350" cy="175" r="7" fill="#636E72"/>
+                    <circle cx="90" cy="230" r="6" fill="#636E72"/>
+                    <circle cx="160" cy="240" r="8" fill="#636E72"/>
+                    <circle cx="230" cy="220" r="7" fill="#636E72"/>
+                    <circle cx="300" cy="245" r="6" fill="#636E72"/>
+                    <circle cx="370" cy="225" r="8" fill="#636E72"/>
+                </g>
+                <!-- Signal - strong clear beam -->
+                <rect x="175" y="280" width="70" height="200" rx="8" fill="url(#signalGrad)" style="filter: drop-shadow(0 10px 30px rgba(201, 162, 39, 0.4));"/>
+                <!-- Pulse rings around signal -->
+                <ellipse cx="210" cy="380" rx="80" ry="15" stroke="#C9A227" stroke-width="2" fill="none" opacity="0.3"/>
+                <ellipse cx="210" cy="380" rx="110" ry="20" stroke="#C9A227" stroke-width="1.5" fill="none" opacity="0.2"/>
+                <ellipse cx="210" cy="380" rx="140" ry="25" stroke="#C9A227" stroke-width="1" fill="none" opacity="0.1"/>
+                <!-- Labels -->
+                <text x="210" y="50" font-family="'Satoshi', sans-serif" font-size="16" fill="#636E72" text-anchor="middle" opacity="0.6">NOISE</text>
+                <text x="210" y="380" font-family="'Ogg Bold', serif" font-size="20" fill="#FFFEF5" text-anchor="middle">YOU</text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 176: "Complete Beginner" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="beginGrad176" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#7CB87C;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#beginGrad176)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <p class="objection-quote" style="font-size: 52px; margin-bottom: 35px;">
+                "I'm a complete beginner /<br>I don't have a shop yet."
+            </p>
+
+            <p class="display" style="font-size: 72px; color: #C9A227; margin-bottom: 45px;">
+                Good.
+            </p>
+
+            <!-- Benefits of being new -->
+            <div style="display: flex; gap: 30px; margin-bottom: 55px;">
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 16px; padding: 30px 35px; box-shadow: 0 12px 40px rgba(124, 184, 124, 0.1); border: 1px solid rgba(124, 184, 124, 0.15); text-align: center;">
+                    <p style="font-size: 22px; color: #2D3436;">No bad habits to unlearn.</p>
+                </div>
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 16px; padding: 30px 35px; box-shadow: 0 12px 40px rgba(124, 184, 124, 0.1); border: 1px solid rgba(124, 184, 124, 0.15); text-align: center;">
+                    <p style="font-size: 22px; color: #2D3436;">No wrong strategies to undo.</p>
+                </div>
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #E8F5F3 100%); border-radius: 16px; padding: 30px 35px; box-shadow: 0 12px 40px rgba(124, 184, 124, 0.1); border: 1px solid rgba(124, 184, 124, 0.15); text-align: center;">
+                    <p style="font-size: 22px; color: #2D3436;">You're a blank slate.</p>
+                </div>
+            </div>
+
+            <p style="font-size: 26px; color: #5C4827; margin-bottom: 30px; font-weight: 600;">
+                The Accelerator works for beginners because:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 22px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">Your roadmap is personalized to <span style="color: #C9A227; font-weight: 600;">YOUR</span> starting point</span>
+                </div>
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 22px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">We build your foundation <span style="color: #7CB87C; font-weight: 600;">correctly</span> from day one</span>
+                </div>
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 22px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 22px; color: #2D3436;">You skip the trial-and-error phase <span style="color: #C9A227; font-weight: 600;">entirely</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 177: "ADHD / Focus" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="adhdGrad177" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="350" rx="500" ry="420" fill="url(#adhdGrad177)"/>
+        <ellipse cx="250" cy="750" rx="400" ry="350" fill="url(#adhdGrad177)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <p class="objection-quote" style="font-size: 54px; margin-bottom: 40px;">
+                "I have ADHD / I can't focus."
+            </p>
+
+            <p style="font-size: 28px; color: #2D3436; margin-bottom: 50px;">
+                The Empire System is <span style="color: #C9A227; font-weight: 700;">DESIGNED</span> for busy, distracted brains.
+            </p>
+
+            <!-- Five accommodations -->
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 55px;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 30px 25px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); text-align: center;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <text x="12" y="17" font-family="'Ogg Bold', serif" font-size="16" fill="white" text-anchor="middle">3</text>
+                        </svg>
+                    </div>
+                    <p style="font-size: 17px; color: #2D3436; font-weight: 500;">3 separate days<br><span style="color: #636E72; font-size: 14px;">(no marathon sessions)</span></p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 30px 25px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); text-align: center;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="8" stroke="white" stroke-width="2" fill="none"/>
+                            <line x1="12" y1="12" x2="12" y2="7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="12" y1="12" x2="16" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <p style="font-size: 17px; color: #2D3436; font-weight: 500;">Clear start and<br>stop times</p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 30px 25px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); text-align: center;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <rect x="4" y="8" width="16" height="12" rx="2" stroke="white" stroke-width="2" fill="none"/>
+                            <line x1="4" y1="12" x2="20" y2="12" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <p style="font-size: 17px; color: #2D3436; font-weight: 500;">One task type per day<br><span style="color: #636E72; font-size: 14px;">(no context switching)</span></p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 30px 25px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); text-align: center;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <text x="12" y="17" font-family="'Satoshi', sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">25</text>
+                        </svg>
+                    </div>
+                    <p style="font-size: 17px; color: #2D3436; font-weight: 500;">25-minute chunks<br>if needed</p>
+                </div>
+
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 16px; padding: 30px 25px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.12); text-align: center;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; box-shadow: 0 6px 20px rgba(201, 162, 39, 0.25);">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <circle cx="8" cy="12" r="3" fill="white"/>
+                            <circle cx="16" cy="8" r="3" fill="white"/>
+                            <circle cx="16" cy="16" r="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <p style="font-size: 17px; color: #2D3436; font-weight: 500;">Community<br>accountability</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <p style="font-size: 30px; color: #2D3436; font-weight: 700;">
+                    You don't need to change your brain.<br>
+                    <span style="color: #C9A227;">You need a system that works WITH it.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 178: "Who Succeeds" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="succGrad178" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.07" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#succGrad178)"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center;">
+        <div style="max-width: 1500px; margin: 0 auto; width: 100%;">
+            <h1 class="display" style="font-size: 52px; color: #5C4827; margin-bottom: 50px;">
+                Let me tell you who succeeds in my community:
+            </h1>
+
+            <!-- Five profile types -->
+            <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 55px;">
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 24px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436;">Women in their 40s and 50s</span>
+                </div>
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 24px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436;">People who've worked corporate jobs for decades</span>
+                </div>
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 24px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436;">Moms whose kids are finally in school</span>
+                </div>
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 24px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436;">Empty nesters looking for purpose AND income</span>
+                </div>
+                <div style="display: flex; align-items: center; background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); padding: 24px 35px; border-radius: 14px; box-shadow: 0 8px 30px rgba(201, 162, 39, 0.08); border: 1px solid rgba(201, 162, 39, 0.1);">
+                    <span class="gold-arrow" style="font-size: 26px;">&#8594;</span>
+                    <span style="font-size: 24px; color: #2D3436;">People who remember life before the internet</span>
+                </div>
+            </div>
+
+            <!-- Three ADVANTAGE statements -->
+            <div style="display: flex; gap: 30px; justify-content: center;">
+                <div style="background: linear-gradient(135deg, #C9A227 0%, #D4A84B 100%); border-radius: 14px; padding: 25px 40px; box-shadow: 0 12px 40px rgba(201, 162, 39, 0.3);">
+                    <p style="font-size: 22px; color: #FFFEF5;">Experience is an <span class="display" style="font-size: 26px;">ADVANTAGE.</span></p>
+                </div>
+                <div style="background: linear-gradient(135deg, #C9A227 0%, #D4A84B 100%); border-radius: 14px; padding: 25px 40px; box-shadow: 0 12px 40px rgba(201, 162, 39, 0.3);">
+                    <p style="font-size: 22px; color: #FFFEF5;">Patience is an <span class="display" style="font-size: 26px;">ADVANTAGE.</span></p>
+                </div>
+                <div style="background: linear-gradient(135deg, #C9A227 0%, #D4A84B 100%); border-radius: 14px; padding: 25px 40px; box-shadow: 0 12px 40px rgba(201, 162, 39, 0.3);">
+                    <p style="font-size: 22px; color: #FFFEF5;">Knowing what matters? <span class="display" style="font-size: 26px;">ADVANTAGE.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 179: "Not Creative" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="createGrad179" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="350" rx="500" ry="420" fill="url(#createGrad179)"/>
+        <ellipse cx="250" cy="750" rx="400" ry="350" fill="url(#createGrad179)"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center;">
+        <div style="max-width: 950px;">
+            <p class="objection-quote" style="font-size: 54px; margin-bottom: 40px;">
+                "I'm not creative /<br>I can't design."
+            </p>
+
+            <p class="display" style="font-size: 52px; color: #C9A227; margin-bottom: 50px;">
+                Neither can I.
+            </p>
+
+            <!-- What she doesn't do -->
+            <div style="margin-bottom: 40px;">
+                <p style="font-size: 22px; color: #636E72; margin-bottom: 12px; opacity: 0.7;">I don't "create from scratch."</p>
+                <p style="font-size: 22px; color: #636E72; margin-bottom: 12px; opacity: 0.7;">I don't sit with a blank canvas and invent things.</p>
+            </div>
+
+            <!-- What she does do -->
+            <div style="background: linear-gradient(145deg, #FFFEF8 0%, #FAF3E0 100%); border-radius: 18px; padding: 35px 45px; margin-bottom: 45px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.12); border: 1px solid rgba(201, 162, 39, 0.15);">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <p style="font-size: 24px; color: #2D3436;">I find what's <span style="color: #C9A227; font-weight: 700;">ALREADY selling.</span></p>
+                    <p style="font-size: 24px; color: #2D3436;">I use <span style="color: #C9A227; font-weight: 700;">AI</span> to help with execution.</p>
+                    <p style="font-size: 24px; color: #2D3436;">I follow <span style="color: #C9A227; font-weight: 700;">templates and systems.</span></p>
+                </div>
+            </div>
+
+            <p style="font-size: 30px; color: #2D3436; font-weight: 700;">
+                This isn't art class.<br>
+                <span style="color: #5C4827;">This is strategic product creation.</span>
+            </p>
+        </div>
+
+        <!-- Visual: Blank canvas vs System -->
+        <div style="margin-left: auto; padding-right: 60px;">
+            <svg width="450" height="500" viewBox="0 0 450 500">
+                <!-- Blank canvas (crossed out) -->
+                <g transform="translate(50, 30)" opacity="0.35">
+                    <rect x="0" y="0" width="150" height="180" fill="#FFFFFF" stroke="#636E72" stroke-width="2" rx="4"/>
+                    <text x="75" y="200" font-family="'Satoshi', sans-serif" font-size="14" fill="#636E72" text-anchor="middle">Blank canvas</text>
+                    <!-- X through it -->
+                    <line x1="10" y1="10" x2="140" y2="170" stroke="#E07B6C" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="140" y1="10" x2="10" y2="170" stroke="#E07B6C" stroke-width="4" stroke-linecap="round"/>
+                </g>
+
+                <!-- Strategic system -->
+                <g transform="translate(250, 30)">
+                    <!-- Template grid -->
+                    <rect x="0" y="0" width="150" height="180" fill="#FAF3E0" stroke="#C9A227" stroke-width="3" rx="8"/>
+                    <!-- Grid lines representing structure -->
+                    <line x1="0" y1="45" x2="150" y2="45" stroke="#C9A227" stroke-width="1" opacity="0.5"/>
+                    <line x1="0" y1="90" x2="150" y2="90" stroke="#C9A227" stroke-width="1" opacity="0.5"/>
+                    <line x1="0" y1="135" x2="150" y2="135" stroke="#C9A227" stroke-width="1" opacity="0.5"/>
+                    <line x1="50" y1="0" x2="50" y2="180" stroke="#C9A227" stroke-width="1" opacity="0.5"/>
+                    <line x1="100" y1="0" x2="100" y2="180" stroke="#C9A227" stroke-width="1" opacity="0.5"/>
+                    <!-- Checkmark -->
+                    <circle cx="75" cy="90" r="35" fill="#7CB87C" opacity="0.2"/>
+                    <path d="M55 90 L70 105 L95 75" stroke="#7CB87C" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="75" y="200" font-family="'Satoshi', sans-serif" font-size="14" fill="#C9A227" text-anchor="middle" font-weight="600">Strategic system</text>
+                </g>
+
+                <!-- Arrow from one to the other -->
+                <path d="M220 120 L240 120" stroke="#C9A227" stroke-width="3" fill="none"/>
+                <polygon points="238,115 248,120 238,125" fill="#C9A227"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 180: "Failed Before" -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="failGrad180" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.08" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="450" rx="750" ry="550" fill="url(#failGrad180)"/>
+    </svg>
+
+    <!-- Decorative corner accent -->
+    <div style="position: absolute; top: 60px; left: 60px; width: 80px; height: 80px; border-left: 4px solid rgba(201, 162, 39, 0.3); border-top: 4px solid rgba(201, 162, 39, 0.3); border-radius: 4px 0 0 0;"></div>
+    <div style="position: absolute; bottom: 60px; right: 60px; width: 80px; height: 80px; border-right: 4px solid rgba(201, 162, 39, 0.3); border-bottom: 4px solid rgba(201, 162, 39, 0.3); border-radius: 0 0 4px 0;"></div>
+
+    <div class="content flex-center">
+        <div style="max-width: 1300px; width: 100%;">
+            <p class="objection-quote" style="font-size: 54px; text-align: center; margin-bottom: 40px;">
+                "I've tried other things and failed."
+            </p>
+
+            <p class="display" style="font-size: 52px; color: #C9A227; text-align: center; margin-bottom: 50px;">
+                You didn't fail before.
+            </p>
+
+            <p style="font-size: 26px; color: #636E72; text-align: center; margin-bottom: 40px; font-weight: 500;">
+                You TRIED things without:
+            </p>
+
+            <!-- Five things they were missing -->
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 55px; flex-wrap: wrap;">
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 14px; padding: 22px 30px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.1); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span class="gold-arrow">&#8594;</span>
+                        <span style="font-size: 20px; color: #2D3436;">A proven system</span>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 14px; padding: 22px 30px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.1); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span class="gold-arrow">&#8594;</span>
+                        <span style="font-size: 20px; color: #2D3436;">Personal guidance</span>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 14px; padding: 22px 30px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.1); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span class="gold-arrow">&#8594;</span>
+                        <span style="font-size: 20px; color: #2D3436;">Community support</span>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 14px; padding: 22px 30px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.1); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span class="gold-arrow">&#8594;</span>
+                        <span style="font-size: 20px; color: #2D3436;">Accountability</span>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF3E0 100%); border-radius: 14px; padding: 22px 30px; box-shadow: 0 10px 35px rgba(201, 162, 39, 0.1); border: 1px solid rgba(201, 162, 39, 0.12);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span class="gold-arrow">&#8594;</span>
+                        <span style="font-size: 20px; color: #2D3436;">Someone who'd already done it</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 26px; color: #5C4827; font-weight: 500;">
+                    That's not failure. That's attempting something hard <span style="font-weight: 700;">alone.</span>
+                </p>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #C9A227 0%, #D4A84B 100%); border-radius: 20px; padding: 40px 60px; text-align: center; box-shadow: 0 20px 60px rgba(201, 162, 39, 0.35); max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 34px; color: #FFFEF5; font-weight: 700;">
+                    This time is different because<br>YOU'RE not alone.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
