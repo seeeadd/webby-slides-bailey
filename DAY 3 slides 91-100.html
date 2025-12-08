@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bailey Vann - Day 3 Slides 91-100: Transition to Offer</title>
+    <style>
+        @font-face {
+            font-family: 'Ogg Bold';
+            src: url('https://seanthea.github.io/bailey-fonts/Ogg-Bold.woff2') format('woff2'),
+                 url('https://seanthea.github.io/bailey-fonts/Ogg-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Satoshi';
+            src: url('https://seanthea.github.io/bailey-fonts/Satoshi-Variable.woff2') format('woff2'),
+                 url('https://seanthea.github.io/bailey-fonts/Satoshi-Variable.woff') format('woff');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* Backgrounds */
+        .bg-cream { background: #FDF8F3; }
+        .bg-blush { background: #FEF0EA; }
+        .bg-bronze { background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%); }
+        .bg-dark { background: linear-gradient(145deg, #1E1E26 0%, #141418 100%); }
+
+        /* Typography */
+        .display {
+            font-family: 'Ogg Bold', Georgia, serif;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .body {
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* Text Colors */
+        .text-espresso { color: #2D3436; }
+        .text-muted { color: #636E72; }
+        .text-light { color: #FFFFFF; }
+        .text-gold { color: #C9A227; }
+        .text-coral { color: #E07B6C; }
+
+        .bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================== -->
+<!-- SLIDE 91: Support Question                     -->
+<!-- The pivot - teaching done, opening the gap     -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="supportGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1650" cy="250" rx="450" ry="350" fill="url(#supportGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; padding: 100px 140px; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+
+        <!-- Main Question -->
+        <h1 class="display text-espresso" style="font-size: 58px; line-height: 1.3; margin-bottom: 60px;">
+            Do you actually have the <span class="text-gold">SUPPORT</span><br>
+            to follow through?
+        </h1>
+
+        <!-- Four Questions - Stacked with subtle left accent -->
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-left: 20px; margin-bottom: 70px;">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 4px; height: 28px; background: linear-gradient(180deg, #C9A227 0%, #D4AF37 100%); border-radius: 2px;"></div>
+                <p class="body text-espresso" style="font-size: 28px;">The accountability?</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 4px; height: 28px; background: linear-gradient(180deg, #C9A227 0%, #D4AF37 100%); border-radius: 2px;"></div>
+                <p class="body text-espresso" style="font-size: 28px;">The feedback when you're stuck?</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 4px; height: 28px; background: linear-gradient(180deg, #C9A227 0%, #D4AF37 100%); border-radius: 2px;"></div>
+                <p class="body text-espresso" style="font-size: 28px;">Someone to answer your questions?</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 4px; height: 28px; background: linear-gradient(180deg, #C9A227 0%, #D4AF37 100%); border-radius: 2px;"></div>
+                <p class="body text-espresso" style="font-size: 28px;">A community that gets it?</p>
+            </div>
+        </div>
+
+        <!-- Final Insight - Callout style -->
+        <div style="background: linear-gradient(145deg, rgba(201, 162, 39, 0.08) 0%, rgba(253, 248, 243, 0.5) 100%); padding: 35px 45px; border-radius: 20px; border-left: 5px solid #C9A227; max-width: 750px;">
+            <p class="body text-espresso" style="font-size: 26px; line-height: 1.5;">
+                Knowledge is step one.<br>
+                <span class="text-gold" style="font-weight: 700;">Implementation</span> is where most people fail.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 92: Belief Check                         -->
+<!-- Micro-commitment - simple, centered, powerful  -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="beliefGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="400" rx="600" ry="400" fill="url(#beliefGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px;">
+
+        <!-- Main Question -->
+        <h1 class="display text-espresso" style="font-size: 52px; line-height: 1.4; margin-bottom: 80px; max-width: 1000px;">
+            After these 3 days, do you believe there's<br>
+            <span class="text-gold">REAL opportunity</span> in digital products on Etsy?
+        </h1>
+
+        <!-- CTA -->
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <path d="M8 20 L28 20 M22 12 L32 20 L22 28" stroke="#C9A227" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="body text-espresso" style="font-size: 28px;">
+                Type "<span class="text-gold" style="font-weight: 700;">YES</span>" if you believe there's opportunity.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 93: Commitment Question                  -->
+<!-- Pre-framing the 90-day commitment              -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="commitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="850" rx="450" ry="350" fill="url(#commitGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px;">
+
+        <!-- Setup -->
+        <p class="body text-muted" style="font-size: 26px; margin-bottom: 40px; max-width: 800px;">
+            If you had everything you needed &mdash;<br>
+            the roadmap, the support, the accountability &mdash;
+        </p>
+
+        <!-- Main Question -->
+        <h1 class="display text-espresso" style="font-size: 56px; line-height: 1.3; margin-bottom: 50px;">
+            Would you commit to<br>
+            <span class="text-gold">90 days</span> of focused effort?
+        </h1>
+
+        <!-- Specifics - Visual treatment -->
+        <div style="display: flex; gap: 60px; margin-bottom: 60px;">
+            <div style="text-align: center;">
+                <p class="display text-gold" style="font-size: 52px;">3</p>
+                <p class="body text-muted" style="font-size: 18px; text-transform: uppercase; letter-spacing: 2px;">hours/week</p>
+            </div>
+            <div style="width: 2px; background: linear-gradient(180deg, transparent, #E5E1DC, transparent);"></div>
+            <div style="text-align: center;">
+                <p class="display text-gold" style="font-size: 52px;">90</p>
+                <p class="body text-muted" style="font-size: 18px; text-transform: uppercase; letter-spacing: 2px;">days</p>
+            </div>
+        </div>
+
+        <p class="body text-espresso" style="font-size: 24px; margin-bottom: 50px;">
+            To build something that could change your income.
+        </p>
+
+        <!-- CTA -->
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <path d="M8 20 L28 20 M22 12 L32 20 L22 28" stroke="#C9A227" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="body text-espresso" style="font-size: 24px;">
+                Type "<span class="text-gold" style="font-weight: 700;">I WOULD</span>" if you'd make that commitment given the right support.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 94: Notes Graveyard                      -->
+<!-- Creative visual metaphor - not a wall of text -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="graveyardGrad" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#636E72;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="800" rx="500" ry="400" fill="url(#graveyardGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; padding: 80px 140px; height: 100%; display: flex; gap: 100px; align-items: center;">
+
+        <!-- Left: Questions & Text -->
+        <div style="flex: 1; max-width: 700px;">
+            <!-- Three interrogative questions -->
+            <div style="margin-bottom: 50px;">
+                <p class="body text-muted" style="font-size: 26px; margin-bottom: 12px;">How many courses have you bought?</p>
+                <p class="body text-muted" style="font-size: 26px; margin-bottom: 12px;">How many YouTube videos have you watched?</p>
+                <p class="body text-muted" style="font-size: 26px;">How many notes have you taken?</p>
+            </div>
+
+            <!-- The Pivot -->
+            <h1 class="display text-espresso" style="font-size: 48px; margin-bottom: 40px;">
+                Where are those notes <span class="text-gold">NOW?</span>
+            </h1>
+
+            <!-- Notes Graveyard concept -->
+            <p class="body text-espresso" style="font-size: 24px; margin-bottom: 30px;">
+                Probably in what I call the <span style="color: #8B7355; font-weight: 600;">"Notes Graveyard."</span>
+            </p>
+
+            <!-- Examples - muted, indented -->
+            <div style="margin-left: 25px; border-left: 3px solid #E5E1DC; padding-left: 25px; margin-bottom: 40px;">
+                <p class="body text-muted" style="font-size: 20px; margin-bottom: 8px;">A folder on your computer you'll never open.</p>
+                <p class="body text-muted" style="font-size: 20px; margin-bottom: 8px;">A notebook in a drawer somewhere.</p>
+                <p class="body text-muted" style="font-size: 20px;">Screenshots on your phone you forgot about.</p>
+            </div>
+
+            <!-- Final punch -->
+            <p class="body text-espresso" style="font-size: 26px; font-weight: 600;">
+                The place where good information goes to <span class="text-coral">die.</span>
+            </p>
+        </div>
+
+        <!-- Right: Visual Metaphor - Notes Graveyard SVG -->
+        <div style="flex-shrink: 0;">
+            <svg width="450" height="400" viewBox="0 0 450 400">
+                <!-- Ground -->
+                <path d="M0 350 Q100 340 225 350 Q350 360 450 345 L450 400 L0 400 Z" fill="#E5E1DC"/>
+
+                <!-- Tombstone 1 - Folder -->
+                <g transform="translate(80, 180)">
+                    <rect x="0" y="0" width="90" height="120" rx="8" fill="#B8B0A8"/>
+                    <rect x="0" y="0" width="90" height="30" rx="8" fill="#A09890"/>
+                    <rect x="0" y="22" width="90" height="8" fill="#B8B0A8"/>
+                    <text x="45" y="80" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="11" fill="#636E72">NOTES</text>
+                    <text x="45" y="95" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="11" fill="#636E72">2019</text>
+                    <!-- Cobweb -->
+                    <path d="M70 5 Q85 15 88 30" stroke="#D5D0CB" stroke-width="1" fill="none"/>
+                    <path d="M75 0 Q85 10 90 20" stroke="#D5D0CB" stroke-width="1" fill="none"/>
+                </g>
+
+                <!-- Tombstone 2 - Notebook -->
+                <g transform="translate(200, 150)">
+                    <rect x="0" y="0" width="80" height="150" rx="6" fill="#9A918A"/>
+                    <rect x="5" y="5" width="70" height="140" rx="4" fill="#B8B0A8"/>
+                    <!-- Lines -->
+                    <line x1="15" y1="40" x2="65" y2="40" stroke="#D5D0CB" stroke-width="1"/>
+                    <line x1="15" y1="55" x2="65" y2="55" stroke="#D5D0CB" stroke-width="1"/>
+                    <line x1="15" y1="70" x2="65" y2="70" stroke="#D5D0CB" stroke-width="1"/>
+                    <line x1="15" y1="85" x2="50" y2="85" stroke="#D5D0CB" stroke-width="1"/>
+                    <text x="40" y="120" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="10" fill="#636E72">IDEAS</text>
+                    <!-- Dust particles -->
+                    <circle cx="70" cy="10" r="2" fill="#D5D0CB" opacity="0.6"/>
+                    <circle cx="75" cy="25" r="1.5" fill="#D5D0CB" opacity="0.5"/>
+                </g>
+
+                <!-- Tombstone 3 - Phone/Screenshots -->
+                <g transform="translate(310, 200)">
+                    <rect x="0" y="0" width="60" height="100" rx="10" fill="#A09890"/>
+                    <rect x="4" y="12" width="52" height="76" rx="2" fill="#C8C0B8"/>
+                    <!-- Screenshot icon -->
+                    <rect x="14" y="30" width="32" height="24" rx="2" fill="#B8B0A8"/>
+                    <circle cx="30" cy="42" r="6" fill="#A09890"/>
+                    <text x="30" y="72" text-anchor="middle" font-family="Satoshi, sans-serif" font-size="8" fill="#636E72">2021</text>
+                    <!-- Crack -->
+                    <path d="M45 0 L42 15 L48 25 L44 40" stroke="#888078" stroke-width="1" fill="none"/>
+                </g>
+
+                <!-- Dead flower/weed -->
+                <g transform="translate(150, 300)">
+                    <path d="M0 50 Q5 30 0 10 Q-5 30 0 50" stroke="#8B8078" stroke-width="2" fill="none"/>
+                    <circle cx="-3" cy="8" r="4" fill="#A09890"/>
+                </g>
+
+                <!-- RIP text floating subtly -->
+                <text x="225" y="60" text-anchor="middle" font-family="Ogg Bold, serif" font-size="28" fill="#C9A227" opacity="0.15">R.I.P.</text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 95: Information vs Implementation        -->
+<!-- Split contrast layout - visual distinction     -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <div style="position: relative; z-index: 1; height: 100%; display: flex;">
+
+        <!-- LEFT: Information (Gold side) -->
+        <div style="flex: 1; padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, rgba(201, 162, 39, 0.06) 0%, transparent 100%);">
+            <h2 class="display text-gold" style="font-size: 52px; margin-bottom: 30px;">INFORMATION</h2>
+            <p class="display text-gold" style="font-size: 38px; margin-bottom: 30px;">is free.</p>
+            <p class="body text-muted" style="font-size: 22px; line-height: 1.7; max-width: 400px;">
+                YouTube has everything.<br>
+                You could learn anything about Etsy<br>
+                without spending a dollar.
+            </p>
+
+            <!-- Visual: Open book/video icon -->
+            <svg width="120" height="100" viewBox="0 0 120 100" style="margin-top: 40px; opacity: 0.4;">
+                <rect x="10" y="20" width="100" height="60" rx="4" fill="none" stroke="#C9A227" stroke-width="3"/>
+                <polygon points="50,40 50,60 70,50" fill="#C9A227"/>
+            </svg>
+        </div>
+
+        <!-- CENTER: The Gap -->
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+            <div style="width: 3px; height: 200px; background: linear-gradient(180deg, transparent, #E5E1DC, transparent);"></div>
+            <div style="position: absolute; background: #FDF8F3; padding: 15px 20px; border-radius: 30px; border: 2px solid #E5E1DC;">
+                <p class="body text-muted" style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">THE GAP</p>
+            </div>
+        </div>
+
+        <!-- RIGHT: Implementation (Espresso/Coral side) -->
+        <div style="flex: 1; padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(225deg, rgba(224, 123, 108, 0.06) 0%, transparent 100%);">
+            <h2 class="display text-espresso" style="font-size: 52px; margin-bottom: 30px;">IMPLEMENTATION</h2>
+            <p class="display text-coral" style="font-size: 38px; margin-bottom: 30px;">is hard.</p>
+            <p class="body text-muted" style="font-size: 22px; line-height: 1.7; max-width: 400px;">
+                That's where people get stuck.<br>
+                That's where dreams go to <span class="text-coral">die.</span>
+            </p>
+
+            <!-- Visual: Tangled/stuck icon -->
+            <svg width="120" height="100" viewBox="0 0 120 100" style="margin-top: 40px; opacity: 0.4;">
+                <circle cx="60" cy="50" r="35" fill="none" stroke="#E07B6C" stroke-width="3" stroke-dasharray="10 5"/>
+                <path d="M40 50 Q60 30 80 50 Q60 70 40 50" stroke="#E07B6C" stroke-width="3" fill="none"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Bottom: The Punch -->
+    <div style="position: absolute; bottom: 80px; left: 0; right: 0; text-align: center; z-index: 2;">
+        <p class="body text-muted" style="font-size: 24px; margin-bottom: 20px;">
+            The gap between "knowing" and "doing"...<br>
+            That's what separates people who succeed from people who stay stuck.
+        </p>
+        <p class="display text-espresso" style="font-size: 32px;">
+            You don't need more information. You need <span class="text-gold">IMPLEMENTATION SUPPORT.</span>
+        </p>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 96: You CAN Do This Alone                -->
+<!-- Permission slide - warm, then pivot           -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="aloneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="250" cy="300" rx="400" ry="300" fill="url(#aloneGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; padding: 120px 180px; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+
+        <!-- Direct Statement -->
+        <h1 class="display text-espresso" style="font-size: 64px; margin-bottom: 50px;">
+            You CAN do this alone.
+        </h1>
+
+        <!-- Validation -->
+        <p class="body text-espresso" style="font-size: 28px; line-height: 1.7; margin-bottom: 20px; max-width: 800px;">
+            Everything I taught you these 3 days &mdash;<br>
+            it works. You could implement it yourself.
+        </p>
+
+        <!-- Grace -->
+        <p class="body text-muted" style="font-size: 26px; margin-bottom: 60px;">
+            Some of you will. And that's great. Genuinely.
+        </p>
+
+        <!-- Pivot -->
+        <p class="body text-espresso" style="font-size: 28px; font-weight: 600; margin-bottom: 40px;">
+            But if you're being honest with yourself...
+        </p>
+
+        <!-- The Question - Highlighted -->
+        <div style="background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(253, 248, 243, 0.5) 100%); padding: 45px 55px; border-radius: 24px; max-width: 850px; border-left: 6px solid #C9A227;">
+            <h2 class="display text-gold" style="font-size: 42px; line-height: 1.3;">
+                What's your track record with<br>
+                implementing things on your own?
+            </h2>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 97: What If Partnership                  -->
+<!-- Gold accented, five items, elevated treatment  -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="partnerGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="300" rx="500" ry="400" fill="url(#partnerGrad)"/>
+        <ellipse cx="300" cy="800" rx="350" ry="280" fill="url(#partnerGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; padding: 100px 160px; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+
+        <!-- Main Question -->
+        <h1 class="display text-gold" style="font-size: 56px; margin-bottom: 60px;">
+            What if you didn't have to do this alone?
+        </h1>
+
+        <!-- Five Items - Card treatment -->
+        <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FDF8F3 100%); padding: 50px 60px; border-radius: 24px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.1); max-width: 900px; margin-bottom: 50px;">
+            <p class="body text-muted" style="font-size: 20px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">What if you had:</p>
+
+            <div style="display: flex; flex-direction: column; gap: 22px;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">A personalized roadmap for <span style="font-weight: 700;">YOUR</span> shop</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">Weekly calls to keep you on track</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">A community of people on the same journey</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">Direct access to someone who's done <span style="font-weight: 700;">$1M+</span></p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">Accountability so you actually follow through</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <path d="M8 20 L28 20 M22 12 L32 20 L22 28" stroke="#C9A227" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="body text-espresso" style="font-size: 26px;">
+                Type "<span class="text-gold" style="font-weight: 700;">YES</span>" if that would help.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 98: Responsibility Frame                 -->
+<!-- What it's NOT vs What it IS                    -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="respGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="200" rx="600" ry="350" fill="url(#respGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; padding: 100px 160px; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+
+        <!-- Main Question -->
+        <h1 class="display text-espresso" style="font-size: 50px; line-height: 1.3; margin-bottom: 60px;">
+            What if I took <span class="text-gold">RESPONSIBILITY</span><br>
+            for your success over the next 90 days?
+        </h1>
+
+        <!-- Two Column: NOT vs IS -->
+        <div style="display: flex; gap: 60px; margin-bottom: 60px;">
+
+            <!-- What it's NOT -->
+            <div style="flex: 1;">
+                <p class="body text-muted" style="font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Not just...</p>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: center; gap: 15px; opacity: 0.6;">
+                        <div style="width: 32px; height: 32px; background: #E5E1DC; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 4 L12 12 M12 4 L4 12" stroke="#636E72" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <p class="body text-muted" style="font-size: 22px;">Teaching you</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px; opacity: 0.6;">
+                        <div style="width: 32px; height: 32px; background: #E5E1DC; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 4 L12 12 M12 4 L4 12" stroke="#636E72" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <p class="body text-muted" style="font-size: 22px;">Giving you content</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What it IS -->
+            <div style="flex: 1.5;">
+                <p class="body text-gold" style="font-size: 18px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 600;">Actually...</p>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #C9A227, #D4AF37); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);">
+                            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9 L7 12 L14 5" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <p class="body text-espresso" style="font-size: 24px; font-weight: 500;">Being in your corner</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #C9A227, #D4AF37); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);">
+                            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9 L7 12 L14 5" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <p class="body text-espresso" style="font-size: 24px; font-weight: 500;">Reviewing your shop</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #C9A227, #D4AF37); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);">
+                            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9 L7 12 L14 5" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <p class="body text-espresso" style="font-size: 24px; font-weight: 500;">Answering your questions</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #C9A227, #D4AF37); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);">
+                            <svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 9 L7 12 L14 5" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <p class="body text-espresso" style="font-size: 24px; font-weight: 500;">Making sure you don't quit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Question -->
+        <div style="border-top: 2px solid #E5E1DC; padding-top: 40px;">
+            <h2 class="display text-espresso" style="font-size: 38px;">
+                What if I was <span style="font-style: italic;">obligated</span> to your success?
+            </h2>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 99: Permission to Present                -->
+<!-- Warm, inviting - the ask                       -->
+<!-- ============================================== -->
+<div class="slide bg-cream">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="permGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F3;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="350" cy="800" rx="450" ry="350" fill="url(#permGrad)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; padding: 100px 180px; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+
+        <!-- Opening -->
+        <h1 class="display text-espresso" style="font-size: 48px; margin-bottom: 50px;">
+            I've created something specifically<br>
+            for people like you.
+        </h1>
+
+        <!-- Four Criteria -->
+        <div style="margin-bottom: 60px; margin-left: 20px;">
+            <p class="body text-muted" style="font-size: 22px; margin-bottom: 25px;">People who:</p>
+
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">Have the knowledge but struggle with implementation</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">Want support, not just information</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">Are ready to commit to 90 days of focused work</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <svg width="28" height="28" viewBox="0 0 28 28"><path d="M6 14 L20 14 M16 8 L24 14 L16 20" stroke="#C9A227" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <p class="body text-espresso" style="font-size: 24px;">Want to build something real</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Ask -->
+        <div style="background: linear-gradient(145deg, #FFFFFF 0%, rgba(201, 162, 39, 0.05) 100%); padding: 40px 50px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); max-width: 800px;">
+            <p class="body text-espresso" style="font-size: 28px; font-weight: 500; margin-bottom: 20px;">
+                Can I take <span class="text-gold" style="font-weight: 700;">15 minutes</span> to show you<br>
+                exactly what this partnership looks like?
+            </p>
+            <p class="body text-muted" style="font-size: 22px;">
+                You can decide if it's right for you.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================== -->
+<!-- SLIDE 100: Section Break                       -->
+<!-- Visual breath before offer reveal              -->
+<!-- ============================================== -->
+<div class="slide bg-bronze">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="breathGrad1" x1="30%" y1="0%" x2="70%" y2="100%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.08" />
+                <stop offset="100%" style="stop-color:#5C4827;stop-opacity:0" />
+            </linearGradient>
+            <linearGradient id="breathGrad2" x1="70%" y1="100%" x2="30%" y2="0%">
+                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#3D2B1F;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1500" cy="350" rx="550" ry="400" fill="url(#breathGrad1)"/>
+        <ellipse cx="400" cy="750" rx="450" ry="350" fill="url(#breathGrad2)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; justify-content: center;">
+
+        <!-- Subtle geometric element - thin gold line with small diamond -->
+        <svg width="300" height="100" viewBox="0 0 300 100">
+            <line x1="0" y1="50" x2="120" y2="50" stroke="#C9A227" stroke-width="1" opacity="0.4"/>
+            <polygon points="150,35 165,50 150,65 135,50" fill="#C9A227" opacity="0.6"/>
+            <line x1="180" y1="50" x2="300" y2="50" stroke="#C9A227" stroke-width="1" opacity="0.4"/>
+        </svg>
+
+    </div>
+</div>
+
+</body>
+</html>
