@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* ============================================
+           DAY 3: THE EMPIRE SYSTEM — BATCH 0
+           Slides 1-19: Opening Sequence + Bailey's Story
+           Color Palette: Warm Gold/Amber/Bronze
+           ============================================ */
+
+@font-face {
+    font-family: 'Ogg Bold';
+    src: url('fonts/Ogg-Bold.woff2') format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Day 3 Warm Palette */
+    --warm-gold: #C9A227;
+    --rich-amber: #B8860B;
+    --deep-bronze: #5C4827;
+    --honey: #D4A84B;
+    --cream: #FDF6E3;
+    --warm-white: #FFFEF5;
+    --pale-gold: #FAF3E0;
+    --light-tan: #F5E6D3;
+    --espresso: #3D2B1F;
+    --charcoal: #2D2D2D;
+    --sage-green: #6B8E6B;
+    --burnt-coral: #E07A5F;
+    --warm-gray: #8B8178;
+    --taupe: #A69B8D;
+    --stone: #D4CCC4;
+}
+
+body {
+    font-family: 'Satoshi', 'Helvetica Neue', sans-serif;
+}
+
+.slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+}
+
+.display {
+    font-family: 'Ogg Bold', Georgia, serif;
+    font-weight: bold;
+}
+
+.body {
+    font-family: 'Satoshi', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    padding: 80px 120px;
+    height: 100%;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide-label {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    font-family: 'Satoshi', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Animations for live presentations */
+@keyframes shimmer {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 30px rgba(201, 162, 39, 0.3); }
+    50% { box-shadow: 0 0 50px rgba(201, 162, 39, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(201, 162, 39, 0.3); }
+}
+
+.shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- ============================================
+     SLIDE 1: Holding Slide (Pre-Start)
+     "The doors are about to open" energy
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
+    <!-- Subtle linen texture pattern -->
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <pattern id="linenTexture" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="100" y2="100" stroke="#C9A227" stroke-width="0.3" stroke-opacity="0.04"/>
+                <line x1="100" y1="0" x2="0" y2="100" stroke="#C9A227" stroke-width="0.3" stroke-opacity="0.04"/>
+            </pattern>
+            <radialGradient id="centerGlow" cx="50%" cy="40%" r="50%">
+                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.1"/>
+                <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
+            </radialGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#linenTexture)"/>
+        <ellipse cx="960" cy="400" rx="600" ry="400" fill="url(#centerGlow)"/>
+        <!-- Decorative corner flourishes -->
+        <path d="M 50 50 Q 100 50, 100 100" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.15"/>
+        <path d="M 1870 50 Q 1820 50, 1820 100" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.15"/>
+        <path d="M 50 1030 Q 100 1030, 100 980" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.15"/>
+        <path d="M 1870 1030 Q 1820 1030, 1820 980" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.15"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display shimmer" style="font-size: 58px; color: #C9A227; text-align: center; margin-bottom: 80px; text-shadow: 0 4px 40px rgba(201, 162, 39, 0.4);">
+            We're starting in just a moment...
+        </h1>
+
+        <div style="display: flex; flex-direction: column; gap: 35px; max-width: 700px;">
+            <div style="display: flex; align-items: center; gap: 25px;">
+                <span style="color: #C9A227; font-size: 36px; font-weight: 700;">&#8594;</span>
+                <p class="body" style="font-size: 28px; color: #FFFEF5; line-height: 1.5;">
+                    Type <span style="color: #C9A227; font-weight: 700;">"DAY 3"</span> in the chat to let us know you're here
+                </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 25px;">
+                <span style="color: #C9A227; font-size: 36px; font-weight: 700;">&#8594;</span>
+                <p class="body" style="font-size: 28px; color: #FFFEF5; line-height: 1.5;">
+                    Grab your notes from Days 1 &amp; 2
+                </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 25px;">
+                <span style="color: #C9A227; font-size: 36px; font-weight: 700;">&#8594;</span>
+                <p class="body" style="font-size: 28px; color: #FFFEF5; line-height: 1.5;">
+                    Get ready <span style="color: #D4A84B;">&#8212;</span> today changes everything
+                </p>
+            </div>
+        </div>
+
+        <!-- Subtle countdown visual -->
+        <div style="margin-top: 100px; display: flex; gap: 20px;">
+            <div style="width: 12px; height: 12px; background: #C9A227; border-radius: 50%; opacity: 0.4;"></div>
+            <div style="width: 12px; height: 12px; background: #C9A227; border-radius: 50%; opacity: 0.6;"></div>
+            <div style="width: 12px; height: 12px; background: #C9A227; border-radius: 50%; opacity: 1;"></div>
+        </div>
+    </div>
+    <div class="slide-label">SLIDE 1</div>
+</div>
+
+<!-- ============================================
+     SLIDE 2: Title Slide (THE HERO MOMENT)
+     Premium Netflix documentary energy
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(165deg, #5C4827 0%, #3D2B1F 50%, #2D2014 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <!-- Golden network pattern -->
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.15"/>
+                <stop offset="50%" stop-color="#D4A84B" stop-opacity="0.1"/>
+                <stop offset="100%" stop-color="#B8860B" stop-opacity="0.15"/>
+            </linearGradient>
+        </defs>
+        <!-- Empire building blocks rising -->
+        <g stroke="#C9A227" stroke-width="1" fill="none" opacity="0.12">
+            <!-- Left side geometric empire -->
+            <rect x="80" y="700" width="120" height="80" rx="4"/>
+            <rect x="100" y="640" width="80" height="60" rx="4"/>
+            <rect x="120" y="590" width="40" height="50" rx="4"/>
+            <!-- Connecting lines suggesting system -->
+            <path d="M200 740 Q 400 600, 600 650 T 900 500" stroke-opacity="0.08"/>
+            <path d="M900 500 Q 1100 400, 1300 450 T 1600 300" stroke-opacity="0.08"/>
+        </g>
+        <!-- Right side abstract flow -->
+        <g stroke="#D4A84B" stroke-width="1.5" fill="none" opacity="0.1">
+            <path d="M 1400 200 Q 1500 250, 1550 180 T 1700 220"/>
+            <path d="M 1450 280 Q 1550 320, 1600 260 T 1750 300"/>
+            <path d="M 1500 350 Q 1600 400, 1650 330 T 1800 380"/>
+        </g>
+        <!-- Central glow -->
+        <ellipse cx="960" cy="480" rx="500" ry="350" fill="url(#goldGradient)"/>
+        <!-- Corner accent nodes -->
+        <circle cx="150" cy="150" r="4" fill="#C9A227" fill-opacity="0.3"/>
+        <circle cx="1770" cy="150" r="4" fill="#C9A227" fill-opacity="0.3"/>
+        <circle cx="150" cy="930" r="4" fill="#C9A227" fill-opacity="0.3"/>
+        <circle cx="1770" cy="930" r="4" fill="#C9A227" fill-opacity="0.3"/>
+        <!-- Interconnected dots suggesting system -->
+        <circle cx="300" cy="400" r="3" fill="#C9A227" fill-opacity="0.2"/>
+        <circle cx="450" cy="350" r="2" fill="#C9A227" fill-opacity="0.15"/>
+        <circle cx="1500" cy="600" r="3" fill="#C9A227" fill-opacity="0.2"/>
+        <circle cx="1650" cy="550" r="2" fill="#C9A227" fill-opacity="0.15"/>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- Day label -->
+        <p class="body" style="font-size: 22px; color: #D4A84B; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 20px;">
+            DAY 3
+        </p>
+
+        <!-- Main title -->
+        <h1 class="display" style="font-size: 120px; color: #C9A227; text-align: center; letter-spacing: 4px; text-shadow: 0 6px 60px rgba(201, 162, 39, 0.5); margin-bottom: 30px;">
+            THE EMPIRE SYSTEM
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="body" style="font-size: 38px; color: #FFFEF5; text-align: center; margin-bottom: 15px; font-weight: 400;">
+            How to Stay Consistent
+        </p>
+        <p class="body" style="font-size: 32px; color: rgba(255, 254, 245, 0.7); text-align: center; margin-bottom: 60px;">
+            (Without Burning Out)
+        </p>
+
+        <!-- Divider -->
+        <div style="width: 200px; height: 2px; background: linear-gradient(90deg, transparent, #C9A227, transparent); margin-bottom: 50px;"></div>
+
+        <!-- Presenter -->
+        <p class="body" style="font-size: 26px; color: #FFFEF5; margin-bottom: 12px;">
+            with <span style="font-weight: 600;">Bailey Vann</span>
+        </p>
+        <p class="body" style="font-size: 20px; color: #8B8178; letter-spacing: 1px;">
+            Top 0.1% Etsy Seller &nbsp;|&nbsp; $1M+ in Sales
+        </p>
+    </div>
+    <div class="slide-label">SLIDE 2</div>
+</div>
+
+<!-- ============================================
+     SLIDE 3: Progress Tracker (Day 1-2-3)
+     Video game level select energy
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Progress path -->
+        <path d="M 200 800 Q 500 700, 800 750 T 1400 650 T 1700 550" fill="none" stroke="#C9A227" stroke-width="3" stroke-opacity="0.1" stroke-dasharray="10,10"/>
+        <!-- Milestone dots -->
+        <circle cx="300" cy="780" r="8" fill="#6B8E6B" fill-opacity="0.3"/>
+        <circle cx="800" cy="750" r="8" fill="#6B8E6B" fill-opacity="0.3"/>
+        <circle cx="1400" cy="650" r="8" fill="#C9A227" fill-opacity="0.5"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h2 class="display" style="font-size: 44px; color: #5C4827; margin-bottom: 70px; text-align: center;">
+            Your Journey So Far
+        </h2>
+
+        <div style="display: flex; gap: 50px; margin-bottom: 80px;">
+            <!-- Day 1 Card - Completed -->
+            <div style="width: 380px; padding: 40px; background: white; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); border: 2px solid rgba(107, 142, 107, 0.2); position: relative; opacity: 0.85;">
+                <!-- Checkmark badge -->
+                <div style="position: absolute; top: -15px; right: 20px; background: #6B8E6B; padding: 8px 20px; border-radius: 30px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="body" style="font-size: 13px; color: white; text-transform: uppercase; letter-spacing: 1px;">Complete</span>
+                </div>
+                <p class="body" style="font-size: 16px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;">Day 1</p>
+                <h3 class="display" style="font-size: 26px; color: #5C4827; margin-bottom: 20px;">The Demand-First Framework</h3>
+                <div style="background: #FAF3E0; padding: 20px; border-radius: 12px;">
+                    <p class="body" style="font-size: 16px; color: #8B8178; margin-bottom: 8px;">You learned:</p>
+                    <p class="body" style="font-size: 20px; color: #5C4827; font-weight: 600;">WHAT to create</p>
+                    <div style="height: 1px; background: #D4CCC4; margin: 15px 0;"></div>
+                    <p class="body" style="font-size: 16px; color: #8B8178; margin-bottom: 8px;">Result:</p>
+                    <p class="body" style="font-size: 20px; color: #6B8E6B; font-weight: 600;">CLARITY on profitable products</p>
+                </div>
+            </div>
+
+            <!-- Day 2 Card - Completed -->
+            <div style="width: 380px; padding: 40px; background: white; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); border: 2px solid rgba(107, 142, 107, 0.2); position: relative; opacity: 0.85;">
+                <!-- Checkmark badge -->
+                <div style="position: absolute; top: -15px; right: 20px; background: #6B8E6B; padding: 8px 20px; border-radius: 30px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="body" style="font-size: 13px; color: white; text-transform: uppercase; letter-spacing: 1px;">Complete</span>
+                </div>
+                <p class="body" style="font-size: 16px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;">Day 2</p>
+                <h3 class="display" style="font-size: 26px; color: #5C4827; margin-bottom: 20px;">The Winner Hypothesis</h3>
+                <div style="background: #FAF3E0; padding: 20px; border-radius: 12px;">
+                    <p class="body" style="font-size: 16px; color: #8B8178; margin-bottom: 8px;">You learned:</p>
+                    <p class="body" style="font-size: 20px; color: #5C4827; font-weight: 600;">HOW to validate ideas</p>
+                    <div style="height: 1px; background: #D4CCC4; margin: 15px 0;"></div>
+                    <p class="body" style="font-size: 16px; color: #8B8178; margin-bottom: 8px;">Result:</p>
+                    <p class="body" style="font-size: 20px; color: #6B8E6B; font-weight: 600;">A PLAN you can execute</p>
+                </div>
+            </div>
+
+            <!-- Day 3 Card - Active -->
+            <div style="width: 380px; padding: 40px; background: linear-gradient(145deg, #C9A227, #B8860B); border-radius: 24px; box-shadow: 0 20px 60px rgba(201, 162, 39, 0.35); position: relative;">
+                <!-- Today badge -->
+                <div style="position: absolute; top: -15px; right: 20px; background: white; padding: 8px 20px; border-radius: 30px;">
+                    <span class="body" style="font-size: 13px; color: #C9A227; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Today</span>
+                </div>
+                <p class="body" style="font-size: 16px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;">Day 3</p>
+                <h3 class="display" style="font-size: 26px; color: white; margin-bottom: 20px;">The Empire System</h3>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 12px;">
+                    <p class="body" style="font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 8px;">You'll learn:</p>
+                    <p class="body" style="font-size: 20px; color: white; font-weight: 600;">HOW to stay consistent</p>
+                    <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 15px 0;"></div>
+                    <p class="body" style="font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 8px;">Result:</p>
+                    <p class="body" style="font-size: 20px; color: white; font-weight: 600;">SUSTAINABLE momentum</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flow summary -->
+        <div style="display: flex; align-items: center; gap: 30px; background: white; padding: 25px 60px; border-radius: 100px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.08);">
+            <span class="display" style="font-size: 24px; color: #6B8E6B;">CLARITY</span>
+            <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+            <span class="display" style="font-size: 24px; color: #6B8E6B;">PLAN</span>
+            <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+            <span class="display" style="font-size: 24px; color: #C9A227;">CONSISTENCY</span>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 3</div>
+</div>
+
+<!-- ============================================
+     SLIDE 4: Homework Check-In
+     Inviting, not testing
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1600" cy="200" r="300" fill="#C9A227" fill-opacity="0.03"/>
+        <circle cx="300" cy="900" r="200" fill="#B8860B" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content flex-center">
+        <p class="body" style="font-size: 24px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">
+            Yesterday's homework
+        </p>
+        <h1 class="display" style="font-size: 52px; color: #3D2B1F; text-align: center; margin-bottom: 70px;">
+            Create your first Winner Hypothesis
+        </h1>
+
+        <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 50px;">
+            Type in the chat:
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 25px; width: 700px;">
+            <!-- Created -->
+            <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(145deg, rgba(107, 142, 107, 0.1), rgba(107, 142, 107, 0.05)); padding: 30px 40px; border-radius: 20px; border: 2px solid rgba(107, 142, 107, 0.2);">
+                <div style="width: 60px; height: 60px; background: #6B8E6B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="display" style="font-size: 28px; color: #6B8E6B;">"CREATED"</p>
+                    <p class="body" style="font-size: 18px; color: #5C4827; margin-top: 5px;">if you completed it</p>
+                </div>
+            </div>
+
+            <!-- In Progress -->
+            <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(145deg, rgba(212, 168, 75, 0.1), rgba(212, 168, 75, 0.05)); padding: 30px 40px; border-radius: 20px; border: 2px solid rgba(212, 168, 75, 0.2);">
+                <div style="width: 60px; height: 60px; background: #D4A84B; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2.5"/>
+                        <path d="M12 7v5l3 3" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="display" style="font-size: 28px; color: #B8860B;">"IN PROGRESS"</p>
+                    <p class="body" style="font-size: 18px; color: #5C4827; margin-top: 5px;">if you started but didn't finish</p>
+                </div>
+            </div>
+
+            <!-- Life Happened -->
+            <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(145deg, rgba(139, 129, 120, 0.08), rgba(139, 129, 120, 0.03)); padding: 30px 40px; border-radius: 20px; border: 2px solid rgba(139, 129, 120, 0.15);">
+                <div style="width: 60px; height: 60px; background: #A69B8D; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="white" stroke-width="2"/>
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="9" cy="9" r="1.5" fill="white"/>
+                        <circle cx="15" cy="9" r="1.5" fill="white"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="display" style="font-size: 28px; color: #8B8178;">"LIFE HAPPENED"</p>
+                    <p class="body" style="font-size: 18px; color: #8B8178; margin-top: 5px;">if you didn't get to it <span style="opacity: 0.7;">(no judgment!)</span></p>
+                </div>
+            </div>
+        </div>
+
+        <p class="body" style="font-size: 24px; color: #5C4827; margin-top: 50px;">
+            Be honest &#8212; I want to know where you're at.
+        </p>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 4</div>
+</div>
+
+<!-- ============================================
+     SLIDE 5: Validation (You're Already Ahead)
+     Recognition + grace
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Warm glow at top -->
+        <ellipse cx="960" cy="200" rx="800" ry="300" fill="#C9A227" fill-opacity="0.05"/>
+        <!-- Star accents -->
+        <polygon points="1650,180 1655,195 1670,195 1658,205 1663,220 1650,210 1637,220 1642,205 1630,195 1645,195" fill="#C9A227" fill-opacity="0.15"/>
+        <polygon points="280,250 283,260 293,260 285,267 288,277 280,270 272,277 275,267 267,260 277,260" fill="#D4A84B" fill-opacity="0.12"/>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- Recognition banner -->
+        <div style="background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 20px 60px; border-radius: 60px; margin-bottom: 50px; box-shadow: 0 15px 50px rgba(201, 162, 39, 0.3);">
+            <h1 class="display" style="font-size: 48px; color: white; letter-spacing: 3px;">
+                YOU ARE ALREADY AHEAD
+            </h1>
+        </div>
+
+        <div style="max-width: 900px; text-align: center;">
+            <p class="body" style="font-size: 32px; color: #5C4827; line-height: 1.7; margin-bottom: 40px;">
+                Most people who attend challenges<br>
+                <span style="color: #8B8178;">never do the homework.</span>
+            </p>
+
+            <p class="body" style="font-size: 36px; color: #3D2B1F; font-weight: 600; margin-bottom: 15px;">
+                You did.
+            </p>
+            <p class="body" style="font-size: 32px; color: #C9A227; font-weight: 600; margin-bottom: 80px;">
+                That tells me you're serious.
+            </p>
+
+            <!-- Grace section -->
+            <div style="background: white; padding: 40px 60px; border-radius: 24px; box-shadow: 0 10px 40px rgba(61, 43, 31, 0.06);">
+                <p class="body" style="font-size: 26px; color: #8B8178; margin-bottom: 15px;">
+                    To everyone else: That's okay.
+                </p>
+                <p class="body" style="font-size: 26px; color: #5C4827; margin-bottom: 25px;">
+                    Today is a fresh start.
+                </p>
+                <p class="body" style="font-size: 28px; color: #3D2B1F; font-weight: 600;">
+                    The question is: <span style="color: #C9A227;">What's been stopping you?</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 5</div>
+</div>
+
+<!-- ============================================
+     SLIDE 6: Why Are You Here? (Specificity Prompt)
+     Reflective, personal
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Thought bubble suggestion -->
+        <circle cx="1500" cy="400" r="150" fill="#C9A227" fill-opacity="0.04"/>
+        <circle cx="1400" cy="550" r="60" fill="#C9A227" fill-opacity="0.03"/>
+        <circle cx="1350" cy="620" r="30" fill="#C9A227" fill-opacity="0.02"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; padding-left: 200px;">
+        <div style="max-width: 1000px;">
+            <p class="body" style="font-size: 28px; color: #8B8178; margin-bottom: 40px;">
+                I want you to think about something.
+            </p>
+
+            <h1 class="display" style="font-size: 80px; color: #C9A227; margin-bottom: 50px; line-height: 1.1;">
+                WHY are you<br>really here?
+            </h1>
+
+            <p class="body" style="font-size: 26px; color: #5C4827; margin-bottom: 50px; line-height: 1.6;">
+                Not "to learn about Etsy" &#8212; that's too vague.<br>
+                What <span style="font-weight: 700;">SPECIFICALLY</span> do you want?
+            </p>
+
+            <div style="background: white; padding: 40px 50px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.06); margin-bottom: 50px;">
+                <p class="body" style="font-size: 22px; color: #5C4827; margin-bottom: 25px; font-weight: 600;">
+                    Make it SPECIFIC:
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 18px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #C9A227; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">A dollar amount per month?</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #C9A227; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">A lifestyle change?</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #C9A227; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">Something for your family?</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #C9A227; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">Proving something to yourself?</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="body" style="font-size: 26px; color: #3D2B1F; font-weight: 600;">
+                Type your <span style="color: #C9A227;">WHY</span> in the chat. Be specific.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 6</div>
+</div>
+
+<!-- ============================================
+     SLIDE 7: Two Goals for Today
+     Clear, honest, trustworthy
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path d="M 0 900 Q 400 850, 800 880 T 1600 820 T 1920 860" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.08"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 48px; color: #3D2B1F; margin-bottom: 70px;">
+            I have two goals for our time today:
+        </h1>
+
+        <div style="display: flex; gap: 60px; margin-bottom: 70px;">
+            <!-- Goal 1 -->
+            <div style="width: 500px; padding: 50px; background: white; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #C9A227, #D4A84B); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);">
+                    <span class="display" style="font-size: 32px; color: white;">1</span>
+                </div>
+                <h2 class="display" style="font-size: 32px; color: #C9A227; margin-bottom: 20px;">
+                    GIVE YOU MASSIVE VALUE
+                </h2>
+                <p class="body" style="font-size: 22px; color: #5C4827; line-height: 1.6;">
+                    The most useful 90 minutes on Etsy<br>
+                    you've ever experienced.
+                </p>
+            </div>
+
+            <!-- Goal 2 -->
+            <div style="width: 500px; padding: 50px; background: white; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #B8860B, #C9A227); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);">
+                    <span class="display" style="font-size: 32px; color: white;">2</span>
+                </div>
+                <h2 class="display" style="font-size: 32px; color: #B8860B; margin-bottom: 20px;">
+                    OFFER YOU SOMETHING
+                </h2>
+                <p class="body" style="font-size: 22px; color: #5C4827; line-height: 1.6;">
+                    At the end, a way to go deeper<br>
+                    if you want more support.
+                </p>
+            </div>
+        </div>
+
+        <!-- Key insight -->
+        <div style="background: linear-gradient(145deg, #FAF3E0, #F5E6D3); padding: 30px 60px; border-radius: 100px; border: 2px solid rgba(201, 162, 39, 0.2);">
+            <p class="body" style="font-size: 26px; color: #3D2B1F;">
+                If I deliver on #1, I've <span style="color: #C9A227; font-weight: 700;">earned the right</span> to do #2.
+            </p>
+        </div>
+
+        <div style="margin-top: 50px; display: flex; align-items: center; gap: 15px;">
+            <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+            <p class="body" style="font-size: 24px; color: #5C4827;">
+                Type <span style="color: #C9A227; font-weight: 700;">"FAIR"</span> if that sounds reasonable.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 7</div>
+</div>
+
+<!-- ============================================
+     SLIDE 8: Open-Minded Ask
+     Disarming, respectful
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <ellipse cx="960" cy="540" rx="600" ry="400" fill="#C9A227" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content flex-center">
+        <div style="max-width: 1000px; text-align: center;">
+            <p class="body" style="font-size: 32px; color: #8B8178; margin-bottom: 50px;">
+                I'm not asking you to believe everything I say.
+            </p>
+
+            <h1 class="display" style="font-size: 60px; color: #3D2B1F; margin-bottom: 60px;">
+                I'm just asking you to stay<br>
+                <span style="color: #C9A227;">OPEN-MINDED.</span>
+            </h1>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 60px;">
+                <p class="body" style="font-size: 28px; color: #5C4827;">Maybe this will work for you.</p>
+                <p class="body" style="font-size: 28px; color: #8B8178;">Maybe it won't.</p>
+                <p class="body" style="font-size: 28px; color: #8B8178;">Maybe your situation is different.</p>
+            </div>
+
+            <div style="background: white; padding: 40px 60px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.06); margin-bottom: 50px;">
+                <p class="body" style="font-size: 28px; color: #5C4827; line-height: 1.7;">
+                    Let me show you the process.<br>
+                    Let me show you the evidence.<br>
+                    <span style="font-weight: 600;">THEN</span> you can decide for yourself.
+                </p>
+            </div>
+
+            <p class="body" style="font-size: 26px; color: #5C4827; font-style: italic;">
+                You're smart. I trust your judgment.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 8</div>
+</div>
+
+<!-- ============================================
+     SLIDE 9: Commitment Ask
+     Getting the micro-yes
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="200" cy="300" r="250" fill="#C9A227" fill-opacity="0.03"/>
+        <circle cx="1700" cy="800" r="200" fill="#B8860B" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; padding-left: 200px;">
+        <div style="max-width: 1000px;">
+            <h1 class="display" style="font-size: 48px; color: #3D2B1F; margin-bottom: 50px;">
+                I need a commitment from you.
+            </h1>
+
+            <p class="body" style="font-size: 28px; color: #5C4827; line-height: 1.7; margin-bottom: 50px;">
+                If I show you something that makes sense...<br>
+                something that could work for you...
+            </p>
+
+            <h2 class="display" style="font-size: 64px; color: #C9A227; margin-bottom: 50px;">
+                Will you actually TRY it?
+            </h2>
+
+            <div style="background: rgba(224, 122, 95, 0.08); padding: 35px 50px; border-radius: 20px; border-left: 4px solid #E07A5F; margin-bottom: 50px;">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <p class="body" style="font-size: 24px; color: #5C4827;">
+                        <span style="color: #E07A5F; font-weight: 600;">Not</span> just nod along.
+                    </p>
+                    <p class="body" style="font-size: 24px; color: #5C4827;">
+                        <span style="color: #E07A5F; font-weight: 600;">Not</span> just take notes you'll never look at.
+                    </p>
+                    <p class="body" style="font-size: 24px; color: #3D2B1F; font-weight: 600;">
+                        Actually <span style="color: #C9A227;">IMPLEMENT</span> it?
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+                <p class="body" style="font-size: 24px; color: #5C4827;">
+                    Type <span style="color: #C9A227; font-weight: 700;">"I'LL TRY IT"</span> if you're committed to implementing, not just learning.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 9</div>
+</div>
+
+<!-- ============================================
+     SLIDE 10: Agenda / Transparency
+     Honest about the pitch
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <line x1="960" y1="150" x2="960" y2="200" stroke="#C9A227" stroke-width="2" stroke-opacity="0.15"/>
+        <line x1="960" y1="880" x2="960" y2="930" stroke="#C9A227" stroke-width="2" stroke-opacity="0.15"/>
+    </svg>
+
+    <div class="content flex-center">
+        <div style="display: flex; gap: 80px; margin-bottom: 60px;">
+            <!-- Part 1 -->
+            <div style="width: 500px; padding: 50px; background: white; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); border-top: 4px solid #C9A227;">
+                <p class="body" style="font-size: 16px; color: #C9A227; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">Part 1</p>
+                <h2 class="display" style="font-size: 32px; color: #3D2B1F; margin-bottom: 20px;">
+                    The Empire System
+                </h2>
+                <p class="body" style="font-size: 18px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Teaching</p>
+                <p class="body" style="font-size: 22px; color: #5C4827; line-height: 1.6;">
+                    I'll show you my exact weekly system<br>for staying consistent
+                </p>
+            </div>
+
+            <!-- Part 2 -->
+            <div style="width: 500px; padding: 50px; background: white; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); border-top: 4px solid #B8860B;">
+                <p class="body" style="font-size: 16px; color: #B8860B; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">Part 2</p>
+                <h2 class="display" style="font-size: 32px; color: #3D2B1F; margin-bottom: 20px;">
+                    Your Next Step
+                </h2>
+                <p class="body" style="font-size: 18px; color: #8B8178; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Opportunity</p>
+                <p class="body" style="font-size: 22px; color: #5C4827; line-height: 1.6;">
+                    I'll share how we can work<br>together more closely
+                </p>
+            </div>
+        </div>
+
+        <!-- Full transparency box -->
+        <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 50px 80px; border-radius: 24px; max-width: 900px; text-align: center;">
+            <p class="body" style="font-size: 18px; color: #D4A84B; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">
+                Full transparency
+            </p>
+            <p class="body" style="font-size: 26px; color: #FFFEF5; line-height: 1.6; margin-bottom: 25px;">
+                At the end, I'm going to invite you to join<br>
+                my <span style="color: #C9A227; font-weight: 600;">90-Day Accelerator</span> program.
+            </p>
+            <p class="body" style="font-size: 22px; color: rgba(255, 254, 245, 0.8); margin-bottom: 15px;">
+                You can say yes or no &#8212; either is fine.
+            </p>
+            <p class="body" style="font-size: 22px; color: #C9A227; font-weight: 600;">
+                But either way, the teaching today is YOURS to keep.
+            </p>
+        </div>
+
+        <div style="margin-top: 50px; display: flex; align-items: center; gap: 15px;">
+            <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+            <p class="body" style="font-size: 24px; color: #5C4827;">
+                Type <span style="color: #C9A227; font-weight: 700;">"FAIR"</span> if that sounds fair.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 10</div>
+</div>
+
+<!-- ============================================
+     SLIDE 11: The Question Hook (Story Begins)
+     Opening the story arc
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Large quotation marks -->
+        <text x="100" y="300" font-size="400" fill="#C9A227" fill-opacity="0.06" font-family="Georgia, serif">"</text>
+        <text x="1600" y="900" font-size="400" fill="#C9A227" fill-opacity="0.06" font-family="Georgia, serif">"</text>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- The question as a pull quote -->
+        <div style="max-width: 1200px; text-align: center;">
+            <div style="margin-bottom: 60px;">
+                <p class="display" style="font-size: 58px; color: #3D2B1F; line-height: 1.4; font-style: italic;">
+                    "Bailey, how do you find the<br>
+                    <span style="color: #C9A227;">TIME</span> to create so many products?"
+                </p>
+            </div>
+
+            <p class="body" style="font-size: 32px; color: #8B8178; margin-bottom: 80px;">
+                Sound familiar?
+            </p>
+
+            <div style="background: white; padding: 50px 80px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); display: inline-block;">
+                <p class="body" style="font-size: 30px; color: #5C4827; margin-bottom: 15px;">
+                    You know <span style="font-weight: 700;">WHAT</span> to do...
+                </p>
+                <p class="body" style="font-size: 30px; color: #3D2B1F;">
+                    You just can't seem to <span style="font-weight: 700;">DO</span> it <span style="color: #C9A227; font-weight: 700;">consistently.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 11</div>
+</div>
+
+<!-- ============================================
+     SLIDE 12: The Answer (Mechanism Tease)
+     The paradigm shift
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Radial glow behind the answer -->
+        <defs>
+            <radialGradient id="answerGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
+            </radialGradient>
+        </defs>
+        <ellipse cx="960" cy="450" rx="500" ry="350" fill="url(#answerGlow)"/>
+    </svg>
+
+    <div class="content flex-center">
+        <!-- The paradigm shift quote -->
+        <div style="max-width: 1200px; text-align: center;">
+            <p class="display" style="font-size: 52px; color: #5C4827; margin-bottom: 30px; font-style: italic;">
+                "I don't find time.
+            </p>
+            <h1 class="display" style="font-size: 90px; color: #C9A227; margin-bottom: 80px; text-shadow: 0 4px 30px rgba(201, 162, 39, 0.3);">
+                I have a SYSTEM."
+            </h1>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+                <div style="width: 100px; height: 2px; background: linear-gradient(90deg, transparent, #C9A227);"></div>
+                <p class="body" style="font-size: 36px; color: #3D2B1F; font-weight: 500;">
+                    And today, I'm giving you that system.
+                </p>
+                <div style="width: 100px; height: 2px; background: linear-gradient(90deg, #C9A227, transparent);"></div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 12</div>
+</div>
+
+<!-- ============================================
+     SLIDE 13: Stick Bonus (Open Loop)
+     Creates anticipation for staying
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FAF3E0 0%, #F5E6D3 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Premium corner accents -->
+        <path d="M 0 0 L 80 0 L 80 3 L 3 3 L 3 80 L 0 80 Z" fill="#C9A227" fill-opacity="0.15"/>
+        <path d="M 1920 0 L 1840 0 L 1840 3 L 1917 3 L 1917 80 L 1920 80 Z" fill="#C9A227" fill-opacity="0.15"/>
+        <path d="M 0 1080 L 80 1080 L 80 1077 L 3 1077 L 3 1000 L 0 1000 Z" fill="#C9A227" fill-opacity="0.15"/>
+        <path d="M 1920 1080 L 1840 1080 L 1840 1077 L 1917 1077 L 1917 1000 L 1920 1000 Z" fill="#C9A227" fill-opacity="0.15"/>
+        <!-- Gift/reward icon suggestion -->
+        <circle cx="1600" cy="300" r="80" fill="#C9A227" fill-opacity="0.05"/>
+    </svg>
+
+    <div class="content flex-center">
+        <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 40px;">
+            If you're still here at minute 85,<br>
+            I'm giving you something special:
+        </p>
+
+        <!-- The bonus card -->
+        <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 60px 80px; border-radius: 30px; box-shadow: 0 25px 70px rgba(92, 72, 39, 0.35); margin-bottom: 50px; position: relative;">
+            <!-- Exclusive badge -->
+            <div style="position: absolute; top: -18px; right: 40px; background: linear-gradient(135deg, #C9A227, #D4A84B); padding: 10px 25px; border-radius: 30px;">
+                <span class="body" style="font-size: 14px; color: white; text-transform: uppercase; letter-spacing: 2px;">Exclusive</span>
+            </div>
+
+            <h2 class="display" style="font-size: 48px; color: #C9A227; text-align: center; margin-bottom: 45px; letter-spacing: 2px;">
+                THE EMPIRE SYSTEM CHECKLIST
+            </h2>
+
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+                    <p class="body" style="font-size: 24px; color: #FFFEF5;">
+                        My exact weekly checklist <span style="color: #D4A84B;">(fill-in-the-blank)</span>
+                    </p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+                    <p class="body" style="font-size: 24px; color: #FFFEF5;">
+                        The "Emergency Mode" protocol <span style="color: #D4A84B;">(for crazy weeks)</span>
+                    </p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+                    <p class="body" style="font-size: 24px; color: #FFFEF5;">
+                        The Progress Tracker template
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <p class="body" style="font-size: 26px; color: #3D2B1F; font-weight: 600; margin-bottom: 10px;">
+                This is <span style="color: #E07A5F;">NOT</span> available anywhere else.
+            </p>
+            <p class="body" style="font-size: 24px; color: #5C4827;">
+                Only for people who stay until the end.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 13</div>
+</div>
+
+<!-- ============================================
+     SLIDE 14: Story - The Daycare Math
+     Relatable pain point
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <circle cx="1650" cy="200" r="180" fill="#E07A5F" fill-opacity="0.04"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; padding-left: 200px;">
+        <div style="max-width: 1100px;">
+            <p class="body" style="font-size: 20px; color: #8B8178; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px;">
+                My Story
+            </p>
+            <h1 class="display" style="font-size: 48px; color: #3D2B1F; margin-bottom: 20px;">
+                I was pregnant with my third child.
+            </h1>
+            <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 50px;">
+                I sat down to do the math on going back to work.
+            </p>
+
+            <!-- The math visualization -->
+            <div style="background: white; padding: 40px 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.06); margin-bottom: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <p class="body" style="font-size: 24px; color: #5C4827;">Daycare for two kids:</p>
+                    <p class="display" style="font-size: 32px; color: #E07A5F;">~$1,500/month</p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p class="body" style="font-size: 24px; color: #5C4827;">My take-home after taxes:</p>
+                    <p class="display" style="font-size: 32px; color: #8B8178;">barely more than that</p>
+                </div>
+            </div>
+
+            <p class="body" style="font-size: 26px; color: #5C4827; margin-bottom: 25px;">
+                So I would be:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 50px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                    <p class="body" style="font-size: 24px; color: #5C4827;">Working 40+ hours a week</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                    <p class="body" style="font-size: 24px; color: #5C4827;">Missing my kids growing up</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                    <p class="body" style="font-size: 24px; color: #5C4827;">Exhausted and stressed</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                    <p class="body" style="font-size: 24px; color: #3D2B1F; font-weight: 600;">To basically <span style="color: #E07A5F;">break even</span></p>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+                <p class="body" style="font-size: 22px; color: #5C4827;">
+                    Type <span style="color: #C9A227; font-weight: 700;">"DONE IT"</span> if you've run this math yourself.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 14</div>
+</div>
+
+<!-- ============================================
+     SLIDE 15: Story - The Side Hustle Graveyard
+     Relatable failures
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Subtle graveyard-like shapes -->
+        <rect x="150" y="800" width="40" height="70" rx="5" fill="#8B8178" fill-opacity="0.06"/>
+        <rect x="220" y="820" width="35" height="50" rx="5" fill="#8B8178" fill-opacity="0.05"/>
+        <rect x="1650" y="810" width="45" height="60" rx="5" fill="#8B8178" fill-opacity="0.05"/>
+        <rect x="1720" y="830" width="35" height="40" rx="5" fill="#8B8178" fill-opacity="0.04"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 52px; color: #3D2B1F; margin-bottom: 60px;">
+            I call this my <span style="color: #8B8178;">"Side Hustle Graveyard."</span>
+        </h1>
+
+        <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 60px;">
+            <!-- Failed ventures -->
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(224, 122, 95, 0.05); padding: 25px 40px; border-radius: 16px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#E07A5F" stroke-width="2"/>
+                    <path d="M8 8l8 8M16 8l-8 8" stroke="#E07A5F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="body" style="font-size: 26px; color: #5C4827;">
+                    <span style="font-weight: 600;">Dropshipping</span> <span style="color: #8B8178;">&#8212; never made a single sale</span>
+                </p>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(224, 122, 95, 0.05); padding: 25px 40px; border-radius: 16px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#E07A5F" stroke-width="2"/>
+                    <path d="M8 8l8 8M16 8l-8 8" stroke="#E07A5F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="body" style="font-size: 26px; color: #5C4827;">
+                    <span style="font-weight: 600;">Kindle publishing</span> <span style="color: #8B8178;">&#8212; 3 months in, $47 total</span>
+                </p>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(224, 122, 95, 0.05); padding: 25px 40px; border-radius: 16px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#E07A5F" stroke-width="2"/>
+                    <path d="M8 8l8 8M16 8l-8 8" stroke="#E07A5F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="body" style="font-size: 26px; color: #5C4827;">
+                    <span style="font-weight: 600;">Affiliate marketing</span> <span style="color: #8B8178;">&#8212; too complicated, gave up</span>
+                </p>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(224, 122, 95, 0.05); padding: 25px 40px; border-radius: 16px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#E07A5F" stroke-width="2"/>
+                    <path d="M8 8l8 8M16 8l-8 8" stroke="#E07A5F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="body" style="font-size: 26px; color: #5C4827;">
+                    <span style="font-weight: 600;">MLM</span> <span style="color: #8B8178;">&#8212; we don't talk about that one</span>
+                </p>
+            </div>
+        </div>
+
+        <p class="body" style="font-size: 28px; color: #5C4827; text-align: center; margin-bottom: 50px;">
+            All those dreams that cost me time and money<br>
+            and went <span style="color: #E07A5F; font-weight: 600;">absolutely nowhere.</span>
+        </p>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <span style="color: #C9A227; font-size: 28px;">&#8594;</span>
+            <p class="body" style="font-size: 22px; color: #5C4827;">
+                Type <span style="color: #C9A227; font-weight: 700;">"GRAVEYARD"</span> if you have one too.
+            </p>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 15</div>
+</div>
+
+<!-- ============================================
+     SLIDE 16: Story - The Tumbler Prison
+     Success that wasn't
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Prison bar suggestion -->
+        <line x1="100" y1="0" x2="100" y2="1080" stroke="#8B8178" stroke-width="3" stroke-opacity="0.04"/>
+        <line x1="160" y1="0" x2="160" y2="1080" stroke="#8B8178" stroke-width="3" stroke-opacity="0.04"/>
+        <line x1="1760" y1="0" x2="1760" y2="1080" stroke="#8B8178" stroke-width="3" stroke-opacity="0.04"/>
+        <line x1="1820" y1="0" x2="1820" y2="1080" stroke="#8B8178" stroke-width="3" stroke-opacity="0.04"/>
+    </svg>
+
+    <div class="content" style="display: flex; align-items: center; padding-left: 200px;">
+        <div style="max-width: 1100px;">
+            <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 20px;">
+                Then I found something that <span style="color: #8B8178;">"worked."</span>
+            </p>
+            <h1 class="display" style="font-size: 44px; color: #3D2B1F; margin-bottom: 15px;">
+                Handmade glitter epoxy tumblers.
+            </h1>
+            <p class="body" style="font-size: 26px; color: #6B8E6B; margin-bottom: 50px;">
+                Orders coming in. Money flowing.
+            </p>
+
+            <p class="body" style="font-size: 28px; color: #5C4827; margin-bottom: 30px;">
+                But here's what <span style="color: #8B8178;">"success"</span> looked like:
+            </p>
+
+            <div style="background: rgba(224, 122, 95, 0.06); padding: 40px 50px; border-radius: 20px; border-left: 4px solid #E07A5F; margin-bottom: 50px;">
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">2 AM, pregnant, <span style="font-weight: 600;">inhaling toxic fumes</span></p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">Garage overflowing with supplies</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">Hands raw from epoxy</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span style="color: #E07A5F; font-size: 24px;">&#8594;</span>
+                        <p class="body" style="font-size: 24px; color: #5C4827;">Couldn't take a day off without losing money</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 40px 60px; border-radius: 20px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); text-align: center;">
+                <p class="display" style="font-size: 36px; color: #3D2B1F;">
+                    I'd built a <span style="color: #E07A5F;">prison</span> and called it a business.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 16</div>
+</div>
+
+<!-- ============================================
+     SLIDE 17: Story - The Pivot
+     Transformation moment
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <!-- Upward momentum lines -->
+        <path d="M 200 800 Q 500 600, 800 500 T 1400 300 T 1700 200" fill="none" stroke="#C9A227" stroke-width="3" stroke-opacity="0.1"/>
+        <path d="M 250 850 Q 550 650, 850 550 T 1450 350 T 1750 250" fill="none" stroke="#6B8E6B" stroke-width="2" stroke-opacity="0.08"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 52px; color: #3D2B1F; margin-bottom: 20px;">
+            I deleted <span style="color: #E07A5F;">ALL</span> my physical products.
+        </h1>
+        <p class="body" style="font-size: 28px; color: #8B8178; margin-bottom: 60px;">
+            Every tumbler. Every handmade item. Gone.
+        </p>
+
+        <div style="background: white; padding: 40px 60px; border-radius: 20px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); margin-bottom: 60px; text-align: center;">
+            <p class="body" style="font-size: 30px; color: #5C4827;">
+                I went all-in on <span style="color: #C9A227; font-weight: 700;">$3 digital designs.</span>
+            </p>
+            <p class="body" style="font-size: 24px; color: #8B8178; margin-top: 15px;">
+                Files people download. No shipping. No inventory.
+            </p>
+        </div>
+
+        <!-- Results -->
+        <div style="background: linear-gradient(145deg, #5C4827, #3D2B1F); padding: 50px 80px; border-radius: 24px; box-shadow: 0 20px 60px rgba(92, 72, 39, 0.35);">
+            <p class="body" style="font-size: 18px; color: #D4A84B; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; text-align: center;">
+                By March 2022
+            </p>
+            <div style="display: flex; gap: 80px; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="#6B8E6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="body" style="font-size: 26px; color: #FFFEF5;">500 listings live</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="#6B8E6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="display" style="font-size: 36px; color: #C9A227;">$115,000 month</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 13l4 4L19 7" stroke="#6B8E6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p class="body" style="font-size: 26px; color: #FFFEF5;">Working 3 hours/week on Etsy</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="body" style="font-size: 32px; color: #5C4827; margin-top: 60px;">
+            Not luck. Not viral. <span style="color: #C9A227; font-weight: 700;">Just system.</span>
+        </p>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 17</div>
+</div>
+
+<!-- ============================================
+     SLIDE 18: "I'm Not Special"
+     Closing the gap
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #FDF6E3 0%, #FAF3E0 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <ellipse cx="960" cy="540" rx="700" ry="450" fill="#C9A227" fill-opacity="0.03"/>
+    </svg>
+
+    <div class="content flex-center">
+        <h1 class="display" style="font-size: 72px; color: #3D2B1F; margin-bottom: 60px;">
+            I'm not special.
+        </h1>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 60px; max-width: 1000px;">
+            <div style="background: rgba(139, 129, 120, 0.1); padding: 15px 30px; border-radius: 40px;">
+                <p class="body" style="font-size: 22px; color: #8B8178;">No art degree</p>
+            </div>
+            <div style="background: rgba(139, 129, 120, 0.1); padding: 15px 30px; border-radius: 40px;">
+                <p class="body" style="font-size: 22px; color: #8B8178;">No tech background</p>
+            </div>
+            <div style="background: rgba(139, 129, 120, 0.1); padding: 15px 30px; border-radius: 40px;">
+                <p class="body" style="font-size: 22px; color: #8B8178;">No business connections</p>
+            </div>
+            <div style="background: rgba(139, 129, 120, 0.1); padding: 15px 30px; border-radius: 40px;">
+                <p class="body" style="font-size: 22px; color: #8B8178;">No trust fund</p>
+            </div>
+            <div style="background: rgba(139, 129, 120, 0.1); padding: 15px 30px; border-radius: 40px;">
+                <p class="body" style="font-size: 22px; color: #8B8178;">No unfair advantages</p>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 50px 80px; border-radius: 24px; box-shadow: 0 15px 50px rgba(61, 43, 31, 0.08); text-align: center; margin-bottom: 50px;">
+            <p class="body" style="font-size: 32px; color: #5C4827; line-height: 1.6;">
+                Just a mom of four who found a <span style="color: #C9A227; font-weight: 600;">system</span><br>
+                and followed it <span style="color: #C9A227; font-weight: 600;">consistently</span>.
+            </p>
+        </div>
+
+        <p class="body" style="font-size: 30px; color: #5C4827; text-align: center;">
+            The only difference between us?
+        </p>
+        <p class="display" style="font-size: 38px; color: #3D2B1F; text-align: center; margin-top: 15px;">
+            I started before you. <span style="color: #C9A227;">That's it.</span>
+        </p>
+    </div>
+    <div class="slide-label" style="color: rgba(0,0,0,0.2);">SLIDE 18</div>
+</div>
+
+<!-- ============================================
+     SLIDE 19: Ready Check (Transition)
+     Launch energy
+     ============================================ -->
+<div class="slide" style="background: linear-gradient(145deg, #5C4827 0%, #3D2B1F 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <defs>
+            <radialGradient id="launchGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
+            </radialGradient>
+        </defs>
+        <ellipse cx="960" cy="540" rx="600" ry="400" fill="url(#launchGlow)"/>
+        <!-- Upward arrows/chevrons suggesting momentum -->
+        <path d="M 920 700 L 960 660 L 1000 700" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.15"/>
+        <path d="M 920 740 L 960 700 L 1000 740" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.1"/>
+        <path d="M 920 780 L 960 740 L 1000 780" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.05"/>
+    </svg>
+
+    <div class="content flex-center">
+        <p class="body" style="font-size: 32px; color: #FFFEF5; margin-bottom: 40px;">
+            Type <span style="color: #C9A227; font-weight: 700;">"READY"</span> if you're locked in<br>
+            for the next 90 minutes.
+        </p>
+
+        <h1 class="display" style="font-size: 90px; color: #C9A227; text-shadow: 0 6px 60px rgba(201, 162, 39, 0.5); margin-top: 40px;">
+            Let's build your empire.
+        </h1>
+
+        <!-- Decorative gold line -->
+        <div style="width: 200px; height: 3px; background: linear-gradient(90deg, transparent, #C9A227, transparent); margin-top: 60px;"></div>
+    </div>
+    <div class="slide-label">SLIDE 19</div>
+</div>
+
+</body>
+</html>
