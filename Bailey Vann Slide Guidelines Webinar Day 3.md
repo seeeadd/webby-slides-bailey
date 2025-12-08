@@ -7,7 +7,32 @@
 
 **STOP using fallback fonts. The actual OGG Bold and Satoshi fonts are hosted on GitHub.**
 
-Every HTML file MUST start with these @font-face declarations. No exceptions. No "Georgia fallback." The real fonts.
+### OPTION 1: USE BASE64 EMBEDDED FONTS (MOST RELIABLE)
+
+Extract the base64 font data from the working Day 1 slides file:
+`/mnt/user-data/uploads/Day_1_Slides_194-242__4_.html`
+
+**HOW TO EXTRACT:**
+
+1. Open the Day 1 HTML file
+2. Find the `@font-face` declarations in the `<style>` block
+3. Copy the ENTIRE @font-face blocks including the base64 data
+4. Paste into your new HTML file
+
+The base64 format looks like this:
+```css
+@font-face {
+    font-family: 'Ogg Bold';
+    src: url(data:font/woff2;base64,d09GMgABAAAAAC...[very long string]...==) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+```
+
+**CRITICAL:** The base64 string will be VERY long (thousands of characters). Copy ALL of it.
+
+### OPTION 2: USE GITHUB URLS (IF BASE64 NOT AVAILABLE)
 
 ```css
 @font-face {
@@ -28,6 +53,29 @@ Every HTML file MUST start with these @font-face declarations. No exceptions. No
     font-display: swap;
 }
 ```
+
+### ⚠️ FONT USAGE MUST MATCH EXACTLY
+
+When USING the fonts, the font-family name MUST match the @font-face declaration EXACTLY:
+
+```css
+/* ✅ CORRECT — matches @font-face declaration exactly */
+font-family: 'Ogg Bold', serif;
+font-family: 'Satoshi', sans-serif;
+
+/* ❌ WRONG — these will NOT work */
+font-family: 'OGG Bold', serif;      /* wrong case */
+font-family: 'Ogg', serif;           /* missing 'Bold' */
+font-family: 'ogg bold', serif;      /* wrong case */
+font-family: Ogg Bold, serif;        /* missing quotes */
+font-family: 'Satoshi Variable', sans-serif;  /* wrong name */
+```
+
+### IF FONTS DON'T RENDER
+
+1. Use base64 embedded fonts from Day 1 slides (most reliable)
+2. Check browser console for 404 errors on font URLs
+3. Ensure font-family in usage EXACTLY matches @font-face declaration (case-sensitive)
 
 ### SLIDE DIMENSIONS
 
@@ -595,7 +643,8 @@ Don't use icon libraries. Build custom SVG graphics for:
 
 Before you consider ANY slide done:
 
-- [ ] **Fonts are imported from GitHub** — OGG Bold and Satoshi, not fallbacks
+- [ ] **Fonts are BASE64 embedded** — Extract from Day 1 slides, or use GitHub URLs as fallback
+- [ ] **Font-family EXACT match** — `'Ogg Bold'` and `'Satoshi'` (case-sensitive, with quotes)
 - [ ] **No generic blobs** — Background shapes use SVG gradients at 0.02-0.1 opacity
 - [ ] **No gray shadows** — All shadows are color-tinted
 - [ ] **No plain white cards** — Cards have tinted backgrounds or gradients
