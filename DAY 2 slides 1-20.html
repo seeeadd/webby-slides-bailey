@@ -49,37 +49,21 @@
     font-style: normal;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
     --bg-cream: #FDF8F6;
     --bg-blush-white: #FFFBFA;
-    --bg-soft: #FAF5F3;
-    --bg-card: #FFFFFF;
+    --pink-primary: #D4727A;
+    --pink-blush: #E8A5AB;
     --bg-rose-dark: #8B4D5C;
     --bg-rose-deeper: #5C3341;
-    --bg-mauve-dark: #6B4F5C;
-    --pink-primary: #D4727A;
-    --pink-rose: #C76B73;
-    --pink-blush: #E8A5AB;
-    --pink-dusty: #B8848B;
-    --pink-coral: #E07B6C;
     --sage-success: #7CB87C;
-    --sage-muted: #8BA88B;
     --coral-warning: #D4685A;
-    --teal-callback: #1B8A8A;
     --gold-premium: #C9A227;
     --text-dark: #2D3436;
-    --text-rose: #5C3341;
     --text-muted: #636E72;
     --text-light: #FFFBFA;
-    --card-blush-tint: #FEF5F4;
-    --card-rose-tint: #FDF0EE;
-    --card-sage-tint: #F5F9F5;
 }
 
 .slide {
@@ -98,56 +82,48 @@
     height: 100%;
     pointer-events: none;
 }
-
-.content {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-}
-
-.flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.text-center { text-align: center; }
     </style>
 </head>
 <body>
 
-<!-- SLIDE 1: Hero/Title Slide -->
+<!-- SLIDE 1: Hero Title -->
 <div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="heroBlush1" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.15" />
+            <linearGradient id="hero1" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.12" />
                 <stop offset="100%" style="stop-color:#8B4D5C;stop-opacity:0" />
             </linearGradient>
-            <linearGradient id="heroBlush2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.1" />
+            <linearGradient id="hero2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.08" />
                 <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1600" cy="250" rx="600" ry="450" fill="url(#heroBlush1)"/>
-        <ellipse cx="200" cy="850" rx="500" ry="400" fill="url(#heroBlush2)"/>
-        <ellipse cx="960" cy="900" rx="300" ry="200" fill="url(#heroBlush1)"/>
+        <ellipse cx="1550" cy="280" rx="550" ry="420" fill="url(#hero1)"/>
+        <ellipse cx="250" cy="820" rx="450" ry="350" fill="url(#hero2)"/>
+        <!-- Decorative geometric lines -->
+        <line x1="100" y1="150" x2="300" y2="150" stroke="#E8A5AB" stroke-width="1" stroke-opacity="0.3"/>
+        <line x1="1620" y1="930" x2="1820" y2="930" stroke="#E8A5AB" stroke-width="1" stroke-opacity="0.3"/>
+        <circle cx="320" cy="150" r="4" fill="#E8A5AB" fill-opacity="0.4"/>
+        <circle cx="1600" cy="930" r="4" fill="#E8A5AB" fill-opacity="0.4"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 40px; font-weight: 600;">
+    <!-- Large decorative "2" -->
+    <div style="position: absolute; right: 120px; top: 50%; transform: translateY(-50%); font-family: 'Ogg Bold', serif; font-size: 450px; color: rgba(232,165,171,0.08); line-height: 1;">2</div>
+    
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <div>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 30px; font-weight: 600;">
                 THE ETSY UPGRADE CHALLENGE
             </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 120px; color: #FFFBFA; line-height: 1.1; margin-bottom: 30px;">
-                Day 2
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 140px; color: #FFFBFA; line-height: 0.95; margin-bottom: 25px;">
+                Day Two
             </h1>
-            <p style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #E8A5AB; margin-bottom: 50px;">
+            <div style="width: 80px; height: 3px; background: linear-gradient(90deg, #D4727A, #E8A5AB); margin-bottom: 35px;"></div>
+            <p style="font-family: 'Ogg Bold', serif; font-size: 48px; color: #E8A5AB;">
                 The Winner Hypothesis
             </p>
-            <div style="width: 120px; height: 4px; background: linear-gradient(90deg, #D4727A 0%, #E8A5AB 100%); margin: 0 auto 40px; border-radius: 2px;"></div>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: rgba(255,251,250,0.7);">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: rgba(255,251,250,0.6); margin-top: 25px;">
                 Research before you create. Validate before you invest.
             </p>
         </div>
@@ -155,103 +131,123 @@
 </div>
 
 <!-- SLIDE 2: Mood Check-In -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="moodPink" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.06" />
+            <linearGradient id="mood1" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1650" cy="200" rx="450" ry="380" fill="url(#moodPink)"/>
-        <ellipse cx="150" cy="900" rx="350" ry="280" fill="url(#moodPink)"/>
+        <ellipse cx="1650" cy="200" rx="400" ry="350" fill="url(#mood1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1400px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 35px; font-weight: 600;">
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; padding: 80px 140px;">
+        <!-- Left side: Question -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 25px; font-weight: 600;">
                 BEFORE WE BEGIN
             </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 80px; color: #2D3436; line-height: 1.2; margin-bottom: 60px;">
-                How are we feeling <span style="color: #D4727A;">today?</span>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; line-height: 1.1;">
+                How are we<br/>feeling <span style="color: #D4727A;">today?</span>
             </h1>
-            
-            <div style="display: flex; justify-content: center; gap: 50px; margin-top: 40px;">
-                <div style="text-align: center;">
-                    <div style="width: 120px; height: 120px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); border-radius: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(212, 114, 122, 0.15); margin-bottom: 20px; border: 1px solid rgba(212, 114, 122, 0.1);">
-                        <span style="font-size: 56px;">🔥</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; font-weight: 500;">Fired up!</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 120px; height: 120px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); border-radius: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(212, 114, 122, 0.15); margin-bottom: 20px; border: 1px solid rgba(212, 114, 122, 0.1);">
-                        <span style="font-size: 56px;">😊</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; font-weight: 500;">Feeling good</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 120px; height: 120px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); border-radius: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(212, 114, 122, 0.15); margin-bottom: 20px; border: 1px solid rgba(212, 114, 122, 0.1);">
-                        <span style="font-size: 56px;">🤔</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; font-weight: 500;">A bit nervous</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 120px; height: 120px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); border-radius: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(212, 114, 122, 0.15); margin-bottom: 20px; border: 1px solid rgba(212, 114, 122, 0.1);">
-                        <span style="font-size: 56px;">😅</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; font-weight: 500;">Overwhelmed</p>
-                </div>
-            </div>
-            
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #636E72; margin-top: 60px;">
-                Drop your emoji in the chat!
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #636E72; margin-top: 30px;">
+                Drop your emoji in the chat
             </p>
+        </div>
+        
+        <!-- Right side: Emoji options - ONLY PLACE WITH EMOJIS -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 20px; padding-left: 80px;">
+            <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 24px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                <span style="font-size: 42px;">🔥</span>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 500;">Fired up & ready</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 24px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                <span style="font-size: 42px;">😊</span>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 500;">Feeling good</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 24px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                <span style="font-size: 42px;">🤔</span>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 500;">A bit nervous</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 25px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 24px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                <span style="font-size: 42px;">😅</span>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 500;">A little overwhelmed</span>
+            </div>
         </div>
     </div>
 </div>
 
 <!-- SLIDE 3: Homework Check-In -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FAF5F3 100%);">
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="hwPink" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.08" />
+            <linearGradient id="hw1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.06" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1700" cy="540" rx="500" ry="600" fill="url(#hwPink)"/>
+        <ellipse cx="1700" cy="540" rx="450" ry="550" fill="url(#hw1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 35px; font-weight: 600;">
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <div style="flex: 1;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 25px; font-weight: 600;">
                 HOMEWORK CHECK
             </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; line-height: 1.2; margin-bottom: 50px;">
-                Did you delete your <span style="color: #D4727A;">worst listings?</span>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 68px; color: #2D3436; line-height: 1.15; margin-bottom: 50px;">
+                Did you delete<br/>your <span style="color: #D4727A;">worst listings?</span>
             </h1>
             
-            <div style="display: flex; justify-content: center; gap: 80px; margin-top: 50px;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #F5F9F5 100%); padding: 50px 70px; border-radius: 24px; box-shadow: 0 20px 60px rgba(124, 184, 124, 0.12); border: 1px solid rgba(124, 184, 124, 0.15);">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(124, 184, 124, 0.35);">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <path d="M8 20 L16 28 L32 10" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <div style="display: flex; gap: 40px;">
+                <!-- Yes card -->
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #F5F9F5 100%); padding: 40px 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(124,184,124,0.12); border: 1px solid rgba(124,184,124,0.12); text-align: center;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(124,184,124,0.35);">
+                        <svg width="35" height="35" viewBox="0 0 35 35">
+                            <path d="M7 17 L14 24 L28 9" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <p style="font-family: 'Ogg Bold', serif; font-size: 36px; color: #2D3436;">Yes!</p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; margin-top: 10px;">Type "DELETED" in chat</p>
+                    <p style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #2D3436; margin-bottom: 10px;">Yes!</p>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72;">Type "DELETED"</p>
                 </div>
                 
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 50px 70px; border-radius: 24px; box-shadow: 0 20px 60px rgba(212, 114, 122, 0.12); border: 1px solid rgba(212, 114, 122, 0.15);">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #E8A5AB 0%, #D4727A 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 30px rgba(212, 114, 122, 0.35);">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <path d="M12 28 L28 12 M12 12 L28 28" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <!-- No card -->
+                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(212,114,122,0.12); border: 1px solid rgba(212,114,122,0.12); text-align: center;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(212,114,122,0.35);">
+                        <svg width="35" height="35" viewBox="0 0 35 35">
+                            <path d="M10 10 L25 25 M25 10 L10 25" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <p style="font-family: 'Ogg Bold', serif; font-size: 36px; color: #2D3436;">Not yet</p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; margin-top: 10px;">Type "CHICKEN" in chat</p>
+                    <p style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #2D3436; margin-bottom: 10px;">Not yet</p>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72;">Type "CHICKEN"</p>
                 </div>
             </div>
+        </div>
+        
+        <!-- Right side: Trash can illustration -->
+        <div style="flex: 0.6; display: flex; justify-content: center; align-items: center;">
+            <svg width="280" height="320" viewBox="0 0 280 320">
+                <defs>
+                    <linearGradient id="trashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D4727A"/>
+                        <stop offset="100%" style="stop-color:#E8A5AB"/>
+                    </linearGradient>
+                </defs>
+                <!-- Trash can body -->
+                <rect x="50" y="80" width="180" height="220" rx="15" fill="url(#trashGrad)" opacity="0.15"/>
+                <rect x="60" y="90" width="160" height="200" rx="10" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <!-- Lid -->
+                <rect x="40" y="60" width="200" height="25" rx="8" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <rect x="110" y="40" width="60" height="25" rx="6" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <!-- Lines on can -->
+                <line x1="100" y1="120" x2="100" y2="260" stroke="#D4727A" stroke-width="2" stroke-opacity="0.5"/>
+                <line x1="140" y1="120" x2="140" y2="260" stroke="#D4727A" stroke-width="2" stroke-opacity="0.5"/>
+                <line x1="180" y1="120" x2="180" y2="260" stroke="#D4727A" stroke-width="2" stroke-opacity="0.5"/>
+                <!-- Sparkles -->
+                <circle cx="250" cy="100" r="4" fill="#7CB87C"/>
+                <circle cx="30" cy="150" r="3" fill="#E8A5AB"/>
+                <path d="M260 150 L265 160 L275 155 L265 165 L270 175 L260 167 L250 175 L255 165 L245 155 L255 160 Z" fill="#7CB87C" opacity="0.6"/>
+            </svg>
         </div>
     </div>
 </div>
@@ -260,63 +256,97 @@
 <div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="celebBlush" x1="50%" y1="0%" x2="50%" y2="100%">
-                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.12" />
+            <linearGradient id="celeb1" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
                 <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="960" cy="200" rx="800" ry="400" fill="url(#celebBlush)"/>
-        <ellipse cx="300" cy="800" rx="400" ry="350" fill="url(#celebBlush)"/>
-        <ellipse cx="1600" cy="750" rx="350" ry="300" fill="url(#celebBlush)"/>
+        <ellipse cx="960" cy="200" rx="700" ry="350" fill="url(#celeb1)"/>
+        <!-- Confetti/celebration elements -->
+        <circle cx="200" cy="300" r="8" fill="#E8A5AB" opacity="0.4"/>
+        <circle cx="1700" cy="250" r="6" fill="#7CB87C" opacity="0.5"/>
+        <circle cx="300" cy="700" r="5" fill="#C9A227" opacity="0.4"/>
+        <circle cx="1600" cy="800" r="7" fill="#E8A5AB" opacity="0.3"/>
+        <rect x="150" y="500" width="15" height="15" rx="3" fill="#D4727A" opacity="0.3" transform="rotate(45 157 507)"/>
+        <rect x="1750" y="400" width="12" height="12" rx="2" fill="#7CB87C" opacity="0.4" transform="rotate(30 1756 406)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <div style="font-size: 80px; margin-bottom: 40px;">🎉</div>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 90px; color: #FFFBFA; line-height: 1.1; margin-bottom: 40px;">
-                That took <span style="color: #E8A5AB;">courage!</span>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center; max-width: 1000px;">
+            <!-- Trophy/Star illustration -->
+            <svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom: 40px;">
+                <defs>
+                    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#C9A227"/>
+                        <stop offset="100%" style="stop-color:#E8A5AB"/>
+                    </linearGradient>
+                </defs>
+                <path d="M60 10 L72 45 L110 45 L80 68 L90 105 L60 82 L30 105 L40 68 L10 45 L48 45 Z" fill="url(#starGrad)"/>
+            </svg>
+            
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 90px; color: #FFFBFA; line-height: 1.05; margin-bottom: 30px;">
+                That took <span style="color: #E8A5AB;">courage.</span>
             </h1>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: #E8A5AB; line-height: 1.6; margin-bottom: 50px;">
-                Letting go of what's not working<br>makes room for what will.
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: rgba(255,251,250,0.8); line-height: 1.6; margin-bottom: 50px;">
+                Letting go of what's not working<br/>makes room for what will.
             </p>
-            <div style="display: inline-block; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); padding: 20px 50px; border-radius: 50px; box-shadow: 0 15px 40px rgba(212, 114, 122, 0.4);">
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: white; font-weight: 600;">
-                    You just leveled up ✨
-                </p>
+            <div style="display: inline-block; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); padding: 18px 45px; border-radius: 50px; box-shadow: 0 12px 35px rgba(212,114,122,0.4);">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: white; font-weight: 600;">You just leveled up</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- SLIDE 5: For the "Chickens" -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
+<!-- SLIDE 5: For the Chickens - Empathy -->
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="chickenPink" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
+            <linearGradient id="emp1" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.04" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="200" cy="200" rx="400" ry="350" fill="url(#chickenPink)"/>
-        <ellipse cx="1750" cy="850" rx="350" ry="300" fill="url(#chickenPink)"/>
+        <ellipse cx="200" cy="200" rx="350" ry="300" fill="url(#emp1)"/>
+        <ellipse cx="1750" cy="850" rx="300" ry="250" fill="url(#emp1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1100px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 35px; font-weight: 600;">
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <!-- Left: Heart illustration -->
+        <div style="flex: 0.5; display: flex; justify-content: center;">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <defs>
+                    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D4727A"/>
+                        <stop offset="100%" style="stop-color:#E8A5AB"/>
+                    </linearGradient>
+                </defs>
+                <path d="M100 170 C30 120 10 70 10 50 C10 25 30 10 55 10 C80 10 100 35 100 55 C100 35 120 10 145 10 C170 10 190 25 190 50 C190 70 170 120 100 170Z" fill="url(#heartGrad)" opacity="0.2"/>
+                <path d="M100 170 C30 120 10 70 10 50 C10 25 30 10 55 10 C80 10 100 35 100 55 C100 35 120 10 145 10 C170 10 190 25 190 50 C190 70 170 120 100 170Z" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <!-- Band-aid on heart -->
+                <rect x="70" y="60" width="60" height="25" rx="5" fill="#FEF5F4" stroke="#E8A5AB" stroke-width="2"/>
+                <line x1="82" y1="65" x2="82" y2="80" stroke="#E8A5AB" stroke-width="1.5"/>
+                <line x1="92" y1="65" x2="92" y2="80" stroke="#E8A5AB" stroke-width="1.5"/>
+                <line x1="108" y1="65" x2="108" y2="80" stroke="#E8A5AB" stroke-width="1.5"/>
+                <line x1="118" y1="65" x2="118" y2="80" stroke="#E8A5AB" stroke-width="1.5"/>
+            </svg>
+        </div>
+        
+        <!-- Right: Content -->
+        <div style="flex: 1;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 25px; font-weight: 600;">
                 FOR THE "CHICKENS"
             </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 68px; color: #2D3436; line-height: 1.2; margin-bottom: 45px;">
-                It's okay to feel <span style="color: #D4727A;">attached.</span>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 64px; color: #2D3436; line-height: 1.15; margin-bottom: 35px;">
+                It's okay to feel<br/><span style="color: #D4727A;">attached.</span>
             </h1>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #636E72; line-height: 1.7; margin-bottom: 50px;">
-                Those listings represent your time, your effort, your hope.<br>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; line-height: 1.7; margin-bottom: 40px;">
+                Those listings represent your time, your effort, your hope.<br/>
                 But holding onto what's not selling doesn't serve your future.
             </p>
             
-            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 45px 60px; border-radius: 24px; box-shadow: 0 20px 60px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); display: inline-block;">
-                <p style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #5C3341; line-height: 1.5;">
-                    "Deleting doesn't mean you failed.<br>
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08); max-width: 600px;">
+                <p style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #5C3341; line-height: 1.5;">
+                    "Deleting doesn't mean you failed.<br/>
                     <span style="color: #D4727A;">It means you're making room to win."</span>
                 </p>
             </div>
@@ -324,47 +354,45 @@
     </div>
 </div>
 
-<!-- SLIDE 6: Feeling Check Reflection -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FAF5F3 100%);">
+<!-- SLIDE 6: Feeling Check - Emojis allowed here -->
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="reflectPink" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.06" />
+            <linearGradient id="feel1" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.05" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1600" cy="900" rx="500" ry="400" fill="url(#reflectPink)"/>
+        <ellipse cx="1600" cy="850" rx="450" ry="350" fill="url(#feel1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1100px;">
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; line-height: 1.2; margin-bottom: 50px;">
-                How did it <span style="color: #D4727A;">feel</span> to delete?
-            </h1>
-            
-            <div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); min-width: 200px;">
-                    <span style="font-size: 48px; display: block; margin-bottom: 15px;">😰</span>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">Terrifying</p>
-                </div>
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); min-width: 200px;">
-                    <span style="font-size: 48px; display: block; margin-bottom: 15px;">😮‍💨</span>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">Relieving</p>
-                </div>
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); min-width: 200px;">
-                    <span style="font-size: 48px; display: block; margin-bottom: 15px;">💪</span>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">Empowering</p>
-                </div>
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); min-width: 200px;">
-                    <span style="font-size: 48px; display: block; margin-bottom: 15px;">🤷‍♀️</span>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">All of the above</p>
-                </div>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 140px;">
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; line-height: 1.15; margin-bottom: 60px; text-align: center;">
+            How did it <span style="color: #D4727A;">feel</span> to delete?
+        </h1>
+        
+        <div style="display: flex; gap: 35px;">
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); text-align: center; min-width: 180px;">
+                <span style="font-size: 56px; display: block; margin-bottom: 15px;">😰</span>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">Terrifying</p>
             </div>
-            
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; margin-top: 60px;">
-                Every feeling is valid. Share yours in the chat!
-            </p>
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); text-align: center; min-width: 180px;">
+                <span style="font-size: 56px; display: block; margin-bottom: 15px;">😮‍💨</span>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">Relieving</p>
+            </div>
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); text-align: center; min-width: 180px;">
+                <span style="font-size: 56px; display: block; margin-bottom: 15px;">💪</span>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">Empowering</p>
+            </div>
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px 45px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); text-align: center; min-width: 180px;">
+                <span style="font-size: 56px; display: block; margin-bottom: 15px;">🤷‍♀️</span>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 500;">All of the above</p>
+            </div>
         </div>
+        
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #636E72; margin-top: 50px;">
+            Every feeling is valid. Share yours in the chat!
+        </p>
     </div>
 </div>
 
@@ -372,375 +400,502 @@
 <div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="whyBlush" x1="30%" y1="0%" x2="70%" y2="100%">
+            <linearGradient id="why1" x1="30%" y1="0%" x2="70%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.08" />
+                <stop offset="100%" style="stop-color:#8B4D5C;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1100" cy="350" rx="550" ry="400" fill="url(#why1)"/>
+        <ellipse cx="400" cy="750" rx="350" ry="280" fill="url(#why1)"/>
+    </svg>
+    
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <div style="flex: 1;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 30px; font-weight: 600;">
+                REMEMBER
+            </p>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 120px; color: #FFFBFA; line-height: 1;">
+                Your <span style="color: #E8A5AB;">WHY</span>
+            </h1>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: rgba(255,251,250,0.75); line-height: 1.6; margin-top: 40px; max-width: 600px;">
+                Why did you start this Etsy journey?<br/>
+                What would consistent income mean for your life?
+            </p>
+        </div>
+        
+        <!-- Right: Visual icons -->
+        <div style="flex: 0.8; display: flex; flex-direction: column; gap: 25px; align-items: flex-end;">
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.08); padding: 22px 35px; border-radius: 16px; border: 1px solid rgba(232,165,171,0.15);">
+                <svg width="35" height="35" viewBox="0 0 35 35">
+                    <circle cx="17.5" cy="17.5" r="14" fill="none" stroke="#E8A5AB" stroke-width="2"/>
+                    <path d="M12 17.5 L15.5 21 L23 13" stroke="#E8A5AB" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #E8A5AB; font-weight: 500;">Freedom</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.08); padding: 22px 35px; border-radius: 16px; border: 1px solid rgba(232,165,171,0.15);">
+                <svg width="35" height="35" viewBox="0 0 35 35">
+                    <circle cx="17.5" cy="12" r="8" fill="none" stroke="#E8A5AB" stroke-width="2"/>
+                    <path d="M13 27 L17.5 20 L22 27" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #E8A5AB; font-weight: 500;">Creativity</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.08); padding: 22px 35px; border-radius: 16px; border: 1px solid rgba(232,165,171,0.15);">
+                <svg width="35" height="35" viewBox="0 0 35 35">
+                    <rect x="8" y="15" width="19" height="14" rx="3" fill="none" stroke="#E8A5AB" stroke-width="2"/>
+                    <path d="M12 15 L12 10 A5.5 5.5 0 0 1 23 10 L23 15" fill="none" stroke="#E8A5AB" stroke-width="2"/>
+                </svg>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #E8A5AB; font-weight: 500;">Security</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.08); padding: 22px 35px; border-radius: 16px; border: 1px solid rgba(232,165,171,0.15);">
+                <svg width="35" height="35" viewBox="0 0 35 35">
+                    <path d="M17.5 28 C8 22 4 16 4 11 C4 6 8 3 13 3 C16.5 3 17.5 6 17.5 8 C17.5 6 18.5 3 22 3 C27 3 31 6 31 11 C31 16 27 22 17.5 28Z" fill="none" stroke="#E8A5AB" stroke-width="2"/>
+                </svg>
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #E8A5AB; font-weight: 500;">Family</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 8: Day 1 Recap Header -->
+<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="recap1" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
                 <stop offset="100%" style="stop-color:#8B4D5C;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1100" cy="350" rx="600" ry="450" fill="url(#whyBlush)"/>
-        <ellipse cx="400" cy="800" rx="400" ry="300" fill="url(#whyBlush)"/>
+        <ellipse cx="1600" cy="300" rx="500" ry="400" fill="url(#recap1)"/>
+        <ellipse cx="250" cy="800" rx="350" ry="280" fill="url(#recap1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; text-transform: uppercase; letter-spacing: 5px; color: #E8A5AB; margin-bottom: 40px; font-weight: 600;">
-                REMEMBER
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <div style="flex: 1;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 25px; font-weight: 600;">
+                QUICK REFRESH
             </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 90px; color: #FFFBFA; line-height: 1.1; margin-bottom: 50px;">
-                Your <span style="color: #E8A5AB;">WHY</span>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 96px; color: #FFFBFA; line-height: 1.05;">
+                What we<br/>covered in<br/><span style="color: #E8A5AB;">Day 1</span>
             </h1>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: rgba(255,251,250,0.85); line-height: 1.7;">
-                Why did you start this Etsy journey?<br>
-                What would consistent income mean for your life?
-            </p>
-            
-            <div style="margin-top: 60px; display: flex; justify-content: center; gap: 40px;">
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 25px 40px; border-radius: 16px; border: 1px solid rgba(232, 165, 171, 0.2);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #E8A5AB;">Freedom</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 25px 40px; border-radius: 16px; border: 1px solid rgba(232, 165, 171, 0.2);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #E8A5AB;">Creativity</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 25px 40px; border-radius: 16px; border: 1px solid rgba(232, 165, 171, 0.2);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #E8A5AB;">Security</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 25px 40px; border-radius: 16px; border: 1px solid rgba(232, 165, 171, 0.2);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #E8A5AB;">Family</p>
-                </div>
-            </div>
+        </div>
+        
+        <!-- Custom SVG - Rewind/Recap visual -->
+        <div style="flex: 0.6; display: flex; justify-content: center; align-items: center;">
+            <svg width="320" height="320" viewBox="0 0 320 320">
+                <defs>
+                    <linearGradient id="recapCircle" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E8A5AB"/>
+                        <stop offset="100%" style="stop-color:#D4727A"/>
+                    </linearGradient>
+                </defs>
+                <!-- Outer circle -->
+                <circle cx="160" cy="160" r="140" fill="none" stroke="url(#recapCircle)" stroke-width="4" opacity="0.3"/>
+                <!-- Progress arc -->
+                <path d="M160 20 A140 140 0 1 1 50 235" fill="none" stroke="url(#recapCircle)" stroke-width="8" stroke-linecap="round"/>
+                <!-- Arrow at end -->
+                <polygon points="40,210 65,240 70,205" fill="#E8A5AB"/>
+                <!-- Inner content - "1" -->
+                <text x="160" y="180" font-family="'Ogg Bold', serif" font-size="100" fill="#E8A5AB" text-anchor="middle">1</text>
+                <!-- Small dots around -->
+                <circle cx="160" cy="20" r="8" fill="#E8A5AB"/>
+                <circle cx="280" cy="100" r="6" fill="#E8A5AB" opacity="0.6"/>
+                <circle cx="280" cy="220" r="5" fill="#E8A5AB" opacity="0.4"/>
+            </svg>
         </div>
     </div>
 </div>
 
-<!-- SLIDE 8: Recap - Old Belief -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
+<!-- SLIDE 9: Day 1 Key Takeaways -->
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="oldPink" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.06" />
-                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
-            </linearGradient>
-        </defs>
-        <ellipse cx="1650" cy="300" rx="450" ry="380" fill="url(#oldPink)"/>
-    </svg>
-    
-    <div class="content flex-center">
-        <div style="max-width: 1300px; display: flex; align-items: center; gap: 100px;">
-            <div style="flex: 1;">
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 4px; color: #D4685A; margin-bottom: 25px; font-weight: 600;">
-                    DAY 1 RECAP
-                </p>
-                <h1 style="font-family: 'Ogg Bold', serif; font-size: 64px; color: #2D3436; line-height: 1.15; margin-bottom: 35px;">
-                    The <span style="color: #D4685A;">Old Belief</span>
-                </h1>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: #636E72; line-height: 1.7;">
-                    "If I just create more listings, eventually something will sell."
-                </p>
-            </div>
-            
-            <div style="flex: 1;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, rgba(212, 104, 90, 0.05) 100%); padding: 50px; border-radius: 24px; box-shadow: 0 20px 60px rgba(212, 104, 90, 0.1); border: 1px solid rgba(212, 104, 90, 0.1);">
-                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #D4685A 0%, #C05A4D 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(212, 104, 90, 0.35);">
-                        <svg width="35" height="35" viewBox="0 0 35 35">
-                            <path d="M8 8 L27 27 M27 8 L8 27" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #D4685A; margin-bottom: 15px;">
-                        The Spray & Pray Method
-                    </p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #636E72; line-height: 1.6;">
-                        More listings ≠ More sales<br>
-                        It just means more work with no guarantee.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE 9: Recap - New Truth -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
-    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-        <defs>
-            <linearGradient id="newPink" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#7CB87C;stop-opacity:0.06" />
-                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
-            </linearGradient>
-        </defs>
-        <ellipse cx="250" cy="800" rx="450" ry="380" fill="url(#newPink)"/>
-    </svg>
-    
-    <div class="content flex-center">
-        <div style="max-width: 1300px; display: flex; align-items: center; gap: 100px;">
-            <div style="flex: 1;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #F5F9F5 100%); padding: 50px; border-radius: 24px; box-shadow: 0 20px 60px rgba(124, 184, 124, 0.1); border: 1px solid rgba(124, 184, 124, 0.1);">
-                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(124, 184, 124, 0.35);">
-                        <svg width="35" height="35" viewBox="0 0 35 35">
-                            <path d="M6 17 L14 25 L29 8" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <p style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #7CB87C; margin-bottom: 15px;">
-                        The Strategic Method
-                    </p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #636E72; line-height: 1.6;">
-                        Research what's already selling.<br>
-                        Then create with confidence.
-                    </p>
-                </div>
-            </div>
-            
-            <div style="flex: 1;">
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 4px; color: #7CB87C; margin-bottom: 25px; font-weight: 600;">
-                    THE NEW TRUTH
-                </p>
-                <h1 style="font-family: 'Ogg Bold', serif; font-size: 64px; color: #2D3436; line-height: 1.15; margin-bottom: 35px;">
-                    Create what <span style="color: #7CB87C;">sells.</span>
-                </h1>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: #636E72; line-height: 1.7;">
-                    "Before I create anything, I research what buyers are actively searching for and buying."
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE 10: Key Insight -->
-<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
-    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-        <defs>
-            <linearGradient id="insightBlush" x1="50%" y1="0%" x2="50%" y2="100%">
-                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
-                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
-            </linearGradient>
-        </defs>
-        <ellipse cx="960" cy="400" rx="700" ry="500" fill="url(#insightBlush)"/>
-    </svg>
-    
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1300px;">
-            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center; margin: 0 auto 50px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.4);">
-                <svg width="50" height="50" viewBox="0 0 50 50">
-                    <circle cx="25" cy="20" r="14" fill="none" stroke="white" stroke-width="3"/>
-                    <path d="M20 34 L30 34 M21 38 L29 38 M22 42 L28 42" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                </svg>
-            </div>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #FFFBFA; line-height: 1.2; margin-bottom: 50px;">
-                The best ideas come from<br>
-                <span style="color: #E8A5AB;">observing what's already working.</span>
-            </h1>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: rgba(255,251,250,0.8);">
-                This is the foundation of the Winner Hypothesis.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE 11: Tonight's Promise Part 1 -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
-    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-        <defs>
-            <linearGradient id="promisePink" x1="100%" y1="0%" x2="0%" y2="100%">
+            <linearGradient id="takeaway1" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1700" cy="200" rx="400" ry="350" fill="url(#promisePink)"/>
+        <ellipse cx="1700" cy="200" rx="400" ry="320" fill="url(#takeaway1)"/>
+        <ellipse cx="200" cy="900" rx="350" ry="250" fill="url(#takeaway1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 35px; font-weight: 600;">
-                TONIGHT'S PROMISE
-            </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; line-height: 1.2; margin-bottom: 50px;">
-                By the end of tonight,<br>you'll know <span style="color: #D4727A;">exactly</span> how to...
-            </h1>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 140px;">
+        <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; margin-bottom: 50px; text-align: center;">
+            Day 1 <span style="color: #D4727A;">Foundations</span>
+        </h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; max-width: 1500px; margin: 0 auto;">
+            <!-- Card 1 -->
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 35px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); text-align: center;">
+                <svg width="70" height="70" viewBox="0 0 70 70" style="margin-bottom: 25px;">
+                    <rect x="10" y="20" width="50" height="40" rx="5" fill="none" stroke="#D4727A" stroke-width="3"/>
+                    <rect x="18" y="10" width="34" height="15" rx="4" fill="#E8A5AB"/>
+                    <line x1="20" y1="35" x2="50" y2="35" stroke="#D4727A" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="20" y1="45" x2="40" y2="45" stroke="#D4727A" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #2D3436; margin-bottom: 12px;">Shop Audit</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; line-height: 1.5;">Identified what's working and what needs to go</p>
+            </div>
             
-            <div style="display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: 0 auto;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 28px 40px; border-radius: 18px; box-shadow: 0 12px 40px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212, 114, 122, 0.3); flex-shrink: 0;">
-                        <span style="font-family: 'Ogg Bold', serif; font-size: 24px; color: white;">1</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; font-weight: 500; text-align: left;">
-                        Find winning product ideas before you create them
-                    </p>
-                </div>
-                
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 28px 40px; border-radius: 18px; box-shadow: 0 12px 40px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212, 114, 122, 0.3); flex-shrink: 0;">
-                        <span style="font-family: 'Ogg Bold', serif; font-size: 24px; color: white;">2</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; font-weight: 500; text-align: left;">
-                        Validate demand using free research tools
-                    </p>
-                </div>
+            <!-- Card 2 -->
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 35px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); text-align: center;">
+                <svg width="70" height="70" viewBox="0 0 70 70" style="margin-bottom: 25px;">
+                    <circle cx="35" cy="35" r="25" fill="none" stroke="#D4727A" stroke-width="3"/>
+                    <path d="M35 20 L35 35 L48 42" stroke="#D4727A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <circle cx="35" cy="35" r="4" fill="#E8A5AB"/>
+                </svg>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #2D3436; margin-bottom: 12px;">Time Audit</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; line-height: 1.5;">Found your hidden productive hours</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 35px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); text-align: center;">
+                <svg width="70" height="70" viewBox="0 0 70 70" style="margin-bottom: 25px;">
+                    <rect x="15" y="8" width="40" height="54" rx="5" fill="none" stroke="#D4727A" stroke-width="3"/>
+                    <line x1="25" y1="22" x2="45" y2="22" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="25" y1="32" x2="45" y2="32" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="25" y1="42" x2="38" y2="42" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M22 50 L28 56 L42 42" stroke="#7CB87C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #2D3436; margin-bottom: 12px;">Action Plan</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; line-height: 1.5;">Created your first 90-day roadmap</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- SLIDE 12: Tonight's Promise Part 2 -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
+<!-- SLIDE 10: Key Insight - The Foundation -->
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="promise2Pink" x1="0%" y1="100%" x2="100%" y2="0%">
+            <linearGradient id="insight1" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.06" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="200" cy="850" rx="400" ry="350" fill="url(#promise2Pink)"/>
+        <ellipse cx="300" cy="850" rx="450" ry="320" fill="url(#insight1)"/>
+        <ellipse cx="1650" cy="250" rx="350" ry="280" fill="url(#insight1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <div style="display: flex; flex-direction: column; gap: 25px; max-width: 900px; margin: 0 auto;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 28px 40px; border-radius: 18px; box-shadow: 0 12px 40px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212, 114, 122, 0.3); flex-shrink: 0;">
-                        <span style="font-family: 'Ogg Bold', serif; font-size: 24px; color: white;">3</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; font-weight: 500; text-align: left;">
-                        Spot the "green flags" that signal a winner
-                    </p>
-                </div>
-                
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 28px 40px; border-radius: 18px; box-shadow: 0 12px 40px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212, 114, 122, 0.3); flex-shrink: 0;">
-                        <span style="font-family: 'Ogg Bold', serif; font-size: 24px; color: white;">4</span>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; font-weight: 500; text-align: left;">
-                        Create a hypothesis for your next best-seller
-                    </p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 60px; display: inline-block; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); padding: 22px 50px; border-radius: 50px; box-shadow: 0 15px 40px rgba(212, 114, 122, 0.35);">
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: white; font-weight: 600;">
-                    No more guessing. No more hoping. Just data.
-                </p>
-            </div>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <!-- Left: Custom lightbulb SVG -->
+        <div style="flex: 0.5; display: flex; justify-content: center; align-items: center;">
+            <svg width="280" height="340" viewBox="0 0 280 340">
+                <defs>
+                    <linearGradient id="bulbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D4727A"/>
+                        <stop offset="100%" style="stop-color:#E8A5AB"/>
+                    </linearGradient>
+                    <filter id="bulbGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="15" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <!-- Glow effect -->
+                <ellipse cx="140" cy="130" rx="95" ry="100" fill="#E8A5AB" opacity="0.2" filter="url(#bulbGlow)"/>
+                <!-- Bulb shape -->
+                <path d="M140 30 C75 30 30 80 30 140 C30 185 55 220 90 245 L90 280 L190 280 L190 245 C225 220 250 185 250 140 C250 80 205 30 140 30Z" fill="url(#bulbGrad)" opacity="0.15"/>
+                <path d="M140 30 C75 30 30 80 30 140 C30 185 55 220 90 245 L90 280 L190 280 L190 245 C225 220 250 185 250 140 C250 80 205 30 140 30Z" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <!-- Base -->
+                <rect x="95" y="280" width="90" height="15" rx="3" fill="#D4727A"/>
+                <rect x="100" y="295" width="80" height="10" rx="3" fill="#E8A5AB"/>
+                <rect x="105" y="305" width="70" height="8" rx="3" fill="#D4727A"/>
+                <!-- Filament glow lines -->
+                <path d="M115 180 Q125 150 140 180 Q155 210 165 180" stroke="#D4727A" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <!-- Sparkles -->
+                <circle cx="70" cy="60" r="5" fill="#E8A5AB"/>
+                <circle cx="210" cy="50" r="4" fill="#D4727A"/>
+                <circle cx="235" cy="100" r="3" fill="#E8A5AB" opacity="0.7"/>
+                <path d="M55 120 L45 120 M50 115 L50 125" stroke="#D4727A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M225 160 L235 160 M230 155 L230 165" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+        
+        <!-- Right: Text content -->
+        <div style="flex: 1;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 20px; font-weight: 600;">
+                THE KEY INSIGHT
+            </p>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 68px; color: #2D3436; line-height: 1.15; margin-bottom: 30px;">
+                Success on Etsy isn't about <span style="color: #D4727A;">more</span> products
+            </h1>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: #636E72; line-height: 1.6; max-width: 650px;">
+                It's about the <strong style="color: #D4727A;">right</strong> products — ones that customers are already searching for.
+            </p>
         </div>
     </div>
 </div>
 
-<!-- SLIDE 13: Live Demo Tease Part 1 -->
+<!-- SLIDE 11: Tonight's Promise Header -->
 <div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="demoBlush" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.12" />
-                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
+            <linearGradient id="promise1" x1="30%" y1="0%" x2="70%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#8B4D5C;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1500" cy="300" rx="550" ry="420" fill="url(#demoBlush)"/>
-        <ellipse cx="350" cy="750" rx="400" ry="300" fill="url(#demoBlush)"/>
+        <ellipse cx="1200" cy="300" rx="550" ry="400" fill="url(#promise1)"/>
+        <ellipse cx="350" cy="750" rx="400" ry="300" fill="url(#promise1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; text-transform: uppercase; letter-spacing: 5px; color: #E8A5AB; margin-bottom: 40px; font-weight: 600;">
-                COMING UP
-            </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 80px; color: #FFFBFA; line-height: 1.15; margin-bottom: 50px;">
-                I'm going to show you<br><span style="color: #E8A5AB;">exactly how I do it</span>
-            </h1>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: rgba(255,251,250,0.8); line-height: 1.6;">
-                Live research. Real products. Real results.
-            </p>
-        </div>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 140px;">
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 30px; font-weight: 600;">
+            TONIGHT'S FOCUS
+        </p>
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 88px; color: #FFFBFA; line-height: 1.1; margin-bottom: 25px;">
+            The <span style="color: #E8A5AB;">Winner</span><br/>Hypothesis
+        </h1>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: rgba(255,251,250,0.8); max-width: 700px;">
+            How to identify products that <em>will</em> sell before you invest the time
+        </p>
     </div>
 </div>
 
-<!-- SLIDE 14: Live Demo Tease Part 2 -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
+<!-- SLIDE 12: Tonight's Promise Details -->
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="demo2Pink" x1="50%" y1="0%" x2="50%" y2="100%">
+            <linearGradient id="promiseDet" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="960" cy="200" rx="600" ry="400" fill="url(#demo2Pink)"/>
+        <ellipse cx="1650" cy="200" rx="400" ry="320" fill="url(#promiseDet)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 68px; color: #2D3436; line-height: 1.2; margin-bottom: 60px;">
-                What you'll see in the <span style="color: #D4727A;">demo:</span>
-            </h1>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <div style="flex: 1;">
+            <h2 style="font-family: 'Ogg Bold', serif; font-size: 60px; color: #2D3436; margin-bottom: 50px;">
+                By the end of tonight, you'll...
+            </h2>
             
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); text-align: left;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(212, 114, 122, 0.3);">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <circle cx="10" cy="10" r="7" fill="none" stroke="white" stroke-width="2"/>
-                            <path d="M15 15 L21 21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                <div style="display: flex; align-items: center; gap: 25px;">
+                    <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(124,184,124,0.3); flex-shrink: 0;">
+                        <svg width="26" height="26" viewBox="0 0 26 26">
+                            <path d="M5 13 L10 18 L21 7" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 600;">Etsy Search Analysis</p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 10px;">Reading the algorithm's mind</p>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; font-weight: 500;">Know exactly how to research product demand</p>
                 </div>
                 
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); text-align: left;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(212, 114, 122, 0.3);">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M3 17 L9 11 L13 15 L21 7" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <div style="display: flex; align-items: center; gap: 25px;">
+                    <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(124,184,124,0.3); flex-shrink: 0;">
+                        <svg width="26" height="26" viewBox="0 0 26 26">
+                            <path d="M5 13 L10 18 L21 7" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 600;">Competition Check</p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 10px;">Finding gaps in the market</p>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; font-weight: 500;">Have a validated product idea (your "winner hypothesis")</p>
                 </div>
                 
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); text-align: left;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(124, 184, 124, 0.3);">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 12 L10 17 L19 7" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <div style="display: flex; align-items: center; gap: 25px;">
+                    <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(124,184,124,0.3); flex-shrink: 0;">
+                        <svg width="26" height="26" viewBox="0 0 26 26">
+                            <path d="M5 13 L10 18 L21 7" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 600;">Green Flag Spotting</p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 10px;">Signals that scream "winner"</p>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; font-weight: 500;">Understand the "green flags" that signal opportunity</p>
                 </div>
-                
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 35px; border-radius: 20px; box-shadow: 0 15px 45px rgba(212, 114, 122, 0.1); border: 1px solid rgba(212, 114, 122, 0.1); text-align: left;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #C9A227 0%, #B8860B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(201, 162, 39, 0.3);">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="9" fill="none" stroke="white" stroke-width="2"/>
-                            <circle cx="12" cy="12" r="5" fill="none" stroke="white" stroke-width="2"/>
-                            <circle cx="12" cy="12" r="2" fill="white"/>
-                        </svg>
-                    </div>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436; font-weight: 600;">The Hypothesis Build</p>
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 10px;">Turning research into action</p>
+            </div>
+        </div>
+        
+        <!-- Right: Target/Bullseye SVG -->
+        <div style="flex: 0.5; display: flex; justify-content: center; align-items: center;">
+            <svg width="300" height="300" viewBox="0 0 300 300">
+                <defs>
+                    <linearGradient id="targetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D4727A"/>
+                        <stop offset="100%" style="stop-color:#E8A5AB"/>
+                    </linearGradient>
+                </defs>
+                <!-- Outer rings -->
+                <circle cx="150" cy="150" r="130" fill="none" stroke="#E8A5AB" stroke-width="3" opacity="0.3"/>
+                <circle cx="150" cy="150" r="100" fill="none" stroke="#D4727A" stroke-width="3" opacity="0.4"/>
+                <circle cx="150" cy="150" r="70" fill="none" stroke="#D4727A" stroke-width="3" opacity="0.6"/>
+                <circle cx="150" cy="150" r="40" fill="url(#targetGrad)" opacity="0.15"/>
+                <circle cx="150" cy="150" r="40" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <!-- Center dot -->
+                <circle cx="150" cy="150" r="12" fill="#D4727A"/>
+                <!-- Arrow hitting target -->
+                <path d="M250 50 L160 140" stroke="#7CB87C" stroke-width="4" stroke-linecap="round"/>
+                <polygon points="155,145 165,135 170,150" fill="#7CB87C"/>
+                <!-- Arrow tail feathers -->
+                <path d="M250 50 L270 45 L255 65" stroke="#7CB87C" stroke-width="2" fill="none"/>
+                <!-- Sparkles -->
+                <circle cx="170" cy="130" r="4" fill="#7CB87C"/>
+                <circle cx="140" cy="155" r="3" fill="#E8A5AB"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 13: Live Demo Tease Header -->
+<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="demo1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.08" />
+                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1500" cy="400" rx="500" ry="380" fill="url(#demo1)"/>
+        <ellipse cx="300" cy="700" rx="400" ry="300" fill="url(#demo1)"/>
+    </svg>
+    
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <div style="flex: 1;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 25px; font-weight: 600;">
+                COMING UP
+            </p>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 90px; color: #FFFBFA; line-height: 1.1; margin-bottom: 30px;">
+                Live<br/><span style="color: #E8A5AB;">Research</span><br/>Demo
+            </h1>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: rgba(255,251,250,0.75); max-width: 550px;">
+                Watch me validate a product idea in real-time
+            </p>
+        </div>
+        
+        <!-- Right: Screen/Demo SVG -->
+        <div style="flex: 0.6; display: flex; justify-content: center; align-items: center;">
+            <svg width="340" height="280" viewBox="0 0 340 280">
+                <defs>
+                    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E8A5AB"/>
+                        <stop offset="100%" style="stop-color:#D4727A"/>
+                    </linearGradient>
+                </defs>
+                <!-- Monitor frame -->
+                <rect x="20" y="20" width="300" height="190" rx="12" fill="rgba(255,255,255,0.1)" stroke="#E8A5AB" stroke-width="3"/>
+                <!-- Screen content lines -->
+                <rect x="40" y="45" width="120" height="12" rx="4" fill="#E8A5AB" opacity="0.6"/>
+                <rect x="40" y="70" width="180" height="8" rx="3" fill="#E8A5AB" opacity="0.3"/>
+                <rect x="40" y="90" width="160" height="8" rx="3" fill="#E8A5AB" opacity="0.3"/>
+                <rect x="40" y="110" width="200" height="8" rx="3" fill="#E8A5AB" opacity="0.3"/>
+                <!-- Graph bars -->
+                <rect x="40" y="165" width="30" height="25" rx="3" fill="#E8A5AB" opacity="0.4"/>
+                <rect x="80" y="145" width="30" height="45" rx="3" fill="#E8A5AB" opacity="0.6"/>
+                <rect x="120" y="135" width="30" height="55" rx="3" fill="#E8A5AB" opacity="0.8"/>
+                <rect x="160" y="155" width="30" height="35" rx="3" fill="#E8A5AB" opacity="0.5"/>
+                <!-- Arrow pointing up -->
+                <path d="M260 160 L260 60 L250 75 M260 60 L270 75" stroke="#7CB87C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <!-- Monitor stand -->
+                <rect x="145" y="210" width="50" height="15" rx="3" fill="#E8A5AB" opacity="0.5"/>
+                <rect x="130" y="225" width="80" height="10" rx="4" fill="#E8A5AB" opacity="0.4"/>
+                <!-- Play button overlay -->
+                <circle cx="170" cy="115" r="35" fill="rgba(212,114,122,0.3)" stroke="#E8A5AB" stroke-width="2"/>
+                <polygon points="160,100 160,130 185,115" fill="#E8A5AB"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 14: What You'll See in Demo -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="demoList" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1700" cy="180" rx="380" ry="300" fill="url(#demoList)"/>
+        <ellipse cx="150" cy="900" rx="300" ry="220" fill="url(#demoList)"/>
+    </svg>
+    
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 140px;">
+        <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; margin-bottom: 15px; text-align: center;">
+            In the demo, I'll show you...
+        </h2>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #636E72; text-align: center; margin-bottom: 50px;">
+            The exact research process I use with my students
+        </p>
+        
+        <div style="display: flex; gap: 35px; justify-content: center;">
+            <!-- Step 1 -->
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 35px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); width: 280px; text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(212,114,122,0.3);">
+                    <span style="color: white; font-family: 'Ogg Bold', serif; font-size: 26px;">1</span>
                 </div>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 24px; color: #2D3436; margin-bottom: 15px;">Finding Demand</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #636E72; line-height: 1.5;">How to spot what customers are actively searching for</p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 35px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); width: 280px; text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(212,114,122,0.3);">
+                    <span style="color: white; font-family: 'Ogg Bold', serif; font-size: 26px;">2</span>
+                </div>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 24px; color: #2D3436; margin-bottom: 15px;">Checking Competition</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #636E72; line-height: 1.5;">When "lots of sellers" is actually a good sign</p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 35px; border-radius: 20px; box-shadow: 0 12px 40px rgba(212,114,122,0.1); border: 1px solid rgba(212,114,122,0.08); width: 280px; text-align: center;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 8px 25px rgba(212,114,122,0.3);">
+                    <span style="color: white; font-family: 'Ogg Bold', serif; font-size: 26px;">3</span>
+                </div>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 24px; color: #2D3436; margin-bottom: 15px;">Making the Call</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #636E72; line-height: 1.5;">The green flags that say "yes, pursue this"</p>
             </div>
         </div>
     </div>
 </div>
 
 <!-- SLIDE 15: Commitment Ask -->
-<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="commitBlush" x1="30%" y1="0%" x2="70%" y2="100%">
-                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
-                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
+            <linearGradient id="commit1" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.06" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1200" cy="400" rx="600" ry="500" fill="url(#commitBlush)"/>
-        <ellipse cx="300" cy="700" rx="350" ry="280" fill="url(#commitBlush)"/>
+        <ellipse cx="350" cy="850" rx="450" ry="320" fill="url(#commit1)"/>
+        <ellipse cx="1550" cy="200" rx="350" ry="280" fill="url(#commit1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1100px;">
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 80px; color: #FFFBFA; line-height: 1.2; margin-bottom: 50px;">
-                Are you ready to<br><span style="color: #E8A5AB;">stop guessing?</span>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <!-- Left: Handshake/Pinky Promise SVG -->
+        <div style="flex: 0.5; display: flex; justify-content: center; align-items: center;">
+            <svg width="280" height="280" viewBox="0 0 280 280">
+                <defs>
+                    <linearGradient id="handGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#D4727A"/>
+                        <stop offset="100%" style="stop-color:#E8A5AB"/>
+                    </linearGradient>
+                </defs>
+                <!-- Two hands forming pinky promise -->
+                <path d="M50 180 Q60 140 90 130 L130 110 Q145 105 150 120 L155 140 Q158 150 150 155 L120 165" fill="none" stroke="#D4727A" stroke-width="4" stroke-linecap="round"/>
+                <path d="M230 180 Q220 140 190 130 L150 110 Q135 105 130 120 L125 140 Q122 150 130 155 L160 165" fill="none" stroke="#E8A5AB" stroke-width="4" stroke-linecap="round"/>
+                <!-- Interlocked pinkies -->
+                <ellipse cx="140" cy="135" rx="20" ry="25" fill="url(#handGrad)" opacity="0.2"/>
+                <ellipse cx="140" cy="135" rx="20" ry="25" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <!-- Heart above -->
+                <path d="M140 60 C125 45 100 50 100 70 C100 90 140 115 140 115 C140 115 180 90 180 70 C180 50 155 45 140 60Z" fill="url(#handGrad)" opacity="0.3"/>
+                <path d="M140 60 C125 45 100 50 100 70 C100 90 140 115 140 115 C140 115 180 90 180 70 C180 50 155 45 140 60Z" fill="none" stroke="#D4727A" stroke-width="2"/>
+                <!-- Sparkles -->
+                <circle cx="70" cy="100" r="5" fill="#E8A5AB"/>
+                <circle cx="210" cy="95" r="4" fill="#D4727A"/>
+                <circle cx="140" cy="200" r="6" fill="#E8A5AB" opacity="0.6"/>
+                <path d="M85 210 L75 210 M80 205 L80 215" stroke="#D4727A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M200 205 L210 205 M205 200 L205 210" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+        
+        <!-- Right: Content -->
+        <div style="flex: 1;">
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; line-height: 1.15; margin-bottom: 35px;">
+                Quick ask before we dive in...
             </h1>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: rgba(255,251,250,0.8); line-height: 1.6; margin-bottom: 60px;">
-                Type "I'M READY" in the chat if you're committed<br>to doing research BEFORE you create.
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: #636E72; line-height: 1.7; margin-bottom: 40px; max-width: 650px;">
+                Commit to staying present for the next 90 minutes. Close the other tabs. Put your phone face-down.
             </p>
-            
-            <div style="display: inline-block; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px 60px; border-radius: 20px; border: 1px solid rgba(232, 165, 171, 0.3);">
-                <p style="font-family: 'Ogg Bold', serif; font-size: 36px; color: #E8A5AB;">
-                    I'M READY
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 30px 40px; border-radius: 18px; box-shadow: 0 12px 40px rgba(212,114,122,0.12); border: 1px solid rgba(212,114,122,0.1); display: inline-block;">
+                <p style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #D4727A; margin: 0;">
+                    Type "I'm all in" in the chat
                 </p>
             </div>
         </div>
@@ -748,192 +903,196 @@
 </div>
 
 <!-- SLIDE 16: Gift Tease -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
-    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-        <defs>
-            <linearGradient id="giftPink" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.06" />
-                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
-            </linearGradient>
-        </defs>
-        <ellipse cx="1650" cy="350" rx="450" ry="400" fill="url(#giftPink)"/>
-    </svg>
-    
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1100px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 5px; color: #C9A227; margin-bottom: 35px; font-weight: 600;">
-                BUT FIRST...
-            </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; line-height: 1.2; margin-bottom: 50px;">
-                I have something <span style="color: #C9A227;">special</span> for you.
-            </h1>
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: #636E72; line-height: 1.6;">
-                Something that's going to make tonight's homework<br>10x easier...
-            </p>
-            
-            <div style="margin-top: 60px;">
-                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #C9A227 0%, #B8860B 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 15px 45px rgba(201, 162, 39, 0.35);">
-                    <span style="font-size: 50px;">🎁</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE 17: Gift Reveal -->
 <div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="revealGold" x1="50%" y1="0%" x2="50%" y2="100%">
-                <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.15" />
-                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
+            <linearGradient id="gift1" x1="30%" y1="0%" x2="70%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#8B4D5C;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="960" cy="300" rx="700" ry="400" fill="url(#revealGold)"/>
+        <ellipse cx="1100" cy="350" rx="550" ry="420" fill="url(#gift1)"/>
+        <ellipse cx="400" cy="750" rx="350" ry="280" fill="url(#gift1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1200px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 5px; color: #C9A227; margin-bottom: 30px; font-weight: 600;">
-                YOUR FREE GIFT
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
+        <div style="flex: 1;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 25px; font-weight: 600;">
+                BONUS GIFT
             </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 68px; color: #FFFBFA; line-height: 1.15; margin-bottom: 40px;">
-                The Winner Hypothesis<br><span style="color: #C9A227;">Research Worksheet</span>
+            <h1 style="font-family: 'Ogg Bold', serif; font-size: 80px; color: #FFFBFA; line-height: 1.1; margin-bottom: 30px;">
+                Stay till the end<br/>for a <span style="color: #E8A5AB;">special</span> gift
             </h1>
-            
-            <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 45px 60px; border-radius: 24px; border: 1px solid rgba(201, 162, 39, 0.25); margin: 40px auto; max-width: 800px;">
-                <div style="display: flex; flex-direction: column; gap: 20px;">
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #C9A227 0%, #B8860B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <svg width="22" height="22" viewBox="0 0 22 22">
-                                <path d="M4 11 L9 16 L18 6" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #FFFBFA; text-align: left;">Step-by-step research framework</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #C9A227 0%, #B8860B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <svg width="22" height="22" viewBox="0 0 22 22">
-                                <path d="M4 11 L9 16 L18 6" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #FFFBFA; text-align: left;">Green flag checklist included</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #C9A227 0%, #B8860B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <svg width="22" height="22" viewBox="0 0 22 22">
-                                <path d="M4 11 L9 16 L18 6" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #FFFBFA; text-align: left;">Use it for every product idea, forever</p>
-                    </div>
-                </div>
-            </div>
-            
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: rgba(255,251,250,0.7);">
-                Link dropping in chat soon!
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: rgba(255,251,250,0.75); max-width: 550px;">
+                Something that will make your research 10x faster...
             </p>
+        </div>
+        
+        <!-- Right: Gift Box SVG -->
+        <div style="flex: 0.5; display: flex; justify-content: center; align-items: center;">
+            <svg width="280" height="320" viewBox="0 0 280 320">
+                <defs>
+                    <linearGradient id="giftBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E8A5AB"/>
+                        <stop offset="100%" style="stop-color:#D4727A"/>
+                    </linearGradient>
+                </defs>
+                <!-- Box body -->
+                <rect x="40" y="120" width="200" height="170" rx="10" fill="url(#giftBoxGrad)" opacity="0.2"/>
+                <rect x="40" y="120" width="200" height="170" rx="10" fill="none" stroke="#E8A5AB" stroke-width="3"/>
+                <!-- Lid -->
+                <rect x="30" y="90" width="220" height="40" rx="8" fill="url(#giftBoxGrad)" opacity="0.3"/>
+                <rect x="30" y="90" width="220" height="40" rx="8" fill="none" stroke="#E8A5AB" stroke-width="3"/>
+                <!-- Vertical ribbon -->
+                <rect x="125" y="90" width="30" height="200" fill="#E8A5AB" opacity="0.4"/>
+                <rect x="125" y="90" width="30" height="200" fill="none" stroke="#E8A5AB" stroke-width="2"/>
+                <!-- Horizontal ribbon on lid -->
+                <rect x="30" y="100" width="220" height="20" fill="#E8A5AB" opacity="0.4"/>
+                <!-- Bow -->
+                <ellipse cx="110" cy="70" rx="30" ry="20" fill="none" stroke="#E8A5AB" stroke-width="3"/>
+                <ellipse cx="170" cy="70" rx="30" ry="20" fill="none" stroke="#E8A5AB" stroke-width="3"/>
+                <circle cx="140" cy="80" r="12" fill="#E8A5AB"/>
+                <!-- Ribbon tails -->
+                <path d="M105 90 Q90 120 75 115" stroke="#E8A5AB" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M175 90 Q190 120 205 115" stroke="#E8A5AB" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <!-- Sparkles -->
+                <circle cx="60" cy="50" r="5" fill="#E8A5AB"/>
+                <circle cx="220" cy="55" r="4" fill="#E8A5AB" opacity="0.7"/>
+                <circle cx="250" cy="150" r="6" fill="#E8A5AB" opacity="0.5"/>
+                <path d="M30 180 L20 180 M25 175 L25 185" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+                <!-- Question mark hint -->
+                <text x="140" y="220" font-family="'Ogg Bold', serif" font-size="50" fill="#E8A5AB" text-anchor="middle" opacity="0.6">?</text>
+            </svg>
         </div>
     </div>
 </div>
 
-<!-- SLIDE 18: Agenda Part 1 -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
+<!-- SLIDE 17: Gift Reveal Tease -->
+<div class="slide" style="background: #FDF8F6;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="agendaPink" x1="100%" y1="0%" x2="0%" y2="100%">
+            <linearGradient id="giftReveal" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="1700" cy="540" rx="400" ry="500" fill="url(#agendaPink)"/>
+        <ellipse cx="1650" cy="250" rx="400" ry="320" fill="url(#giftReveal)"/>
+        <ellipse cx="250" cy="850" rx="350" ry="280" fill="url(#giftReveal)"/>
     </svg>
     
-    <div class="content" style="padding: 80px 120px;">
-        <div style="max-width: 1400px; margin: 0 auto;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 5px; color: #D4727A; margin-bottom: 25px; font-weight: 600;">
-                TONIGHT'S AGENDA
-            </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; line-height: 1.2; margin-bottom: 50px;">
-                What we're covering <span style="color: #D4727A;">today</span>
-            </h1>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 140px;">
+        <h2 style="font-family: 'Ogg Bold', serif; font-size: 60px; color: #2D3436; margin-bottom: 50px;">
+            Tonight's <span style="color: #D4727A;">Bonus</span> Includes...
+        </h2>
+        
+        <div style="display: flex; gap: 40px;">
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 45px 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(212,114,122,0.12); border: 1px solid rgba(212,114,122,0.1); width: 320px;">
+                <svg width="60" height="60" viewBox="0 0 60 60" style="margin-bottom: 25px;">
+                    <rect x="8" y="10" width="44" height="40" rx="5" fill="none" stroke="#D4727A" stroke-width="3"/>
+                    <line x1="8" y1="25" x2="52" y2="25" stroke="#D4727A" stroke-width="2"/>
+                    <rect x="15" y="32" width="12" height="12" rx="2" fill="#E8A5AB"/>
+                    <line x1="33" y1="35" x2="45" y2="35" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="33" y1="41" x2="42" y2="41" stroke="#E8A5AB" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #2D3436; margin-bottom: 15px;">Research Template</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; line-height: 1.5;">My personal product validation spreadsheet</p>
+            </div>
             
-            <div style="display: flex; flex-direction: column; gap: 22px;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 10px 35px rgba(212, 114, 122, 0.08); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(212, 114, 122, 0.25); flex-shrink: 0;">
-                        <span style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: white; font-weight: 700;">1</span>
-                    </div>
-                    <div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 600;">The Winner Hypothesis Framework</p>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 5px;">Your new decision-making system</p>
-                    </div>
-                </div>
-                
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 10px 35px rgba(212, 114, 122, 0.08); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(212, 114, 122, 0.25); flex-shrink: 0;">
-                        <span style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: white; font-weight: 700;">2</span>
-                    </div>
-                    <div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 600;">Live Research Demo</p>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 5px;">Watch me find winners in real-time</p>
-                    </div>
-                </div>
-                
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 10px 35px rgba(212, 114, 122, 0.08); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(212, 114, 122, 0.25); flex-shrink: 0;">
-                        <span style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: white; font-weight: 700;">3</span>
-                    </div>
-                    <div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 600;">Green Flag Checklist</p>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 5px;">The signals that never lie</p>
-                    </div>
-                </div>
+            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 45px 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(212,114,122,0.12); border: 1px solid rgba(212,114,122,0.1); width: 320px;">
+                <svg width="60" height="60" viewBox="0 0 60 60" style="margin-bottom: 25px;">
+                    <circle cx="30" cy="30" r="22" fill="none" stroke="#D4727A" stroke-width="3"/>
+                    <path d="M22 30 L28 36 L40 24" stroke="#7CB87C" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #2D3436; margin-bottom: 15px;">Green Flags Checklist</h3>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #636E72; line-height: 1.5;">Quick-reference for validating any product idea</p>
             </div>
         </div>
+        
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #636E72; margin-top: 45px;">
+            More details at the end of tonight's session
+        </p>
     </div>
 </div>
 
-<!-- SLIDE 19: Agenda Part 2 -->
-<div class="slide" style="background: linear-gradient(180deg, #FFFBFA 0%, #FDF8F6 100%);">
+<!-- SLIDE 18: Agenda Header -->
+<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="agenda2Pink" x1="0%" y1="100%" x2="100%" y2="0%">
+            <linearGradient id="agenda1" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#8B4D5C;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1550" cy="350" rx="500" ry="400" fill="url(#agenda1)"/>
+        <ellipse cx="300" cy="750" rx="400" ry="300" fill="url(#agenda1)"/>
+    </svg>
+    
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 140px;">
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 30px; font-weight: 600;">
+            HERE'S THE PLAN
+        </p>
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 96px; color: #FFFBFA; line-height: 1.1;">
+            Tonight's<br/><span style="color: #E8A5AB;">Agenda</span>
+        </h1>
+    </div>
+</div>
+
+<!-- SLIDE 19: Agenda Details -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="agendaDet" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.05" />
                 <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="200" cy="800" rx="400" ry="350" fill="url(#agenda2Pink)"/>
+        <ellipse cx="250" cy="850" rx="400" ry="300" fill="url(#agendaDet)"/>
+        <ellipse cx="1700" cy="200" rx="350" ry="280" fill="url(#agendaDet)"/>
     </svg>
     
-    <div class="content" style="padding: 80px 120px;">
-        <div style="max-width: 1400px; margin: 0 auto;">
-            <div style="display: flex; flex-direction: column; gap: 22px;">
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 10px 35px rgba(212, 114, 122, 0.08); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(212, 114, 122, 0.25); flex-shrink: 0;">
-                        <span style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: white; font-weight: 700;">4</span>
-                    </div>
-                    <div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 600;">Your Homework</p>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 5px;">Build your first hypothesis</p>
-                    </div>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 200px;">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <!-- Item 1 -->
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(212,114,122,0.25); flex-shrink: 0;">
+                    <span style="color: white; font-family: 'Ogg Bold', serif; font-size: 28px;">1</span>
                 </div>
-                
-                <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 10px 35px rgba(212, 114, 122, 0.08); border: 1px solid rgba(212, 114, 122, 0.1); display: flex; align-items: center; gap: 25px;">
-                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(212, 114, 122, 0.25); flex-shrink: 0;">
-                        <span style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: white; font-weight: 700;">5</span>
-                    </div>
-                    <div>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 600;">Q&A Session</p>
-                        <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-top: 5px;">Get your questions answered live</p>
-                    </div>
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                    <h3 style="font-family: 'Ogg Bold', serif; font-size: 24px; color: #2D3436; margin-bottom: 5px;">The Winner Hypothesis Framework</h3>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #636E72;">Understanding what makes a product worth pursuing</p>
                 </div>
             </div>
             
-            <div style="margin-top: 50px; text-align: center;">
-                <div style="display: inline-block; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); padding: 20px 45px; border-radius: 50px; box-shadow: 0 12px 35px rgba(212, 114, 122, 0.3);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: white; font-weight: 600;">
-                        Let's make your next product a winner
-                    </p>
+            <!-- Item 2 -->
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(212,114,122,0.25); flex-shrink: 0;">
+                    <span style="color: white; font-family: 'Ogg Bold', serif; font-size: 28px;">2</span>
+                </div>
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                    <h3 style="font-family: 'Ogg Bold', serif; font-size: 24px; color: #2D3436; margin-bottom: 5px;">Live Research Demo</h3>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #636E72;">Watch me validate a product idea in real-time</p>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(212,114,122,0.25); flex-shrink: 0;">
+                    <span style="color: white; font-family: 'Ogg Bold', serif; font-size: 28px;">3</span>
+                </div>
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                    <h3 style="font-family: 'Ogg Bold', serif; font-size: 24px; color: #2D3436; margin-bottom: 5px;">Your Turn: Hands-On Practice</h3>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #636E72;">Create your own winner hypothesis with guidance</p>
+                </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #D4727A 0%, #E8A5AB 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(212,114,122,0.25); flex-shrink: 0;">
+                    <span style="color: white; font-family: 'Ogg Bold', serif; font-size: 28px;">4</span>
+                </div>
+                <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 25px 35px; border-radius: 16px; box-shadow: 0 8px 30px rgba(212,114,122,0.08); border: 1px solid rgba(212,114,122,0.08);">
+                    <h3 style="font-family: 'Ogg Bold', serif; font-size: 24px; color: #2D3436; margin-bottom: 5px;">Q&A + Homework</h3>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #636E72;">Get your questions answered, then tonight's action item</p>
                 </div>
             </div>
         </div>
@@ -941,42 +1100,34 @@
 </div>
 
 <!-- SLIDE 20: Disclosure -->
-<div class="slide" style="background: linear-gradient(180deg, #FAF5F3 0%, #FDF8F6 100%);">
+<div class="slide" style="background: #FAF5F3;">
     <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <linearGradient id="disclosurePink" x1="50%" y1="0%" x2="50%" y2="100%">
-                <stop offset="0%" style="stop-color:#B8848B;stop-opacity:0.04" />
-                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            <linearGradient id="disc1" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FAF5F3;stop-opacity:0" />
             </linearGradient>
         </defs>
-        <ellipse cx="960" cy="540" rx="800" ry="500" fill="url(#disclosurePink)"/>
+        <ellipse cx="1650" cy="250" rx="380" ry="300" fill="url(#disc1)"/>
     </svg>
     
-    <div class="content flex-center">
-        <div style="text-align: center; max-width: 1100px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 4px; color: #B8848B; margin-bottom: 30px; font-weight: 600;">
-                DISCLOSURE
-            </p>
-            <h1 style="font-family: 'Ogg Bold', serif; font-size: 48px; color: #5C3341; line-height: 1.3; margin-bottom: 40px;">
-                A quick note before we dive in...
-            </h1>
-            
-            <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FAF6F4 100%); padding: 50px 60px; border-radius: 24px; box-shadow: 0 15px 50px rgba(139, 77, 92, 0.08); border: 1px solid rgba(139, 77, 92, 0.08); text-align: left;">
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #636E72; line-height: 1.8; margin-bottom: 25px;">
-                    Results vary. The strategies I share have worked for me and many of my students, but success depends on your effort, niche, and market conditions.
-                </p>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #636E72; line-height: 1.8; margin-bottom: 25px;">
-                    This workshop contains educational content. At the end, I'll share information about my paid program for those who want to go deeper.
-                </p>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #5C3341; line-height: 1.8; font-weight: 500;">
-                    There's zero pressure to buy anything. The free content alone can transform your approach.
-                </p>
-            </div>
-            
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #B8848B; margin-top: 40px;">
-                Now let's get to the good stuff...
-            </p>
-        </div>
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 250px;">
+        <svg width="70" height="70" viewBox="0 0 70 70" style="margin-bottom: 35px;">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#D4727A" stroke-width="3"/>
+            <text x="35" y="45" font-family="'Ogg Bold', serif" font-size="32" fill="#D4727A" text-anchor="middle">i</text>
+        </svg>
+        
+        <h2 style="font-family: 'Ogg Bold', serif; font-size: 42px; color: #2D3436; margin-bottom: 30px;">
+            Quick <span style="color: #D4727A;">Disclosure</span>
+        </h2>
+        
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #636E72; line-height: 1.8; max-width: 900px; margin-bottom: 25px;">
+            Results vary based on effort, niche, and implementation. The students featured in testimonials achieved their results through consistent work and application of the strategies taught. This workshop provides education and frameworks — your success depends on taking action.
+        </p>
+        
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #8B4D5C; font-weight: 500;">
+            Now let's get to the good stuff!
+        </p>
     </div>
 </div>
 
