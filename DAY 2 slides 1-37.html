@@ -2004,5 +2004,842 @@
     </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION A: AI SLOP EXPOSED (Why Most AI Designs Fail) -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 38: Section Header - AI Slop -->
+<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slopHero1" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#8B4D5C;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="300" rx="500" ry="400" fill="url(#slopHero1)"/>
+        <ellipse cx="200" cy="800" rx="400" ry="300" fill="url(#slopHero1)"/>
+    </svg>
+
+    <!-- Warning graphic -->
+    <div style="position: absolute; right: 120px; top: 50%; transform: translateY(-50%); z-index: 2;">
+        <svg width="450" height="450" viewBox="0 0 450 450">
+            <defs>
+                <linearGradient id="warnGrad38" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#E8A5AB"/>
+                    <stop offset="100%" style="stop-color:#D4727A"/>
+                </linearGradient>
+                <filter id="warnGlow38" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="15" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+            </defs>
+            <!-- Warning triangle -->
+            <g filter="url(#warnGlow38)">
+                <path d="M225 50 L400 380 L50 380 Z" fill="none" stroke="url(#warnGrad38)" stroke-width="8" stroke-linejoin="round"/>
+                <path d="M225 90 L370 350 L80 350 Z" fill="rgba(232,165,171,0.1)" stroke="none"/>
+            </g>
+            <!-- Exclamation mark -->
+            <rect x="210" y="150" width="30" height="120" rx="15" fill="#E8A5AB"/>
+            <circle cx="225" cy="310" r="20" fill="#E8A5AB"/>
+            <!-- Floating X marks -->
+            <g stroke="#D4685A" stroke-width="4" stroke-linecap="round" opacity="0.7">
+                <line x1="60" y1="120" x2="90" y2="150"/><line x1="90" y1="120" x2="60" y2="150"/>
+            </g>
+            <g stroke="#D4685A" stroke-width="3" stroke-linecap="round" opacity="0.5">
+                <line x1="380" y1="180" x2="405" y2="205"/><line x1="405" y1="180" x2="380" y2="205"/>
+            </g>
+            <g stroke="#D4685A" stroke-width="3" stroke-linecap="round" opacity="0.6">
+                <line x1="100" y1="400" x2="125" y2="425"/><line x1="125" y1="400" x2="100" y2="425"/>
+            </g>
+            <!-- Sparkles -->
+            <circle cx="420" cy="100" r="6" fill="#E8A5AB"/>
+            <circle cx="30" cy="280" r="5" fill="#E8A5AB" opacity="0.7"/>
+        </svg>
+    </div>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 140px; max-width: 950px;">
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 5px; color: #E8A5AB; margin-bottom: 30px; font-weight: 600;">SECTION A</p>
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #FFFBFA; line-height: 1.15; margin-bottom: 40px;">
+            Let's Talk About Why Most AI Designs <span style="color: #E8A5AB;">Fail.</span>
+        </h1>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: rgba(255,251,250,0.7);">
+            And I'm not going to sugarcoat this.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 39: AI Slop Definition -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop39" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1650" cy="200" rx="400" ry="350" fill="url(#slop39)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; margin-bottom: 50px;">
+            We've all seen <span style="color: #D4727A;">"AI Slop."</span>
+        </h1>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: #636E72; margin-bottom: 60px;">
+            You know it when you see it.
+        </p>
+        <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FDF0EE 100%); padding: 50px 70px; border-radius: 24px; box-shadow: 0 20px 60px rgba(212,114,122,0.12); border: 1px solid rgba(212,114,122,0.1); max-width: 1000px;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #2D3436; line-height: 1.7;">
+                That generic, rushed, <span style="color: #D4685A; font-weight: 600;">"this was clearly made in 2 minutes"</span> energy that floods Etsy right now.
+            </p>
+        </div>
+        <p style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #D4727A; margin-top: 50px;">
+            Let me show you exactly what I mean...
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 40: AI Slop Indicator #1 -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop40" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="250" rx="350" ry="300" fill="url(#slop40)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; padding: 80px 140px; gap: 80px;">
+        <!-- Left: Image placeholder -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="background: linear-gradient(145deg, #FAF5F3 0%, #F5F0EE 100%); border: 3px dashed rgba(212,104,90,0.4); border-radius: 20px; height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                    <rect x="10" y="10" width="60" height="60" rx="8" fill="none" stroke="#D4685A" stroke-width="3" stroke-dasharray="8 4"/>
+                    <circle cx="30" cy="35" r="8" fill="#D4685A" opacity="0.5"/>
+                    <path d="M15 55 L30 40 L45 50 L65 30" stroke="#D4685A" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; text-transform: uppercase; letter-spacing: 2px;">[Bailey's Screenshot]</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; color: #8B6D72;">Wrong hands/anatomy example</p>
+            </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 35px;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4685A 0%, #C05A4D 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212,104,90,0.3);">
+                    <span style="font-family: sans-serif; font-size: 24px; color: #FFFBFA; font-weight: bold;">1</span>
+                </div>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #D4685A; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;">AI Slop Indicator</p>
+            </div>
+            <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; margin-bottom: 40px; line-height: 1.15;">
+                Wrong Hands &<br/><span style="color: #D4685A;">Weird Anatomy</span>
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; line-height: 1.6;">Six fingers. Three arms.<br/>Eyes that don't quite line up.</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; line-height: 1.6;">Animals with legs in impossible places.</p>
+            </div>
+            <div style="margin-top: 45px; padding: 25px 35px; background: linear-gradient(145deg, #FDF0EE 0%, #FEF5F4 100%); border-radius: 16px; border-left: 4px solid #D4685A;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; font-weight: 500;">If you didn't check for anatomy issues,<br/><span style="color: #D4685A;">your buyer definitely will.</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 41: AI Slop Indicator #2 -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop41" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="800" rx="400" ry="350" fill="url(#slop41)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; padding: 80px 140px; gap: 80px;">
+        <!-- Left: Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 35px;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4685A 0%, #C05A4D 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212,104,90,0.3);">
+                    <span style="font-family: sans-serif; font-size: 24px; color: #FFFBFA; font-weight: bold;">2</span>
+                </div>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #D4685A; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;">AI Slop Indicator</p>
+            </div>
+            <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; margin-bottom: 40px; line-height: 1.15;">
+                Weird Textures &<br/><span style="color: #D4685A;">Smudgy Edges</span>
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; line-height: 1.6;">That "melted" look around the edges.</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; line-height: 1.6;">Textures that don't make sense.</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; line-height: 1.6;">Details that blur into nothing.</p>
+            </div>
+            <div style="margin-top: 45px; padding: 25px 35px; background: linear-gradient(145deg, #FDF0EE 0%, #FEF5F4 100%); border-radius: 16px; border-left: 4px solid #D4685A;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #D4685A; font-weight: 600;">Instant "AI generated" red flag.</p>
+            </div>
+        </div>
+
+        <!-- Right: Image placeholder -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="background: linear-gradient(145deg, #FAF5F3 0%, #F5F0EE 100%); border: 3px dashed rgba(212,104,90,0.4); border-radius: 20px; height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                    <rect x="10" y="10" width="60" height="60" rx="8" fill="none" stroke="#D4685A" stroke-width="3" stroke-dasharray="8 4"/>
+                    <path d="M20 60 Q40 20 60 60" stroke="#D4685A" stroke-width="3" fill="none" opacity="0.5"/>
+                    <ellipse cx="40" cy="40" rx="15" ry="10" fill="#D4685A" opacity="0.3"/>
+                </svg>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; text-transform: uppercase; letter-spacing: 2px;">[Bailey's Screenshot]</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; color: #8B6D72;">Smudgy/melted edges example</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 42: AI Slop Indicator #3 -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop42" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="250" cy="300" rx="350" ry="280" fill="url(#slop42)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; padding: 80px 140px; gap: 80px;">
+        <!-- Left: Image placeholder -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="background: linear-gradient(145deg, #FAF5F3 0%, #F5F0EE 100%); border: 3px dashed rgba(212,104,90,0.4); border-radius: 20px; height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                    <rect x="25" y="15" width="30" height="50" rx="4" fill="none" stroke="#D4685A" stroke-width="2"/>
+                    <ellipse cx="40" cy="70" rx="25" ry="8" fill="#D4685A" opacity="0.2"/>
+                    <rect x="30" y="25" width="20" height="30" rx="2" fill="#D4685A" opacity="0.4"/>
+                    <text x="40" y="44" font-family="sans-serif" font-size="8" fill="#FFFBFA" text-anchor="middle">?</text>
+                </svg>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; text-transform: uppercase; letter-spacing: 2px;">[Bailey's Screenshot]</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; color: #8B6D72;">Random background on tumbler</p>
+            </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 35px;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4685A 0%, #C05A4D 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212,104,90,0.3);">
+                    <span style="font-family: sans-serif; font-size: 24px; color: #FFFBFA; font-weight: bold;">3</span>
+                </div>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #D4685A; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;">AI Slop Indicator</p>
+            </div>
+            <h2 style="font-family: 'Ogg Bold', serif; font-size: 52px; color: #2D3436; margin-bottom: 40px; line-height: 1.15;">
+                Auto Backgrounds<br/><span style="color: #D4685A;">With No Purpose</span>
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72; line-height: 1.6;">A random PNG slapped onto a tumbler wrap with whatever background the AI spit out.</p>
+                <div style="padding: 25px 30px; background: linear-gradient(145deg, #FDF0EE 0%, #FEF5F4 100%); border-radius: 16px;">
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; line-height: 1.6;">
+                        <span style="color: #D4685A;">No thought</span> about how it actually looks on the product.<br/>
+                        <span style="color: #D4685A;">No thought</span> about the buyer.<br/>
+                        Just... <span style="font-style: italic; opacity: 0.7;">there.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 43: AI Slop Indicator #4 -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop43" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1650" cy="250" rx="380" ry="300" fill="url(#slop43)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; padding: 80px 140px; gap: 80px;">
+        <!-- Left: Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 35px;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4685A 0%, #C05A4D 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212,104,90,0.3);">
+                    <span style="font-family: sans-serif; font-size: 24px; color: #FFFBFA; font-weight: bold;">4</span>
+                </div>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #D4685A; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;">AI Slop Indicator</p>
+            </div>
+            <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; margin-bottom: 40px; line-height: 1.15;">
+                No Clear Niche<br/><span style="color: #D4685A;">or Demand</span>
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                <div style="display: flex; gap: 20px; align-items: baseline;">
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #636E72;">Pretty?</p>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #636E72; font-style: italic;">Maybe.</p>
+                </div>
+                <p style="font-family: 'Ogg Bold', serif; font-size: 38px; color: #D4727A;">But pretty for WHO?</p>
+                <div style="margin-top: 20px; padding: 30px 35px; background: linear-gradient(145deg, #FDF0EE 0%, #FEF5F4 100%); border-radius: 16px; border-left: 4px solid #D4685A;">
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436; line-height: 1.6;">Designs that could be for <span style="font-weight: 600;">anyone</span><br/>usually end up being for <span style="color: #D4685A; font-weight: 600;">no one.</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Image placeholder -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="background: linear-gradient(145deg, #FAF5F3 0%, #F5F0EE 100%); border: 3px dashed rgba(212,104,90,0.4); border-radius: 20px; height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#D4685A" stroke-width="3" stroke-dasharray="8 4"/>
+                    <text x="50" y="45" font-family="sans-serif" font-size="12" fill="#D4685A" text-anchor="middle">for</text>
+                    <text x="50" y="62" font-family="sans-serif" font-size="14" fill="#D4685A" text-anchor="middle" font-weight="bold">???</text>
+                </svg>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; text-transform: uppercase; letter-spacing: 2px;">[Bailey's Screenshot]</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; color: #8B6D72;">Generic "for anyone" design</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 44: AI Slop Indicator #5 -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop44" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="800" rx="400" ry="320" fill="url(#slop44)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; padding: 80px 140px; gap: 80px;">
+        <!-- Left: Image placeholder -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="background: linear-gradient(145deg, #FAF5F3 0%, #F5F0EE 100%); border: 3px dashed rgba(212,104,90,0.4); border-radius: 20px; height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+                <svg width="120" height="60" viewBox="0 0 120 60">
+                    <text x="10" y="35" font-family="serif" font-size="28" fill="#D4685A" opacity="0.6">Helllo</text>
+                    <path d="M75 40 Q85 35 95 42" stroke="#D4685A" stroke-width="2" fill="none" opacity="0.4"/>
+                </svg>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; text-transform: uppercase; letter-spacing: 2px;">[Bailey's Screenshot]</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; color: #8B6D72;">Broken AI typography example</p>
+            </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 35px;">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4685A 0%, #C05A4D 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(212,104,90,0.3);">
+                    <span style="font-family: sans-serif; font-size: 24px; color: #FFFBFA; font-weight: bold;">5</span>
+                </div>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #D4685A; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;">AI Slop Indicator</p>
+            </div>
+            <h2 style="font-family: 'Ogg Bold', serif; font-size: 52px; color: #2D3436; margin-bottom: 40px; line-height: 1.15;">
+                Poor Typography &<br/><span style="color: #D4685A;">Spelling Errors</span>
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 35px;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72;">Misspelled words.</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72;">Letters that don't quite form right.</p>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #636E72;">Text that looks like it's melting.</p>
+            </div>
+            <div style="padding: 30px 35px; background: linear-gradient(145deg, #FDF0EE 0%, #FEF5F4 100%); border-radius: 16px;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #2D3436; margin-bottom: 15px;">And the worst part?</p>
+                <p style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #D4685A;">People don't even PROOFREAD before listing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 45: AI Slop Tie Down -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop45" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="200" rx="600" ry="300" fill="url(#slop45)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <!-- Chat bubble icon -->
+        <div style="margin-bottom: 40px;">
+            <svg width="80" height="80" viewBox="0 0 80 80">
+                <path d="M10 15 L70 15 Q75 15 75 20 L75 50 Q75 55 70 55 L25 55 L15 70 L15 55 L10 55 Q5 55 5 50 L5 20 Q5 15 10 15" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <circle cx="25" cy="37" r="4" fill="#D4727A"/>
+                <circle cx="40" cy="37" r="4" fill="#D4727A"/>
+                <circle cx="55" cy="37" r="4" fill="#D4727A"/>
+            </svg>
+        </div>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #D4727A; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; font-weight: 600;">Be honest in the chat</p>
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; margin-bottom: 50px; line-height: 1.3;">
+            Have you ever listed something<br/>without really checking it first?
+        </h1>
+        <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 40px 60px; border-radius: 20px; box-shadow: 0 15px 50px rgba(212,114,122,0.12); border: 1px solid rgba(212,114,122,0.1); margin-bottom: 50px;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #636E72;">Type <span style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #D4727A;">"GUILTY"</span> — no judgment.</p>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #636E72; margin-top: 15px; opacity: 0.8;">We've all done it.</p>
+        </div>
+        <p style="font-family: 'Ogg Bold', serif; font-size: 36px; color: #D4727A;">But that stops today.</p>
+    </div>
+</div>
+
+<!-- SLIDE 46: The Bigger Problem -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop46" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1650" cy="540" rx="450" ry="400" fill="url(#slop46)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #636E72; margin-bottom: 50px;">But here's the thing...</p>
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 72px; color: #2D3436; margin-bottom: 60px;">
+            All of those are <span style="color: #D4727A;">SYMPTOMS.</span>
+        </h1>
+        <div style="display: flex; align-items: center; gap: 30px;">
+            <div style="width: 100px; height: 3px; background: linear-gradient(90deg, transparent, #D4727A);"></div>
+            <p style="font-family: 'Ogg Bold', serif; font-size: 42px; color: #636E72;">They're not the real disease.</p>
+            <div style="width: 100px; height: 3px; background: linear-gradient(90deg, #D4727A, transparent);"></div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 47: The Real Disease -->
+<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop47" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1600" cy="300" rx="500" ry="400" fill="url(#slop47)"/>
+        <ellipse cx="300" cy="750" rx="400" ry="300" fill="url(#slop47)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <h2 style="font-family: 'Ogg Bold', serif; font-size: 48px; color: #E8A5AB; margin-bottom: 60px;">The Real Reason AI Designs Fail:</h2>
+        <div style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 60px;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: rgba(255,251,250,0.8);">The AI isn't broken.</p>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: rgba(255,251,250,0.8);">Your prompts are probably fine.</p>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: rgba(255,251,250,0.8);">Your tools work great.</p>
+        </div>
+        <div style="background: rgba(255,251,250,0.1); padding: 45px 70px; border-radius: 24px; border: 1px solid rgba(232,165,171,0.2);">
+            <p style="font-family: 'Ogg Bold', serif; font-size: 42px; color: #FFFBFA; line-height: 1.4;">
+                The problem is what happens<br/><span style="color: #E8A5AB;">BEFORE</span> you ever open the AI.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 48: The Decision-Making Flaw -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop48" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="250" cy="300" rx="350" ry="280" fill="url(#slop48)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; padding: 80px 140px; gap: 100px;">
+        <!-- Left: Content -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <h2 style="font-family: 'Ogg Bold', serif; font-size: 52px; color: #2D3436; margin-bottom: 50px;">Here's What Most Sellers Do:</h2>
+            <div style="display: flex; flex-direction: column; gap: 22px;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #E8A5AB 0%, #D4727A 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #FFFBFA; font-weight: 700;">1</span>
+                    </div>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436;">Open MidJourney or Kittl</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #E8A5AB 0%, #D4727A 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #FFFBFA; font-weight: 700;">2</span>
+                    </div>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436;">Browse the inspiration boards</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #E8A5AB 0%, #D4727A 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #FFFBFA; font-weight: 700;">3</span>
+                    </div>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436;">Find something that looks "pretty"</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #E8A5AB 0%, #D4727A 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #FFFBFA; font-weight: 700;">4</span>
+                    </div>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436;">Create it</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #E8A5AB 0%, #D4727A 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #FFFBFA; font-weight: 700;">5</span>
+                    </div>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436;">List it</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #E8A5AB 0%, #D4727A 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: 'Satoshi', sans-serif; font-size: 18px; color: #FFFBFA; font-weight: 700;">6</span>
+                    </div>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #D4685A; font-weight: 600;">Hope it sells</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Graphic -->
+        <div style="flex: 0.8; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <svg width="350" height="350" viewBox="0 0 350 350">
+                <defs>
+                    <linearGradient id="hopeGrad48" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#F5E6E8"/>
+                        <stop offset="100%" style="stop-color:#EDD5D8"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="175" cy="175" r="140" fill="url(#hopeGrad48)" stroke="#E8A5AB" stroke-width="3"/>
+                <text x="175" y="155" font-family="sans-serif" font-size="72" text-anchor="middle">🤞</text>
+                <text x="175" y="220" font-family="'Satoshi', sans-serif" font-size="22" fill="#8B4D5C" text-anchor="middle" font-weight="600">Hope Strategy</text>
+                <text x="60" y="80" font-family="sans-serif" font-size="28" fill="#D4727A" opacity="0.4">?</text>
+                <text x="280" y="100" font-family="sans-serif" font-size="24" fill="#D4727A" opacity="0.3">?</text>
+                <text x="80" y="280" font-family="sans-serif" font-size="22" fill="#D4727A" opacity="0.35">?</text>
+                <text x="260" y="270" font-family="sans-serif" font-size="26" fill="#D4727A" opacity="0.4">?</text>
+            </svg>
+            <p style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #D4727A; margin-top: 30px;">Sound familiar?</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 49: The Fatal Mistake -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop49" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1650" cy="540" rx="450" ry="380" fill="url(#slop49)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <div style="display: flex; flex-direction: column; gap: 35px; margin-bottom: 70px;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: #636E72;">They're designing what <span style="font-weight: 600; color: #2D3436;">THEY</span> think is beautiful.</p>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: #636E72;">They're designing from inspiration boards.</p>
+        </div>
+        <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FDF0EE 100%); padding: 50px 80px; border-radius: 24px; box-shadow: 0 20px 60px rgba(212,104,90,0.15); border: 2px solid rgba(212,104,90,0.15);">
+            <p style="font-family: 'Ogg Bold', serif; font-size: 42px; color: #2D3436; line-height: 1.5;">
+                They never checked if anyone<br/>is actually <span style="color: #D4685A;">SEARCHING</span> for it.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 50: OLD WAY vs NEW WAY -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop50a" x1="0%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4685A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+            <linearGradient id="slop50b" x1="100%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#7CB87C;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="300" rx="400" ry="350" fill="url(#slop50a)"/>
+        <ellipse cx="1620" cy="300" rx="400" ry="350" fill="url(#slop50b)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; padding: 60px 100px;">
+        <h2 style="font-family: 'Ogg Bold', serif; font-size: 48px; color: #2D3436; text-align: center; margin-bottom: 50px;">The Shift That Changes Everything</h2>
+
+        <div style="display: flex; gap: 60px; flex: 1;">
+            <!-- OLD WAY -->
+            <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #FDF0EE 100%); border-radius: 24px; padding: 40px; box-shadow: 0 15px 50px rgba(212,104,90,0.1); border: 2px solid rgba(212,104,90,0.15);">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 35px;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #D4685A 0%, #C05A4D 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M6 6 L18 18 M18 6 L6 18" stroke="#FFFBFA" stroke-width="3" stroke-linecap="round"/></svg>
+                    </div>
+                    <p style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #D4685A;">OLD WAY</p>
+                </div>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px;">Most AI Sellers</p>
+                <div style="display: flex; flex-direction: column; gap: 18px;">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #D4685A; font-size: 20px;">✗</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;">Open MidJourney/Kittl first</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #D4685A; font-size: 20px;">✗</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;">Design what looks cool</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #D4685A; font-size: 20px;">✗</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;">Throw it on Etsy</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #D4685A; font-size: 20px;">✗</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;">Hope the algorithm picks it up</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #D4685A; font-size: 20px;">✗</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;">Make more random designs when it doesn't sell</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow -->
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                    <path d="M20 40 L55 40 M45 30 L55 40 L45 50" stroke="#D4727A" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <!-- NEW WAY -->
+            <div style="flex: 1; background: linear-gradient(145deg, #FFFFFF 0%, #F5F9F5 100%); border-radius: 24px; padding: 40px; box-shadow: 0 15px 50px rgba(124,184,124,0.1); border: 2px solid rgba(124,184,124,0.15);">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 35px;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #7CB87C 0%, #6BA86B 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7" stroke="#FFFBFA" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <p style="font-family: 'Ogg Bold', serif; font-size: 28px; color: #7CB87C;">NEW WAY</p>
+                </div>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; color: #636E72; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px;">What We're Doing</p>
+                <div style="display: flex; flex-direction: column; gap: 18px;">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #7CB87C; font-size: 20px;">✓</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;">Open <span style="font-weight: 600;">Etsy first</span></p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #7CB87C; font-size: 20px;">✓</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;"><span style="font-weight: 600;">MINE:</span> Find real demand</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #7CB87C; font-size: 20px;">✓</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;"><span style="font-weight: 600;">MATCH:</span> Define the exact buyer</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #7CB87C; font-size: 20px;">✓</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;"><span style="font-weight: 600;">MAKE:</span> Use the 5-step formula</p>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <span style="color: #7CB87C; font-size: 20px;">✓</span>
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #2D3436;"><span style="font-weight: 600;">MEASURE:</span> Track, learn, scale</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 51: The Shift Results -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop51" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#7CB87C;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="250" rx="600" ry="350" fill="url(#slop51)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #636E72; margin-bottom: 50px;">This one shift alone is why some shops crawl...</p>
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 64px; color: #2D3436; margin-bottom: 60px;">
+            And others quietly stack<br/><span style="color: #7CB87C;">$3–5K/month.</span>
+        </h1>
+        <div style="display: flex; gap: 50px; align-items: center;">
+            <div style="text-align: center;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #636E72;">Same AI tools.</p>
+            </div>
+            <div style="width: 6px; height: 6px; background: #D4727A; border-radius: 50%;"></div>
+            <div style="text-align: center;">
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #636E72;">Same Etsy algorithm.</p>
+            </div>
+            <div style="width: 6px; height: 6px; background: #D4727A; border-radius: 50%;"></div>
+            <div style="text-align: center;">
+                <p style="font-family: 'Ogg Bold', serif; font-size: 26px; color: #D4727A;">Different PROCESS.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 52: Write This Down #1 -->
+<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop52" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1550" cy="350" rx="500" ry="400" fill="url(#slop52)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <!-- Pencil icon -->
+        <div style="margin-bottom: 40px;">
+            <svg width="60" height="60" viewBox="0 0 60 60">
+                <path d="M45 5 L55 15 L20 50 L5 55 L10 40 Z" fill="none" stroke="#E8A5AB" stroke-width="3" stroke-linejoin="round"/>
+                <line x1="35" y1="15" x2="45" y2="25" stroke="#E8A5AB" stroke-width="2"/>
+            </svg>
+        </div>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #E8A5AB; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 40px; font-weight: 600;">Write this down</p>
+        <div style="background: rgba(255,251,250,0.08); padding: 50px 80px; border-radius: 24px; border: 1px solid rgba(232,165,171,0.2); margin-bottom: 50px;">
+            <p style="font-family: 'Ogg Bold', serif; font-size: 44px; color: #FFFBFA; line-height: 1.5;">
+                "Beginners design what they like.<br/><span style="color: #E8A5AB;">Pros design what the market already wants.</span>"
+            </p>
+        </div>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: rgba(255,251,250,0.7);">
+            This is the foundation of everything I'm about to teach you.
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 53: The Exception -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop53" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.04" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="300" cy="300" rx="400" ry="320" fill="url(#slop53)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 140px;">
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: #636E72; font-style: italic; margin-bottom: 35px;">"But Bailey, can't I create something NEW and unique?"</p>
+        <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #2D3436; margin-bottom: 50px;">Yes. But <span style="color: #D4727A;">ONLY</span> if:</h2>
+        <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 50px; max-width: 1100px;">
+            <div style="display: flex; align-items: flex-start; gap: 20px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 30px 40px; border-radius: 18px; box-shadow: 0 10px 35px rgba(212,114,122,0.08);">
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #D4727A;">→</span>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436;">It's in a category people are <span style="font-weight: 600;">already searching for</span></p>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 20px; background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 30px 40px; border-radius: 18px; box-shadow: 0 10px 35px rgba(212,114,122,0.08);">
+                <span style="font-family: 'Satoshi', sans-serif; font-size: 28px; color: #D4727A;">→</span>
+                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D3436;"><span style="font-weight: 600;">OR</span> you have a massive social media following that will buy anything you make</p>
+            </div>
+        </div>
+        <div style="padding: 35px 45px; background: linear-gradient(145deg, #FDF0EE 0%, #FEF5F4 100%); border-radius: 20px; border-left: 5px solid #D4727A; max-width: 700px;">
+            <p style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #2D3436;">For everyone else?</p>
+            <p style="font-family: 'Ogg Bold', serif; font-size: 36px; color: #D4727A; margin-top: 10px;">Demand first. Design second.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 54: Section Tie Down -->
+<div class="slide" style="background: #FDF8F6;">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="slop54" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#D4727A;stop-opacity:0.05" />
+                <stop offset="100%" style="stop-color:#FDF8F6;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="960" cy="300" rx="700" ry="400" fill="url(#slop54)"/>
+    </svg>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 200px;">
+        <!-- Chat icon -->
+        <div style="margin-bottom: 40px;">
+            <svg width="80" height="80" viewBox="0 0 80 80">
+                <path d="M10 15 L70 15 Q75 15 75 20 L75 50 Q75 55 70 55 L25 55 L15 70 L15 55 L10 55 Q5 55 5 50 L5 20 Q5 15 10 15" fill="none" stroke="#D4727A" stroke-width="3"/>
+                <circle cx="25" cy="37" r="4" fill="#D4727A"/>
+                <circle cx="40" cy="37" r="4" fill="#D4727A"/>
+                <circle cx="55" cy="37" r="4" fill="#D4727A"/>
+            </svg>
+        </div>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: #636E72; margin-bottom: 40px;">Type in the chat</p>
+        <div style="background: linear-gradient(145deg, #FFFFFF 0%, #FEF5F4 100%); padding: 50px 80px; border-radius: 24px; box-shadow: 0 20px 60px rgba(212,114,122,0.12); border: 1px solid rgba(212,114,122,0.1); margin-bottom: 50px;">
+            <p style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #D4727A;">"DEMAND FIRST"</p>
+        </div>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: #636E72; margin-bottom: 20px;">if this is clicking for you.</p>
+        <p style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #2D3436;">This one shift will change everything.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- SECTION B: THE PROOF (Before/After Tumbler Example) -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- SLIDE 55: Transition to Proof -->
+<div class="slide" style="background: linear-gradient(145deg, #8B4D5C 0%, #5C3341 100%);">
+    <svg class="bg-shapes" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="proof55" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.1" />
+                <stop offset="100%" style="stop-color:#5C3341;stop-opacity:0" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="1550" cy="300" rx="500" ry="400" fill="url(#proof55)"/>
+        <ellipse cx="250" cy="750" rx="400" ry="300" fill="url(#proof55)"/>
+    </svg>
+
+    <!-- Proof graphic -->
+    <div style="position: absolute; right: 100px; top: 50%; transform: translateY(-50%); z-index: 2;">
+        <svg width="450" height="450" viewBox="0 0 450 450">
+            <defs>
+                <linearGradient id="proofGrad55" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#E8A5AB"/>
+                    <stop offset="100%" style="stop-color:#D4727A"/>
+                </linearGradient>
+            </defs>
+            <!-- Two products comparison -->
+            <!-- Product 1 (Flop) -->
+            <g transform="translate(50, 80)">
+                <rect x="0" y="0" width="140" height="200" rx="12" fill="rgba(255,251,250,0.08)" stroke="#E8A5AB" stroke-width="2"/>
+                <rect x="20" y="20" width="100" height="100" rx="8" fill="rgba(232,165,171,0.2)"/>
+                <text x="70" y="145" font-family="'Satoshi', sans-serif" font-size="14" fill="#E8A5AB" text-anchor="middle">Flop</text>
+                <!-- X mark -->
+                <g transform="translate(100, 160)">
+                    <circle cx="20" cy="20" r="18" fill="#D4685A"/>
+                    <path d="M12 12 L28 28 M28 12 L12 28" stroke="#FFFBFA" stroke-width="3" stroke-linecap="round"/>
+                </g>
+                <text x="70" y="220" font-family="'Satoshi', sans-serif" font-size="16" fill="rgba(255,251,250,0.5)" text-anchor="middle">$47</text>
+            </g>
+            <!-- Product 2 (Winner) -->
+            <g transform="translate(260, 80)">
+                <rect x="0" y="0" width="140" height="200" rx="12" fill="rgba(255,251,250,0.12)" stroke="#E8A5AB" stroke-width="2"/>
+                <rect x="20" y="20" width="100" height="100" rx="8" fill="rgba(232,165,171,0.3)"/>
+                <text x="70" y="145" font-family="'Satoshi', sans-serif" font-size="14" fill="#FFFBFA" text-anchor="middle">Winner</text>
+                <!-- Checkmark -->
+                <g transform="translate(100, 160)">
+                    <circle cx="20" cy="20" r="18" fill="#7CB87C"/>
+                    <path d="M12 20 L18 26 L28 14" stroke="#FFFBFA" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <text x="70" y="220" font-family="'Satoshi', sans-serif" font-size="16" fill="#7CB87C" text-anchor="middle" font-weight="600">$2,847</text>
+            </g>
+            <!-- VS -->
+            <text x="225" y="195" font-family="'Ogg Bold', serif" font-size="28" fill="#E8A5AB" text-anchor="middle">vs</text>
+            <!-- Same seller badge -->
+            <g transform="translate(125, 330)">
+                <rect x="0" y="0" width="200" height="45" rx="22" fill="rgba(232,165,171,0.2)" stroke="#E8A5AB" stroke-width="1"/>
+                <text x="100" y="29" font-family="'Satoshi', sans-serif" font-size="14" fill="#FFFBFA" text-anchor="middle">Same Seller • Same Tools</text>
+            </g>
+            <!-- Sparkles -->
+            <circle cx="30" cy="50" r="5" fill="#E8A5AB" opacity="0.6"/>
+            <circle cx="420" cy="70" r="6" fill="#E8A5AB" opacity="0.7"/>
+            <circle cx="40" cy="400" r="4" fill="#E8A5AB" opacity="0.5"/>
+        </svg>
+    </div>
+
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 140px; max-width: 850px;">
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 5px; color: #E8A5AB; margin-bottom: 30px; font-weight: 600;">SECTION B: THE PROOF</p>
+        <h1 style="font-family: 'Ogg Bold', serif; font-size: 64px; color: #FFFBFA; line-height: 1.2; margin-bottom: 50px;">
+            Let me show you<br/><span style="color: #E8A5AB;">exactly</span> what I mean.
+        </h1>
+        <p style="font-family: 'Satoshi', sans-serif; font-size: 26px; color: rgba(255,251,250,0.8); margin-bottom: 20px;">With two of my own products.</p>
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: rgba(255,251,250,0.6);">Same niche. Same product type.</p>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 22px; color: rgba(255,251,250,0.6);">Same AI tools. Same seller — <span style="color: #E8A5AB; font-weight: 600;">me.</span></p>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
