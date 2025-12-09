@@ -103,9 +103,118 @@
         <ellipse cx="250" cy="820" rx="450" ry="350" fill="url(#hero2)"/>
     </svg>
 
+    <!-- HERO GRAPHIC: Absolute positioned for reliability -->
+    <div style="position: absolute; right: 100px; top: 50%; transform: translateY(-50%); z-index: 2;">
+        <svg width="550" height="550" viewBox="0 0 550 550">
+            <defs>
+                <linearGradient id="lensGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#F0C4C8"/>
+                    <stop offset="100%" style="stop-color:#E8A5AB"/>
+                </linearGradient>
+                <linearGradient id="handleGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#E8A5AB"/>
+                    <stop offset="100%" style="stop-color:#D4727A"/>
+                </linearGradient>
+                <linearGradient id="starGold1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FFFBFA"/>
+                    <stop offset="100%" style="stop-color:#F0C4C8"/>
+                </linearGradient>
+                <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="12" result="blur"/>
+                    <feMerge>
+                        <feMergeNode in="blur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <!-- Outer glow ring -->
+            <circle cx="220" cy="220" r="185" fill="none" stroke="#E8A5AB" stroke-width="2" opacity="0.3"/>
+            <circle cx="220" cy="220" r="200" fill="none" stroke="#E8A5AB" stroke-width="1" opacity="0.15"/>
+
+            <!-- Main magnifying glass lens -->
+            <circle cx="220" cy="220" r="160" fill="rgba(255,251,250,0.06)" stroke="#E8A5AB" stroke-width="8"/>
+
+            <!-- Lens inner ring -->
+            <circle cx="220" cy="220" r="140" fill="none" stroke="#E8A5AB" stroke-width="3" opacity="0.5"/>
+
+            <!-- Lens shine/reflection -->
+            <ellipse cx="170" cy="170" rx="50" ry="30" fill="#FFFBFA" opacity="0.12" transform="rotate(-35 170 170)"/>
+
+            <!-- THE WINNER STAR - Bold and bright -->
+            <g filter="url(#glow1)">
+                <!-- Star glow background -->
+                <circle cx="220" cy="220" r="70" fill="#E8A5AB" opacity="0.25"/>
+
+                <!-- Main star - bigger and bolder -->
+                <polygon
+                    points="220,120 245,180 310,180 258,225 278,290 220,250 162,290 182,225 130,180 195,180"
+                    fill="url(#starGold1)"
+                    stroke="#FFFBFA"
+                    stroke-width="3"/>
+
+                <!-- Inner star shine -->
+                <polygon
+                    points="220,150 235,190 270,190 245,215 255,255 220,230 185,255 195,215 170,190 205,190"
+                    fill="#FFFBFA"
+                    opacity="0.6"/>
+            </g>
+
+            <!-- Magnifying glass handle -->
+            <rect x="340" y="340" width="35" height="140" rx="17" fill="url(#handleGrad1)" transform="rotate(45 357 410)"/>
+            <!-- Handle inner detail -->
+            <rect x="348" y="350" width="20" height="110" rx="10" fill="#D4727A" opacity="0.5" transform="rotate(45 358 405)"/>
+            <!-- Handle grip lines -->
+            <line x1="420" y1="445" x2="440" y2="465" stroke="#5C3341" stroke-width="4" stroke-linecap="round"/>
+            <line x1="432" y1="433" x2="452" y2="453" stroke="#5C3341" stroke-width="4" stroke-linecap="round"/>
+            <line x1="444" y1="421" x2="464" y2="441" stroke="#5C3341" stroke-width="4" stroke-linecap="round"/>
+
+            <!-- Floating research elements -->
+
+            <!-- Chart bars - bottom left -->
+            <g transform="translate(50, 340)">
+                <rect x="0" y="30" width="18" height="35" rx="4" fill="#E8A5AB" opacity="0.7"/>
+                <rect x="24" y="15" width="18" height="50" rx="4" fill="#E8A5AB" opacity="0.85"/>
+                <rect x="48" y="0" width="18" height="65" rx="4" fill="#E8A5AB"/>
+                <!-- Arrow pointing up -->
+                <path d="M33 -15 L33 -35 L25 -25 M33 -35 L41 -25" stroke="#7CB87C" stroke-width="3" stroke-linecap="round" fill="none"/>
+            </g>
+
+            <!-- Checkmark badge - top right -->
+            <g transform="translate(360, 60)">
+                <circle cx="35" cy="35" r="35" fill="#7CB87C"/>
+                <path d="M20 35 L30 45 L52 23" stroke="#FFFBFA" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+
+            <!-- Sparkle particles -->
+            <circle cx="80" cy="120" r="8" fill="#E8A5AB"/>
+            <circle cx="400" cy="150" r="6" fill="#F0C4C8"/>
+            <circle cx="60" cy="250" r="5" fill="#E8A5AB" opacity="0.8"/>
+            <circle cx="420" cy="280" r="7" fill="#D4727A"/>
+
+            <!-- Plus signs -->
+            <g stroke="#E8A5AB" stroke-width="4" stroke-linecap="round">
+                <line x1="55" y1="180" x2="55" y2="210"/>
+                <line x1="40" y1="195" x2="70" y2="195"/>
+            </g>
+            <g stroke="#E8A5AB" stroke-width="3" stroke-linecap="round" opacity="0.7">
+                <line x1="430" y1="200" x2="430" y2="225"/>
+                <line x1="417" y1="212" x2="443" y2="212"/>
+            </g>
+
+            <!-- Diamond accent -->
+            <polygon points="90,380 105,405 90,430 75,405" fill="#E8A5AB" opacity="0.8"/>
+
+            <!-- Small search dots trail -->
+            <circle cx="385" cy="385" r="4" fill="#E8A5AB" opacity="0.6"/>
+            <circle cx="365" cy="365" r="3" fill="#E8A5AB" opacity="0.4"/>
+            <circle cx="350" cy="350" r="2" fill="#E8A5AB" opacity="0.3"/>
+        </svg>
+    </div>
+
     <div style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; padding: 0 140px;">
         <!-- Left: Text content -->
-        <div style="flex: 1;">
+        <div style="max-width: 900px;">
             <p style="font-family: 'Satoshi', sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 6px; color: #E8A5AB; margin-bottom: 30px; font-weight: 600;">
                 THE ETSY UPGRADE CHALLENGE
             </p>
@@ -119,125 +228,6 @@
             <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: rgba(255,251,250,0.6); margin-top: 25px;">
                 Research before you create. Validate before you invest.
             </p>
-        </div>
-
-        <!-- Right: Creative Discovery Graphic - Magnifying glass revealing a winning star -->
-        <div style="flex: 0.7; display: flex; justify-content: center; align-items: center;">
-            <svg width="480" height="480" viewBox="0 0 480 480">
-                <defs>
-                    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#E8A5AB"/>
-                        <stop offset="100%" style="stop-color:#D4727A"/>
-                    </linearGradient>
-                    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#F0C4C8"/>
-                        <stop offset="100%" style="stop-color:#E8A5AB"/>
-                    </linearGradient>
-                    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#E8A5AB;stop-opacity:0.4"/>
-                        <stop offset="100%" style="stop-color:#D4727A;stop-opacity:0"/>
-                    </linearGradient>
-                    <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
-                        <feGaussianBlur stdDeviation="8" result="blur"/>
-                        <feMerge>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="20" result="blur"/>
-                        <feMerge>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-
-                <!-- Outer glow circle -->
-                <circle cx="200" cy="200" r="160" fill="url(#glowGrad)" filter="url(#softGlow)"/>
-
-                <!-- Magnifying glass lens -->
-                <circle cx="200" cy="200" r="130" fill="rgba(232,165,171,0.08)" stroke="#E8A5AB" stroke-width="6"/>
-                <circle cx="200" cy="200" r="115" fill="none" stroke="#E8A5AB" stroke-width="2" opacity="0.4"/>
-
-                <!-- Inner lens shine -->
-                <ellipse cx="160" cy="160" rx="40" ry="25" fill="#E8A5AB" opacity="0.15" transform="rotate(-30 160 160)"/>
-
-                <!-- THE WINNING STAR - Central focus -->
-                <g filter="url(#starGlow)">
-                    <!-- Star glow background -->
-                    <circle cx="200" cy="200" r="50" fill="#E8A5AB" opacity="0.3"/>
-
-                    <!-- Main star -->
-                    <polygon
-                        points="200,130 218,175 268,175 228,205 243,255 200,225 157,255 172,205 132,175 182,175"
-                        fill="url(#starGrad)"
-                        stroke="#FFFBFA"
-                        stroke-width="2"/>
-
-                    <!-- Inner star highlight -->
-                    <polygon
-                        points="200,155 210,180 235,180 215,198 222,223 200,208 178,223 185,198 165,180 190,180"
-                        fill="#FFFBFA"
-                        opacity="0.5"/>
-                </g>
-
-                <!-- Magnifying glass handle -->
-                <rect x="295" y="295" width="28" height="120" rx="14" fill="url(#glassGrad)" transform="rotate(45 309 355)"/>
-                <rect x="300" y="300" width="18" height="100" rx="9" fill="#D4727A" opacity="0.6" transform="rotate(45 309 350)"/>
-                <!-- Handle grip lines -->
-                <line x1="365" y1="385" x2="380" y2="400" stroke="#8B4D5C" stroke-width="3" stroke-linecap="round"/>
-                <line x1="375" y1="375" x2="390" y2="390" stroke="#8B4D5C" stroke-width="3" stroke-linecap="round"/>
-                <line x1="385" y1="365" x2="400" y2="380" stroke="#8B4D5C" stroke-width="3" stroke-linecap="round"/>
-
-                <!-- Data/research elements floating around -->
-                <!-- Small chart bars -->
-                <g transform="translate(80, 280)">
-                    <rect x="0" y="20" width="12" height="25" rx="3" fill="#E8A5AB" opacity="0.6"/>
-                    <rect x="16" y="10" width="12" height="35" rx="3" fill="#E8A5AB" opacity="0.8"/>
-                    <rect x="32" y="0" width="12" height="45" rx="3" fill="#E8A5AB"/>
-                </g>
-
-                <!-- Checkmark badge -->
-                <g transform="translate(300, 80)">
-                    <circle cx="25" cy="25" r="25" fill="#7CB87C" opacity="0.9"/>
-                    <path d="M15 25 L22 32 L38 16" stroke="#FFFBFA" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-
-                <!-- Floating sparkles/particles -->
-                <circle cx="90" cy="120" r="6" fill="#E8A5AB">
-                    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="340" cy="140" r="5" fill="#F0C4C8">
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="70" cy="220" r="4" fill="#E8A5AB">
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="350" cy="260" r="7" fill="#D4727A" opacity="0.7">
-                    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Plus signs for "discovery" feel -->
-                <g stroke="#E8A5AB" stroke-width="3" stroke-linecap="round" opacity="0.7">
-                    <line x1="55" y1="170" x2="55" y2="190"/>
-                    <line x1="45" y1="180" x2="65" y2="180"/>
-                </g>
-                <g stroke="#E8A5AB" stroke-width="2" stroke-linecap="round" opacity="0.5">
-                    <line x1="360" y1="200" x2="360" y2="215"/>
-                    <line x1="352" y1="207" x2="368" y2="207"/>
-                </g>
-
-                <!-- Small diamond accent -->
-                <polygon points="100,320 110,335 100,350 90,335" fill="#E8A5AB" opacity="0.6"/>
-
-                <!-- Tiny trend arrow -->
-                <g transform="translate(320, 320)">
-                    <path d="M0 20 L15 5 L30 12" stroke="#7CB87C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polygon points="30,5 35,15 25,12" fill="#7CB87C"/>
-                </g>
-            </svg>
         </div>
     </div>
 </div>
