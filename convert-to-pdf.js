@@ -36,8 +36,8 @@ html = html.replace('/* ============================================', newFontFa
 // Remove slide-label elements
 html = html.replace(/<div class="slide-label">[^<]*<\/div>/g, '');
 
-// Remove box-shadow from .slide
-html = html.replace(/box-shadow: 0 10px 40px rgba\(0,0,0,0\.3\);/g, '');
+// Remove ALL box-shadows
+html = html.replace(/box-shadow:\s*[^;]+;/g, '');
 
 // Remove margin from slides for PDF
 html = html.replace(/margin: 20px auto;/g, 'margin: 0;');
