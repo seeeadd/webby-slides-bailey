@@ -605,41 +605,43 @@
             </h1>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px;">
-            <!-- Metric 1 -->
-            <div class="premium-card" style="padding: 55px 45px; text-align: center;">
-                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--pink-primary), var(--pink-rose)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(212,114,122,0.35);">
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                        <path d="M25 8 L25 42 M8 25 L42 25" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <h3 style="font-family: 'Ogg Bold', serif; font-size: 32px; color: var(--text-dark); margin-bottom: 18px;">Reply Rate</h3>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: var(--text-muted); line-height: 1.6;">By message type, subject line, and persona</p>
-            </div>
+        <table style="width: 100%; border-collapse: separate; border-spacing: 50px 0;">
+            <tr>
+                <!-- Metric 1 -->
+                <td style="width: 33%; background: white; border-radius: 24px; padding: 55px 45px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #D4727A, #E8A5AB); border-radius: 50%; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(212,114,122,0.35); text-align: center; padding-top: 25px;">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <path d="M25 8 L25 42 M8 25 L42 25" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #2D2D2D; margin-bottom: 18px;">Reply Rate</h3>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #6B6B6B; line-height: 1.6;">By message type, subject line, and persona</p>
+                </td>
 
-            <!-- Metric 2 -->
-            <div class="premium-card" style="padding: 55px 45px; text-align: center;">
-                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--sage-success), var(--sage-muted)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(124,184,124,0.35);">
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                        <circle cx="25" cy="25" r="18" stroke="white" stroke-width="3.5" fill="none"/>
-                        <path d="M16 25 L22 31 L35 18" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h3 style="font-family: 'Ogg Bold', serif; font-size: 32px; color: var(--text-dark); margin-bottom: 18px;">Positive vs Negative</h3>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: var(--text-muted); line-height: 1.6;">"Let's talk" vs "Please stop emailing"</p>
-            </div>
+                <!-- Metric 2 -->
+                <td style="width: 33%; background: white; border-radius: 24px; padding: 55px 45px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #5A9E5A, #7CB87C); border-radius: 50%; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(124,184,124,0.35); text-align: center; padding-top: 25px;">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <circle cx="25" cy="25" r="18" stroke="white" stroke-width="3.5" fill="none"/>
+                            <path d="M16 25 L22 31 L35 18" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #2D2D2D; margin-bottom: 18px;">Positive vs Negative</h3>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #6B6B6B; line-height: 1.6;">"Let's talk" vs "Please stop emailing"</p>
+                </td>
 
-            <!-- Metric 3 -->
-            <div class="premium-card" style="padding: 55px 45px; text-align: center;">
-                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--gold-premium), #B8941F); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(201,162,39,0.35);">
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                        <path d="M25 6 L29 18 L42 18 L31 27 L35 42 L25 33 L15 42 L19 27 L8 18 L21 18 Z" fill="white"/>
-                    </svg>
-                </div>
-                <h3 style="font-family: 'Ogg Bold', serif; font-size: 32px; color: var(--text-dark); margin-bottom: 18px;">Meeting Rate</h3>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: var(--text-muted); line-height: 1.6;">Replies that become actual conversations</p>
-            </div>
-        </div>
+                <!-- Metric 3 -->
+                <td style="width: 33%; background: white; border-radius: 24px; padding: 55px 45px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #C9A227, #B8941F); border-radius: 50%; margin: 0 auto 30px; box-shadow: 0 15px 40px rgba(201,162,39,0.35); text-align: center; padding-top: 25px;">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                            <path d="M25 6 L29 18 L42 18 L31 27 L35 42 L25 33 L15 42 L19 27 L8 18 L21 18 Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Ogg Bold', serif; font-size: 32px; color: #2D2D2D; margin-bottom: 18px;">Meeting Rate</h3>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 20px; color: #6B6B6B; line-height: 1.6;">Replies that become actual conversations</p>
+                </td>
+            </tr>
+        </table>
 
         <div style="text-align: center; margin-top: 55px;">
             <div style="background: linear-gradient(135deg, var(--card-blush-tint), var(--card-rose-tint)); padding: 30px 60px; border-radius: 100px; display: inline-block; border: 2px solid rgba(212,114,122,0.15);">
@@ -738,69 +740,53 @@
             </h1>
         </div>
 
-        <div style="display: flex; justify-content: center; gap: 45px; align-items: stretch;">
-            <!-- MAP -->
-            <div class="premium-card" style="padding: 55px 45px; flex: 1; max-width: 460px; text-align: center; position: relative;">
-                <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: linear-gradient(135deg, var(--teal-callback), #157777); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Ogg Bold', serif; font-size: 28px; color: white; box-shadow: 0 12px 35px rgba(27, 138, 138, 0.4);">1</div>
-                <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: var(--teal-callback); margin: 25px 0 28px;">MAP</h2>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: var(--text-dark); line-height: 1.5; margin-bottom: 28px;">Know exactly who<br>you're talking to</p>
-                <div style="background: var(--card-sage-tint); padding: 22px 28px; border-radius: 14px; border: 1px solid rgba(27,138,138,0.15);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: var(--text-muted);">Winner Hypothesis<br>Research Framework</p>
-                </div>
-            </div>
+        <table style="width: 100%; border-collapse: separate; border-spacing: 20px 0; margin: 0 auto;">
+            <tr style="vertical-align: top;">
+                <!-- MAP -->
+                <td style="width: 28%; background: white; border-radius: 24px; padding: 75px 45px 55px; text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);">
+                    <div style="position: absolute; top: -30px; left: 50%; margin-left: -30px; width: 60px; height: 60px; background: linear-gradient(135deg, #1B8A8A, #157777); border-radius: 50%; text-align: center; line-height: 60px; font-family: 'Ogg Bold', serif; font-size: 28px; color: white; box-shadow: 0 12px 35px rgba(27, 138, 138, 0.4);">1</div>
+                    <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #1B8A8A; margin: 25px 0 28px;">MAP</h2>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D2D2D; line-height: 1.5; margin-bottom: 28px;">Know exactly who<br>you're talking to</p>
+                    <div style="background: #F0F7F7; padding: 22px 28px; border-radius: 14px; border: 1px solid rgba(27,138,138,0.15);">
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #6B6B6B;">Winner Hypothesis<br>Research Framework</p>
+                    </div>
+                </td>
 
-            <!-- Arrow -->
-            <div style="display: flex; align-items: center;">
-                <svg width="70" height="50" viewBox="0 0 70 50">
-                    <defs>
-                        <linearGradient id="arrow1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#1B8A8A"/>
-                            <stop offset="100%" style="stop-color:#D4727A"/>
-                        </linearGradient>
-                    </defs>
-                    <path d="M5 25 L45 25" stroke="url(#arrow1Grad)" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M40 15 L55 25 L40 35" fill="none" stroke="var(--pink-primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
+                <!-- Arrow -->
+                <td style="width: 5%; vertical-align: middle; text-align: center;">
+                    <span style="font-size: 36px; color: #888;">→</span>
+                </td>
 
-            <!-- MAKE -->
-            <div class="premium-card" style="padding: 55px 45px; flex: 1; max-width: 460px; text-align: center; position: relative;">
-                <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: linear-gradient(135deg, var(--pink-primary), var(--pink-rose)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Ogg Bold', serif; font-size: 28px; color: white; box-shadow: 0 12px 35px rgba(212, 114, 122, 0.4);">2</div>
-                <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: var(--pink-primary); margin: 25px 0 28px;">MAKE</h2>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: var(--text-dark); line-height: 1.5; margin-bottom: 28px;">Create messages that<br>feel personal</p>
-                <div style="background: var(--card-rose-tint); padding: 22px 28px; border-radius: 14px; border: 1px solid rgba(212,114,122,0.15);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: var(--text-muted);">AI + Research<br>= Magic</p>
-                </div>
-            </div>
+                <!-- MAKE -->
+                <td style="width: 28%; background: white; border-radius: 24px; padding: 75px 45px 55px; text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);">
+                    <div style="position: absolute; top: -30px; left: 50%; margin-left: -30px; width: 60px; height: 60px; background: linear-gradient(135deg, #D4727A, #E8A5AB); border-radius: 50%; text-align: center; line-height: 60px; font-family: 'Ogg Bold', serif; font-size: 28px; color: white; box-shadow: 0 12px 35px rgba(212, 114, 122, 0.4);">2</div>
+                    <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #D4727A; margin: 25px 0 28px;">MAKE</h2>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D2D2D; line-height: 1.5; margin-bottom: 28px;">Create messages that<br>feel personal</p>
+                    <div style="background: #FFF5F6; padding: 22px 28px; border-radius: 14px; border: 1px solid rgba(212,114,122,0.15);">
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #6B6B6B;">AI + Research<br>= Magic</p>
+                    </div>
+                </td>
 
-            <!-- Arrow -->
-            <div style="display: flex; align-items: center;">
-                <svg width="70" height="50" viewBox="0 0 70 50">
-                    <defs>
-                        <linearGradient id="arrow2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#D4727A"/>
-                            <stop offset="100%" style="stop-color:#C9A227"/>
-                        </linearGradient>
-                    </defs>
-                    <path d="M5 25 L45 25" stroke="url(#arrow2Grad)" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M40 15 L55 25 L40 35" fill="none" stroke="var(--gold-premium)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
+                <!-- Arrow -->
+                <td style="width: 5%; vertical-align: middle; text-align: center;">
+                    <span style="font-size: 36px; color: #888;">→</span>
+                </td>
 
-            <!-- MEASURE -->
-            <div class="premium-card" style="padding: 55px 45px; flex: 1; max-width: 460px; text-align: center; position: relative;">
-                <div style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: linear-gradient(135deg, var(--gold-premium), #B8941F); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Ogg Bold', serif; font-size: 28px; color: white; box-shadow: 0 12px 35px rgba(201, 162, 39, 0.4);">3</div>
-                <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: var(--gold-premium); margin: 25px 0 28px;">MEASURE</h2>
-                <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: var(--text-dark); line-height: 1.5; margin-bottom: 28px;">Learn what works,<br>scale winners</p>
-                <div style="background: #FFF9E6; padding: 22px 28px; border-radius: 14px; border: 1px solid rgba(201,162,39,0.15);">
-                    <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: var(--text-muted);">Track, Test,<br>Improve</p>
-                </div>
-            </div>
-        </div>
+                <!-- MEASURE -->
+                <td style="width: 28%; background: white; border-radius: 24px; padding: 75px 45px 55px; text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);">
+                    <div style="position: absolute; top: -30px; left: 50%; margin-left: -30px; width: 60px; height: 60px; background: linear-gradient(135deg, #C9A227, #B8941F); border-radius: 50%; text-align: center; line-height: 60px; font-family: 'Ogg Bold', serif; font-size: 28px; color: white; box-shadow: 0 12px 35px rgba(201, 162, 39, 0.4);">3</div>
+                    <h2 style="font-family: 'Ogg Bold', serif; font-size: 56px; color: #C9A227; margin: 25px 0 28px;">MEASURE</h2>
+                    <p style="font-family: 'Satoshi', sans-serif; font-size: 24px; color: #2D2D2D; line-height: 1.5; margin-bottom: 28px;">Learn what works,<br>scale winners</p>
+                    <div style="background: #FFF9E6; padding: 22px 28px; border-radius: 14px; border: 1px solid rgba(201,162,39,0.15);">
+                        <p style="font-family: 'Satoshi', sans-serif; font-size: 17px; color: #6B6B6B;">Track, Test,<br>Improve</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
 
         <div style="text-align: center; margin-top: 60px;">
-            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: var(--text-dark); font-weight: 500;">
-                <span style="color: var(--teal-callback);">Simple.</span> <span style="color: var(--pink-primary);">Repeatable.</span> <span style="color: var(--gold-premium);">Effective.</span>
+            <p style="font-family: 'Satoshi', sans-serif; font-size: 32px; color: #2D2D2D; font-weight: 500;">
+                <span style="color: #1B8A8A;">Simple.</span> <span style="color: #D4727A;">Repeatable.</span> <span style="color: #C9A227;">Effective.</span>
             </p>
         </div>
     </div>
